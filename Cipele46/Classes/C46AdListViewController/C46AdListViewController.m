@@ -73,7 +73,7 @@
     NSArray *cities = [district valueForKey:@"cities"];
     NSUInteger cityIndex = [cities indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         NSNumber *citId = [obj valueForKey:@"id"];
-        if( [citId compare:ad.districtID] == NSOrderedSame){
+        if( [citId compare:ad.cityID] == NSOrderedSame){
             return YES;
         }else{
             return NO;
