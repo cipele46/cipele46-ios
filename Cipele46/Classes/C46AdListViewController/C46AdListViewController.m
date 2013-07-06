@@ -47,7 +47,7 @@
     // Do any additional setup after loading the view from its nib.
     self.serverCommunicationManager = [[C46ServerCommunicationManager alloc] init];
     [self.serverCommunicationManager setDelegate:self];
-    [self.serverCommunicationManager districts];
+    [self.serverCommunicationManager ads];
     
     
 }
@@ -60,7 +60,7 @@
 
 #pragma mark - search for category, city and district in JSONS
 
--(NSDictionary *)findDistrictAndCity:(C46Ad *)ad{
+/*-(NSDictionary *)findDistrictAndCity:(C46Ad *)ad{
     NSUInteger districtIndex = [districtsList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         NSNumber *disId = [obj valueForKey:@"id"];
         if( [disId compare:ad.districtID] == NSOrderedSame){
@@ -107,7 +107,7 @@
     }];
     NSDictionary *category = [categoriesList objectAtIndex:categoryIndex];
     return category;
-}
+}*/
 
 #pragma mark - server comm delegate response method
 
@@ -123,33 +123,15 @@
         ad.cityID = [dic valueForKey:@"cityID"];
         ad.type = [dic valueForKey:@"type"];
         ad.email = [dic valueForKey:@"email"];
-        [self.tDataSource addObject:ad];
-        NSUInteger categoryIndex = [categoriesList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-            NSNumber *catId = [obj valueForKey:@"id"];
-            if( [catId compare:ad.categoryID] == NSOrderedSame ){
-                return YES;
-            }else{
-                return NO;
-            }
-        }];
-        ad.category = [[self findCategory:ad] valueForKey:@"name"];
-        NSDictionary *districtCity = [self findDistrictAndCity:ad];
-        ad.city = [districtCity valueForKey:@"cityName"];
-        ad.district = [districtCity valueForKey:@"name"];
-    
-        
-        NSUInteger districtIndex = [districtsList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-            NSNumber *disId = [obj valueForKey:@"id"];
-            if( [disId compare:ad.districtID] == NSOrderedSame){
-                return YES;
-            }else{
-                return NO;
-            }
-        }];
-        NSDictionary *category = [categoriesList objectAtIndex:categoryIndex];
-        NSDictionary *district = [districtsList objectAtIndex:districtIndex];
-        ad.category = [category valueForKey:@"name"]; 
+        ad.title = [dic valueForKey:@"title"];
+        NSDictionary *category = [dic valueForKey:@"category"];
+        NSDictionary *city = [dic valueForKey:@"city"];
+        NSDictionary *district = [dic valueForKey:@"district"];
+        ad.category = [category valueForKey:@"name"];
+        ad.city = [city valueForKey:@"name"];
         ad.district = [district valueForKey:@"name"];
+        [self.tDataSource addObject:ad];
+    
     }
     [self.tView reloadData];
 }

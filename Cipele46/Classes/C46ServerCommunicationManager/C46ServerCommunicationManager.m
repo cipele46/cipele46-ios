@@ -36,7 +36,7 @@ typedef void (^DelegateCallerBlock)(id, NSError *);
 }
 
 - (void)ads {
-    [self serverCommunicationGetPathWorker:@"ads" withBlock:^(id response, NSError *error){
+    [self serverCommunicationGetPathWorker:@"ads.json" withBlock:^(id response, NSError *error){
         [self.delegate didReceiveAds:response withError:error];
     } parameters:nil andBaseURL:cipele46URL];
 }
