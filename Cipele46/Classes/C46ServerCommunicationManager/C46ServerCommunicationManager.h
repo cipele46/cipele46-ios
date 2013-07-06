@@ -16,12 +16,17 @@ typedef enum {
 @protocol C46ServerCommunicationManagerDelegate <NSObject>
 //   Returns an array of dictionaries with keys: 'id', 'name'.
 - (void)didReceiveCategories:(NSArray *)categories;
+//   Returns an array of dictionaries with keys: 'cityID', 'phone',
+// 'categoryID', 'description', 'title', 'imageUrl', 'districtID', 'id',
+// 'email'.
+- (void)didReceiveAds:(NSArray *)ads;
 @end
 
 @interface C46ServerCommunicationManager : NSObject
 
 @property (nonatomic, weak) id<C46ServerCommunicationManagerDelegate> delegate;
 
+- (void)ads;
 - (void)categories;
 
 @end
