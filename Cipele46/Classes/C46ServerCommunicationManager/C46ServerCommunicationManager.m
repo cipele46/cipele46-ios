@@ -49,4 +49,13 @@ typedef void (^DelegateCallerBlock)(NSArray *);
     }];
 }
 
+- (void)loginWithUsername:(NSString *)username {
+    [self.delegate didReceiveLoginResponse:@{
+     @"name":@"tvrtko tvrtkovic",
+     @"email":@"tvrtko@somemail.com",
+     @"phone":@"+385991234567",
+     }];
+}
+
+
 @end
