@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94C17D391787CCCE0074D7F7 /* C46AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */; };
+		94C17D451787CCCE0074D7F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D361787CCCE0074D7F7 /* main.m */; };
+		94C17D4F1787CCD70074D7F7 /* Cipele46Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D4B1787CCD70074D7F7 /* Cipele46Tests.m */; };
+		94D2134A1787CDB500ADAF7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D213471787CDB500ADAF7E /* Default-568h@2x.png */; };
+		94D2134B1787CDB500ADAF7E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D213481787CDB500ADAF7E /* Default.png */; };
+		94D2134C1787CDB500ADAF7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D213491787CDB500ADAF7E /* Default@2x.png */; };
+		94D2135C1787CE8B00ADAF7E /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D213501787CE8B00ADAF7E /* first.png */; };
+		94D2135D1787CE8B00ADAF7E /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D213511787CE8B00ADAF7E /* first@2x.png */; };
+		94D2135E1787CE8B00ADAF7E /* C46FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D213531787CE8B00ADAF7E /* C46FirstViewController.m */; };
+		94D2135F1787CE8B00ADAF7E /* C46FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D213541787CE8B00ADAF7E /* C46FirstViewController.xib */; };
+		94D213601787CE8B00ADAF7E /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D213571787CE8B00ADAF7E /* second.png */; };
+		94D213611787CE8B00ADAF7E /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D213581787CE8B00ADAF7E /* second@2x.png */; };
+		94D213621787CE8B00ADAF7E /* C46SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2135A1787CE8B00ADAF7E /* C46SecondViewController.m */; };
+		94D213631787CE8B00ADAF7E /* C46SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D2135B1787CE8B00ADAF7E /* C46SecondViewController.xib */; };
+		94EF264A1787CB8800BE46E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF26491787CB8800BE46E3 /* UIKit.framework */; };
+		94EF264C1787CB8800BE46E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF264B1787CB8800BE46E3 /* Foundation.framework */; };
+		94EF264E1787CB8800BE46E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF264D1787CB8800BE46E3 /* CoreGraphics.framework */; };
+		94EF267C1787CB8800BE46E3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF267B1787CB8800BE46E3 /* SenTestingKit.framework */; };
+		94EF267D1787CB8800BE46E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF26491787CB8800BE46E3 /* UIKit.framework */; };
+		94EF267E1787CB8800BE46E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF264B1787CB8800BE46E3 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94EF267F1787CB8800BE46E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94EF263E1787CB8800BE46E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94EF26451787CB8800BE46E3;
+			remoteInfo = Cipele46;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		94C17D231787CCCE0074D7F7 /* C46AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AppDelegate.h; sourceTree = "<group>"; };
+		94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AppDelegate.m; sourceTree = "<group>"; };
+		94C17D361787CCCE0074D7F7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		94C17D491787CCD70074D7F7 /* Cipele46Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cipele46Tests-Info.plist"; sourceTree = "<group>"; };
+		94C17D4A1787CCD70074D7F7 /* Cipele46Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cipele46Tests.h; sourceTree = "<group>"; };
+		94C17D4B1787CCD70074D7F7 /* Cipele46Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cipele46Tests.m; sourceTree = "<group>"; };
+		94C17D4D1787CCD70074D7F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94D213471787CDB500ADAF7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		94D213481787CDB500ADAF7E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		94D213491787CDB500ADAF7E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		94D213501787CE8B00ADAF7E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		94D213511787CE8B00ADAF7E /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		94D213521787CE8B00ADAF7E /* C46FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46FirstViewController.h; sourceTree = "<group>"; };
+		94D213531787CE8B00ADAF7E /* C46FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46FirstViewController.m; sourceTree = "<group>"; };
+		94D213541787CE8B00ADAF7E /* C46FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46FirstViewController.xib; sourceTree = "<group>"; };
+		94D213571787CE8B00ADAF7E /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		94D213581787CE8B00ADAF7E /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		94D213591787CE8B00ADAF7E /* C46SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46SecondViewController.h; sourceTree = "<group>"; };
+		94D2135A1787CE8B00ADAF7E /* C46SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46SecondViewController.m; sourceTree = "<group>"; };
+		94D2135B1787CE8B00ADAF7E /* C46SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46SecondViewController.xib; sourceTree = "<group>"; };
+		94D213651787CECC00ADAF7E /* Cipele46-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cipele46-Info.plist"; sourceTree = "<group>"; };
+		94D213661787CECC00ADAF7E /* Cipele46-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cipele46-Prefix.pch"; sourceTree = "<group>"; };
+		94D213691787D01E00ADAF7E /* todo */ = {isa = PBXFileReference; lastKnownFileType = text; path = todo; sourceTree = "<group>"; };
+		94EF26461787CB8800BE46E3 /* Cipele46.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cipele46.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94EF26491787CB8800BE46E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		94EF264B1787CB8800BE46E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		94EF264D1787CB8800BE46E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		94EF267A1787CB8800BE46E3 /* Cipele46Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cipele46Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94EF267B1787CB8800BE46E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94EF26431787CB8800BE46E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94EF264A1787CB8800BE46E3 /* UIKit.framework in Frameworks */,
+				94EF264C1787CB8800BE46E3 /* Foundation.framework in Frameworks */,
+				94EF264E1787CB8800BE46E3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94EF26761787CB8800BE46E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94EF267C1787CB8800BE46E3 /* SenTestingKit.framework in Frameworks */,
+				94EF267D1787CB8800BE46E3 /* UIKit.framework in Frameworks */,
+				94EF267E1787CB8800BE46E3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94C17D221787CCCE0074D7F7 /* Cipele46 */ = {
+			isa = PBXGroup;
+			children = (
+				94D213461787CDB500ADAF7E /* Assets */,
+				94D2134D1787CE8B00ADAF7E /* Classes */,
+				94D213681787D01E00ADAF7E /* Documentation */,
+				94D213641787CECC00ADAF7E /* SupportingFiles */,
+				94C17D231787CCCE0074D7F7 /* C46AppDelegate.h */,
+				94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */,
+				94C17D361787CCCE0074D7F7 /* main.m */,
+			);
+			path = Cipele46;
+			sourceTree = "<group>";
+		};
+		94C17D481787CCD70074D7F7 /* Cipele46Tests */ = {
+			isa = PBXGroup;
+			children = (
+				94C17D491787CCD70074D7F7 /* Cipele46Tests-Info.plist */,
+				94C17D4A1787CCD70074D7F7 /* Cipele46Tests.h */,
+				94C17D4B1787CCD70074D7F7 /* Cipele46Tests.m */,
+				94C17D4C1787CCD70074D7F7 /* InfoPlist.strings */,
+			);
+			path = Cipele46Tests;
+			sourceTree = "<group>";
+		};
+		94D213461787CDB500ADAF7E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				94D213471787CDB500ADAF7E /* Default-568h@2x.png */,
+				94D213481787CDB500ADAF7E /* Default.png */,
+				94D213491787CDB500ADAF7E /* Default@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		94D2134D1787CE8B00ADAF7E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				94D2134E1787CE8B00ADAF7E /* C46FirstViewController */,
+				94D213551787CE8B00ADAF7E /* C46SecondViewController */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		94D2134E1787CE8B00ADAF7E /* C46FirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				94D2134F1787CE8B00ADAF7E /* Assets */,
+				94D213521787CE8B00ADAF7E /* C46FirstViewController.h */,
+				94D213531787CE8B00ADAF7E /* C46FirstViewController.m */,
+				94D213541787CE8B00ADAF7E /* C46FirstViewController.xib */,
+			);
+			path = C46FirstViewController;
+			sourceTree = "<group>";
+		};
+		94D2134F1787CE8B00ADAF7E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				94D213501787CE8B00ADAF7E /* first.png */,
+				94D213511787CE8B00ADAF7E /* first@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		94D213551787CE8B00ADAF7E /* C46SecondViewController */ = {
+			isa = PBXGroup;
+			children = (
+				94D213561787CE8B00ADAF7E /* Assets */,
+				94D213591787CE8B00ADAF7E /* C46SecondViewController.h */,
+				94D2135A1787CE8B00ADAF7E /* C46SecondViewController.m */,
+				94D2135B1787CE8B00ADAF7E /* C46SecondViewController.xib */,
+			);
+			path = C46SecondViewController;
+			sourceTree = "<group>";
+		};
+		94D213561787CE8B00ADAF7E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				94D213571787CE8B00ADAF7E /* second.png */,
+				94D213581787CE8B00ADAF7E /* second@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		94D213641787CECC00ADAF7E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				94D213651787CECC00ADAF7E /* Cipele46-Info.plist */,
+				94D213661787CECC00ADAF7E /* Cipele46-Prefix.pch */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		94D213681787D01E00ADAF7E /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				94D213691787D01E00ADAF7E /* todo */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		94EF263D1787CB8800BE46E3 = {
+			isa = PBXGroup;
+			children = (
+				94C17D221787CCCE0074D7F7 /* Cipele46 */,
+				94C17D481787CCD70074D7F7 /* Cipele46Tests */,
+				94EF26481787CB8800BE46E3 /* Frameworks */,
+				94EF26471787CB8800BE46E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94EF26471787CB8800BE46E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94EF26461787CB8800BE46E3 /* Cipele46.app */,
+				94EF267A1787CB8800BE46E3 /* Cipele46Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94EF26481787CB8800BE46E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94EF26491787CB8800BE46E3 /* UIKit.framework */,
+				94EF264B1787CB8800BE46E3 /* Foundation.framework */,
+				94EF264D1787CB8800BE46E3 /* CoreGraphics.framework */,
+				94EF267B1787CB8800BE46E3 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94EF26451787CB8800BE46E3 /* Cipele46 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94EF268C1787CB8800BE46E3 /* Build configuration list for PBXNativeTarget "Cipele46" */;
+			buildPhases = (
+				94EF26421787CB8800BE46E3 /* Sources */,
+				94EF26431787CB8800BE46E3 /* Frameworks */,
+				94EF26441787CB8800BE46E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cipele46;
+			productName = Cipele46;
+			productReference = 94EF26461787CB8800BE46E3 /* Cipele46.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94EF26791787CB8800BE46E3 /* Cipele46Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94EF268F1787CB8800BE46E3 /* Build configuration list for PBXNativeTarget "Cipele46Tests" */;
+			buildPhases = (
+				94EF26751787CB8800BE46E3 /* Sources */,
+				94EF26761787CB8800BE46E3 /* Frameworks */,
+				94EF26771787CB8800BE46E3 /* Resources */,
+				94EF26781787CB8800BE46E3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94EF26801787CB8800BE46E3 /* PBXTargetDependency */,
+			);
+			name = Cipele46Tests;
+			productName = Cipele46Tests;
+			productReference = 94EF267A1787CB8800BE46E3 /* Cipele46Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94EF263E1787CB8800BE46E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = C46;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Miran Brajsa";
+			};
+			buildConfigurationList = 94EF26411787CB8800BE46E3 /* Build configuration list for PBXProject "Cipele46" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 94EF263D1787CB8800BE46E3;
+			productRefGroup = 94EF26471787CB8800BE46E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94EF26451787CB8800BE46E3 /* Cipele46 */,
+				94EF26791787CB8800BE46E3 /* Cipele46Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94EF26441787CB8800BE46E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D2134A1787CDB500ADAF7E /* Default-568h@2x.png in Resources */,
+				94D2134B1787CDB500ADAF7E /* Default.png in Resources */,
+				94D2134C1787CDB500ADAF7E /* Default@2x.png in Resources */,
+				94D2135C1787CE8B00ADAF7E /* first.png in Resources */,
+				94D2135D1787CE8B00ADAF7E /* first@2x.png in Resources */,
+				94D2135F1787CE8B00ADAF7E /* C46FirstViewController.xib in Resources */,
+				94D213601787CE8B00ADAF7E /* second.png in Resources */,
+				94D213611787CE8B00ADAF7E /* second@2x.png in Resources */,
+				94D213631787CE8B00ADAF7E /* C46SecondViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94EF26771787CB8800BE46E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		94EF26781787CB8800BE46E3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94EF26421787CB8800BE46E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94C17D391787CCCE0074D7F7 /* C46AppDelegate.m in Sources */,
+				94C17D451787CCCE0074D7F7 /* main.m in Sources */,
+				94D2135E1787CE8B00ADAF7E /* C46FirstViewController.m in Sources */,
+				94D213621787CE8B00ADAF7E /* C46SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94EF26751787CB8800BE46E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94C17D4F1787CCD70074D7F7 /* Cipele46Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94EF26801787CB8800BE46E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94EF26451787CB8800BE46E3 /* Cipele46 */;
+			targetProxy = 94EF267F1787CB8800BE46E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		94C17D4C1787CCD70074D7F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94C17D4D1787CCD70074D7F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94EF268A1787CB8800BE46E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		94EF268B1787CB8800BE46E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94EF268D1787CB8800BE46E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cipele46/SupportingFiles/Cipele46-Prefix.pch";
+				INFOPLIST_FILE = "Cipele46/SupportingFiles/Cipele46-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		94EF268E1787CB8800BE46E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cipele46/SupportingFiles/Cipele46-Prefix.pch";
+				INFOPLIST_FILE = "Cipele46/SupportingFiles/Cipele46-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		94EF26901787CB8800BE46E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cipele46.app/Cipele46";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cipele46/SupportingFiles/Cipele46-Prefix.pch";
+				INFOPLIST_FILE = "Cipele46Tests/Cipele46Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		94EF26911787CB8800BE46E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cipele46.app/Cipele46";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cipele46/SupportingFiles/Cipele46-Prefix.pch";
+				INFOPLIST_FILE = "Cipele46Tests/Cipele46Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94EF26411787CB8800BE46E3 /* Build configuration list for PBXProject "Cipele46" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94EF268A1787CB8800BE46E3 /* Debug */,
+				94EF268B1787CB8800BE46E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94EF268C1787CB8800BE46E3 /* Build configuration list for PBXNativeTarget "Cipele46" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94EF268D1787CB8800BE46E3 /* Debug */,
+				94EF268E1787CB8800BE46E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94EF268F1787CB8800BE46E3 /* Build configuration list for PBXNativeTarget "Cipele46Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94EF26901787CB8800BE46E3 /* Debug */,
+				94EF26911787CB8800BE46E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94EF263E1787CB8800BE46E3 /* Project object */;
+}
