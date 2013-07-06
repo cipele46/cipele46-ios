@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		11A1E97A1788042B00DACF61 /* C46HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */; };
 		11A1E97F1788096400DACF61 /* C46Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A1E97E1788096400DACF61 /* C46Ad.m */; };
+		8D3770E217881AE900EB4120 /* AddressImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3770DD17881AE900EB4120 /* AddressImage.png */; };
+		8D3770E317881AE900EB4120 /* ClockImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3770DE17881AE900EB4120 /* ClockImage.png */; };
+		8D3770E417881AE900EB4120 /* C46DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3770E017881AE900EB4120 /* C46DetailsViewController.m */; };
+		8D3770E517881AE900EB4120 /* C46DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3770E117881AE900EB4120 /* C46DetailsViewController.xib */; };
+		8D3770EE17881F1400EB4120 /* HeartEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3770EA17881F1400EB4120 /* HeartEmpty.png */; };
+		8D3770EF17881F1400EB4120 /* HeartEmpty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3770EB17881F1400EB4120 /* HeartEmpty@2x.png */; };
+		8D3770F017881F1400EB4120 /* HeartFull.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3770EC17881F1400EB4120 /* HeartFull.png */; };
+		8D3770F117881F1400EB4120 /* HeartFull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3770ED17881F1400EB4120 /* HeartFull@2x.png */; };
 		94C17D391787CCCE0074D7F7 /* C46AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */; };
 		94C17D451787CCCE0074D7F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D361787CCCE0074D7F7 /* main.m */; };
 		94C17D4F1787CCD70074D7F7 /* Cipele46Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D4B1787CCD70074D7F7 /* Cipele46Tests.m */; };
@@ -70,6 +78,15 @@
 		11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46HomeTabBarController.m; path = C46HomeTabBarController/C46HomeTabBarController.m; sourceTree = "<group>"; };
 		11A1E97D1788096400DACF61 /* C46Ad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46Ad.h; path = Model/C46Ad.h; sourceTree = "<group>"; };
 		11A1E97E1788096400DACF61 /* C46Ad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46Ad.m; path = Model/C46Ad.m; sourceTree = "<group>"; };
+		8D3770DD17881AE900EB4120 /* AddressImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddressImage.png; sourceTree = "<group>"; };
+		8D3770DE17881AE900EB4120 /* ClockImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockImage.png; sourceTree = "<group>"; };
+		8D3770DF17881AE900EB4120 /* C46DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46DetailsViewController.h; sourceTree = "<group>"; };
+		8D3770E017881AE900EB4120 /* C46DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46DetailsViewController.m; sourceTree = "<group>"; };
+		8D3770E117881AE900EB4120 /* C46DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46DetailsViewController.xib; sourceTree = "<group>"; };
+		8D3770EA17881F1400EB4120 /* HeartEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeartEmpty.png; sourceTree = "<group>"; };
+		8D3770EB17881F1400EB4120 /* HeartEmpty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeartEmpty@2x.png"; sourceTree = "<group>"; };
+		8D3770EC17881F1400EB4120 /* HeartFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeartFull.png; sourceTree = "<group>"; };
+		8D3770ED17881F1400EB4120 /* HeartFull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeartFull@2x.png"; sourceTree = "<group>"; };
 		94C17D231787CCCE0074D7F7 /* C46AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AppDelegate.h; sourceTree = "<group>"; };
 		94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AppDelegate.m; sourceTree = "<group>"; };
 		94C17D361787CCCE0074D7F7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -192,6 +209,30 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		8D3770DB17881AE900EB4120 /* C46DetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D3770DC17881AE900EB4120 /* Assets */,
+				8D3770DF17881AE900EB4120 /* C46DetailsViewController.h */,
+				8D3770E017881AE900EB4120 /* C46DetailsViewController.m */,
+				8D3770E117881AE900EB4120 /* C46DetailsViewController.xib */,
+			);
+			path = C46DetailsViewController;
+			sourceTree = "<group>";
+		};
+		8D3770DC17881AE900EB4120 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8D3770EA17881F1400EB4120 /* HeartEmpty.png */,
+				8D3770EB17881F1400EB4120 /* HeartEmpty@2x.png */,
+				8D3770EC17881F1400EB4120 /* HeartFull.png */,
+				8D3770ED17881F1400EB4120 /* HeartFull@2x.png */,
+				8D3770DD17881AE900EB4120 /* AddressImage.png */,
+				8D3770DE17881AE900EB4120 /* ClockImage.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		94C17D221787CCCE0074D7F7 /* Cipele46 */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +271,7 @@
 		94D2134D1787CE8B00ADAF7E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8D3770DB17881AE900EB4120 /* C46DetailsViewController */,
 				C2C0FD9C1788082700AD355B /* UserManagement */,
 				11A1E9801788096C00DACF61 /* Model */,
 				94D2134E1787CE8B00ADAF7E /* C46FirstViewController */,
@@ -493,6 +535,13 @@
 				94D213601787CE8B00ADAF7E /* second.png in Resources */,
 				94D213611787CE8B00ADAF7E /* second@2x.png in Resources */,
 				94D213631787CE8B00ADAF7E /* C46SecondViewController.xib in Resources */,
+				8D3770E217881AE900EB4120 /* AddressImage.png in Resources */,
+				8D3770E317881AE900EB4120 /* ClockImage.png in Resources */,
+				8D3770E517881AE900EB4120 /* C46DetailsViewController.xib in Resources */,
+				8D3770EE17881F1400EB4120 /* HeartEmpty.png in Resources */,
+				8D3770EF17881F1400EB4120 /* HeartEmpty@2x.png in Resources */,
+				8D3770F017881F1400EB4120 /* HeartFull.png in Resources */,
+				8D3770F117881F1400EB4120 /* HeartFull@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +595,7 @@
 				C2C0FDA6178813C900AD355B /* NSString+URLEncoding.m in Sources */,
 				94D21394178802E900ADAF7E /* C46ServerCommunicationManager.m in Sources */,
 				94D2139C1788094400ADAF7E /* JSONKit.m in Sources */,
+				8D3770E417881AE900EB4120 /* C46DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
