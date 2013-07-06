@@ -8,15 +8,22 @@
 
 #import "C46LoginViewController.h"
 
+#import "C46RegisterUserViewController.h"
+
 @interface C46LoginViewController ()
 
 -(void)displayAlertView:(NSString*)message;
 -(BOOL)areLoginAndPasswordEntered;
+-(void)setLocalizedLabelsOnButtons;
 
 @end
 
 @implementation C46LoginViewController
 
+@synthesize btnFacebookLogin;
+@synthesize btnLogin;
+@synthesize btnForgotPassword;
+@synthesize btnRegister;
 @synthesize fieldEmail;
 @synthesize fieldPassword;
 
@@ -25,7 +32,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Login", @"Login");
+        self.title = NSLocalizedString(@"LOGIN_VIEW__TITLE", @"Login");
         self.tabBarItem.image = [UIImage imageNamed:@"second"];        
     }
     return self;
@@ -35,10 +42,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.fieldPassword setSecureTextEntry: YES];
-    [self.fieldPassword setPlaceholder:@"Lozinka"];
-    [self.fieldEmail setPlaceholder:@"Email"];
     
+    [self.fieldEmail setPlaceholder: NSLocalizedString(@"LOGIN_VIEW__EMAIL", @"Email") ];
+    
+    [self.fieldPassword setPlaceholder:NSLocalizedString(@"LOGIN_VIEW__PASSWORD", @"Password") ];
+    [self.fieldPassword setSecureTextEntry: YES];
+    
+    [self setLocalizedLabelsOnButtons];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,7 +75,7 @@
 }
 
 -(IBAction)registerUser:(id)sender {
-
+    [self presentViewController: [[C46RegisterUserViewController alloc] initWithNibName:@"C46RegisterUserViewController" bundle:nil] animated: YES completion: nil];
 }
 
 #pragma mark - Text fields events
@@ -100,6 +110,13 @@
     }
     
     return YES;
+}
+
+-(void)setLocalizedLabelsOnButtons {
+    [[self btnFacebookLogin] setTitle: NSLocalizedString(@"LOGIN_VIEW__FACEBOOK_LOGIN", @"Facebook login") forState: UIControlStateNormal];
+    [[self btnLogin] setTitle: NSLocalizedString(@"LOGIN_VIEW__LOGIN", @"Login") forState: UIControlStateNormal];
+    [[self btnForgotPassword] setTitle: NSLocalizedString(@"LOGIN_VIEW__FORGOT_PASSWORD", @"Forgot password") forState: UIControlStateNormal];
+    [[self btnRegister] setTitle: NSLocalizedString(@"LOGIN_VIEW__REGISTER", @"Register") forState: UIControlStateNormal];
 }
 
 @end

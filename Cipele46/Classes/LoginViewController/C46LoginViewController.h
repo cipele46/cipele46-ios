@@ -12,6 +12,10 @@
 
 #pragma mark - Properties
 
+@property (retain, nonatomic) IBOutlet UIButton* btnFacebookLogin;
+@property (retain, nonatomic) IBOutlet UIButton* btnLogin;
+@property (retain, nonatomic) IBOutlet UIButton* btnForgotPassword;
+@property (retain, nonatomic) IBOutlet UIButton* btnRegister;
 @property (retain, nonatomic) IBOutlet UITextField* fieldEmail;
 @property (retain, nonatomic) IBOutlet UITextField* fieldPassword;
 
