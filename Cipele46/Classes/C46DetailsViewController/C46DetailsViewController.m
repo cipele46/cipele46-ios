@@ -89,7 +89,7 @@
 
 - (IBAction)mailButtonTapped:(id)sender {
     
-    NSString *mail = [[self ad] mail];
+    NSString *mail = [[self ad] email];
     
     if ([MFMailComposeViewController canSendMail]) {
         

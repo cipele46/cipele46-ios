@@ -12,7 +12,10 @@
 #import <SDWebImage-3.3/UIImageView+WebCache.h>
 #import "C46ServerCommunicationManager.h"
 
-@interface C46AdListViewController ()
+@interface C46AdListViewController (){
+    NSArray *categoriesList;
+    NSArray *districtsList;
+}
 
 @end
 
@@ -64,18 +67,40 @@
         ad.adID = [dic valueForKey:@"id"];
         ad.cityID = [dic valueForKey:@"cityID"];
         ad.type = [dic valueForKey:@"type"];
-        ad.mail = [dic valueForKey:@"email"];
+        ad.email = [dic valueForKey:@"email"];
         [self.tDataSource addObject:ad];
+        NSUInteger categoryIndex = [categoriesList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+            NSNumber *catId = [obj valueForKey:@"id"];
+            if( [catId compare:ad.categoryID]==NSOrderedSame ){
+                return YES;
+            }else{
+                return NO;
+            }
+        }];
+        NSUInteger districtIndex = [districtsList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+            NSNumber *disId = [obj valueForKey:@"id"];
+            if( [disId compare:ad.districtID] == NSOrderedSame){
+                return YES;
+            }else{
+                return NO;
+            }
+        }];
+        NSDictionary *category = [categoriesList objectAtIndex:categoryIndex];
+        NSDictionary *district = [districtsList objectAtIndex:districtIndex];
+        ad.category = [category valueForKey:@"name"]; 
+        ad.district = [district valueForKey:@"name"];
     }
     [self.tView reloadData];
 }
 
 -(void)didReceiveCategories:(NSArray *)categories{
-    //Dummy
+    categoriesList = categories;
+    [self.serverCommunicationManager districts];
 }
 
 -(void)didReceiveDistricts:(NSArray *)districts{
-    //Dummy
+    districtsList = districts;
+    [self.serverCommunicationManager ads];
 }
 
 
