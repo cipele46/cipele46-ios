@@ -10,20 +10,26 @@
 
 @interface C46Ad : NSObject
 
-@property (strong, nonatomic) NSString *status;
+@property (nonatomic, retain) NSNumber *status;
+@property (nonatomic, retain) NSString *description;
+@property (nonatomic, retain) NSNumber *districtID;
+@property (nonatomic, retain) NSString *phone;
+@property (nonatomic, retain) NSNumber *categoryID;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *imageURL;
+@property (nonatomic, retain) NSNumber *adID;
+@property (nonatomic, retain) NSString *cityID;
+@property (nonatomic, retain) NSNumber *type;
+@property (nonatomic, retain) NSString *email;
 
-@property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *imageURL;
-@property (strong, nonatomic) NSString *description;
 
 @property (strong, nonatomic) NSString *district;
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *address;
-
-@property (strong, nonatomic) NSString *email;
-@property (strong, nonatomic) NSString *phone;
+@property (strong, nonatomic) NSString *category;
 
 @property (nonatomic, getter=isApproved) BOOL approved;
 @property (nonatomic, getter=isFavourite) BOOL favourite;
+
 
 @end

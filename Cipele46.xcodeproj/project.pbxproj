@@ -13,6 +13,11 @@
 		119F01CC1788251400E74817 /* C46MyAdsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119F01CA1788251400E74817 /* C46MyAdsViewController.xib */; };
 		11A1E97A1788042B00DACF61 /* C46HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */; };
 		11A1E97F1788096400DACF61 /* C46Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A1E97E1788096400DACF61 /* C46Ad.m */; };
+		11B1F79117883629001B8969 /* AppIcon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B1F79017883629001B8969 /* AppIcon_114x114.png */; };
+		32E43B7417883C1E008C9A88 /* C46AdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E43B6F17883C1E008C9A88 /* C46AdCell.m */; };
+		32E43B7517883C1E008C9A88 /* C46AdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E43B7017883C1E008C9A88 /* C46AdCell.xib */; };
+		32E43B7617883C1E008C9A88 /* C46AdListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E43B7217883C1E008C9A88 /* C46AdListViewController.m */; };
+		32E43B7717883C1E008C9A88 /* C46AdListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E43B7317883C1E008C9A88 /* C46AdListViewController.xib */; };
 		78A746D5178829CF00E4A6F4 /* C46LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A746D3178829CF00E4A6F4 /* C46LoginViewController.m */; };
 		78A746D6178829CF00E4A6F4 /* C46LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A746D4178829CF00E4A6F4 /* C46LoginViewController.xib */; };
 		78A746DB17882A7600E4A6F4 /* C46RegisterUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A746D917882A7600E4A6F4 /* C46RegisterUserViewController.m */; };
@@ -26,8 +31,6 @@
 		8D6E52421788384500F0E54B /* C46DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E523A1788384500F0E54B /* C46DetailsViewController.m */; };
 		8D6E52431788384500F0E54B /* C46DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6E523B1788384500F0E54B /* C46DetailsViewController.xib */; };
 		8D6E5245178838A400F0E54B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6E5244178838A400F0E54B /* MessageUI.framework */; };
-		8D6E52491788477700F0E54B /* C46MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E52471788477700F0E54B /* C46MessageViewController.m */; };
-		8D6E524A1788477700F0E54B /* C46MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6E52481788477700F0E54B /* C46MessageViewController.xib */; };
 		94C17D391787CCCE0074D7F7 /* C46AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */; };
 		94C17D451787CCCE0074D7F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D361787CCCE0074D7F7 /* main.m */; };
 		94C17D4F1787CCD70074D7F7 /* Cipele46Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D4B1787CCD70074D7F7 /* Cipele46Tests.m */; };
@@ -100,6 +103,13 @@
 		11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46HomeTabBarController.m; path = C46HomeTabBarController/C46HomeTabBarController.m; sourceTree = "<group>"; };
 		11A1E97D1788096400DACF61 /* C46Ad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46Ad.h; path = Model/C46Ad.h; sourceTree = "<group>"; };
 		11A1E97E1788096400DACF61 /* C46Ad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46Ad.m; path = Model/C46Ad.m; sourceTree = "<group>"; };
+		11B1F79017883629001B8969 /* AppIcon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon_114x114.png; path = ../../AppIcon_114x114.png; sourceTree = "<group>"; };
+		32E43B6E17883C1E008C9A88 /* C46AdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdCell.h; sourceTree = "<group>"; };
+		32E43B6F17883C1E008C9A88 /* C46AdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdCell.m; sourceTree = "<group>"; };
+		32E43B7017883C1E008C9A88 /* C46AdCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdCell.xib; sourceTree = "<group>"; };
+		32E43B7117883C1E008C9A88 /* C46AdListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdListViewController.h; sourceTree = "<group>"; };
+		32E43B7217883C1E008C9A88 /* C46AdListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdListViewController.m; sourceTree = "<group>"; };
+		32E43B7317883C1E008C9A88 /* C46AdListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdListViewController.xib; sourceTree = "<group>"; };
 		78A746D2178829CF00E4A6F4 /* C46LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46LoginViewController.h; sourceTree = "<group>"; };
 		78A746D3178829CF00E4A6F4 /* C46LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46LoginViewController.m; sourceTree = "<group>"; };
 		78A746D4178829CF00E4A6F4 /* C46LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46LoginViewController.xib; sourceTree = "<group>"; };
@@ -116,9 +126,6 @@
 		8D6E523A1788384500F0E54B /* C46DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46DetailsViewController.m; sourceTree = "<group>"; };
 		8D6E523B1788384500F0E54B /* C46DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46DetailsViewController.xib; sourceTree = "<group>"; };
 		8D6E5244178838A400F0E54B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		8D6E52461788477700F0E54B /* C46MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46MessageViewController.h; sourceTree = "<group>"; };
-		8D6E52471788477700F0E54B /* C46MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46MessageViewController.m; sourceTree = "<group>"; };
-		8D6E52481788477700F0E54B /* C46MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46MessageViewController.xib; sourceTree = "<group>"; };
 		94C17D231787CCCE0074D7F7 /* C46AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AppDelegate.h; sourceTree = "<group>"; };
 		94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AppDelegate.m; sourceTree = "<group>"; };
 		94C17D361787CCCE0074D7F7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -271,6 +278,19 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		32E43B6D17883C1E008C9A88 /* C46AdListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				32E43B6E17883C1E008C9A88 /* C46AdCell.h */,
+				32E43B6F17883C1E008C9A88 /* C46AdCell.m */,
+				32E43B7017883C1E008C9A88 /* C46AdCell.xib */,
+				32E43B7117883C1E008C9A88 /* C46AdListViewController.h */,
+				32E43B7217883C1E008C9A88 /* C46AdListViewController.m */,
+				32E43B7317883C1E008C9A88 /* C46AdListViewController.xib */,
+			);
+			path = C46AdListViewController;
+			sourceTree = "<group>";
+		};
 		78A746D1178829CF00E4A6F4 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,16 +335,6 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		8D6E524B1788478000F0E54B /* C46MessageViewController */ = {
-			isa = PBXGroup;
-			children = (
-				8D6E52461788477700F0E54B /* C46MessageViewController.h */,
-				8D6E52471788477700F0E54B /* C46MessageViewController.m */,
-				8D6E52481788477700F0E54B /* C46MessageViewController.xib */,
-			);
-			name = C46MessageViewController;
-			sourceTree = "<group>";
-		};
 		94C17D221787CCCE0074D7F7 /* Cipele46 */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +363,7 @@
 		94D213461787CDB500ADAF7E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				11B1F79017883629001B8969 /* AppIcon_114x114.png */,
 				94D213471787CDB500ADAF7E /* Default-568h@2x.png */,
 				94D213481787CDB500ADAF7E /* Default.png */,
 				94D213491787CDB500ADAF7E /* Default@2x.png */,
@@ -363,6 +374,8 @@
 		94D2134D1787CE8B00ADAF7E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				32E43B6D17883C1E008C9A88 /* C46AdListViewController */,
+				8D6E52311788384500F0E54B /* C46DetailsViewController */,
 				78A746D717882A2500E4A6F4 /* RegisterUserViewController */,
 				78A746D1178829CF00E4A6F4 /* LoginViewController */,
 				C2C0FD9C1788082700AD355B /* UserManagement */,
@@ -374,8 +387,6 @@
 				119F01C51788128300E74817 /* C46AdsViewController */,
 				119F01CD1788251F00E74817 /* C46MyAdsViewController */,
 				94D21391178802E900ADAF7E /* C46ServerCommunicationManager */,
-				8D6E524B1788478000F0E54B /* C46MessageViewController */,
-				8D6E52311788384500F0E54B /* C46DetailsViewController */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -654,6 +665,7 @@
 				94D213AC178827EA00ADAF7E /* Localizable.strings in Resources */,
 				78A746D6178829CF00E4A6F4 /* C46LoginViewController.xib in Resources */,
 				78A746DC17882A7600E4A6F4 /* C46RegisterUserViewController.xib in Resources */,
+				11B1F79117883629001B8969 /* AppIcon_114x114.png in Resources */,
 				8D6E523C1788384500F0E54B /* AddressImage.png in Resources */,
 				8D6E523D1788384500F0E54B /* ClockImage.png in Resources */,
 				8D6E523E1788384500F0E54B /* HeartEmpty.png in Resources */,
@@ -661,7 +673,8 @@
 				8D6E52401788384500F0E54B /* HeartFull.png in Resources */,
 				8D6E52411788384500F0E54B /* HeartFull@2x.png in Resources */,
 				8D6E52431788384500F0E54B /* C46DetailsViewController.xib in Resources */,
-				8D6E524A1788477700F0E54B /* C46MessageViewController.xib in Resources */,
+				32E43B7517883C1E008C9A88 /* C46AdCell.xib in Resources */,
+				32E43B7717883C1E008C9A88 /* C46AdListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,7 +735,8 @@
 				78A746D5178829CF00E4A6F4 /* C46LoginViewController.m in Sources */,
 				78A746DB17882A7600E4A6F4 /* C46RegisterUserViewController.m in Sources */,
 				8D6E52421788384500F0E54B /* C46DetailsViewController.m in Sources */,
-				8D6E52491788477700F0E54B /* C46MessageViewController.m in Sources */,
+				32E43B7417883C1E008C9A88 /* C46AdCell.m in Sources */,
+				32E43B7617883C1E008C9A88 /* C46AdListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
