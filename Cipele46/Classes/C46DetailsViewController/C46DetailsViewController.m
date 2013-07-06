@@ -6,23 +6,19 @@
 //  Copyright (c) 2013 Miran Brajsa. All rights reserved.
 //
 
-#import <MessageUI/MessageUI.h>
 #import "C46Ad.h"
 #import "C46DetailsViewController.h"
 
 
 @interface C46DetailsViewController ()
 
-
+@property (weak, nonatomic) IBOutlet UITextView *titleTextView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expirationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-
 @property (weak, nonatomic) IBOutlet UIButton *favouriteButton;
 @property (weak, nonatomic) IBOutlet UIButton *phoneButton;
-
 @property (weak, nonatomic) IBOutlet UIImageView *adImageView;
 
 
@@ -50,8 +46,8 @@
     
     // TODO: Set status label
     
-    [[self titleLabel] setText:[[self ad] title]];
-    [[self descriptionLabel] setText:[[self ad] description]];
+    [[self titleTextView] setText:[[self ad] title]];
+    [[self descriptionTextView] setText:[[self ad] description]];
     
     // TODO: Set expiration label
     
@@ -87,21 +83,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNoURL]];
 }
 
-- (IBAction)mailButtonTapped:(id)sender {
-    
-    NSString *mail = [[self ad] mail];
-    
-    if ([MFMailComposeViewController canSendMail]) {
-        
-        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
-        mailer.mailComposeDelegate = self;
-        [mailer setToRecipients:[NSArray arrayWithObject:mail]];
-        [self presentViewController:mailer animated:YES completion:nil];
-        
-    } else {
-        // TODO: Alert to user there is no email support
-    }
-
+- (IBAction)messageButtonTapped:(id)sender {
 }
 
 - (IBAction)favouriteButtonTapped:(id)sender {

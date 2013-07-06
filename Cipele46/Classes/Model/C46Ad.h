@@ -20,7 +20,7 @@
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *address;
 
-@property (strong, nonatomic) NSString *mail;
+@property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSString *phone;
 
 @property (nonatomic, getter=isApproved) BOOL approved;
