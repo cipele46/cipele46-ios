@@ -17,6 +17,9 @@
     NSArray *districtsList;
 }
 
+- (NSDictionary *) findDistrictAndCity:(C46Ad *)ad;
+- (NSDictionary *) findCategory:(C46Ad *)ad;
+
 @end
 
 @implementation C46AdListViewController
@@ -54,6 +57,48 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - search for category, city and district in JSONS
+
+-(NSDictionary *)findDistrictAndCity:(C46Ad *)ad{
+    NSUInteger districtIndex = [districtsList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        NSNumber *disId = [obj valueForKey:@"id"];
+        if( [disId compare:ad.districtID] == NSOrderedSame){
+            return YES;
+        }else{
+            return NO;
+        }
+    }];
+    NSDictionary *district = [districtsList objectAtIndex:districtIndex];
+    
+    NSArray *cities = [district valueForKey:@"cities"];
+    NSUInteger cityIndex = [cities indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        NSNumber *citId = [obj valueForKey:@"id"];
+        if( [citId compare:ad.districtID] == NSOrderedSame){
+            return YES;
+        }else{
+            return NO;
+        }
+    }];
+    NSDictionary *city = [cities objectAtIndex:cityIndex];
+    NSDictionary *returnDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                      [district valueForKey:@"name"], @"name",
+                                      [city valueForKey:@"name"], @"cityName",nil];
+    return returnDictionary;
+}
+
+-(NSDictionary *) findCategory:(C46Ad *)ad{
+    NSUInteger categoryIndex = [categoriesList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        NSNumber *catId = [obj valueForKey:@"id"];
+        if( [catId compare:ad.categoryID] == NSOrderedSame){
+            return YES;
+        }else{
+            return NO;
+        }
+    }];
+    NSDictionary *category = [categoriesList objectAtIndex:categoryIndex];
+    return category;
+}
+
 #pragma mark - server comm delegate response method
 
 -(void)didReceiveAds:(NSArray *)ads{
@@ -77,6 +122,12 @@
                 return NO;
             }
         }];
+        ad.category = [[self findCategory:ad] valueForKey:@"name"];
+        NSDictionary *districtCity = [self findDistrictAndCity:ad];
+        ad.city = [districtCity valueForKey:@"cityName"];
+        ad.district = [districtCity valueForKey:@"name"];
+    
+        
         NSUInteger districtIndex = [districtsList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
             NSNumber *disId = [obj valueForKey:@"id"];
             if( [disId compare:ad.districtID] == NSOrderedSame){
@@ -135,9 +186,8 @@
                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     cell.title.text = ad.title;
-    //cell.category.text = ad.category;
-    //cell.city.text = ad.city;
-    return cell;
+    cell.category.text = ad.category;
+    cell.city.text = ad.city;
     return cell;
 }
 
