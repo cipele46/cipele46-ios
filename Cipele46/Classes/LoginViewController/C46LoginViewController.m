@@ -92,7 +92,7 @@
 #pragma mark - Private Methods
 
 -(void)displayAlertView:(NSString*)message {
-    UIAlertView *openAlert = [[UIAlertView alloc] initWithTitle:@"Poruka:" message:message delegate:nil cancelButtonTitle:@"U redu" otherButtonTitles:nil];
+    UIAlertView *openAlert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:@"U redu" otherButtonTitles:nil];
     [openAlert show];
 }
 

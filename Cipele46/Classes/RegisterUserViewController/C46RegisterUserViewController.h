@@ -17,5 +17,12 @@
 @property (retain, nonatomic) IBOutlet UITextField* fieldPhone;
 @property (retain, nonatomic) IBOutlet UITextField* fieldPassword;
 @property (retain, nonatomic) IBOutlet UITextField* fieldPasswordAgain;
+@property (retain, nonatomic) IBOutlet UIButton* btnBack;
+@property (retain, nonatomic) IBOutlet UIButton* btnRegister;
+
+#pragma mark - Button events
+
+-(IBAction)btnBackTapped:(id)sender;
+-(IBAction)btnRegisterTapped:(id)sender;
 
 @end
