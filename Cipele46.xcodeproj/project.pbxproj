@@ -42,6 +42,7 @@
 		94EF267C1787CB8800BE46E3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF267B1787CB8800BE46E3 /* SenTestingKit.framework */; };
 		94EF267D1787CB8800BE46E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF26491787CB8800BE46E3 /* UIKit.framework */; };
 		94EF267E1787CB8800BE46E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF264B1787CB8800BE46E3 /* Foundation.framework */; };
+		C2C0FD9B1788047900AD355B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C0FD9A1788047900AD355B /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		94EF264D1787CB8800BE46E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		94EF267A1787CB8800BE46E3 /* Cipele46Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cipele46Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EF267B1787CB8800BE46E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C2C0FD9A1788047900AD355B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = 3rdParty/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				94EF264A1787CB8800BE46E3 /* UIKit.framework in Frameworks */,
 				94EF264C1787CB8800BE46E3 /* Foundation.framework in Frameworks */,
 				94EF264E1787CB8800BE46E3 /* CoreGraphics.framework in Frameworks */,
+				C2C0FD9B1788047900AD355B /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +324,7 @@
 		94EF26481787CB8800BE46E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2C0FD9A1788047900AD355B /* FacebookSDK.framework */,
 				94D2138A1787FFCA00ADAF7E /* MobileCoreServices.framework */,
 				94D213881787FFC100ADAF7E /* SystemConfiguration.framework */,
 				94EF26491787CB8800BE46E3 /* UIKit.framework */,
@@ -552,6 +556,10 @@
 		94EF268D1787CB8800BE46E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/3rdParty\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cipele46/SupportingFiles/Cipele46-Prefix.pch";
 				INFOPLIST_FILE = "Cipele46/SupportingFiles/Cipele46-Info.plist";
@@ -563,6 +571,10 @@
 		94EF268E1787CB8800BE46E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/3rdParty\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cipele46/SupportingFiles/Cipele46-Prefix.pch";
 				INFOPLIST_FILE = "Cipele46/SupportingFiles/Cipele46-Info.plist";
