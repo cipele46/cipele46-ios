@@ -12,49 +12,51 @@
 #import "JSONKit.h"
 
 #define mockupURL @"http://dev.fiveminutes.eu/cipele/api/"
+#define cipele46URL @"http://cipele46.org/"
 
 @interface C46ServerCommunicationManager ()
-typedef void (^DelegateCallerBlock)(NSArray *);
-- (void)serverCommunicationGetPathWorker:(NSString *)path withBlock:(DelegateCallerBlock)delegateCallerBlock;
+typedef void (^DelegateCallerBlock)(id, NSError *);
+- (void)serverCommunicationGetPathWorker:(NSString *)path withBlock:(DelegateCallerBlock)delegateCallerBlock parameters:(NSDictionary *)parameters andBaseURL:(NSString *)baseUrl;
 @end
 
 @implementation C46ServerCommunicationManager
 
-- (void)serverCommunicationGetPathWorker:(NSString *)path withBlock:(DelegateCallerBlock)delegateCallerBlock {
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:mockupURL]];
-    [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+- (void)serverCommunicationGetPathWorker:(NSString *)path withBlock:(DelegateCallerBlock)delegateCallerBlock parameters:(NSDictionary *)parameters andBaseURL:(NSString *)baseUrl {
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:cipele46URL]];
+    if ([parameters objectForKey:@"username"])
+        [client setAuthorizationHeaderWithUsername:[parameters objectForKey:@"username"] password:[parameters objectForKey:@"password"]];
+    [client getPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *json_string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSArray *response = [json_string objectFromJSONString];
-        delegateCallerBlock(response);
+        id response = [json_string objectFromJSONString];
+        delegateCallerBlock(response, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Getting '%@' failed: %@", path, [error localizedDescription]);
+        delegateCallerBlock(nil, error);
     }];
 }
 
 - (void)ads {
-    [self serverCommunicationGetPathWorker:@"ads" withBlock:^(NSArray *response){
-        [self.delegate didReceiveAds:response];
-    }];
+    [self serverCommunicationGetPathWorker:@"ads" withBlock:^(id response, NSError *error){
+        [self.delegate didReceiveAds:response withError:error];
+    } parameters:nil andBaseURL:mockupURL];
 }
 
 - (void)categories {
-    [self serverCommunicationGetPathWorker:@"categories" withBlock:^(NSArray *response){
-        [self.delegate didReceiveCategories:response];
-    }];
+    [self serverCommunicationGetPathWorker:@"categories.json" withBlock:^(id response, NSError *error){
+        [self.delegate didReceiveCategories:response withError:error];
+    } parameters:nil andBaseURL:cipele46URL];
 }
 
 - (void)districts {
-    [self serverCommunicationGetPathWorker:@"districts" withBlock:^(NSArray *response){
-        [self.delegate didReceiveDistricts:response];
-    }];
+    [self serverCommunicationGetPathWorker:@"regions.json" withBlock:^(id response, NSError *error){
+        [self.delegate didReceiveDistricts:response withError:error];
+    } parameters:nil andBaseURL:cipele46URL];
 }
 
-- (void)loginWithUsername:(NSString *)username {
-    [self.delegate didReceiveLoginResponse:@{
-     @"name":@"tvrtko tvrtkovic",
-     @"email":@"tvrtko@somemail.com",
-     @"phone":@"+385991234567",
-     }];
+- (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password {
+    [self serverCommunicationGetPathWorker:@"users/show.json" withBlock:^(id response, NSError *error){
+        [self.delegate didReceiveLoginResponse:response withError:error];
+    } parameters:@{@"username":username, @"password":password} andBaseURL:cipele46URL];
 }
 
 -(void) loginWithEmail:(NSString*) email
