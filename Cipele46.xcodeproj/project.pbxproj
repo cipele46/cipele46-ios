@@ -18,6 +18,7 @@
 		32E43B7517883C1E008C9A88 /* C46AdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E43B7017883C1E008C9A88 /* C46AdCell.xib */; };
 		32E43B7617883C1E008C9A88 /* C46AdListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E43B7217883C1E008C9A88 /* C46AdListViewController.m */; };
 		32E43B7717883C1E008C9A88 /* C46AdListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E43B7317883C1E008C9A88 /* C46AdListViewController.xib */; };
+		32E43B79178853CD008C9A88 /* SDWebImage-3.3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B78178853CD008C9A88 /* SDWebImage-3.3.framework */; };
 		78A746D5178829CF00E4A6F4 /* C46LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A746D3178829CF00E4A6F4 /* C46LoginViewController.m */; };
 		78A746D6178829CF00E4A6F4 /* C46LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A746D4178829CF00E4A6F4 /* C46LoginViewController.xib */; };
 		78A746DB17882A7600E4A6F4 /* C46RegisterUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A746D917882A7600E4A6F4 /* C46RegisterUserViewController.m */; };
@@ -110,6 +111,7 @@
 		32E43B7117883C1E008C9A88 /* C46AdListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdListViewController.h; sourceTree = "<group>"; };
 		32E43B7217883C1E008C9A88 /* C46AdListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdListViewController.m; sourceTree = "<group>"; };
 		32E43B7317883C1E008C9A88 /* C46AdListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdListViewController.xib; sourceTree = "<group>"; };
+		32E43B78178853CD008C9A88 /* SDWebImage-3.3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "SDWebImage-3.3.framework"; path = "3rdParty/SDWebImage-3.3.framework"; sourceTree = "<group>"; };
 		78A746D2178829CF00E4A6F4 /* C46LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46LoginViewController.h; sourceTree = "<group>"; };
 		78A746D3178829CF00E4A6F4 /* C46LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46LoginViewController.m; sourceTree = "<group>"; };
 		78A746D4178829CF00E4A6F4 /* C46LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46LoginViewController.xib; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				94EF264C1787CB8800BE46E3 /* Foundation.framework in Frameworks */,
 				94EF264E1787CB8800BE46E3 /* CoreGraphics.framework in Frameworks */,
 				C2C0FD9B1788047900AD355B /* FacebookSDK.framework in Frameworks */,
+				32E43B79178853CD008C9A88 /* SDWebImage-3.3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +541,7 @@
 		94EF26481787CB8800BE46E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32E43B78178853CD008C9A88 /* SDWebImage-3.3.framework */,
 				8D6E5244178838A400F0E54B /* MessageUI.framework */,
 				C2C0FDAF178814A000AD355B /* libsqlite3.dylib */,
 				C2C0FDAD1788149400AD355B /* AdSupport.framework */,
