@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11856333178860A400149AAB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 11856332178860A400149AAB /* MBProgressHUD.m */; };
 		119F01C31788127C00E74817 /* C46AdsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119F01C11788127C00E74817 /* C46AdsViewController.m */; };
 		119F01C41788127C00E74817 /* C46AdsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119F01C21788127C00E74817 /* C46AdsViewController.xib */; };
 		119F01CB1788251400E74817 /* C46MyAdsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119F01C91788251400E74817 /* C46MyAdsViewController.m */; };
@@ -96,6 +97,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11856331178860A400149AAB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		11856332178860A400149AAB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		119F01C01788127C00E74817 /* C46AdsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46AdsViewController.h; path = C46AdsViewController/C46AdsViewController.h; sourceTree = "<group>"; };
 		119F01C11788127C00E74817 /* C46AdsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46AdsViewController.m; path = C46AdsViewController/C46AdsViewController.m; sourceTree = "<group>"; };
 		119F01C21788127C00E74817 /* C46AdsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = C46AdsViewController.xib; path = C46AdsViewController/C46AdsViewController.xib; sourceTree = "<group>"; };
@@ -250,13 +253,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1185633017884DFC00149AAB /* HomeTabBarRootControlers */ = {
+		1185633017884DFC00149AAB /* HomeTabBarRootControllers */ = {
 			isa = PBXGroup;
 			children = (
 				119F01C51788128300E74817 /* C46AdsViewController */,
 				119F01CD1788251F00E74817 /* C46MyAdsViewController */,
 			);
-			name = HomeTabBarRootControlers;
+			name = HomeTabBarRootControllers;
+			sourceTree = "<group>";
+		};
+		11856334178860AB00149AAB /* MDProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				11856331178860A400149AAB /* MBProgressHUD.h */,
+				11856332178860A400149AAB /* MBProgressHUD.m */,
+			);
+			name = MDProgressHUD;
 			sourceTree = "<group>";
 		};
 		119F01C51788128300E74817 /* C46AdsViewController */ = {
@@ -407,7 +419,7 @@
 				8D4DD4F21788676C00CEC030 /* C46MessageViewController */,
 				11A1E9801788096C00DACF61 /* Model */,
 				11A1E97C1788048E00DACF61 /* C46HomeTabBarController */,
-				1185633017884DFC00149AAB /* HomeTabBarRootControlers */,
+				1185633017884DFC00149AAB /* HomeTabBarRootControllers */,
 				32E43B6D17883C1E008C9A88 /* C46AdListViewController */,
 				8D6E52311788384500F0E54B /* C46DetailsViewController */,
 				78A746D717882A2500E4A6F4 /* RegisterUserViewController */,
@@ -482,6 +494,7 @@
 		94D2136A1787FF9500ADAF7E /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				11856334178860AB00149AAB /* MDProgressHUD */,
 				C2C0FDA3178813BB00AD355B /* Utils */,
 				94D2136B1787FF9500ADAF7E /* AFNetworking */,
 				94D213961788094400ADAF7E /* JSONKit */,
@@ -779,6 +792,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94C17D4F1787CCD70074D7F7 /* Cipele46Tests.m in Sources */,
+				11856333178860A400149AAB /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

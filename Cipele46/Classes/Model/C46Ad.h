@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *imageURL;
 @property (nonatomic, retain) NSNumber *adID;
-@property (nonatomic, retain) NSString *cityID;
+@property (nonatomic, retain) NSNumber *cityID;
 @property (nonatomic, retain) NSNumber *type;
 @property (nonatomic, retain) NSString *email;
 
