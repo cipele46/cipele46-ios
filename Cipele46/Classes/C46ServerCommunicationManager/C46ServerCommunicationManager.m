@@ -13,17 +13,49 @@
 
 #define mockupURL @"http://dev.fiveminutes.eu/cipele/api/"
 
+@interface C46ServerCommunicationManager ()
+typedef void (^DelegateCallerBlock)(NSArray *);
+- (void)serverCommunicationGetPathWorker:(NSString *)path withBlock:(DelegateCallerBlock)delegateCallerBlock;
+@end
+
 @implementation C46ServerCommunicationManager
 
-- (void)categories {
+- (void)serverCommunicationGetPathWorker:(NSString *)path withBlock:(DelegateCallerBlock)delegateCallerBlock {
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:mockupURL]];
-    [client getPath:@"categories" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *json_string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSArray *response = [json_string objectFromJSONString];
-        [self.delegate didReceiveCategories:response];
+        delegateCallerBlock(response);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Getting our publications failed: %@", [error localizedDescription]);
+        NSLog(@"Getting '%@' failed: %@", path, [error localizedDescription]);
     }];
 }
+
+- (void)ads {
+    [self serverCommunicationGetPathWorker:@"ads" withBlock:^(NSArray *response){
+        [self.delegate didReceiveAds:response];
+    }];
+}
+
+- (void)categories {
+    [self serverCommunicationGetPathWorker:@"categories" withBlock:^(NSArray *response){
+        [self.delegate didReceiveCategories:response];
+    }];
+}
+
+- (void)districts {
+    [self serverCommunicationGetPathWorker:@"districts" withBlock:^(NSArray *response){
+        [self.delegate didReceiveDistricts:response];
+    }];
+}
+
+- (void)loginWithUsername:(NSString *)username {
+    [self.delegate didReceiveLoginResponse:@{
+     @"name":@"tvrtko tvrtkovic",
+     @"email":@"tvrtko@somemail.com",
+     @"phone":@"+385991234567",
+     }];
+}
+
 
 @end
