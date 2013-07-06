@@ -4,6 +4,10 @@
 1) Doing.
 ---------
 
+    * (Miran) Service manager module (singleton).
+
+    * Localization files.
+
     * Adverts page.
         * Advert details.
             * Advert inquiry.
@@ -21,8 +25,6 @@
             * User registration.
 
     * User module (singleton).
-
-    * Service manager module (singleton).
 
     * My adverts page.
         * Active.
