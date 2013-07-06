@@ -20,4 +20,6 @@
 -(BOOL) handleOpenURL:(NSURL*) url;
 -(void) handleDidBecomeActive;
 
+@property(nonatomic,readonly) NSString* accessToken;
+
 @end

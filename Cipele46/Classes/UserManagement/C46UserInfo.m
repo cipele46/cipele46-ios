@@ -10,4 +10,20 @@
 
 @implementation C46UserInfo
 
+-(id) initWithUserName:(NSString*) userName
+                 email:(NSString*) email
+             firstName:(NSString*) firstName
+              lastName:(NSString*) lastName
+{
+    if (self = [super init])
+    {
+        _userName = [userName copy];
+        _email = [email copy];
+        _firstName = [firstName copy];
+        _lastName = [lastName copy];
+    }
+    
+    return self;
+}
+
 @end

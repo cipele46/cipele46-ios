@@ -10,6 +10,11 @@
 
 @interface C46UserInfo : NSObject
 
+-(id) initWithUserName:(NSString*) userName
+                 email:(NSString*) email
+             firstName:(NSString*) firstName
+              lastName:(NSString*) lastName;
+
 @property(nonatomic,readonly) NSString* userName;
 @property(nonatomic,readonly) NSString* email;
 @property(nonatomic,readonly) NSString* firstName;
