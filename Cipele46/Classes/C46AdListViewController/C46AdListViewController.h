@@ -13,6 +13,9 @@
 @protocol C46AdListViewControllerDelegate
 @required
 -(void)didSelectAdListViewController:(C46Ad *)ad;
+-(void)adListViewControllerDidStartRefreshing:(UIViewController *)controller;
+-(void)adListViewControllerDidFinishRefreshing:(UIViewController *)controller;
+
 @end
 
 @interface C46AdListViewController: UIViewController<UITableViewDataSource, UITableViewDelegate, C46ServerCommunicationManagerDelegate>

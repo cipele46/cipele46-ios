@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11856333178860A400149AAB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 11856332178860A400149AAB /* MBProgressHUD.m */; };
+		118563351788723300149AAB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 11856332178860A400149AAB /* MBProgressHUD.m */; };
 		119F01C31788127C00E74817 /* C46AdsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119F01C11788127C00E74817 /* C46AdsViewController.m */; };
 		119F01C41788127C00E74817 /* C46AdsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119F01C21788127C00E74817 /* C46AdsViewController.xib */; };
 		119F01CB1788251400E74817 /* C46MyAdsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119F01C91788251400E74817 /* C46MyAdsViewController.m */; };
@@ -262,13 +262,13 @@
 			name = HomeTabBarRootControllers;
 			sourceTree = "<group>";
 		};
-		11856334178860AB00149AAB /* MDProgressHUD */ = {
+		11856334178860AB00149AAB /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
 				11856331178860A400149AAB /* MBProgressHUD.h */,
 				11856332178860A400149AAB /* MBProgressHUD.m */,
 			);
-			name = MDProgressHUD;
+			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		119F01C51788128300E74817 /* C46AdsViewController */ = {
@@ -494,7 +494,7 @@
 		94D2136A1787FF9500ADAF7E /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
-				11856334178860AB00149AAB /* MDProgressHUD */,
+				11856334178860AB00149AAB /* MBProgressHUD */,
 				C2C0FDA3178813BB00AD355B /* Utils */,
 				94D2136B1787FF9500ADAF7E /* AFNetworking */,
 				94D213961788094400ADAF7E /* JSONKit */,
@@ -784,6 +784,7 @@
 				32E43B7417883C1E008C9A88 /* C46AdCell.m in Sources */,
 				32E43B7617883C1E008C9A88 /* C46AdListViewController.m in Sources */,
 				8D4DD4F61788676C00CEC030 /* C46MessageViewController.m in Sources */,
+				118563351788723300149AAB /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,7 +793,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94C17D4F1787CCD70074D7F7 /* Cipele46Tests.m in Sources */,
-				11856333178860A400149AAB /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

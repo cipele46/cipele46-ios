@@ -47,9 +47,9 @@
     // Do any additional setup after loading the view from its nib.
     self.serverCommunicationManager = [[C46ServerCommunicationManager alloc] init];
     [self.serverCommunicationManager setDelegate:self];
+    
+    [self.delegate adListViewControllerDidStartRefreshing:self];
     [self.serverCommunicationManager ads];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,6 +134,8 @@
     
     }
     [self.tView reloadData];
+    
+    [self.delegate adListViewControllerDidFinishRefreshing:self];
 }
 
 -(void)didReceiveCategories:(NSArray *)categories withError:(NSError *)error {
@@ -174,6 +176,7 @@
     C46Ad *ad = [self.tDataSource objectAtIndex:indexPath.row];
     
     // Here we use the new provided setImageWithURL: method to load the web image
+    NSLog(@"imageURL is %@", ad.imageURL);
     [cell.leftImage setImageWithURL:[NSURL URLWithString:ad.imageURL]
                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
@@ -185,6 +188,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.delegate didSelectAdListViewController:[self.tDataSource objectAtIndex:indexPath.row]];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
