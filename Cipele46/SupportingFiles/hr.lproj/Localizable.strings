@@ -12,3 +12,10 @@
 
 "FILTER_GROUP_HEADER__ADVERT_TYPE__SUPPLY" = "Ponuda";
 "FILTER_GROUP_HEADER__ADVERT_TYPE__DEMAND" = "Potražnja";
+
+/*  C46RegisterUserViewController */
+"REGISTER_USER_VIEW__NAME" = "Ime";
+"REGISTER_USER_VIEW__EMAIL" = "Email";
+"TELEPHONE" = "Telefon";
+"REGISTER_USER_VIEW__PASSWORD" = "Lozinka";
+"REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Lozinka ponovo";
