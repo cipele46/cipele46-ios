@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11A1E97A1788042B00DACF61 /* C46HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */; };
+		11A1E97F1788096400DACF61 /* C46Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A1E97E1788096400DACF61 /* C46Ad.m */; };
 		94C17D391787CCCE0074D7F7 /* C46AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */; };
 		94C17D451787CCCE0074D7F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D361787CCCE0074D7F7 /* main.m */; };
 		94C17D4F1787CCD70074D7F7 /* Cipele46Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D4B1787CCD70074D7F7 /* Cipele46Tests.m */; };
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11A1E9771788042B00DACF61 /* C46HomeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46HomeTabBarController.h; path = C46HomeTabBarController/C46HomeTabBarController.h; sourceTree = "<group>"; };
+		11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46HomeTabBarController.m; path = C46HomeTabBarController/C46HomeTabBarController.m; sourceTree = "<group>"; };
+		11A1E97D1788096400DACF61 /* C46Ad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46Ad.h; path = Model/C46Ad.h; sourceTree = "<group>"; };
+		11A1E97E1788096400DACF61 /* C46Ad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46Ad.m; path = Model/C46Ad.m; sourceTree = "<group>"; };
 		94C17D231787CCCE0074D7F7 /* C46AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AppDelegate.h; sourceTree = "<group>"; };
 		94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AppDelegate.m; sourceTree = "<group>"; };
 		94C17D361787CCCE0074D7F7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +101,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11A1E97C1788048E00DACF61 /* C46HomeTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				11A1E9771788042B00DACF61 /* C46HomeTabBarController.h */,
+				11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */,
+			);
+			name = C46HomeTabBarController;
+			sourceTree = "<group>";
+		};
+		11A1E9801788096C00DACF61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11A1E97D1788096400DACF61 /* C46Ad.h */,
+				11A1E97E1788096400DACF61 /* C46Ad.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		94C17D221787CCCE0074D7F7 /* Cipele46 */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,8 +157,10 @@
 		94D2134D1787CE8B00ADAF7E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				11A1E9801788096C00DACF61 /* Model */,
 				94D2134E1787CE8B00ADAF7E /* C46FirstViewController */,
 				94D213551787CE8B00ADAF7E /* C46SecondViewController */,
+				11A1E97C1788048E00DACF61 /* C46HomeTabBarController */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -344,6 +370,8 @@
 				94C17D451787CCCE0074D7F7 /* main.m in Sources */,
 				94D2135E1787CE8B00ADAF7E /* C46FirstViewController.m in Sources */,
 				94D213621787CE8B00ADAF7E /* C46SecondViewController.m in Sources */,
+				11A1E97A1788042B00DACF61 /* C46HomeTabBarController.m in Sources */,
+				11A1E97F1788096400DACF61 /* C46Ad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

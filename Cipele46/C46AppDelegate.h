@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface C46AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface C46AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) UITabBarController *tabBarController;
 
 @end
