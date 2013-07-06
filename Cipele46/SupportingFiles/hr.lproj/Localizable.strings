@@ -16,6 +16,15 @@
 /*  C46RegisterUserViewController */
 "REGISTER_USER_VIEW__NAME" = "Ime";
 "REGISTER_USER_VIEW__EMAIL" = "Email";
-"TELEPHONE" = "Telefon";
+"REGISTER_USER_VIEW__TELEPHONE" = "Telefon";
 "REGISTER_USER_VIEW__PASSWORD" = "Lozinka";
 "REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Lozinka ponovo";
+
+/* C46LoginViewController */
+"LOGIN_VIEW__TITLE" = "Prijava";
+"LOGIN_VIEW__FACEBOOK_LOGIN" = "Prijava putem Facebooka";
+"LOGIN_VIEW__EMAIL" = "Email";
+"LOGIN_VIEW__PASSWORD" = "Lozinka";
+"LOGIN_VIEW__LOGIN" = "Prijavi se";
+"LOGIN_VIEW__FORGOT_PASSWORD" = "Zaboravio/la sam lozinku";
+"LOGIN_VIEW__REGISTER" = "Registriraj se";
