@@ -695,6 +695,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cipele46/SupportingFiles/Cipele46-Prefix.pch";
 				INFOPLIST_FILE = "Cipele46/SupportingFiles/Cipele46-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/3rdParty/SDWebImage-3.3.framework/Versions/A\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -710,6 +714,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cipele46/SupportingFiles/Cipele46-Prefix.pch";
 				INFOPLIST_FILE = "Cipele46/SupportingFiles/Cipele46-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/3rdParty/SDWebImage-3.3.framework/Versions/A\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
