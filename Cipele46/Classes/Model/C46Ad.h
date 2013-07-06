@@ -20,6 +20,15 @@
 @property (nonatomic, retain) NSNumber *adID;
 @property (nonatomic, retain) NSString *cityID;
 @property (nonatomic, retain) NSNumber *type;
-@property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSString *mail;
+
+
+@property (strong, nonatomic) NSString *district;
+@property (strong, nonatomic) NSString *city;
+@property (strong, nonatomic) NSString *address;
+
+@property (nonatomic, getter=isApproved) BOOL approved;
+@property (nonatomic, getter=isFavourite) BOOL favourite;
+
 
 @end
