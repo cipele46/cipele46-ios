@@ -9,7 +9,7 @@
 #import "C46AdListViewController.h"
 #import "C46AdCell.h"
 #import "C46Ad.h"
-#import <SDWebImage-3.3/UIImageView+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "C46ServerCommunicationManager.h"
 
 @interface C46AdListViewController (){
