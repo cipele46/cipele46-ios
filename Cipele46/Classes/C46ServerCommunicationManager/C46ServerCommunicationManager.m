@@ -22,7 +22,7 @@ typedef void (^DelegateCallerBlock)(id, NSError *);
 @implementation C46ServerCommunicationManager
 
 - (void)serverCommunicationGetPathWorker:(NSString *)path withBlock:(DelegateCallerBlock)delegateCallerBlock parameters:(NSDictionary *)parameters andBaseURL:(NSString *)baseUrl {
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:cipele46URL]];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
     if ([parameters objectForKey:@"username"])
         [client setAuthorizationHeaderWithUsername:[parameters objectForKey:@"username"] password:[parameters objectForKey:@"password"]];
     [client getPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
