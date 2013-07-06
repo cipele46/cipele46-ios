@@ -9,6 +9,12 @@
 #import "C46AdFilterViewController.h"
 
 @interface C46AdFilterViewController () <UITableViewDataSource, UITableViewDelegate, C46ServerCommunicationManagerDelegate>
+{
+    NSIndexPath *_selectedAdvertTypeIndexPath;
+    NSIndexPath *_selectedCategoryIndexPath;
+    NSIndexPath *_selectedDistrictIndexPath;
+    
+}
 
 @property (nonatomic) UITableView *filtersTableView;
 
@@ -37,6 +43,7 @@
         self.categoriesFetched = NO;
         self.districtsFetched = NO;
 
+        self.selectedAdvertType = kC46FilterAdvertTypeSupply;
         self.selectedCategory = nil;
         self.selectedDistrict = nil;
     }
@@ -118,15 +125,35 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.section) {
-        case 0:
+        case 0: {
+            
+            UITableViewCell *previousSelectedCell = [self.filtersTableView cellForRowAtIndexPath:_selectedAdvertTypeIndexPath];
+            previousSelectedCell.accessoryType = UITableViewCellAccessoryNone;
+
             self.selectedAdvertType = (kC46FilterAdvertTypes)indexPath.row;
+            _selectedAdvertTypeIndexPath = indexPath;
+            
+            UITableViewCell *newSelectedCell = [self.filtersTableView cellForRowAtIndexPath:_selectedAdvertTypeIndexPath];
+            newSelectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
+                
+        }
+            
             break;
-        case 1:
+        case 1: {
+            
             self.selectedCategory = [self.categories objectAtIndex:indexPath.row];
+        
+        }
+            
             break;
-        case 2:
+        
+        case 2: {
+         
             self.selectedDistrict = [self.districts objectAtIndex:indexPath.row];
+            
+        }
             break;
+        
         default:
             NSAssert(NO, @"Should not be here.");
     }
@@ -179,11 +206,22 @@
                 cell.textLabel.text = NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__SUPPLY", nil);
             else
                 cell.textLabel.text = NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__DEMAND", nil);
-            if (indexPath.row == (int)self.selectedAdvertType)
+            
+            
+            
+            if (indexPath.row == (int)self.selectedAdvertType) {
+                
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            else
+                _selectedAdvertTypeIndexPath = indexPath;
+            
+            } else {
+                
                 cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+            
             break;
+        
+        
         case 1:
             cell.textLabel.text = [[self.categories objectAtIndex:indexPath.row] objectForKey:@"name"];
             if ([self.selectedCategory isEqualToString:[[self.categories objectAtIndex:indexPath.row] objectForKey:@"name"]])

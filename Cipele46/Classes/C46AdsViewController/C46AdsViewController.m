@@ -9,6 +9,7 @@
 #import "C46AdsViewController.h"
 #import "C46AdListViewController.h"
 #import "C46AdFilterViewController.h"
+#import "MBProgressHUD.h"
 
 @interface C46AdsViewController () <C46AdListViewControllerDelegate, C46AdFilterDelegate>
 
@@ -36,7 +37,7 @@
     
     _adListViewController = [[C46AdListViewController alloc] initWithNibName:@"C46AdListViewController" bundle:nil];
     _adListViewController.delegate = self;
-    [_adListViewControllerPlaceholderView addSubview:_adListViewController.view];
+    [_adListViewControllerPlaceholderView addSubview:_adListViewController.view];    
 }
 
 
@@ -52,17 +53,30 @@
 
 - (void)didUpdateFilters:(kC46FilterAdvertTypes)advertType category:(NSString *)category district:(NSString *)district
 {
-    NSLog(@"Filter changed");
-    NSLog(@"Category: %@", category);
-    NSLog(@"District: %@", district);
+//    NSLog(@"Filter changed");
+//    NSLog(@"Category: %@", category);
+//    NSLog(@"District: %@", district);
 }
 
 #pragma mark - C46AdListViewControllerDelegate
 
 - (void)didSelectAdListViewController:(C46Ad *)ad
 {
-    [_delegate adsViewController:self didSelectAd:nil];
+    [_delegate adsViewController:self didSelectAd:ad];
 }
+
+- (void)adListViewControllerDidStartRefreshing:(UIViewController *)controller
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Loading";
+}
+
+- (void)adListViewControllerDidFinishRefreshing:(UIViewController *)controller
+{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
+
 
 
 @end

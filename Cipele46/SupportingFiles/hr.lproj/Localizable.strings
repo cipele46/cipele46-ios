@@ -31,7 +31,7 @@
 "LOGIN_VIEW__EMAIL" = "Email";
 "LOGIN_VIEW__PASSWORD" = "Lozinka";
 "LOGIN_VIEW__LOGIN" = "Prijavi se";
-"LOGIN_VIEW__FORGOT_PASSWORD" = "Zaboravio/la sam lozinku";
+"LOGIN_VIEW__FORGOT_PASSWORD" = "Zaboravio sam lozinku";
 "LOGIN_VIEW__REGISTER" = "Registriraj se";
 
 /* Globals */
