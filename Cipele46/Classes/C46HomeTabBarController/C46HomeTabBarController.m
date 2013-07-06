@@ -9,6 +9,7 @@
 #import "C46HomeTabBarController.h"
 #import "C46FirstViewController.h"
 #import "C46SecondViewController.h"
+#import "C46AdFilterViewController.h"
 
 @interface C46HomeTabBarController ()
 
@@ -46,6 +47,9 @@
     _adsNavigationController = [[UINavigationController alloc] initWithRootViewController:_adsViewController];
     
     self.viewControllers = @[_adsNavigationController, _searchViewController, _createAdViewController, _myAdsViewController, _settingsViewController];
+
+    C46AdFilterViewController *xxx = [[C46AdFilterViewController alloc] init];
+    [_adsNavigationController pushViewController:xxx animated:YES];
 }
 
 
