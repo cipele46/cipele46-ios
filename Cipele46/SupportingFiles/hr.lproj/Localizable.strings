@@ -21,6 +21,7 @@
 "REGISTER_USER_VIEW__PASSWORD" = "Lozinka";
 "REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Lozinka ponovo";
 "REGISTER_USER_VIEW__BTN_BACK" = "Nazad";
+"REGISTER_USER_VIEW__BTN_REGISTER" = "Registriraj";
 
 /* C46LoginViewController */
 "LOGIN_VIEW__TITLE" = "Prijava";
