@@ -176,6 +176,7 @@
     C46Ad *ad = [self.tDataSource objectAtIndex:indexPath.row];
     
     // Here we use the new provided setImageWithURL: method to load the web image
+    NSLog(@"imageURL is %@", ad.imageURL);
     [cell.leftImage setImageWithURL:[NSURL URLWithString:ad.imageURL]
                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
