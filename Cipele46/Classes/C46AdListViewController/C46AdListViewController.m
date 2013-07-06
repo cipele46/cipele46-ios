@@ -64,7 +64,7 @@
         ad.adID = [dic valueForKey:@"id"];
         ad.cityID = [dic valueForKey:@"cityID"];
         ad.type = [dic valueForKey:@"type"];
-        ad.email = [dic valueForKey:@"email"];
+        ad.mail = [dic valueForKey:@"email"];
         [self.tDataSource addObject:ad];
     }
     [self.tView reloadData];
