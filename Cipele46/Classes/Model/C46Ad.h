@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString *phone;
 @property (nonatomic, retain) NSNumber *categoryID;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *imageURL;
+@property (nonatomic, retain) NSURL *imageURL;
 @property (nonatomic, retain) NSNumber *adID;
 @property (nonatomic, retain) NSNumber *cityID;
 @property (nonatomic, retain) NSNumber *type;

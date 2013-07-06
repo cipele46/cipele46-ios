@@ -66,8 +66,8 @@
         [[self phoneButton] setHidden:YES];
     }
     
-    [[self adImageView] setImageWithURL:[NSURL URLWithString:@"http://www.domain.com/path/to/image.jpg"]
-                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    [[self adImageView] setImageWithURL:self.ad.imageURL
+                       placeholderImage:[UIImage imageNamed:@"favorites_icon_full.png"]];
     
 }
 

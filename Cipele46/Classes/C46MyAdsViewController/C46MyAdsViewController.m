@@ -8,6 +8,7 @@
 
 #import "C46MyAdsViewController.h"
 #import "C46AdListViewController.h"
+#import "MBProgressHUD.h"
 
 @interface C46MyAdsViewController () <C46AdListViewControllerDelegate>
 
@@ -55,7 +56,18 @@
 
 - (void)didSelectAdListViewController:(C46Ad *)ad
 {
-    [_delegate adsViewController:self didSelectAd:nil];
+    [_delegate adsViewController:self didSelectAd:ad];
+}
+
+- (void)adListViewControllerDidStartRefreshing:(UIViewController *)controller
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Loading";
+}
+
+- (void)adListViewControllerDidFinishRefreshing:(UIViewController *)controller
+{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 @end

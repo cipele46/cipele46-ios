@@ -130,6 +130,8 @@
         ad.category = [category valueForKey:@"name"];
         ad.city = [city valueForKey:@"name"];
         ad.district = [district valueForKey:@"name"];
+        ad.imageURL = [NSURL URLWithString:@"http://www.lynnwittenburg.com/wp-content/uploads/2013/03/Ball.jpg"];
+        
         [self.tDataSource addObject:ad];
     
     }
@@ -177,8 +179,8 @@
     
     // Here we use the new provided setImageWithURL: method to load the web image
     NSLog(@"imageURL is %@", ad.imageURL);
-    [cell.leftImage setImageWithURL:[NSURL URLWithString:ad.imageURL]
-                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    [cell.leftImage setImageWithURL:ad.imageURL
+                   placeholderImage:[UIImage imageNamed:@"favorites_icon_full.png"]];
     
     cell.title.text = ad.title;
     cell.category.text = ad.category;
