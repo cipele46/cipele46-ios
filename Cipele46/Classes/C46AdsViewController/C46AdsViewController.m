@@ -8,6 +8,7 @@
 
 #import "C46AdsViewController.h"
 #import "C46AdListViewController.h"
+#import "C46AdFilterViewController.h"
 
 @interface C46AdsViewController () <C46AdListViewControllerDelegate>
 
@@ -42,7 +43,8 @@
 
 - (IBAction)filterAdsButtonPress:(id)sender
 {
-    
+    C46AdFilterViewController *adFilter = [[C46AdFilterViewController alloc] init];
+    [self.navigationController pushViewController:adFilter animated:YES];
 }
 
 #pragma mark - C46AdListViewControllerDelegate
