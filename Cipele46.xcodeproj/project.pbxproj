@@ -36,6 +36,8 @@
 		94D2138B1787FFCA00ADAF7E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D2138A1787FFCA00ADAF7E /* MobileCoreServices.framework */; };
 		94D2138C1788008500ADAF7E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D213881787FFC100ADAF7E /* SystemConfiguration.framework */; };
 		94D2138D1788008A00ADAF7E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D2138A1787FFCA00ADAF7E /* MobileCoreServices.framework */; };
+		94D21394178802E900ADAF7E /* C46ServerCommunicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D21393178802E900ADAF7E /* C46ServerCommunicationManager.m */; };
+		94D2139C1788094400ADAF7E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D213991788094400ADAF7E /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-deprecated-objc-isa-usage"; }; };
 		94EF264A1787CB8800BE46E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF26491787CB8800BE46E3 /* UIKit.framework */; };
 		94EF264C1787CB8800BE46E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF264B1787CB8800BE46E3 /* Foundation.framework */; };
 		94EF264E1787CB8800BE46E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF264D1787CB8800BE46E3 /* CoreGraphics.framework */; };
@@ -104,6 +106,12 @@
 		94D2137E1787FF9500ADAF7E /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		94D213881787FFC100ADAF7E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		94D2138A1787FFCA00ADAF7E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		94D21392178802E900ADAF7E /* C46ServerCommunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46ServerCommunicationManager.h; sourceTree = "<group>"; };
+		94D21393178802E900ADAF7E /* C46ServerCommunicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46ServerCommunicationManager.m; sourceTree = "<group>"; };
+		94D213971788094400ADAF7E /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		94D213981788094400ADAF7E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		94D213991788094400ADAF7E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		94D2139A1788094400ADAF7E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		94EF26461787CB8800BE46E3 /* Cipele46.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cipele46.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EF26491787CB8800BE46E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94EF264B1787CB8800BE46E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -202,6 +210,7 @@
 				94D2134E1787CE8B00ADAF7E /* C46FirstViewController */,
 				94D213551787CE8B00ADAF7E /* C46SecondViewController */,
 				11A1E97C1788048E00DACF61 /* C46HomeTabBarController */,
+				94D21391178802E900ADAF7E /* C46ServerCommunicationManager */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -267,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				94D2136B1787FF9500ADAF7E /* AFNetworking */,
+				94D213961788094400ADAF7E /* JSONKit */,
 			);
 			path = 3rdParty;
 			sourceTree = "<group>";
@@ -295,6 +305,26 @@
 				94D2137E1787FF9500ADAF7E /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		94D21391178802E900ADAF7E /* C46ServerCommunicationManager */ = {
+			isa = PBXGroup;
+			children = (
+				94D21392178802E900ADAF7E /* C46ServerCommunicationManager.h */,
+				94D21393178802E900ADAF7E /* C46ServerCommunicationManager.m */,
+			);
+			path = C46ServerCommunicationManager;
+			sourceTree = "<group>";
+		};
+		94D213961788094400ADAF7E /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				94D213971788094400ADAF7E /* CHANGELOG.md */,
+				94D213981788094400ADAF7E /* JSONKit.h */,
+				94D213991788094400ADAF7E /* JSONKit.m */,
+				94D2139A1788094400ADAF7E /* README.md */,
+			);
+			path = JSONKit;
 			sourceTree = "<group>";
 		};
 		94EF263D1787CB8800BE46E3 = {
@@ -460,6 +490,8 @@
 				94D213851787FF9500ADAF7E /* AFURLConnectionOperation.m in Sources */,
 				94D213861787FF9500ADAF7E /* AFXMLRequestOperation.m in Sources */,
 				94D213871787FF9500ADAF7E /* UIImageView+AFNetworking.m in Sources */,
+				94D21394178802E900ADAF7E /* C46ServerCommunicationManager.m in Sources */,
+				94D2139C1788094400ADAF7E /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
