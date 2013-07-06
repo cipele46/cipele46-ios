@@ -123,7 +123,7 @@
 						<string key="NSFrame">{{40, 25}, {240, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="439516668"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -146,7 +146,7 @@
 						<string key="NSFrame">{{40, 133}, {240, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="269778264"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -378,7 +378,7 @@
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">LoginViewController</string>
+				<string key="-1.CustomClassName">C46LoginViewController</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -399,42 +399,17 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">LoginViewController</string>
+					<string key="className">C46LoginViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="emailFieldEditingDidEnd:">id</string>
-						<string key="emailFieldTapped:">id</string>
-						<string key="emailFieldTextChanged:">id</string>
 						<string key="forgotPassword:">id</string>
-						<string key="passwordFieldEditingDidEnd:">id</string>
-						<string key="passwordFieldTapped:">id</string>
 						<string key="registerUser:">id</string>
 						<string key="tryFacebookLogin:">id</string>
 						<string key="tryNormalLogin:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="emailFieldEditingDidEnd:">
-							<string key="name">emailFieldEditingDidEnd:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="emailFieldTapped:">
-							<string key="name">emailFieldTapped:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="emailFieldTextChanged:">
-							<string key="name">emailFieldTextChanged:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="forgotPassword:">
 							<string key="name">forgotPassword:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="passwordFieldEditingDidEnd:">
-							<string key="name">passwordFieldEditingDidEnd:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="passwordFieldTapped:">
-							<string key="name">passwordFieldTapped:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="registerUser:">
@@ -466,7 +441,7 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/LoginViewController.h</string>
+						<string key="minorKey">./Classes/C46LoginViewController.h</string>
 					</object>
 				</object>
 			</array>
