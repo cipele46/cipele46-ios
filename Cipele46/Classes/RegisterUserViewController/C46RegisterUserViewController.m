@@ -147,25 +147,6 @@
     [[self baseView] setFrame: oldFrame];
     
     [[self baseView] setContentSize: CGSizeMake( oldFrame.size.width, newContentSize )];
-    
-    
-    return;
-    
-    CGRect contentRect = [[self baseView] frame];
-
-    CGFloat contentHeight = 0.0f;
-    
-    for (UIView* subview in [[self baseView] subviews] ) {
-        const CGFloat largestSize = [subview frame].origin.y + [subview frame].size.height;
-        
-        if ( largestSize > contentHeight ) {
-            contentHeight = largestSize;
-        }
-    }
-    
-    contentRect.size.height = contentHeight;
-    
-    [[self baseView] setFrame: contentRect];
 }
 
 @end
