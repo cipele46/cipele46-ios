@@ -2,7 +2,7 @@
 //  C46AdsViewController.h
 //  Cipele46
 //
-//  Created by Dino Bartosak on 7/6/13.
+//  Created by Dino Bartosak on 7/6/13.
 //  Copyright (c) 2013 Miran Brajsa. All rights reserved.
 //
 
