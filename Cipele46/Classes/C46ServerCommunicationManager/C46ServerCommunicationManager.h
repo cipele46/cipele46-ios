@@ -14,14 +14,14 @@ typedef enum {
 } kC46FilterAdvertTypes;
 
 @protocol C46ServerCommunicationManagerDelegate <NSObject>
-//  Returns an array of dictionaries with keys: 'id', 'name'.
-- (void)didReceiveFilterCategories:(NSArray *)categories;
+//   Returns an array of dictionaries with keys: 'id', 'name'.
+- (void)didReceiveCategories:(NSArray *)categories;
 @end
 
 @interface C46ServerCommunicationManager : NSObject
 
 @property (nonatomic, weak) id<C46ServerCommunicationManagerDelegate> delegate;
 
-- (void)filterCategories;
+- (void)categories;
 
 @end

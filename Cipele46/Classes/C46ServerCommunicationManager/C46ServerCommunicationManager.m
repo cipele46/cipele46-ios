@@ -15,12 +15,12 @@
 
 @implementation C46ServerCommunicationManager
 
-- (void)filterCategories {
+- (void)categories {
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:mockupURL]];
     [client getPath:@"categories" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *json_string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSArray *response = [json_string objectFromJSONString];
-        [self.delegate didReceiveFilterCategories:response];
+        [self.delegate didReceiveCategories:response];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Getting our publications failed: %@", [error localizedDescription]);
     }];
