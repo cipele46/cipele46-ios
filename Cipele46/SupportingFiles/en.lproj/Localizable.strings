@@ -21,6 +21,9 @@
 "REGISTER_USER_VIEW__PASSWORD" = "Password";
 "REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Password again";
 "REGISTER_USER_VIEW__BTN_BACK" = "Back";
+"REGISTER_USER_VIEW__BTN_REGISTER" = "Register";
+"REGISTER_USER_VIEW__ALERT_MESSAGE_ALL_FIELDS" = "All fields must be filled to register new user.";
+"REGISTER_USER_VIEW__ALERT_MESSAGE_PASSWORDS_NOT_SAME" = "Passwords are not the same!";
 
 /* C46LoginViewController */
 "LOGIN_VIEW__TITLE" = "Login";
@@ -30,3 +33,6 @@
 "LOGIN_VIEW__LOGIN" = "Login";
 "LOGIN_VIEW__FORGOT_PASSWORD" = "Forgot password";
 "LOGIN_VIEW__REGISTER" = "Register";
+
+/* Globals */
+"GLOBAL_ALERT_DIALOG_BTN_OK" = "Ok";
