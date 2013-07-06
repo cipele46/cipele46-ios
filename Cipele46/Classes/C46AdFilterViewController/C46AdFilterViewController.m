@@ -186,14 +186,14 @@
             break;
         case 1:
             cell.textLabel.text = [[self.categories objectAtIndex:indexPath.row] objectForKey:@"name"];
-            if ([self.selectedCategory isEqualToString:[self.categories objectAtIndex:indexPath.row]])
+            if ([self.selectedCategory isEqualToString:[[self.categories objectAtIndex:indexPath.row] objectForKey:@"name"]])
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
             else
                 cell.accessoryType = UITableViewCellAccessoryNone;
             break;
         case 2:
             cell.textLabel.text = [[self.districts objectAtIndex:indexPath.row] objectForKey:@"name"];
-            if ([self.selectedDistrict isEqualToString:[self.districts objectAtIndex:indexPath.row]])
+            if ([self.selectedDistrict isEqualToString:[[self.districts objectAtIndex:indexPath.row] objectForKey:@"name"]])
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
             else
                 cell.accessoryType = UITableViewCellAccessoryNone;
