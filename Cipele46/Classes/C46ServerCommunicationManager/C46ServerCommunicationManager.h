@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    kC46FilterAdvertTypeSupply = 1,
-    kC46FilterAdvertTypeDemand = 2
+    kC46FilterAdvertTypeSupply = 0,
+    kC46FilterAdvertTypeDemand = 1
 } kC46FilterAdvertTypes;
 
 @protocol C46ServerCommunicationManagerDelegate <NSObject>

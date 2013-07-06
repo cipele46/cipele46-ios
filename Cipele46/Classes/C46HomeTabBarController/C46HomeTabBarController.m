@@ -9,6 +9,7 @@
 #import "C46HomeTabBarController.h"
 #import "C46AdsViewController.h"
 #import "C46MyAdsViewController.h"
+#import "C46DetailsViewController.h"
 
 #import "C46FirstViewController.h"
 #import "C46SecondViewController.h"
@@ -68,7 +69,8 @@
     NSAssert(controller == _adsViewController || controller == _myAdsViewController, @"Shit happened");
     NSAssert(controller.navigationController != nil, @"Navigation controller can not be nil");
     
-    C46SecondViewController *adViewController = [[C46SecondViewController alloc] initWithNibName:@"C46SecondViewController" bundle:nil];
+    C46DetailsViewController *adViewController = [[C46DetailsViewController alloc] initWithNibName:@"C46DetailsViewController" bundle:nil];
+    adViewController.ad = ad;
     
     [controller.navigationController pushViewController:adViewController animated:YES];
 }

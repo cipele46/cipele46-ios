@@ -50,6 +50,7 @@
     // TODO: Set status label
     
     [[self titleTextView] setText:[[self ad] title]];
+    
     [[self descriptionTextView] setText:[[self ad] description]];
     
     // TODO: Set expiration label
