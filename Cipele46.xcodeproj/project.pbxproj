@@ -41,6 +41,9 @@
 		94EF267D1787CB8800BE46E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF26491787CB8800BE46E3 /* UIKit.framework */; };
 		94EF267E1787CB8800BE46E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF264B1787CB8800BE46E3 /* Foundation.framework */; };
 		C2C0FD9B1788047900AD355B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C0FD9A1788047900AD355B /* FacebookSDK.framework */; };
+		C2C0FD9F1788085500AD355B /* C46FacebookConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C0FD9E1788085500AD355B /* C46FacebookConnect.m */; };
+		C2C0FDA2178809CB00AD355B /* C46UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C0FDA1178809CB00AD355B /* C46UserInfo.m */; };
+		C2C0FDA6178813C900AD355B /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C0FDA5178813C900AD355B /* NSString+URLEncoding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,12 @@
 		94EF267A1787CB8800BE46E3 /* Cipele46Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cipele46Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EF267B1787CB8800BE46E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C2C0FD9A1788047900AD355B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = 3rdParty/FacebookSDK.framework; sourceTree = "<group>"; };
+		C2C0FD9D1788085500AD355B /* C46FacebookConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46FacebookConnect.h; path = UserManagement/C46FacebookConnect.h; sourceTree = "<group>"; };
+		C2C0FD9E1788085500AD355B /* C46FacebookConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46FacebookConnect.m; path = UserManagement/C46FacebookConnect.m; sourceTree = "<group>"; };
+		C2C0FDA0178809CB00AD355B /* C46UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46UserInfo.h; path = UserManagement/C46UserInfo.h; sourceTree = "<group>"; };
+		C2C0FDA1178809CB00AD355B /* C46UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46UserInfo.m; path = UserManagement/C46UserInfo.m; sourceTree = "<group>"; };
+		C2C0FDA4178813C900AD355B /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "Utils/NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		C2C0FDA5178813C900AD355B /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncoding.m"; path = "Utils/NSString+URLEncoding.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +183,7 @@
 		94D2134D1787CE8B00ADAF7E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C2C0FD9C1788082700AD355B /* UserManagement */,
 				94D2134E1787CE8B00ADAF7E /* C46FirstViewController */,
 				94D213551787CE8B00ADAF7E /* C46SecondViewController */,
 			);
@@ -240,6 +250,7 @@
 		94D2136A1787FF9500ADAF7E /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C2C0FDA3178813BB00AD355B /* Utils */,
 				94D2136B1787FF9500ADAF7E /* AFNetworking */,
 			);
 			path = 3rdParty;
@@ -303,6 +314,26 @@
 				94EF267B1787CB8800BE46E3 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2C0FD9C1788082700AD355B /* UserManagement */ = {
+			isa = PBXGroup;
+			children = (
+				C2C0FD9D1788085500AD355B /* C46FacebookConnect.h */,
+				C2C0FD9E1788085500AD355B /* C46FacebookConnect.m */,
+				C2C0FDA0178809CB00AD355B /* C46UserInfo.h */,
+				C2C0FDA1178809CB00AD355B /* C46UserInfo.m */,
+			);
+			name = UserManagement;
+			sourceTree = "<group>";
+		};
+		C2C0FDA3178813BB00AD355B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C2C0FDA4178813C900AD355B /* NSString+URLEncoding.h */,
+				C2C0FDA5178813C900AD355B /* NSString+URLEncoding.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +463,9 @@
 				94D213851787FF9500ADAF7E /* AFURLConnectionOperation.m in Sources */,
 				94D213861787FF9500ADAF7E /* AFXMLRequestOperation.m in Sources */,
 				94D213871787FF9500ADAF7E /* UIImageView+AFNetworking.m in Sources */,
+				C2C0FD9F1788085500AD355B /* C46FacebookConnect.m in Sources */,
+				C2C0FDA2178809CB00AD355B /* C46UserInfo.m in Sources */,
+				C2C0FDA6178813C900AD355B /* NSString+URLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
