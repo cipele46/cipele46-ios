@@ -71,7 +71,9 @@
     NSDictionary *district = [districtsList objectAtIndex:districtIndex];
     
     NSArray *cities = [district valueForKey:@"cities"];
-    NSUInteger cityIndex = [cities indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+    NSInteger cityIndex = -1;
+    
+    cityIndex = [cities indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         NSNumber *citId = [obj valueForKey:@"id"];
         if( [citId compare:ad.cityID] == NSOrderedSame){
             return YES;
@@ -79,11 +81,18 @@
             return NO;
         }
     }];
-    NSDictionary *city = [cities objectAtIndex:cityIndex];
-    NSDictionary *returnDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      [district valueForKey:@"name"], @"name",
-                                      [city valueForKey:@"name"], @"cityName",nil];
-    return returnDictionary;
+    
+    if (cityIndex != NSNotFound) {
+        NSDictionary *city = [cities objectAtIndex:cityIndex];
+        NSDictionary *returnDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          [district valueForKey:@"name"], @"name",
+                                          [city valueForKey:@"name"], @"cityName",nil];
+        return returnDictionary;
+    } else {
+
+        return nil;
+    }
+
 }
 
 -(NSDictionary *) findCategory:(C46Ad *)ad{

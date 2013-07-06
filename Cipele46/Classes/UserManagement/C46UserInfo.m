@@ -14,6 +14,7 @@
                  email:(NSString*) email
              firstName:(NSString*) firstName
               lastName:(NSString*) lastName
+              password:(NSString*) password
 {
     if (self = [super init])
     {
@@ -21,6 +22,7 @@
         _email = [email copy];
         _firstName = [firstName copy];
         _lastName = [lastName copy];
+        _password = [password copy];
     }
     
     return self;

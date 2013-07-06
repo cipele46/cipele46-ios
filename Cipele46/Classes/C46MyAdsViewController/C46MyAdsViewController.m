@@ -7,13 +7,12 @@
 //
 
 #import "C46MyAdsViewController.h"
-
-#import "C46SecondViewController.h"
+#import "C46AdListViewController.h"
 
 @interface C46MyAdsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *adListViewControllerPlaceholderView;
-@property (nonatomic) UIViewController *adListViewController;
+@property (nonatomic) C46AdListViewController *adListViewController;
 @property (nonatomic) UISegmentedControl *adsSegmentControl;
 
 @end
@@ -41,7 +40,7 @@
     self.navigationItem.titleView = _adsSegmentControl;
     
     // Ad list
-    _adListViewController = [[C46SecondViewController alloc] initWithNibName:@"C46SecondViewController" bundle:nil];
+    _adListViewController = [[C46AdListViewController alloc] initWithNibName:@"C46AdListViewController" bundle:nil];
     [_adListViewControllerPlaceholderView addSubview:_adListViewController.view];
 }
 
