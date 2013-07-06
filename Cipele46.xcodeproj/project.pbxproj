@@ -239,6 +239,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1185633017884DFC00149AAB /* HomeTabBarRootControlers */ = {
+			isa = PBXGroup;
+			children = (
+				119F01C51788128300E74817 /* C46AdsViewController */,
+				119F01CD1788251F00E74817 /* C46MyAdsViewController */,
+			);
+			name = HomeTabBarRootControlers;
+			sourceTree = "<group>";
+		};
 		119F01C51788128300E74817 /* C46AdsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,18 +383,17 @@
 		94D2134D1787CE8B00ADAF7E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				11A1E9801788096C00DACF61 /* Model */,
+				11A1E97C1788048E00DACF61 /* C46HomeTabBarController */,
+				1185633017884DFC00149AAB /* HomeTabBarRootControlers */,
 				32E43B6D17883C1E008C9A88 /* C46AdListViewController */,
 				8D6E52311788384500F0E54B /* C46DetailsViewController */,
 				78A746D717882A2500E4A6F4 /* RegisterUserViewController */,
 				78A746D1178829CF00E4A6F4 /* LoginViewController */,
 				C2C0FD9C1788082700AD355B /* UserManagement */,
-				11A1E9801788096C00DACF61 /* Model */,
 				94D213A317881C6D00ADAF7E /* C46AdFilterViewController */,
 				94D2134E1787CE8B00ADAF7E /* C46FirstViewController */,
 				94D213551787CE8B00ADAF7E /* C46SecondViewController */,
-				11A1E97C1788048E00DACF61 /* C46HomeTabBarController */,
-				119F01C51788128300E74817 /* C46AdsViewController */,
-				119F01CD1788251F00E74817 /* C46MyAdsViewController */,
 				94D21391178802E900ADAF7E /* C46ServerCommunicationManager */,
 			);
 			path = Classes;
