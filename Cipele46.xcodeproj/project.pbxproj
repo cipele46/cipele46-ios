@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		11A1E97A1788042B00DACF61 /* C46HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */; };
 		11A1E97F1788096400DACF61 /* C46Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A1E97E1788096400DACF61 /* C46Ad.m */; };
+		78A746D5178829CF00E4A6F4 /* C46LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A746D3178829CF00E4A6F4 /* C46LoginViewController.m */; };
+		78A746D6178829CF00E4A6F4 /* C46LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A746D4178829CF00E4A6F4 /* C46LoginViewController.xib */; };
+		78A746DB17882A7600E4A6F4 /* C46RegisterUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A746D917882A7600E4A6F4 /* C46RegisterUserViewController.m */; };
+		78A746DC17882A7600E4A6F4 /* C46RegisterUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A746DA17882A7600E4A6F4 /* C46RegisterUserViewController.xib */; };
 		94C17D391787CCCE0074D7F7 /* C46AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */; };
 		94C17D451787CCCE0074D7F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D361787CCCE0074D7F7 /* main.m */; };
 		94C17D4F1787CCD70074D7F7 /* Cipele46Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D4B1787CCD70074D7F7 /* Cipele46Tests.m */; };
@@ -38,6 +42,9 @@
 		94D2138D1788008A00ADAF7E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D2138A1787FFCA00ADAF7E /* MobileCoreServices.framework */; };
 		94D21394178802E900ADAF7E /* C46ServerCommunicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D21393178802E900ADAF7E /* C46ServerCommunicationManager.m */; };
 		94D2139C1788094400ADAF7E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D213991788094400ADAF7E /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-deprecated-objc-isa-usage"; }; };
+		94D213A717881C6E00ADAF7E /* C46AdFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D213A517881C6E00ADAF7E /* C46AdFilterViewController.m */; };
+		94D213A817881C6E00ADAF7E /* C46AdFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D213A617881C6E00ADAF7E /* C46AdFilterViewController.xib */; };
+		94D213AC178827EA00ADAF7E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94D213AE178827EA00ADAF7E /* Localizable.strings */; };
 		94EF264A1787CB8800BE46E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF26491787CB8800BE46E3 /* UIKit.framework */; };
 		94EF264C1787CB8800BE46E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF264B1787CB8800BE46E3 /* Foundation.framework */; };
 		94EF264E1787CB8800BE46E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF264D1787CB8800BE46E3 /* CoreGraphics.framework */; };
@@ -71,6 +78,12 @@
 		11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46HomeTabBarController.m; path = C46HomeTabBarController/C46HomeTabBarController.m; sourceTree = "<group>"; };
 		11A1E97D1788096400DACF61 /* C46Ad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46Ad.h; path = Model/C46Ad.h; sourceTree = "<group>"; };
 		11A1E97E1788096400DACF61 /* C46Ad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46Ad.m; path = Model/C46Ad.m; sourceTree = "<group>"; };
+		78A746D2178829CF00E4A6F4 /* C46LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46LoginViewController.h; sourceTree = "<group>"; };
+		78A746D3178829CF00E4A6F4 /* C46LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46LoginViewController.m; sourceTree = "<group>"; };
+		78A746D4178829CF00E4A6F4 /* C46LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46LoginViewController.xib; sourceTree = "<group>"; };
+		78A746D817882A7600E4A6F4 /* C46RegisterUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46RegisterUserViewController.h; path = RegisterUserViewController/C46RegisterUserViewController.h; sourceTree = "<group>"; };
+		78A746D917882A7600E4A6F4 /* C46RegisterUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46RegisterUserViewController.m; path = RegisterUserViewController/C46RegisterUserViewController.m; sourceTree = "<group>"; };
+		78A746DA17882A7600E4A6F4 /* C46RegisterUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = C46RegisterUserViewController.xib; path = RegisterUserViewController/C46RegisterUserViewController.xib; sourceTree = "<group>"; };
 		94C17D231787CCCE0074D7F7 /* C46AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AppDelegate.h; sourceTree = "<group>"; };
 		94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AppDelegate.m; sourceTree = "<group>"; };
 		94C17D361787CCCE0074D7F7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +134,12 @@
 		94D213981788094400ADAF7E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		94D213991788094400ADAF7E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		94D2139A1788094400ADAF7E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		94D213A417881C6E00ADAF7E /* C46AdFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdFilterViewController.h; sourceTree = "<group>"; };
+		94D213A517881C6E00ADAF7E /* C46AdFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdFilterViewController.m; sourceTree = "<group>"; };
+		94D213A617881C6E00ADAF7E /* C46AdFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdFilterViewController.xib; sourceTree = "<group>"; };
+		94D213AB178827DB00ADAF7E /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94D213AD178827EA00ADAF7E /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		94D213AF178827EF00ADAF7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		94EF26461787CB8800BE46E3 /* Cipele46.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cipele46.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EF26491787CB8800BE46E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94EF264B1787CB8800BE46E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -195,6 +214,26 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		78A746D1178829CF00E4A6F4 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				78A746D2178829CF00E4A6F4 /* C46LoginViewController.h */,
+				78A746D3178829CF00E4A6F4 /* C46LoginViewController.m */,
+				78A746D4178829CF00E4A6F4 /* C46LoginViewController.xib */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		78A746D717882A2500E4A6F4 /* RegisterUserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				78A746D817882A7600E4A6F4 /* C46RegisterUserViewController.h */,
+				78A746D917882A7600E4A6F4 /* C46RegisterUserViewController.m */,
+				78A746DA17882A7600E4A6F4 /* C46RegisterUserViewController.xib */,
+			);
+			name = RegisterUserViewController;
+			sourceTree = "<group>";
+		};
 		94C17D221787CCCE0074D7F7 /* Cipele46 */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,8 +272,11 @@
 		94D2134D1787CE8B00ADAF7E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				78A746D717882A2500E4A6F4 /* RegisterUserViewController */,
+				78A746D1178829CF00E4A6F4 /* LoginViewController */,
 				C2C0FD9C1788082700AD355B /* UserManagement */,
 				11A1E9801788096C00DACF61 /* Model */,
+				94D213A317881C6D00ADAF7E /* C46AdFilterViewController */,
 				94D2134E1787CE8B00ADAF7E /* C46FirstViewController */,
 				94D213551787CE8B00ADAF7E /* C46SecondViewController */,
 				11A1E97C1788048E00DACF61 /* C46HomeTabBarController */,
@@ -288,6 +330,7 @@
 			children = (
 				94D213651787CECC00ADAF7E /* Cipele46-Info.plist */,
 				94D213661787CECC00ADAF7E /* Cipele46-Prefix.pch */,
+				94D213AE178827EA00ADAF7E /* Localizable.strings */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -354,6 +397,16 @@
 				94D2139A1788094400ADAF7E /* README.md */,
 			);
 			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		94D213A317881C6D00ADAF7E /* C46AdFilterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				94D213A417881C6E00ADAF7E /* C46AdFilterViewController.h */,
+				94D213A517881C6E00ADAF7E /* C46AdFilterViewController.m */,
+				94D213A617881C6E00ADAF7E /* C46AdFilterViewController.xib */,
+			);
+			path = C46AdFilterViewController;
 			sourceTree = "<group>";
 		};
 		94EF263D1787CB8800BE46E3 = {
@@ -472,6 +525,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				hr,
 			);
 			mainGroup = 94EF263D1787CB8800BE46E3;
 			productRefGroup = 94EF26471787CB8800BE46E3 /* Products */;
@@ -498,6 +552,10 @@
 				94D213601787CE8B00ADAF7E /* second.png in Resources */,
 				94D213611787CE8B00ADAF7E /* second@2x.png in Resources */,
 				94D213631787CE8B00ADAF7E /* C46SecondViewController.xib in Resources */,
+				94D213A817881C6E00ADAF7E /* C46AdFilterViewController.xib in Resources */,
+				94D213AC178827EA00ADAF7E /* Localizable.strings in Resources */,
+				78A746D6178829CF00E4A6F4 /* C46LoginViewController.xib in Resources */,
+				78A746DC17882A7600E4A6F4 /* C46RegisterUserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +610,9 @@
 				94D21394178802E900ADAF7E /* C46ServerCommunicationManager.m in Sources */,
 				94D2139C1788094400ADAF7E /* JSONKit.m in Sources */,
 				C2C0FDB31788281200AD355B /* C46UserManager.m in Sources */,
+				94D213A717881C6E00ADAF7E /* C46AdFilterViewController.m in Sources */,
+				78A746D5178829CF00E4A6F4 /* C46LoginViewController.m in Sources */,
+				78A746DB17882A7600E4A6F4 /* C46RegisterUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,8 +639,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				94C17D4D1787CCD70074D7F7 /* en */,
+				94D213AB178827DB00ADAF7E /* hr */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		94D213AE178827EA00ADAF7E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D213AD178827EA00ADAF7E /* hr */,
+				94D213AF178827EF00ADAF7E /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
