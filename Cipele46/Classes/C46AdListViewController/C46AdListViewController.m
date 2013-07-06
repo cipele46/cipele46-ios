@@ -101,7 +101,7 @@
 
 #pragma mark - server comm delegate response method
 
--(void)didReceiveAds:(NSArray *)ads{
+-(void)didReceiveAds:(NSArray *)ads withError:(NSError *)error {
     for (NSDictionary *dic in ads){
         C46Ad *ad = [[C46Ad alloc] init];
         ad.status = [dic valueForKey:@"id"];
@@ -144,12 +144,12 @@
     [self.tView reloadData];
 }
 
--(void)didReceiveCategories:(NSArray *)categories{
+-(void)didReceiveCategories:(NSArray *)categories withError:(NSError *)error {
     categoriesList = categories;
     [self.serverCommunicationManager districts];
 }
 
--(void)didReceiveDistricts:(NSArray *)districts{
+-(void)didReceiveDistricts:(NSArray *)districts withError:(NSError *)error {
     districtsList = districts;
     [self.serverCommunicationManager ads];
 }

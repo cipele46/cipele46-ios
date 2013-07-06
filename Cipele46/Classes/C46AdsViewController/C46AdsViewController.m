@@ -10,7 +10,7 @@
 #import "C46AdListViewController.h"
 #import "C46AdFilterViewController.h"
 
-@interface C46AdsViewController () <C46AdListViewControllerDelegate>
+@interface C46AdsViewController () <C46AdListViewControllerDelegate, C46AdFilterDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *adListViewControllerPlaceholderView;
 
@@ -37,14 +37,22 @@
     _adListViewController = [[C46AdListViewController alloc] initWithNibName:@"C46AdListViewController" bundle:nil];
     _adListViewController.delegate = self;
     [_adListViewControllerPlaceholderView addSubview:_adListViewController.view];
-    
 }
 
 
 - (IBAction)filterAdsButtonPress:(id)sender
 {
-    C46AdFilterViewController *adFilter = [[C46AdFilterViewController alloc] init];
-    [self.navigationController pushViewController:adFilter animated:YES];
+    C46AdFilterViewController *adFilterViewController = [[C46AdFilterViewController alloc] init];
+    adFilterViewController.delegate = self;
+    
+    [self.navigationController pushViewController:adFilterViewController animated:YES];
+}
+
+#pragma mark - C46AdFilterDelegate
+
+- (void)didUpdateFilters:(kC46FilterAdvertTypes)advertType category:(NSString *)category district:(NSString *)district
+{
+    NSLog(@"update meee");
 }
 
 #pragma mark - C46AdListViewControllerDelegate
