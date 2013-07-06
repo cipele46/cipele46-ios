@@ -30,3 +30,7 @@
 "LOGIN_VIEW__LOGIN" = "Login";
 "LOGIN_VIEW__FORGOT_PASSWORD" = "Forgot password";
 "LOGIN_VIEW__REGISTER" = "Register";
+
+/* C46DetailsViewController*/
+"DETAIL_VIEW__BTN_CALL" = "Call";
+"DETAIL_VIEW__BTN_MESSAGE" = "Send message";
