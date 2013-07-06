@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    kC46FilterAdvertTypeSupply,
-    kC46FilterAdvertTypeDemand
+    kC46FilterAdvertTypeSupply = 1,
+    kC46FilterAdvertTypeDemand = 2
 } kC46FilterAdvertTypes;
 
 @protocol C46ServerCommunicationManagerDelegate <NSObject>
@@ -18,14 +18,14 @@ typedef enum {
 //   Returns an array of dictionaries with keys: 'cityID', 'phone',
 // 'categoryID', 'description', 'title', 'imageUrl', 'districtID', 'id',
 // 'email'.
-- (void)didReceiveAds:(NSArray *)ads;
+- (void)didReceiveAds:(NSArray *)ads withError:(NSError *)error;
 //   Returns an array of dictionaries with keys: 'id', 'name'.
-- (void)didReceiveCategories:(NSArray *)categories;
+- (void)didReceiveCategories:(NSArray *)categories withError:(NSError *)error;
 //   Returns an array of dictionaries with keys: 'id', 'name'.
-- (void)didReceiveDistricts:(NSArray *)districts;
+- (void)didReceiveDistricts:(NSArray *)districts withError:(NSError *)error;
 
 //   Returns dictionary with keys: 'name', 'email', 'phone' (optional).
-- (void)didReceiveLoginResponse:(NSDictionary *)userInfo;
+- (void)didReceiveLoginResponse:(NSDictionary *)userInfo withError:(NSError *)error;
 @end
 
 @interface C46ServerCommunicationManager : NSObject
@@ -36,7 +36,7 @@ typedef enum {
 - (void)categories;
 - (void)districts;
 
-- (void)loginWithUsername:(NSString *)username;
+- (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password;
 
 -(void) loginWithEmail:(NSString*) email
    facebookAccessToken:(NSString*) accessToken
