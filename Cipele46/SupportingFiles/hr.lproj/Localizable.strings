@@ -21,9 +21,10 @@
 "REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Lozinka ponovo";
 
 /* C46LoginViewController */
-"LOGIN_VIEW__FACEBOOK_LOGIN" = "";
-"LOGIN_VIEW__EMAIL" = "";
-"LOGIN_VIEW__PASSWORD" = "";
-"LOGIN_VIEW__LOGIN" = "";
-"LOGIN_VIEW__FORGOT_PASSWORD" = "";
-"LOGIN_VIEW__REGISTER" = "";
+"LOGIN_VIEW__TITLE" = "Prijava";
+"LOGIN_VIEW__FACEBOOK_LOGIN" = "Prijava putem Facebooka";
+"LOGIN_VIEW__EMAIL" = "Email";
+"LOGIN_VIEW__PASSWORD" = "Lozinka";
+"LOGIN_VIEW__LOGIN" = "Prijavi se";
+"LOGIN_VIEW__FORGOT_PASSWORD" = "Zaboravio/la sam lozinku";
+"LOGIN_VIEW__REGISTER" = "Registriraj se";
