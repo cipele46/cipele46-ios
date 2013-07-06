@@ -89,7 +89,8 @@
         else
         {
             _isFBLogin = NO;
-            _userInfo = [self userInfoWithServerDict:userInfo];
+            _userInfo = [self userInfoWithServerDict:userInfo
+                                            password:password];
             [self broadcastNotification:C46UserManagerLoggedInNotification];
         }
     }];
@@ -114,6 +115,7 @@
 #pragma mark - private
 
 -(C46UserInfo*) userInfoWithServerDict:(NSDictionary*) dict
+                              password:(NSString*) password
 {
     NSString* firstName = [dict objectForKey:@"first_name"];
     NSString* lastName = [dict objectForKey:@"last_name"];
@@ -123,7 +125,8 @@
     C46UserInfo* userInfo = [[C46UserInfo alloc] initWithUserName:userName
                                                             email:email
                                                         firstName:firstName
-                                                         lastName:lastName];
+                                                         lastName:lastName
+                                                         password:password];
     
     return userInfo;
 }

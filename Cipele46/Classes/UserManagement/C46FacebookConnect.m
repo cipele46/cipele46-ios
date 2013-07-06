@@ -168,16 +168,18 @@
 {
     FBGraphObject* data = [[response objectForKey:@"data"] firstObject];
     
-    // TODO: placeholder keys
     NSString* firstName = [data objectForKey:@"first_name"];
     NSString* lastName = [data objectForKey:@"last_name"];
     NSString* userName = [data objectForKey:@"name"];
     NSString* email = [data objectForKey:@"email"];
     
+    NSString* accessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+    
     C46UserInfo* userInfo = [[C46UserInfo alloc] initWithUserName:userName
                                                             email:email
                                                         firstName:firstName
-                                                         lastName:lastName];
+                                                         lastName:lastName
+                                                         password:accessToken];
     
     return userInfo;
 }
