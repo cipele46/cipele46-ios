@@ -125,7 +125,7 @@
         [self.tDataSource addObject:ad];
         NSUInteger categoryIndex = [categoriesList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
             NSNumber *catId = [obj valueForKey:@"id"];
-            if( [catId compare:ad.categoryID]==NSOrderedSame ){
+            if( [catId compare:ad.categoryID] == NSOrderedSame ){
                 return YES;
             }else{
                 return NO;

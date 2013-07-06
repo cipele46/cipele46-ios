@@ -13,11 +13,13 @@
 -(id) initWithUserName:(NSString*) userName
                  email:(NSString*) email
              firstName:(NSString*) firstName
-              lastName:(NSString*) lastName;
+              lastName:(NSString*) lastName
+              password:(NSString*) password;
 
 @property(nonatomic,readonly) NSString* userName;
 @property(nonatomic,readonly) NSString* email;
 @property(nonatomic,readonly) NSString* firstName;
 @property(nonatomic,readonly) NSString* lastName;
+@property(nonatomic,readonly) NSString* password;
 
 @end

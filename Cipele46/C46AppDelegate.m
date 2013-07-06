@@ -19,8 +19,15 @@
 
 @implementation C46AppDelegate
 
+static void uncaughtExceptionHandler(NSException * exception)
+{
+    NSLog(@"Unhandled exception: %@", exception.description);
+    NSLog(@"Stack trace: %@", [exception callStackSymbols].description);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.homeTabBarController = [[C46HomeTabBarController alloc] init];
     self.window.rootViewController = self.homeTabBarController;
