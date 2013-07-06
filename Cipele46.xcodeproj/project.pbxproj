@@ -64,6 +64,7 @@
 		C2C0FDAC1788148A00AD355B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C0FDAB1788148A00AD355B /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C2C0FDAE1788149400AD355B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C0FDAD1788149400AD355B /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C2C0FDB0178814A000AD355B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C0FDAF178814A000AD355B /* libsqlite3.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C2C0FDB31788281200AD355B /* C46UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C0FDB21788281200AD355B /* C46UserManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,8 @@
 		C2C0FDAB1788148A00AD355B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C2C0FDAD1788149400AD355B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C2C0FDAF178814A000AD355B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C2C0FDB11788281200AD355B /* C46UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46UserManager.h; path = UserManagement/C46UserManager.h; sourceTree = "<group>"; };
+		C2C0FDB21788281200AD355B /* C46UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46UserManager.m; path = UserManagement/C46UserManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +489,8 @@
 				C2C0FD9E1788085500AD355B /* C46FacebookConnect.m */,
 				C2C0FDA0178809CB00AD355B /* C46UserInfo.h */,
 				C2C0FDA1178809CB00AD355B /* C46UserInfo.m */,
+				C2C0FDB11788281200AD355B /* C46UserManager.h */,
+				C2C0FDB21788281200AD355B /* C46UserManager.m */,
 			);
 			name = UserManagement;
 			sourceTree = "<group>";
@@ -642,6 +647,7 @@
 				94D2139C1788094400ADAF7E /* JSONKit.m in Sources */,
 				119F01C31788127C00E74817 /* C46AdsViewController.m in Sources */,
 				119F01CB1788251400E74817 /* C46MyAdsViewController.m in Sources */,
+				C2C0FDB31788281200AD355B /* C46UserManager.m in Sources */,
 				94D213A717881C6E00ADAF7E /* C46AdFilterViewController.m in Sources */,
 				78A746D5178829CF00E4A6F4 /* C46LoginViewController.m in Sources */,
 				78A746DB17882A7600E4A6F4 /* C46RegisterUserViewController.m in Sources */,

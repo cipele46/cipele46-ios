@@ -57,5 +57,30 @@ typedef void (^DelegateCallerBlock)(NSArray *);
      }];
 }
 
+-(void) loginWithEmail:(NSString*) email
+   facebookAccessToken:(NSString*) accessToken
+     completionHandler:(void(^)(NSError* error, NSDictionary* userInfo)) completionHandler
+{
+    dispatch_async(dispatch_get_current_queue(), ^{
+        completionHandler(nil, @{
+                          @"name":@"tvrtko tvrtkovic",
+                          @"email":@"tvrtko@somemail.com",
+                          @"phone":@"+385991234567",
+                          });
+    });
+}
+
+-(void) loginWithUserName:(NSString*) userName
+                 password:(NSString*) password
+        completionHandler:(void(^)(NSError* error, NSDictionary* userInfo)) completionHandler
+{
+    dispatch_async(dispatch_get_current_queue(), ^{
+        completionHandler(nil, @{
+                          @"name":@"tvrtko tvrtkovic",
+                          @"email":@"tvrtko@somemail.com",
+                          @"phone":@"+385991234567",
+                          });
+    });
+}
 
 @end
