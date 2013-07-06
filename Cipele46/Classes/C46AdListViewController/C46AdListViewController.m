@@ -33,16 +33,17 @@
     return self;
 }
 
--(NSMutableArray *) tDataSource {
+/*-(NSMutableArray *) tDataSource {
     if(!_tDataSource)
         return [[NSMutableArray alloc] init];
     else
         return _tDataSource;
-}
+}*/
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tDataSource = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
     self.serverCommunicationManager = [[C46ServerCommunicationManager alloc] init];
     [self.serverCommunicationManager setDelegate:self];
