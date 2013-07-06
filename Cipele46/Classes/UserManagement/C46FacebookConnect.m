@@ -7,6 +7,7 @@
 //
 
 #import "C46FacebookConnect.h"
+#import "NSString+URLEncoding.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @implementation C46FacebookConnect
