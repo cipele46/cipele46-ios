@@ -16,6 +16,14 @@
 /*  C46RegisterUserViewController */
 "REGISTER_USER_VIEW__NAME" = "Ime";
 "REGISTER_USER_VIEW__EMAIL" = "Email";
-"TELEPHONE" = "Telefon";
+"REGISTER_USER_VIEW__TELEPHONE" = "Telefon";
 "REGISTER_USER_VIEW__PASSWORD" = "Lozinka";
 "REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Lozinka ponovo";
+
+/* C46LoginViewController */
+"LOGIN_VIEW__FACEBOOK_LOGIN" = "";
+"LOGIN_VIEW__EMAIL" = "";
+"LOGIN_VIEW__PASSWORD" = "";
+"LOGIN_VIEW__LOGIN" = "";
+"LOGIN_VIEW__FORGOT_PASSWORD" = "";
+"LOGIN_VIEW__REGISTER" = "";
