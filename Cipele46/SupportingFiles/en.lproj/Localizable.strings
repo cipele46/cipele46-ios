@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Cipele46
+
+  Created by Miran Brajsa on 7/6/13.
+  Copyright (c) 2013 Miran Brajsa. All rights reserved.
+*/
+
+"FILTER_GROUP_HEADER__ADVERT_TYPE" = "Advert type";
+"FILTER_GROUP_HEADER__CATEGORY" = "Category";
+"FILTER_GROUP_HEADER__DISTRICT" = "Region";
+
+"FILTER_GROUP_HEADER__ADVERT_TYPE__SUPPLY" = "Suply";
+"FILTER_GROUP_HEADER__ADVERT_TYPE__DEMAND" = "Demand";
+
+/*  C46RegisterUserViewController */
+"REGISTER_USER_VIEW__NAME" = "Name";
+"REGISTER_USER_VIEW__EMAIL" = "Email";
+"REGISTER_USER_VIEW__TELEPHONE" = "Telephone";
+"REGISTER_USER_VIEW__PASSWORD" = "Password";
+"REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Password again";

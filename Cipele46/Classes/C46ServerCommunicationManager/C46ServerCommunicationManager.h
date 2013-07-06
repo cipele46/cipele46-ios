@@ -14,6 +14,7 @@ typedef enum {
 } kC46FilterAdvertTypes;
 
 @protocol C46ServerCommunicationManagerDelegate <NSObject>
+@optional
 //   Returns an array of dictionaries with keys: 'cityID', 'phone',
 // 'categoryID', 'description', 'title', 'imageUrl', 'districtID', 'id',
 // 'email'.
@@ -22,6 +23,9 @@ typedef enum {
 - (void)didReceiveCategories:(NSArray *)categories;
 //   Returns an array of dictionaries with keys: 'id', 'name'.
 - (void)didReceiveDistricts:(NSArray *)districts;
+
+//   Returns dictionary with keys: 'name', 'email', 'phone' (optional).
+- (void)didReceiveLoginResponse:(NSDictionary *)userInfo;
 @end
 
 @interface C46ServerCommunicationManager : NSObject
@@ -31,5 +35,16 @@ typedef enum {
 - (void)ads;
 - (void)categories;
 - (void)districts;
+
+- (void)loginWithUsername:(NSString *)username;
+
+-(void) loginWithEmail:(NSString*) email
+   facebookAccessToken:(NSString*) accessToken
+     completionHandler:(void(^)(NSError* error, NSDictionary* userInfo)) completionHandler;
+
+-(void) loginWithUserName:(NSString*) userName
+                 password:(NSString*) password
+        completionHandler:(void(^)(NSError* error, NSDictionary* userInfo)) completionHandler;
+
 
 @end

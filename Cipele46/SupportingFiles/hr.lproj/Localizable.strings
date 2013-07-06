@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Cipele46
+
+  Created by Miran Brajsa on 7/6/13.
+  Copyright (c) 2013 Miran Brajsa. All rights reserved.
+*/
+
+"FILTER_GROUP_HEADER__ADVERT_TYPE" = "Tip oglasa";
+"FILTER_GROUP_HEADER__CATEGORY" = "Kategorija";
+"FILTER_GROUP_HEADER__DISTRICT" = "Županija";
+
+"FILTER_GROUP_HEADER__ADVERT_TYPE__SUPPLY" = "Ponuda";
+"FILTER_GROUP_HEADER__ADVERT_TYPE__DEMAND" = "Potražnja";
+
+/*  C46RegisterUserViewController */
+"REGISTER_USER_VIEW__NAME" = "Ime";
+"REGISTER_USER_VIEW__EMAIL" = "Email";
+"TELEPHONE" = "Telefon";
+"REGISTER_USER_VIEW__PASSWORD" = "Lozinka";
+"REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Lozinka ponovo";
