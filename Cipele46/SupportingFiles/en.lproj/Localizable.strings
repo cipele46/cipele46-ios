@@ -21,9 +21,10 @@
 "REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Password again";
 
 /* C46LoginViewController */
-"LOGIN_VIEW__FACEBOOK_LOGIN" = "";
-"LOGIN_VIEW__EMAIL" = "";
-"LOGIN_VIEW__PASSWORD" = "";
-"LOGIN_VIEW__LOGIN" = "";
-"LOGIN_VIEW__FORGOT_PASSWORD" = "";
-"LOGIN_VIEW__REGISTER" = "";
+"LOGIN_VIEW__TITLE" = "Login";
+"LOGIN_VIEW__FACEBOOK_LOGIN" = "Facebook login";
+"LOGIN_VIEW__EMAIL" = "Email";
+"LOGIN_VIEW__PASSWORD" = "Password";
+"LOGIN_VIEW__LOGIN" = "Login";
+"LOGIN_VIEW__FORGOT_PASSWORD" = "Forgot password";
+"LOGIN_VIEW__REGISTER" = "Register";
