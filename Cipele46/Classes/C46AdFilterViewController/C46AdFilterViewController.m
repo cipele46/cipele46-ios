@@ -130,6 +130,8 @@
         default:
             NSAssert(NO, @"Should not be here.");
     }
+    
+    [self.delegate didUpdateFilters:self.selectedAdvertType category:self.selectedCategory district:self.selectedDistrict];
 }
 
 #pragma mark - UITableViewDataSource
