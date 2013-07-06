@@ -1,0 +1,43 @@
+--------------------------------------------------------------------------------
+
+---------
+1) Doing.
+---------
+
+    * Adverts page.
+        * Advert details.
+            * Advert inquiry.
+        * Filters.
+
+    * Search page. (Optional)
+
+    * Advert placement.
+
+    * Login.
+        * Facebook.
+        * Twitter. (Optional).
+        * Google. (Optional).
+        * Cipele46.
+            * User registration.
+
+    * User module (singleton).
+
+    * Service manager module (singleton).
+
+    * My adverts page.
+        * Active.
+        * Closed.
+        * Favorites.
+
+    * Settings page.
+        * Login.
+        * User details change.
+        * Password change.
+
+--------------------------------------------------------------------------------
+
+--------
+2) Done.
+--------
+
+--------------------------------------------------------------------------------
