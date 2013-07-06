@@ -101,13 +101,13 @@
 
 #pragma mark - C46ServerCommunicationManagerDelegate
 
-- (void)didReceiveCategories:(NSArray *)categories {
+- (void)didReceiveCategories:(NSArray *)categories withError:(NSError *)error {
     self.categories = categories;
     self.categoriesFetched = YES;
     [self updateTableViewSource];
 }
 
-- (void)didReceiveDistricts:(NSArray *)districts {
+- (void)didReceiveDistricts:(NSArray *)districts withError:(NSError *)error {
     self.districts = districts;
     self.districtsFetched = YES;
     [self updateTableViewSource];
