@@ -14,11 +14,13 @@
 "FILTER_GROUP_HEADER__ADVERT_TYPE__DEMAND" = "Demand";
 
 /*  C46RegisterUserViewController */
+"REGISTER_USER_VIEW__TITLE" = "Register";
 "REGISTER_USER_VIEW__NAME" = "Name";
 "REGISTER_USER_VIEW__EMAIL" = "Email";
 "REGISTER_USER_VIEW__TELEPHONE" = "Telephone";
 "REGISTER_USER_VIEW__PASSWORD" = "Password";
 "REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Password again";
+"REGISTER_USER_VIEW__BTN_BACK" = "Back";
 
 /* C46LoginViewController */
 "LOGIN_VIEW__TITLE" = "Login";
