@@ -43,4 +43,10 @@ typedef void (^DelegateCallerBlock)(NSArray *);
     }];
 }
 
+- (void)districts {
+    [self serverCommunicationGetPathWorker:@"districts" withBlock:^(NSArray *response){
+        [self.delegate didReceiveDistricts:response];
+    }];
+}
+
 @end
