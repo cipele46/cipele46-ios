@@ -9,6 +9,7 @@
 #import "C46FacebookConnect.h"
 #import "NSString+URLEncoding.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "C46UserInfo.h"
 
 @implementation C46FacebookConnect
 
@@ -32,17 +33,21 @@
     [self loginToFacebookWithPermissions:[[self class] loginPermissions]
                        completionHandler:^(NSError *error)
     {
-        if (nil != error)
+        dispatch_async(dispatch_get_current_queue(), ^()
         {
-            completionHandler(error, nil);
-        }
-        else
-        {
-            [self fetchUserInfoWithCompletionHandler:^(NSError *error, C46UserInfo *userInfo)
+            if (nil != error)
             {
-                completionHandler(error, userInfo);
-            }];
-        }
+                completionHandler(error, nil);
+            }
+            else
+            {
+                [self fetchUserInfoWithCompletionHandler:^(NSError *error, C46UserInfo *userInfo)
+                {
+                    completionHandler(error, userInfo);
+                }];
+            }
+            
+        });
     }];
 }
 
@@ -62,11 +67,16 @@
     return [[FBSession activeSession] handleDidBecomeActive];
 }
 
+-(NSString *)accessToken
+{
+    return [[[FBSession activeSession] accessTokenData] accessToken];
+}
+
 #pragma mark - private
 
 +(NSArray*) loginPermissions
 {
-    return @[@"email"];
+    return @[@"email", @"user_about_me"];
 }
 
 -(void) loginToFacebookWithPermissions:(NSArray*)permissions
@@ -89,7 +99,7 @@
         {
             if (NULL != completionHandlerCopy)
             {
-                completionHandlerCopy(nil);
+                completionHandlerCopy(error);
                 completionHandlerCopy = NULL;
             }
         };
@@ -108,6 +118,30 @@
 -(void) fetchUserInfoWithCompletionHandler:(void(^)(NSError* error, C46UserInfo* userInfo)) completionHandler
 {
     NSAssert(NULL != completionHandler, @"completion handler is required!");
+    
+    NSString* path = [self graphPathForFQLQuery:[self userDataQueryForUser:@"me()"]];
+    
+    FBRequestConnection* connection = [[FBRequestConnection alloc] init];
+    FBSession* activeSession = [FBSession activeSession];
+    
+    FBRequest* request = [[FBRequest alloc] initWithSession:activeSession
+                                                  graphPath:path];
+    
+    [connection addRequest:request
+         completionHandler: ^(FBRequestConnection *requestConnection, id result, NSError *error)
+    {
+        if (nil != error)
+        {
+            completionHandler(error, nil);
+        }
+        else
+        {
+            C46UserInfo* userInfo = [self userInfoWithFBResponse:result];
+            completionHandler(nil, userInfo);
+        }
+    }];
+    
+    [connection start];
 }
 
 -(NSString*) userDataQueryForUser:(NSString*) userID
@@ -128,6 +162,24 @@
                       ];
     
     return path;
+}
+
+-(C46UserInfo*) userInfoWithFBResponse:(FBGraphObject*) response
+{
+    FBGraphObject* data = [[response objectForKey:@"data"] firstObject];
+    
+    // TODO: placeholder keys
+    NSString* firstName = [data objectForKey:@"first_name"];
+    NSString* lastName = [data objectForKey:@"last_name"];
+    NSString* userName = [data objectForKey:@"name"];
+    NSString* email = [data objectForKey:@"email"];
+    
+    C46UserInfo* userInfo = [[C46UserInfo alloc] initWithUserName:userName
+                                                            email:email
+                                                        firstName:firstName
+                                                         lastName:lastName];
+    
+    return userInfo;
 }
 
 @end

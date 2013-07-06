@@ -38,4 +38,13 @@ typedef enum {
 
 - (void)loginWithUsername:(NSString *)username;
 
+-(void) loginWithEmail:(NSString*) email
+   facebookAccessToken:(NSString*) accessToken
+     completionHandler:(void(^)(NSError* error, NSDictionary* userInfo)) completionHandler;
+
+-(void) loginWithUserName:(NSString*) userName
+                 password:(NSString*) password
+        completionHandler:(void(^)(NSError* error, NSDictionary* userInfo)) completionHandler;
+
+
 @end

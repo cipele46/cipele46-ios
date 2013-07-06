@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 Miran Brajsa. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "C46LoginViewController.h"
 
-@interface LoginViewController ()
+@interface C46LoginViewController ()
 
 -(void)displayAlertView:(NSString*)message;
 -(BOOL)areLoginAndPasswordEntered;
 
 @end
 
-@implementation LoginViewController
+@implementation C46LoginViewController
 
 @synthesize fieldEmail;
 @synthesize fieldPassword;
