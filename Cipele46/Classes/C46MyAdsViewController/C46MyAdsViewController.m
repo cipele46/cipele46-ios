@@ -9,7 +9,7 @@
 #import "C46MyAdsViewController.h"
 #import "C46AdListViewController.h"
 
-@interface C46MyAdsViewController ()
+@interface C46MyAdsViewController () <C46AdListViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *adListViewControllerPlaceholderView;
 @property (nonatomic) C46AdListViewController *adListViewController;
@@ -33,19 +33,27 @@
 {
     [super viewDidLoad];
     
-    
     // Segment control
     _adsSegmentControl = [[UISegmentedControl alloc] initWithItems:@[@"Favoriti", @"Aktivni", @"Zatvoreni"]];
+    _adsSegmentControl.selectedSegmentIndex = 0;
     [_adsSegmentControl addTarget:self action:@selector(adsSegmentControlValueChanged:) forControlEvents:UIControlEventValueChanged];
     self.navigationItem.titleView = _adsSegmentControl;
     
     // Ad list
     _adListViewController = [[C46AdListViewController alloc] initWithNibName:@"C46AdListViewController" bundle:nil];
+    _adListViewController.delegate = self;
     [_adListViewControllerPlaceholderView addSubview:_adListViewController.view];
 }
 
 
 - (void)adsSegmentControlValueChanged:(id)sender
+{
+    NSLog(@"Segment control value changed");
+}
+
+#pragma mark - C46AdListViewControllerDelegate
+
+- (void)didSelectAdListViewController:(C46Ad *)ad
 {
     [_delegate adsViewController:self didSelectAd:nil];
 }
