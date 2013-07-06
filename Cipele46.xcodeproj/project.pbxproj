@@ -13,6 +13,7 @@
 		119F01CC1788251400E74817 /* C46MyAdsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119F01CA1788251400E74817 /* C46MyAdsViewController.xib */; };
 		11A1E97A1788042B00DACF61 /* C46HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */; };
 		11A1E97F1788096400DACF61 /* C46Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A1E97E1788096400DACF61 /* C46Ad.m */; };
+		11B1F79117883629001B8969 /* AppIcon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B1F79017883629001B8969 /* AppIcon_114x114.png */; };
 		78A746D5178829CF00E4A6F4 /* C46LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A746D3178829CF00E4A6F4 /* C46LoginViewController.m */; };
 		78A746D6178829CF00E4A6F4 /* C46LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A746D4178829CF00E4A6F4 /* C46LoginViewController.xib */; };
 		78A746DB17882A7600E4A6F4 /* C46RegisterUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A746D917882A7600E4A6F4 /* C46RegisterUserViewController.m */; };
@@ -89,6 +90,7 @@
 		11A1E9781788042B00DACF61 /* C46HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46HomeTabBarController.m; path = C46HomeTabBarController/C46HomeTabBarController.m; sourceTree = "<group>"; };
 		11A1E97D1788096400DACF61 /* C46Ad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46Ad.h; path = Model/C46Ad.h; sourceTree = "<group>"; };
 		11A1E97E1788096400DACF61 /* C46Ad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46Ad.m; path = Model/C46Ad.m; sourceTree = "<group>"; };
+		11B1F79017883629001B8969 /* AppIcon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon_114x114.png; path = ../../AppIcon_114x114.png; sourceTree = "<group>"; };
 		78A746D2178829CF00E4A6F4 /* C46LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46LoginViewController.h; sourceTree = "<group>"; };
 		78A746D3178829CF00E4A6F4 /* C46LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46LoginViewController.m; sourceTree = "<group>"; };
 		78A746D4178829CF00E4A6F4 /* C46LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46LoginViewController.xib; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		94D213461787CDB500ADAF7E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				11B1F79017883629001B8969 /* AppIcon_114x114.png */,
 				94D213471787CDB500ADAF7E /* Default-568h@2x.png */,
 				94D213481787CDB500ADAF7E /* Default.png */,
 				94D213491787CDB500ADAF7E /* Default@2x.png */,
@@ -592,6 +595,7 @@
 				94D213AC178827EA00ADAF7E /* Localizable.strings in Resources */,
 				78A746D6178829CF00E4A6F4 /* C46LoginViewController.xib in Resources */,
 				78A746DC17882A7600E4A6F4 /* C46RegisterUserViewController.xib in Resources */,
+				11B1F79117883629001B8969 /* AppIcon_114x114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
