@@ -52,7 +52,9 @@
 
 - (void)didUpdateFilters:(kC46FilterAdvertTypes)advertType category:(NSString *)category district:(NSString *)district
 {
-    NSLog(@"update meee");
+    NSLog(@"Filter changed");
+    NSLog(@"Category: %@", category);
+    NSLog(@"District: %@", district);
 }
 
 #pragma mark - C46AdListViewControllerDelegate
