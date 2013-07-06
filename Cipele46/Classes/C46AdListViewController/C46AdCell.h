@@ -14,5 +14,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *category;
 @property (nonatomic, weak) IBOutlet UILabel *city;
 @property (nonatomic, weak) IBOutlet UIImageView *leftImage;
+@property (nonatomic, weak) IBOutlet UIView *colorView;
 
 @end

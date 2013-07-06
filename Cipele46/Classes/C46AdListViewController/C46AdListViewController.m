@@ -121,7 +121,7 @@
         ad.categoryID = [dic valueForKey:@"categoryID"];
         ad.adID = [dic valueForKey:@"id"];
         ad.cityID = [dic valueForKey:@"cityID"];
-        ad.type = [dic valueForKey:@"type"];
+        ad.type = [dic valueForKey:@"ad_type"];
         ad.email = [dic valueForKey:@"email"];
         ad.title = [dic valueForKey:@"title"];
         NSDictionary *category = [dic valueForKey:@"category"];
@@ -185,6 +185,12 @@
     cell.title.text = ad.title;
     cell.category.text = ad.category;
     cell.city.text = ad.city;
+    NSLog(@"adtype=%@",ad.type);
+    if([ad.type compare:[NSNumber numberWithInt:1]] == NSOrderedSame){
+        [cell.colorView setBackgroundColor:[UIColor colorWithRed:25.0f/255.0f green:225.0f/255.0f blue:206.0f/255.0f alpha:1.0]];
+    }else{
+        [cell.colorView setBackgroundColor:[UIColor colorWithRed:251.0f/255.0f green:62.0f/255.0f blue:38.0f/255.0f alpha:1.0]];
+    }
     return cell;
 }
 
