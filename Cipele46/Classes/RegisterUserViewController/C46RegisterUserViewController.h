@@ -12,6 +12,7 @@
 
 #pragma mark - Properties
 
+@property (retain, nonatomic) IBOutlet UIScrollView* baseView;
 @property (retain, nonatomic) IBOutlet UITextField* fieldName;
 @property (retain, nonatomic) IBOutlet UITextField* fieldEmail;
 @property (retain, nonatomic) IBOutlet UITextField* fieldPhone;

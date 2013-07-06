@@ -8,12 +8,18 @@
 
 #import "C46RegisterUserViewController.h"
 
+#define viewSpacement 10.0f //px
+
 @interface C46RegisterUserViewController ()
 
 #pragma mark - Private methods declaration
 
 -(BOOL)areAllFieldsWithValues;
 -(BOOL)passwordsAreSame;
+//! Method iterates through all baseView (UIScrollView ) subviews,
+// calculates and sets (vertical) content size to baseView. This method
+// must be called after adding'removing error labels to view
+-(void)modifyBaseViewContentSize;
 
 @end
 
@@ -26,6 +32,7 @@
 @synthesize fieldPasswordAgain;
 @synthesize btnBack;
 @synthesize btnRegister;
+@synthesize baseView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,6 +56,8 @@
     [[self fieldPasswordAgain] setPlaceholder: NSLocalizedString(@"REGISTER_USER_VIEW__PASSWORD_AGAIN", @"") ];
     [[self btnBack] setTitle: NSLocalizedString(@"REGISTER_USER_VIEW__BTN_BACK", @"") forState: UIControlStateNormal ];
     [[self btnRegister] setTitle: NSLocalizedString(@"REGISTER_USER_VIEW__BTN_REGISTER", @"") forState: UIControlStateNormal ];
+    
+    [self modifyBaseViewContentSize];
 }
 
 - (void)didReceiveMemoryWarning
@@ -125,6 +134,38 @@
     UIAlertView *openAlert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil
                                               cancelButtonTitle:NSLocalizedString(@"GLOBAL_ALERT_DIALOG_BTN_OK", @"") otherButtonTitles:nil];
     [openAlert show];
+}
+
+-(void)modifyBaseViewContentSize {
+    
+    const CGRect oldFrame = [[self baseView] frame];
+    
+    [[self baseView] sizeToFit];
+    
+    const CGFloat newContentSize = [baseView frame].size.height;
+    
+    [[self baseView] setFrame: oldFrame];
+    
+    [[self baseView] setContentSize: CGSizeMake( oldFrame.size.width, newContentSize )];
+    
+    
+    return;
+    
+    CGRect contentRect = [[self baseView] frame];
+
+    CGFloat contentHeight = 0.0f;
+    
+    for (UIView* subview in [[self baseView] subviews] ) {
+        const CGFloat largestSize = [subview frame].origin.y + [subview frame].size.height;
+        
+        if ( largestSize > contentHeight ) {
+            contentHeight = largestSize;
+        }
+    }
+    
+    contentRect.size.height = contentHeight;
+    
+    [[self baseView] setFrame: contentRect];
 }
 
 @end
