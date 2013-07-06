@@ -14,6 +14,7 @@ typedef enum {
 } kC46FilterAdvertTypes;
 
 @protocol C46ServerCommunicationManagerDelegate <NSObject>
+@optional
 //   Returns an array of dictionaries with keys: 'cityID', 'phone',
 // 'categoryID', 'description', 'title', 'imageUrl', 'districtID', 'id',
 // 'email'.
