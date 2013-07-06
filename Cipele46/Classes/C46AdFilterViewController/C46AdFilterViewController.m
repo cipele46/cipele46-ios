@@ -18,12 +18,12 @@
 @property (atomic) BOOL categoriesFetched;
 @property (atomic) BOOL districtsFetched;
 
+@property (nonatomic) BOOL overrideInitialAdvertTypeSetup;
+@property (nonatomic) BOOL overrideInitialCategoriesSetup;
+@property (nonatomic) BOOL overrideInitialDistrictsSetup;
+
 - (BOOL)shouldUpdateTableViewSource;
 - (void)updateTableViewSource;
-
-@property (nonatomic) kC46FilterAdvertTypes selectedAdvertType;
-@property (nonatomic) NSString *selectedCategory;
-@property (nonatomic) NSString *selectedDistrict;
 
 @end
 
@@ -36,6 +36,9 @@
         // Custom initialization
         self.categoriesFetched = NO;
         self.districtsFetched = NO;
+
+        self.selectedCategory = nil;
+        self.selectedDistrict = nil;
     }
     return self;
 }
@@ -60,26 +63,51 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setSelectedAdvertType:(kC46FilterAdvertTypes)selectedAdvertType {
+    _selectedAdvertType = selectedAdvertType;
+    self.overrideInitialAdvertTypeSetup = YES;
+}
+
+- (void)setSelectedCategory:(NSString *)selectedCategory {
+    _selectedCategory = selectedCategory;
+    self.overrideInitialCategoriesSetup = YES;
+}
+
+- (void)setSelectedDistrict:(NSString *)selectedDistrict {
+    _selectedDistrict = selectedDistrict;
+    self.overrideInitialDistrictsSetup = YES;
+}
+
 - (BOOL)shouldUpdateTableViewSource {
     return (self.categoriesFetched && self.districtsFetched);
+}
+
+- (void)setupStartingFilters {
+    if (!self.overrideInitialAdvertTypeSetup)
+        _selectedAdvertType = kC46FilterAdvertTypeSupply;
+    if (!self.overrideInitialCategoriesSetup)
+        _selectedCategory = [self.categories objectAtIndex:0];
+    if (!self.overrideInitialDistrictsSetup)
+        _selectedDistrict = [self.districts objectAtIndex:0];
 }
 
 - (void)updateTableViewSource {
     if (!self.shouldUpdateTableViewSource)
         return;
     self.filtersTableView.dataSource = self;
+    [self setupStartingFilters];
     [self.filtersTableView reloadData];
 }
 
 #pragma mark - C46ServerCommunicationManagerDelegate
 
-- (void)didReceiveCategories:(NSArray *)categories {
+- (void)didReceiveCategories:(NSArray *)categories withError:(NSError *)error {
     self.categories = categories;
     self.categoriesFetched = YES;
     [self updateTableViewSource];
 }
 
-- (void)didReceiveDistricts:(NSArray *)districts {
+- (void)didReceiveDistricts:(NSArray *)districts withError:(NSError *)error {
     self.districts = districts;
     self.districtsFetched = YES;
     [self updateTableViewSource];
@@ -89,6 +117,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.section) {
+        case 0:
+            self.selectedAdvertType = (kC46FilterAdvertTypes)indexPath.row;
+            break;
+        case 1:
+            self.selectedCategory = [self.categories objectAtIndex:indexPath.row];
+            break;
+        case 2:
+            self.selectedDistrict = [self.districts objectAtIndex:indexPath.row];
+            break;
+        default:
+            NSAssert(NO, @"Should not be here.");
+    }
+    
+    [self.delegate didUpdateFilters:self.selectedAdvertType category:self.selectedCategory district:self.selectedDistrict];
 }
 
 #pragma mark - UITableViewDataSource
@@ -136,12 +179,24 @@
                 cell.textLabel.text = NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__SUPPLY", nil);
             else
                 cell.textLabel.text = NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__DEMAND", nil);
+            if (indexPath.row == (int)self.selectedAdvertType)
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            else
+                cell.accessoryType = UITableViewCellAccessoryNone;
             break;
         case 1:
             cell.textLabel.text = [[self.categories objectAtIndex:indexPath.row] objectForKey:@"name"];
+            if ([self.selectedCategory isEqualToString:[[self.categories objectAtIndex:indexPath.row] objectForKey:@"name"]])
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            else
+                cell.accessoryType = UITableViewCellAccessoryNone;
             break;
         case 2:
             cell.textLabel.text = [[self.districts objectAtIndex:indexPath.row] objectForKey:@"name"];
+            if ([self.selectedDistrict isEqualToString:[[self.districts objectAtIndex:indexPath.row] objectForKey:@"name"]])
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            else
+                cell.accessoryType = UITableViewCellAccessoryNone;
             break;
         default:
             NSAssert(NO, @"Should not be here.");

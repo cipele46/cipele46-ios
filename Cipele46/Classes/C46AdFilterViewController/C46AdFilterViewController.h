@@ -18,4 +18,8 @@
 
 @property (nonatomic, weak) id<C46AdFilterDelegate> delegate;
 
+@property (nonatomic) kC46FilterAdvertTypes selectedAdvertType;
+@property (nonatomic, copy, setter=setSelectedCategory:) NSString *selectedCategory;
+@property (nonatomic, copy) NSString *selectedDistrict;
+
 @end

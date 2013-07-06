@@ -21,6 +21,9 @@
 "REGISTER_USER_VIEW__PASSWORD" = "Lozinka";
 "REGISTER_USER_VIEW__PASSWORD_AGAIN" = "Lozinka ponovo";
 "REGISTER_USER_VIEW__BTN_BACK" = "Nazad";
+"REGISTER_USER_VIEW__BTN_REGISTER" = "Registriraj";
+"REGISTER_USER_VIEW__ALERT_MESSAGE_ALL_FIELDS" = "U sva polje moraju biti unešene vrijednosti.";
+"REGISTER_USER_VIEW__ALERT_MESSAGE_PASSWORDS_NOT_SAME" = "Lozinke su različite!";
 
 /* C46LoginViewController */
 "LOGIN_VIEW__TITLE" = "Prijava";
@@ -31,6 +34,5 @@
 "LOGIN_VIEW__FORGOT_PASSWORD" = "Zaboravio/la sam lozinku";
 "LOGIN_VIEW__REGISTER" = "Registriraj se";
 
-/* C46DetailsViewController*/
-"DETAIL_VIEW__BTN_CALL" = "Nazovi";
-"DETAIL_VIEW__BTN_MESSAGE" = "Pošalji poruku";
+/* Globals */
+"GLOBAL_ALERT_DIALOG_BTN_OK" = "Ok";
