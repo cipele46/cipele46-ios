@@ -8,7 +8,7 @@
 
 @class C46Ad;
 
-@interface C46DetailsViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface C46DetailsViewController : UIViewController 
 
 @property (strong, nonatomic) C46Ad *ad;
 
