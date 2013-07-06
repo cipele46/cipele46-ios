@@ -83,6 +83,7 @@
 - (IBAction)phoneButtonTapped:(id)sender {
     
     NSString *phoneNo = [[self ad] phone];
+    phoneNo = [phoneNo stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString *phoneNoURL = [@"telprompt://" stringByAppendingString:phoneNo];
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNoURL]];
