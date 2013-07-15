@@ -17,28 +17,22 @@
     NSArray *districtsList;
 }
 
-- (NSDictionary *) findDistrictAndCity:(C46Ad *)ad;
-- (NSDictionary *) findCategory:(C46Ad *)ad;
 
 @end
 
 @implementation C46AdListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"C46AdListViewController" bundle:nil];
+    
     if (self) {
-        // Custom initialization
+        
+        
     }
+
     return self;
 }
-
-/*-(NSMutableArray *) tDataSource {
-    if(!_tDataSource)
-        return [[NSMutableArray alloc] init];
-    else
-        return _tDataSource;
-}*/
 
 - (void)viewDidLoad
 {
@@ -52,62 +46,6 @@
     [self.serverCommunicationManager ads];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - search for category, city and district in JSONS
-
-/*-(NSDictionary *)findDistrictAndCity:(C46Ad *)ad{
-    NSUInteger districtIndex = [districtsList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        NSNumber *disId = [obj valueForKey:@"id"];
-        if( [disId compare:ad.districtID] == NSOrderedSame){
-            return YES;
-        }else{
-            return NO;
-        }
-    }];
-    NSDictionary *district = [districtsList objectAtIndex:districtIndex];
-    
-    NSArray *cities = [district valueForKey:@"cities"];
-    NSInteger cityIndex = -1;
-    
-    cityIndex = [cities indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        NSNumber *citId = [obj valueForKey:@"id"];
-        if( [citId compare:ad.cityID] == NSOrderedSame){
-            return YES;
-        }else{
-            return NO;
-        }
-    }];
-    
-    if (cityIndex != NSNotFound) {
-        NSDictionary *city = [cities objectAtIndex:cityIndex];
-        NSDictionary *returnDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                          [district valueForKey:@"name"], @"name",
-                                          [city valueForKey:@"name"], @"cityName",nil];
-        return returnDictionary;
-    } else {
-
-        return nil;
-    }
-
-}
-
--(NSDictionary *) findCategory:(C46Ad *)ad{
-    NSUInteger categoryIndex = [categoriesList indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        NSNumber *catId = [obj valueForKey:@"id"];
-        if( [catId compare:ad.categoryID] == NSOrderedSame){
-            return YES;
-        }else{
-            return NO;
-        }
-    }];
-    NSDictionary *category = [categoriesList objectAtIndex:categoryIndex];
-    return category;
-}*/
 
 #pragma mark - server comm delegate response method
 
@@ -153,11 +91,13 @@
 
 #pragma mark - table view methods
 
--(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [self.tDataSource count];
 }
 
--(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *AdCellIdentifier = @"AdCell";
     
     // add a placeholder cell while waiting on table data
@@ -194,7 +134,8 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [self.delegate didSelectAdListViewController:[self.tDataSource objectAtIndex:indexPath.row]];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

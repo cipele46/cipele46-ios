@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Miran Brajsa. All rights reserved.
 //
 
-#import "C46LoginViewController.h"
+#import "C46LoginUserViewController.h"
 
 #import "C46RegisterUserViewController.h"
 
-@interface C46LoginViewController ()
+@interface C46LoginUserViewController ()
 
 -(void)displayAlertView:(NSString*)message;
 -(BOOL)areLoginAndPasswordEntered;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation C46LoginViewController
+@implementation C46LoginUserViewController
 
 @synthesize btnFacebookLogin;
 @synthesize btnLogin;

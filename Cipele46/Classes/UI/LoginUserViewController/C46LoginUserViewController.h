@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface C46LoginViewController : UIViewController <UITextFieldDelegate>
+@interface C46LoginUserViewController : UIViewController <UITextFieldDelegate>
 
 #pragma mark - Properties
 

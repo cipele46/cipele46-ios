@@ -8,10 +8,10 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "C46Ad.h"
-#import "C46DetailsViewController.h"
+#import "C46AdDetailViewController.h"
 
 
-@interface C46DetailsViewController ()
+@interface C46AdDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *titleTextView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
@@ -27,7 +27,7 @@
 @end
 
 
-@implementation C46DetailsViewController
+@implementation C46AdDetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -11,6 +11,7 @@
 #import "C46Ad.h"
 
 @protocol C46AdListViewControllerDelegate
+
 @required
 -(void)didSelectAdListViewController:(C46Ad *)ad;
 -(void)adListViewControllerDidStartRefreshing:(UIViewController *)controller;

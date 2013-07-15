@@ -9,10 +9,8 @@
 #import "C46HomeTabBarController.h"
 #import "C46AdsViewController.h"
 #import "C46MyAdsViewController.h"
-#import "C46DetailsViewController.h"
+#import "C46AdDetailViewController.h"
 
-#import "C46FirstViewController.h"
-#import "C46SecondViewController.h"
 
 
 @interface C46HomeTabBarController () <C46AdsViewControllerDelegate>
@@ -46,10 +44,10 @@
     UINavigationController *adsNavigationController = [[UINavigationController alloc] initWithRootViewController:_adsViewController];
 
     // Search
-    _searchViewController = [[C46SecondViewController alloc] initWithNibName:@"C46SecondViewController" bundle:nil];
+    _searchViewController = [[UIViewController alloc] init];
     
     // Create ad
-    _createAdViewController = [[C46SecondViewController alloc] initWithNibName:@"C46SecondViewController" bundle:nil];
+    _createAdViewController = [[UIViewController alloc] init];
     
     // My ads
     _myAdsViewController = [[C46MyAdsViewController alloc] initWithNibName:@"C46MyAdsViewController" bundle:nil];
@@ -57,7 +55,7 @@
     UINavigationController *myAdsNavigationController = [[UINavigationController alloc] initWithRootViewController:_myAdsViewController];
 
     // Settings
-    _settingsViewController = [[C46SecondViewController alloc] initWithNibName:@"C46SecondViewController" bundle:nil];
+    _settingsViewController = [[UIViewController alloc] init];
        
     self.viewControllers = @[adsNavigationController, _searchViewController, _createAdViewController, myAdsNavigationController, _settingsViewController];
 }
@@ -69,7 +67,7 @@
     NSAssert(controller == _adsViewController || controller == _myAdsViewController, @"Shit happened");
     NSAssert(controller.navigationController != nil, @"Navigation controller can not be nil");
     
-    C46DetailsViewController *adViewController = [[C46DetailsViewController alloc] initWithNibName:@"C46DetailsViewController" bundle:nil];
+    C46AdDetailViewController *adViewController = [[C46AdDetailViewController alloc] initWithNibName:@"C46DetailsViewController" bundle:nil];
     adViewController.ad = ad;
     
     [controller.navigationController pushViewController:adViewController animated:YES];

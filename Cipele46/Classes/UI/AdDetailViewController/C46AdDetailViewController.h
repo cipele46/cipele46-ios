@@ -8,7 +8,7 @@
 
 @class C46Ad;
 
-@interface C46DetailsViewController : UIViewController 
+@interface C46AdDetailViewController : UIViewController 
 
 @property (strong, nonatomic) C46Ad *ad;
 

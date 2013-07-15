@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     
-    _adListViewController = [[C46AdListViewController alloc] initWithNibName:@"C46AdListViewController" bundle:nil];
+    _adListViewController = [[C46AdListViewController alloc] init];
     _adListViewController.delegate = self;
     [_adListViewControllerPlaceholderView addSubview:_adListViewController.view];    
 }
