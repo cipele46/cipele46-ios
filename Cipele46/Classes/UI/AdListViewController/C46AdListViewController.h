@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "C46ServerCommunicationManager.h"
-#import "C46Ad.h"
+@class C46Ad;
 
 @protocol C46AdListViewControllerDelegate
 
@@ -19,15 +18,12 @@
 
 @end
 
-@interface C46AdListViewController: UIViewController<UITableViewDataSource, UITableViewDelegate, C46ServerCommunicationManagerDelegate>
+@interface C46AdListViewController: UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tView;
 @property (nonatomic, weak) IBOutlet UIButton *header;
-@property (nonatomic, strong) NSMutableArray *tDataSource;
-@property (nonatomic, strong) C46ServerCommunicationManager *serverCommunicationManager;
 
 @property (nonatomic, weak) id<C46AdListViewControllerDelegate> delegate;
-
 
 
 @end

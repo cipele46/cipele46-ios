@@ -11,6 +11,9 @@
 #import "C46HomeTabBarController.h"
 #import "C46FacebookConnect.h"
 
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
+
 @interface C46AppDelegate ()
 
 @property (strong, nonatomic) C46HomeTabBarController *homeTabBarController;
@@ -28,6 +31,10 @@ static void uncaughtExceptionHandler(NSException * exception)
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.homeTabBarController = [[C46HomeTabBarController alloc] init];
     self.window.rootViewController = self.homeTabBarController;

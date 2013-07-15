@@ -10,13 +10,16 @@
 #import "C46AdCell.h"
 #import "C46Ad.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "C46ServerCommunicationManager.h"
+#import "C46DataSource.h"
+
+static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface C46AdListViewController (){
     NSArray *categoriesList;
     NSArray *districtsList;
 }
 
+@property (nonatomic, strong) NSArray *ads;
 
 @end
 
@@ -37,55 +40,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tDataSource = [[NSMutableArray alloc] init];
-    // Do any additional setup after loading the view from its nib.
-    self.serverCommunicationManager = [[C46ServerCommunicationManager alloc] init];
-    [self.serverCommunicationManager setDelegate:self];
-    
-    [self.delegate adListViewControllerDidStartRefreshing:self];
-    [self.serverCommunicationManager ads];
-}
-
-
-#pragma mark - server comm delegate response method
-
--(void)didReceiveAds:(NSArray *)ads withError:(NSError *)error {
-    for (NSDictionary *dic in ads){
-        C46Ad *ad = [[C46Ad alloc] init];
-        ad.status = [dic valueForKey:@"id"];
-        ad.description = [dic valueForKey:@"description"];
-        ad.districtID = [dic valueForKey:@"districtID"];
-        ad.phone = [dic valueForKey:@"phone"];
-        ad.categoryID = [dic valueForKey:@"categoryID"];
-        ad.adID = [dic valueForKey:@"id"];
-        ad.cityID = [dic valueForKey:@"cityID"];
-        ad.type = [dic valueForKey:@"ad_type"];
-        ad.email = [dic valueForKey:@"email"];
-        ad.title = [dic valueForKey:@"title"];
-        NSDictionary *category = [dic valueForKey:@"category"];
-        NSDictionary *city = [dic valueForKey:@"city"];
-        NSDictionary *district = [dic valueForKey:@"district"];
-        ad.category = [category valueForKey:@"name"];
-        ad.city = [city valueForKey:@"name"];
-        ad.district = [district valueForKey:@"name"];
-        ad.imageURL = [NSURL URLWithString:@"http://www.lynnwittenburg.com/wp-content/uploads/2013/03/Ball.jpg"];
         
-        [self.tDataSource addObject:ad];
+    [self.delegate adListViewControllerDidStartRefreshing:self];
     
-    }
-    [self.tView reloadData];
-    
-    [self.delegate adListViewControllerDidFinishRefreshing:self];
-}
-
--(void)didReceiveCategories:(NSArray *)categories withError:(NSError *)error {
-    categoriesList = categories;
-    [self.serverCommunicationManager districts];
-}
-
--(void)didReceiveDistricts:(NSArray *)districts withError:(NSError *)error {
-    districtsList = districts;
-    [self.serverCommunicationManager ads];
+    [[C46DataSource sharedInstance] fetchAdsWithSuccess:^(NSArray *ads) {
+        
+        DDLogInfo(@"Ads received");
+        DDLogVerbose(@"\t\tAds: %@", ads);
+        
+        [self.delegate adListViewControllerDidFinishRefreshing:self];
+        
+        self.ads = ads;
+        [self.tView reloadData];
+        
+    } failure:^(WMError *error) {
+        
+        DDLogError(@"Ads fetch error: %@", error);
+        
+        [self.delegate adListViewControllerDidFinishRefreshing:self];
+    }];
 }
 
 
@@ -93,7 +66,7 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.tDataSource count];
+    return [self.ads count];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,7 +88,7 @@
         }
     }
 
-    C46Ad *ad = [self.tDataSource objectAtIndex:indexPath.row];
+    C46Ad *ad = [self.ads objectAtIndex:indexPath.row];
     
     // Here we use the new provided setImageWithURL: method to load the web image
     NSLog(@"imageURL is %@", ad.imageURL);
@@ -136,7 +109,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.delegate didSelectAdListViewController:[self.tDataSource objectAtIndex:indexPath.row]];
+    [self.delegate didSelectAdListViewController:[self.ads objectAtIndex:indexPath.row]];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

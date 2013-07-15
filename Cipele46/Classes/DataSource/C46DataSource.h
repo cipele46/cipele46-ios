@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WMAFHTTPClientRequest.h"
 
 @interface C46DataSource : NSObject
+
++ (C46DataSource *)sharedInstance;
+
+
+- (id <WMRequestProxyProtocol>)fetchAdsWithSuccess:(void(^)(NSArray *ads))success // C46Ad objects
+                                           failure:(void(^)(WMError *error))failure;
 
 @end

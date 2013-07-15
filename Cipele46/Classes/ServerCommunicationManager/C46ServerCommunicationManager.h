@@ -32,7 +32,7 @@ typedef enum {
 
 @property (nonatomic, weak) id<C46ServerCommunicationManagerDelegate> delegate;
 
-- (void)ads;
+//- (void)ads;
 - (void)categories;
 - (void)districts;
 

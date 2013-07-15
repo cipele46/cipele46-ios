@@ -9,7 +9,6 @@
 #import "C46ServerCommunicationManager.h"
 
 #import "AFNetworking.h"
-#import "JSONKit.h"
 
 #define mockupURL @"http://dev.fiveminutes.eu/cipele/api/"
 #define cipele46URL @"http://cipele46.org/"
@@ -21,13 +20,19 @@ typedef void (^DelegateCallerBlock)(id, NSError *);
 
 @implementation C46ServerCommunicationManager
 
-- (void)serverCommunicationGetPathWorker:(NSString *)path withBlock:(DelegateCallerBlock)delegateCallerBlock parameters:(NSDictionary *)parameters andBaseURL:(NSString *)baseUrl {
+- (void)serverCommunicationGetPathWorker:(NSString *)path withBlock:(DelegateCallerBlock)delegateCallerBlock parameters:(NSDictionary *)parameters andBaseURL:(NSString *)baseUrl
+{
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
+    
     if ([parameters objectForKey:@"username"])
-        [client setAuthorizationHeaderWithUsername:[parameters objectForKey:@"username"] password:[parameters objectForKey:@"password"]];
+    {
+        [client setAuthorizationHeaderWithUsername:[parameters objectForKey:@"username"]
+                                          password:[parameters objectForKey:@"password"]];
+    }
+    
     [client getPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *json_string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        id response = [json_string objectFromJSONString];
+        id response = nil;//[json_string objectFromJSONString];
         delegateCallerBlock(response, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Getting '%@' failed: %@", path, [error localizedDescription]);
