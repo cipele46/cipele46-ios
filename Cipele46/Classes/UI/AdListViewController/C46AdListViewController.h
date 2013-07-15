@@ -12,13 +12,13 @@
 @protocol C46AdListViewControllerDelegate
 
 @required
--(void)didSelectAdListViewController:(C46Ad *)ad;
+-(void)adListViewController:(UIViewController *)controller didSelectAd:(C46Ad *)ad;
 -(void)adListViewControllerDidStartRefreshing:(UIViewController *)controller;
 -(void)adListViewControllerDidFinishRefreshing:(UIViewController *)controller;
 
 @end
 
-@interface C46AdListViewController: UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface C46AdListViewController: UIViewController
 
 @property (nonatomic, weak) IBOutlet UITableView *tView;
 @property (nonatomic, weak) IBOutlet UIButton *header;

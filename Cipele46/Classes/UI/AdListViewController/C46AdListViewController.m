@@ -14,7 +14,8 @@
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
-@interface C46AdListViewController (){
+@interface C46AdListViewController () <UITableViewDataSource, UITableViewDelegate>
+{
     NSArray *categoriesList;
     NSArray *districtsList;
 }
@@ -109,7 +110,9 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.delegate didSelectAdListViewController:[self.ads objectAtIndex:indexPath.row]];
+    C46Ad *ad = [self.ads objectAtIndex:indexPath.row];
+    
+    [self.delegate adListViewController:self didSelectAd:ad];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

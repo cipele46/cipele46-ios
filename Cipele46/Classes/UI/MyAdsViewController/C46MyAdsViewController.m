@@ -54,7 +54,7 @@
 
 #pragma mark - C46AdListViewControllerDelegate
 
-- (void)didSelectAdListViewController:(C46Ad *)ad
+- (void)adListViewController:(UIViewController *)controller didSelectAd:(C46Ad *)ad
 {
     [_delegate adsViewController:self didSelectAd:ad];
 }
