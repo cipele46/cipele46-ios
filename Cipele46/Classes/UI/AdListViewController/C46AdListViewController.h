@@ -20,10 +20,6 @@
 
 @interface C46AdListViewController: UIViewController
 
-@property (nonatomic, weak) IBOutlet UITableView *tView;
-@property (nonatomic, weak) IBOutlet UIButton *header;
-
 @property (nonatomic, weak) id<C46AdListViewControllerDelegate> delegate;
-
 
 @end

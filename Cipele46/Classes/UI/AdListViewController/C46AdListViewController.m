@@ -15,11 +15,8 @@
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface C46AdListViewController () <UITableViewDataSource, UITableViewDelegate>
-{
-    NSArray *categoriesList;
-    NSArray *districtsList;
-}
 
+@property (nonatomic, weak) IBOutlet UITableView *tView;
 @property (nonatomic, strong) NSArray *ads;
 
 @end
