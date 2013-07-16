@@ -47,6 +47,10 @@
 		1133AB0917949ADB002E8B89 /* C46Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB0817949ADB002E8B89 /* C46Error.m */; };
 		1133AB0E17949BE4002E8B89 /* C46Cipele46APINetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB0B17949BE4002E8B89 /* C46Cipele46APINetworkClient.m */; };
 		1133AB0F17949BE4002E8B89 /* C46Cipele46APIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB0D17949BE4002E8B89 /* C46Cipele46APIUtils.m */; };
+		1133AB121795AE5F002E8B89 /* C46AdCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB111795AE5E002E8B89 /* C46AdCategory.m */; };
+		1133AB151795B4EB002E8B89 /* C46City.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB141795B4EB002E8B89 /* C46City.m */; };
+		1133AB181795BEF9002E8B89 /* C46AdImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB171795BEF9002E8B89 /* C46AdImageInfo.m */; };
+		1133AB1B1795C0C0002E8B89 /* C46Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB1A1795C0BF002E8B89 /* C46Region.m */; };
 		11B1F79117883629001B8969 /* AppIcon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B1F79017883629001B8969 /* AppIcon_114x114.png */; };
 		32E43B81178856B3008C9A88 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B80178856B3008C9A88 /* ImageIO.framework */; };
 		32E43B8317885A42008C9A88 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B8217885A42008C9A88 /* SDWebImage.framework */; };
@@ -164,6 +168,14 @@
 		1133AB0B17949BE4002E8B89 /* C46Cipele46APINetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46Cipele46APINetworkClient.m; sourceTree = "<group>"; };
 		1133AB0C17949BE4002E8B89 /* C46Cipele46APIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46Cipele46APIUtils.h; sourceTree = "<group>"; };
 		1133AB0D17949BE4002E8B89 /* C46Cipele46APIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46Cipele46APIUtils.m; sourceTree = "<group>"; };
+		1133AB101795AE5E002E8B89 /* C46AdCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdCategory.h; sourceTree = "<group>"; };
+		1133AB111795AE5E002E8B89 /* C46AdCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdCategory.m; sourceTree = "<group>"; };
+		1133AB131795B4EB002E8B89 /* C46City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46City.h; sourceTree = "<group>"; };
+		1133AB141795B4EB002E8B89 /* C46City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46City.m; sourceTree = "<group>"; };
+		1133AB161795BEF9002E8B89 /* C46AdImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdImageInfo.h; sourceTree = "<group>"; };
+		1133AB171795BEF9002E8B89 /* C46AdImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdImageInfo.m; sourceTree = "<group>"; };
+		1133AB191795C0BF002E8B89 /* C46Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46Region.h; sourceTree = "<group>"; };
+		1133AB1A1795C0BF002E8B89 /* C46Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46Region.m; sourceTree = "<group>"; };
 		11B1F79017883629001B8969 /* AppIcon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon_114x114.png; path = ../../AppIcon_114x114.png; sourceTree = "<group>"; };
 		32E43B80178856B3008C9A88 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		32E43B8217885A42008C9A88 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = 3rdParty/SDWebImage.framework; sourceTree = "<group>"; };
@@ -278,6 +290,14 @@
 				1133AB0817949ADB002E8B89 /* C46Error.m */,
 				1133AA8C17949440002E8B89 /* C46Ad.h */,
 				1133AA8D17949440002E8B89 /* C46Ad.m */,
+				1133AB101795AE5E002E8B89 /* C46AdCategory.h */,
+				1133AB111795AE5E002E8B89 /* C46AdCategory.m */,
+				1133AB131795B4EB002E8B89 /* C46City.h */,
+				1133AB141795B4EB002E8B89 /* C46City.m */,
+				1133AB161795BEF9002E8B89 /* C46AdImageInfo.h */,
+				1133AB171795BEF9002E8B89 /* C46AdImageInfo.m */,
+				1133AB191795C0BF002E8B89 /* C46Region.h */,
+				1133AB1A1795C0BF002E8B89 /* C46Region.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -795,6 +815,10 @@
 				1133AB0917949ADB002E8B89 /* C46Error.m in Sources */,
 				1133AB0E17949BE4002E8B89 /* C46Cipele46APINetworkClient.m in Sources */,
 				1133AB0F17949BE4002E8B89 /* C46Cipele46APIUtils.m in Sources */,
+				1133AB121795AE5F002E8B89 /* C46AdCategory.m in Sources */,
+				1133AB151795B4EB002E8B89 /* C46City.m in Sources */,
+				1133AB181795BEF9002E8B89 /* C46AdImageInfo.m in Sources */,
+				1133AB1B1795C0C0002E8B89 /* C46Region.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

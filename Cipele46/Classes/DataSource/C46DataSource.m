@@ -65,7 +65,7 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
     
     for (NSDictionary *dictionary in responseObject) {
 
-        C46Ad *ad = [[C46Ad alloc] initWithHTTPReponseDictionary:dictionary];
+        C46Ad *ad = [[C46Ad alloc] initWithJSONDictionary:dictionary];
         [ads addObject:ad];
     }
 

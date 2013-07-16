@@ -10,32 +10,46 @@
 
 @implementation C46Ad
 
-- (id)initWithHTTPReponseDictionary:(NSDictionary *)dictionary
+- (id)initWithJSONDictionary:(NSDictionary *)dictionary
 {
     if (self = [super init]) {
         
-        _status =  [dictionary valueForKey:@"id"];
-        _description =  [dictionary valueForKey:@"description"];
-        _districtID =  [dictionary valueForKey:@"districtID"];
-        _phone =  [dictionary valueForKey:@"phone"];
-        _categoryID =  [dictionary valueForKey:@"categoryID"];
-        _adID =  [dictionary valueForKey:@"id"];
-        _cityID =  [dictionary valueForKey:@"cityID"];
-        _type =  [dictionary valueForKey:@"ad_type"];
-        _email =  [dictionary valueForKey:@"email"];
-        _title =  [dictionary valueForKey:@"title"];
+        _type =  [[dictionary objectForKey:@"ad_type"] integerValue];
         
-        NSDictionary *category =  [dictionary valueForKey:@"category"];
-        NSDictionary *city =  [dictionary valueForKey:@"city"];
-        NSDictionary *district =  [dictionary valueForKey:@"district"];
+        NSDictionary *categoryDictionary =  [dictionary objectForKey:@"category"];
+        _category = [[C46AdCategory alloc] initWithJSONDictionary:categoryDictionary];
+        _categoryID =  [[dictionary objectForKey:@"categoryID"] integerValue];
+
+        NSDictionary *cityDictionary =  [dictionary objectForKey:@"city"];
+        _city = [[C46City alloc] initWithJSONDictionary:cityDictionary];
+        _cityID =  [[dictionary objectForKey:@"cityID"] integerValue];
+
+        // TODO: create date object from string
+//        NSString *dateCreatedString = [dictionary objectForKey:@"created_at"]; // 2013-07-06T10:01:53Z
+        _dateCreated = [NSDate date];
+//        NSString *dateUpdatedString = [dictionary objectForKey:@"updated_at"]; // 2013-07-06T10:01:53Z
+        _dateUpdated = [NSDate date];
         
-        _category = [category valueForKey:@"name"];
-        _city = [city valueForKey:@"name"];
-        _district = [district valueForKey:@"name"];
-        _imageURL = [NSURL URLWithString:@"http://www.lynnwittenburg.com/wp-content/uploads/2013/03/Ball.jpg"];
+        
+        _description =  [dictionary objectForKey:@"description"];
+        _email =  [dictionary objectForKey:@"email"];
+        _identifier = [[dictionary objectForKey:@"id"] integerValue];
+        
+        NSDictionary *imageInfoDIctionary = [dictionary objectForKey:@"image"];
+        _imageInfo = [[C46AdImageInfo alloc] initWithJSONDictionary:imageInfoDIctionary];
+
+        _phone =  [dictionary objectForKey:@"phone"];
+        
+        NSDictionary *regionDictionary = [dictionary objectForKey:@"region"];
+        _region = [[C46Region alloc] initWithJSONDictionary:regionDictionary];
+        _status =  [[dictionary objectForKey:@"status"] integerValue];
+        _title =  [dictionary objectForKey:@"title"];
+        
+        _userId = [dictionary objectForKey:@"user_id"];
     }
     
     return self;
 }
 
 @end
+

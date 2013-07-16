@@ -55,7 +55,7 @@
     
     // TODO: Set expiration label
     
-    NSString *address = [NSString stringWithFormat:@"%@%@%@", [[self ad] district], @", ", [[self ad] city]];
+    NSString *address = _ad.city.name;
     [[self addressLabel] setText:address];
     
     // Phone number is not mandatory.
@@ -66,7 +66,7 @@
         [[self phoneButton] setHidden:YES];
     }
     
-    [[self adImageView] setImageWithURL:self.ad.imageURL
+    [[self adImageView] setImageWithURL:self.ad.imageInfo.imageURL
                        placeholderImage:[UIImage imageNamed:@"favorites_icon_full.png"]];
     
 }
@@ -98,14 +98,14 @@
     UIImage *image=nil;
     
     // TODO: Save the change
-    
-    if([[self ad] isFavourite]){
-        image = [UIImage imageNamed:@"favorites_icon_full.png"];
-    }else{
-        image = [UIImage imageNamed:@"favorites_icon_empty.png"];
-    }
-    
-    [[self favouriteButton] setImage:image forState:UIControlStateNormal];
+//    
+//    if([[self ad] isFavourite]){
+//        image = [UIImage imageNamed:@"favorites_icon_full.png"];
+//    }else{
+//        image = [UIImage imageNamed:@"favorites_icon_empty.png"];
+//    }
+//    
+//    [[self favouriteButton] setImage:image forState:UIControlStateNormal];
     
 }
 

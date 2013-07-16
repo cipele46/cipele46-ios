@@ -26,17 +26,25 @@
 
 - (void)setAd:(C46Ad *)ad
 {
-    [self.leftImage setImageWithURL:ad.imageURL
-                   placeholderImage:[UIImage imageNamed:@"favorites_icon_full.png"]];
-    
-    self.title.text = ad.title;
-    self.category.text = ad.category;
-    self.city.text = ad.city;
-    
-    if([ad.type compare:[NSNumber numberWithInt:1]] == NSOrderedSame){
-        [self.colorView setBackgroundColor:[UIColor colorWithRed:25.0f/255.0f green:225.0f/255.0f blue:206.0f/255.0f alpha:1.0]];
-    }else{
-        [self.colorView setBackgroundColor:[UIColor colorWithRed:251.0f/255.0f green:62.0f/255.0f blue:38.0f/255.0f alpha:1.0]];
+    if (_ad != ad) {
+        
+        _ad = ad;
+        
+        [self.leftImage setImageWithURL:ad.imageInfo.imageURL
+                       placeholderImage:[UIImage imageNamed:@"favorites_icon_full.png"]];
+        
+        self.title.text = ad.title;
+        self.category.text = ad.category.name;
+        self.city.text = ad.city.name;
+        
+        if(ad.type == AdTypeSupply) {
+            
+            [self.colorView setBackgroundColor:[UIColor colorWithRed:25.0f/255.0f green:225.0f/255.0f blue:206.0f/255.0f alpha:1.0]];
+            
+        } else if (ad.type == AdTypeDemand){
+            
+            [self.colorView setBackgroundColor:[UIColor colorWithRed:251.0f/255.0f green:62.0f/255.0f blue:38.0f/255.0f alpha:1.0]];
+        }
     }
 }
 
