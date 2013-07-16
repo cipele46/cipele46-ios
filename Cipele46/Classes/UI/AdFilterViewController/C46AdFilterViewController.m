@@ -60,8 +60,8 @@
     self.view = self.filtersTableView;
     C46ServerCommunicationManager *manager = [[C46ServerCommunicationManager alloc] init];
     manager.delegate = self;
-    [manager categories];
-    [manager districts];
+//    [manager categories];
+//    [manager districts];
 }
 
 - (void)didReceiveMemoryWarning

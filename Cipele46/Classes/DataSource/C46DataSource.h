@@ -17,4 +17,12 @@
 - (id <WMRequestProxyProtocol>)fetchAdsWithSuccess:(void(^)(NSArray *ads))success // C46Ad objects
                                            failure:(void(^)(C46Error *error))failure;
 
+- (id <WMRequestProxyProtocol>)fetchCategoriesWithSuccess:(void(^)(NSArray *categories))success // C46Category objects
+                                                  failure:(void(^)(C46Error *error))failure;
+
+- (id <WMRequestProxyProtocol>)fetchRegionsWithSuccess:(void(^)(NSArray *regions))success // C46Region objects
+                                               failure:(void(^)(C46Error *error))failure;
+
+
+
 @end

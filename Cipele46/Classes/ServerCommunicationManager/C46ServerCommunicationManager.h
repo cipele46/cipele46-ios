@@ -33,8 +33,8 @@ typedef enum {
 @property (nonatomic, weak) id<C46ServerCommunicationManagerDelegate> delegate;
 
 //- (void)ads;
-- (void)categories;
-- (void)districts;
+//- (void)categories;
+//- (void)districts;
 
 - (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password;
 
