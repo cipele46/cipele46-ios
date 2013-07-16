@@ -32,4 +32,6 @@
 @property (nonatomic, getter=isFavourite) BOOL favourite;
 
 
+- (id)initWithHTTPReponseDictionary:(NSDictionary *)dictionary;
+
 @end

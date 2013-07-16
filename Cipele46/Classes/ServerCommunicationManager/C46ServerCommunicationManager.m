@@ -31,7 +31,7 @@ typedef void (^DelegateCallerBlock)(id, NSError *);
     }
     
     [client getPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSString *json_string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSString *json_string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         id response = nil;//[json_string objectFromJSONString];
         delegateCallerBlock(response, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

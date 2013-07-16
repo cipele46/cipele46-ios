@@ -57,34 +57,15 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
     return request;
 }
 
-#pragma mark - server comm delegate response method
+#pragma mark - Utils
 
 + (NSArray *)adsFromResponseObject:(id)responseObject
 {
     NSMutableArray *ads = [NSMutableArray array];
     
-    for (NSDictionary *dic in responseObject)
-    {
-        C46Ad *ad = [[C46Ad alloc] init];
-        
-        ad.status = [dic valueForKey:@"id"];
-        ad.description = [dic valueForKey:@"description"];
-        ad.districtID = [dic valueForKey:@"districtID"];
-        ad.phone = [dic valueForKey:@"phone"];
-        ad.categoryID = [dic valueForKey:@"categoryID"];
-        ad.adID = [dic valueForKey:@"id"];
-        ad.cityID = [dic valueForKey:@"cityID"];
-        ad.type = [dic valueForKey:@"ad_type"];
-        ad.email = [dic valueForKey:@"email"];
-        ad.title = [dic valueForKey:@"title"];
-        NSDictionary *category = [dic valueForKey:@"category"];
-        NSDictionary *city = [dic valueForKey:@"city"];
-        NSDictionary *district = [dic valueForKey:@"district"];
-        ad.category = [category valueForKey:@"name"];
-        ad.city = [city valueForKey:@"name"];
-        ad.district = [district valueForKey:@"name"];
-        ad.imageURL = [NSURL URLWithString:@"http://www.lynnwittenburg.com/wp-content/uploads/2013/03/Ball.jpg"];
-        
+    for (NSDictionary *dictionary in responseObject) {
+
+        C46Ad *ad = [[C46Ad alloc] initWithHTTPReponseDictionary:dictionary];
         [ads addObject:ad];
     }
 
