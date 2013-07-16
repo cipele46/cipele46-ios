@@ -8,13 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class CLLocation;
-@class WMEvent;
-@class WMUser;
-
 @interface C46Cipele46APIUtils : NSObject
 
-+ (WMError *)errorFromHTTPResponse:(NSDictionary *)responseDict
++ (C46Error *)errorFromHTTPResponse:(NSDictionary *)responseDict
                             responseInfo:(NSDictionary *)responseInfo;
 
 @end

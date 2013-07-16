@@ -51,7 +51,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
         self.ads = ads;
         [self.tView reloadData];
         
-    } failure:^(WMError *error) {
+    } failure:^(C46Error *error) {
         
         DDLogError(@"Ads fetch error: %@", error);
         

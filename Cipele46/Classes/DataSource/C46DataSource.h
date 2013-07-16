@@ -15,6 +15,6 @@
 
 
 - (id <WMRequestProxyProtocol>)fetchAdsWithSuccess:(void(^)(NSArray *ads))success // C46Ad objects
-                                           failure:(void(^)(WMError *error))failure;
+                                           failure:(void(^)(C46Error *error))failure;
 
 @end

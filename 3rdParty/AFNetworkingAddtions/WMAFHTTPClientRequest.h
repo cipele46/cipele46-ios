@@ -9,9 +9,9 @@
 #import "AFHTTPClient.h"
 #import "WMRequestProxyProtocol.h"
 
-NSString * WMResponseStatusCodeFromRequestKey; //NSUInteger
-NSString * WMNetworkClientErrorLocalizedDesriptionKey; // NSString
-NSString * WMErrorTypeKey; // WMWinkMeError
+NSString * C46ResponseStatusCodeFromRequestKey; //NSUInteger
+NSString * C46NetworkClientErrorLocalizedDesriptionKey; // NSString
+NSString * C46ErrorTypeKey; // C46ErrorType
 
 typedef void (^WMAFHTTPClientRequestSuccess)(id responseInfo, id responseObject);
 typedef void (^WMAFHTTPClientRequestFailure)(id responseInfo, id responseObject);

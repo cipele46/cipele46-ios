@@ -44,7 +44,7 @@
 		1133AAFE179498CA002E8B89 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AAFB179498CA002E8B89 /* DDTTYLogger.m */; };
 		1133AB01179498E3002E8B89 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB00179498E3002E8B89 /* MBProgressHUD.m */; };
 		1133AB06179499ED002E8B89 /* WMAFHTTPClientRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB04179499ED002E8B89 /* WMAFHTTPClientRequest.m */; };
-		1133AB0917949ADB002E8B89 /* WMError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB0817949ADB002E8B89 /* WMError.m */; };
+		1133AB0917949ADB002E8B89 /* C46Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB0817949ADB002E8B89 /* C46Error.m */; };
 		1133AB0E17949BE4002E8B89 /* C46Cipele46APINetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB0B17949BE4002E8B89 /* C46Cipele46APINetworkClient.m */; };
 		1133AB0F17949BE4002E8B89 /* C46Cipele46APIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB0D17949BE4002E8B89 /* C46Cipele46APIUtils.m */; };
 		11B1F79117883629001B8969 /* AppIcon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B1F79017883629001B8969 /* AppIcon_114x114.png */; };
@@ -158,8 +158,8 @@
 		1133AB03179499ED002E8B89 /* WMAFHTTPClientRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAFHTTPClientRequest.h; sourceTree = "<group>"; };
 		1133AB04179499ED002E8B89 /* WMAFHTTPClientRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAFHTTPClientRequest.m; sourceTree = "<group>"; };
 		1133AB05179499ED002E8B89 /* WMRequestProxyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMRequestProxyProtocol.h; sourceTree = "<group>"; };
-		1133AB0717949ADB002E8B89 /* WMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMError.h; sourceTree = "<group>"; };
-		1133AB0817949ADB002E8B89 /* WMError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMError.m; sourceTree = "<group>"; };
+		1133AB0717949ADB002E8B89 /* C46Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46Error.h; sourceTree = "<group>"; };
+		1133AB0817949ADB002E8B89 /* C46Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46Error.m; sourceTree = "<group>"; };
 		1133AB0A17949BE4002E8B89 /* C46Cipele46APINetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46Cipele46APINetworkClient.h; sourceTree = "<group>"; };
 		1133AB0B17949BE4002E8B89 /* C46Cipele46APINetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46Cipele46APINetworkClient.m; sourceTree = "<group>"; };
 		1133AB0C17949BE4002E8B89 /* C46Cipele46APIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46Cipele46APIUtils.h; sourceTree = "<group>"; };
@@ -274,8 +274,8 @@
 		1133AA8B17949440002E8B89 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1133AB0717949ADB002E8B89 /* WMError.h */,
-				1133AB0817949ADB002E8B89 /* WMError.m */,
+				1133AB0717949ADB002E8B89 /* C46Error.h */,
+				1133AB0817949ADB002E8B89 /* C46Error.m */,
 				1133AA8C17949440002E8B89 /* C46Ad.h */,
 				1133AA8D17949440002E8B89 /* C46Ad.m */,
 			);
@@ -792,7 +792,7 @@
 				1133AAFE179498CA002E8B89 /* DDTTYLogger.m in Sources */,
 				1133AB01179498E3002E8B89 /* MBProgressHUD.m in Sources */,
 				1133AB06179499ED002E8B89 /* WMAFHTTPClientRequest.m in Sources */,
-				1133AB0917949ADB002E8B89 /* WMError.m in Sources */,
+				1133AB0917949ADB002E8B89 /* C46Error.m in Sources */,
 				1133AB0E17949BE4002E8B89 /* C46Cipele46APINetworkClient.m in Sources */,
 				1133AB0F17949BE4002E8B89 /* C46Cipele46APIUtils.m in Sources */,
 			);

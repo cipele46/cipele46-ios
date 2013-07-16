@@ -27,7 +27,7 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 }
 
 - (id <WMRequestProxyProtocol>)fetchAdsWithSuccess:(void (^)(NSArray *))success
-                                           failure:(void (^)(WMError *))failure
+                                           failure:(void (^)(C46Error *))failure
 {
     NSString *path = @"ads.json";
     

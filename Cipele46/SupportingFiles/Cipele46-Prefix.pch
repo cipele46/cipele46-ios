@@ -5,7 +5,7 @@
 #import <Availability.h>
 
 #import "DDLog.h"
-#import "WMError.h"
+#import "C46Error.h"
 
 #ifndef __IPHONE_4_0
 #warning "This project uses features only available in iOS SDK 4.0 and later."

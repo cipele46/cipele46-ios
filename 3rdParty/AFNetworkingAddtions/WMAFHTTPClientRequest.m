@@ -12,9 +12,9 @@
 
 static const int ddLogLevel = LOG_LEVEL_WARN;
 
-NSString * WMResponseStatusCodeFromRequestKey = @"WMResponseStatusCodeFromRequestKey";
-NSString * WMNetworkClientErrorLocalizedDesriptionKey = @"WMNetworkClientErrorLocalizedDesriptionKey";
-NSString * WMErrorTypeKey = @"WMErrorTypeKey";
+NSString * C46ResponseStatusCodeFromRequestKey = @"C46ResponseStatusCodeFromRequestKey";
+NSString * C46NetworkClientErrorLocalizedDesriptionKey = @"C46NetworkClientErrorLocalizedDesriptionKey";
+NSString * C46ErrorTypeKey = @"C46ErrorTypeKey";
 
 
 typedef enum __WMNetworkOperationProxyType {
@@ -185,28 +185,28 @@ typedef enum __WMNetworkOperationProxyType {
     
     //XXX TODO check here if is network failure
 
-    [dict setObjectSafe:@(operation.response.statusCode) forKey:WMResponseStatusCodeFromRequestKey];
+    [dict setObjectSafe:@(operation.response.statusCode) forKey:C46ResponseStatusCodeFromRequestKey];
     
     if (networkClientError) {
-        [dict setObjectSafe:@([WMAFHTTPClientRequest errorTypeFromRequestOperation:operation]) forKey:WMErrorTypeKey];
+        [dict setObjectSafe:@([WMAFHTTPClientRequest errorTypeFromRequestOperation:operation]) forKey:C46ErrorTypeKey];
     }
     
-    [dict setObjectSafe:networkClientError.localizedDescription forKey:WMNetworkClientErrorLocalizedDesriptionKey];
+    [dict setObjectSafe:networkClientError.localizedDescription forKey:C46NetworkClientErrorLocalizedDesriptionKey];
     
     return dict;
 }
          
-+ (WMErrorType)errorTypeFromRequestOperation:(AFHTTPRequestOperation *)operation
++ (C46ErrorType)errorTypeFromRequestOperation:(AFHTTPRequestOperation *)operation
 {
-    WMErrorType type = WMErrorType_Undefined;
+    C46ErrorType type = C46ErrorType_Undefined;
     
     if (operation.response && operation.response.statusCode >= 500) {
         
-        type = WMErrorType_ServerError;
+        type = C46ErrorType_ServerError;
     
     } else if (!operation.response) {
         
-        type = WMErrorType_NetworkConnection;
+        type = C46ErrorType_NetworkConnection;
     }
     
     return type;
