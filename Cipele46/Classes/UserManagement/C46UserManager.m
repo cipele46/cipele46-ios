@@ -7,7 +7,6 @@
 //
 
 #import "C46UserManager.h"
-#import "C46ServerCommunicationManager.h"
 #import "C46UserInfo.h"
 #import "C46FacebookConnect.h"
 
@@ -15,7 +14,6 @@
 {
     @private
     
-    C46ServerCommunicationManager* _server;
     BOOL _isFBLogin;
 }
 
@@ -41,7 +39,6 @@
 {
     if (self = [super init])
     {
-        _server = [[C46ServerCommunicationManager alloc] init];
     }
     
     return self;
@@ -57,43 +54,43 @@
         }
         else
         {   
-            [_server loginWithEmail:fbUserInfo.email
-                facebookAccessToken:[[C46FacebookConnect sharedInstance] accessToken]
-                  completionHandler:^(NSError *error, NSDictionary *userInfo)
-            {
-                if (error)
-                {
-                    [self broadcastNotification:C46UserManagerLoginFailedNotification];
-                }
-                else
-                {
-                    _isFBLogin = YES;
-                    _userInfo = fbUserInfo;
-                    [self broadcastNotification:C46UserManagerLoggedInNotification];
-                }
-            }];
+//            [_server loginWithEmail:fbUserInfo.email
+//                facebookAccessToken:[[C46FacebookConnect sharedInstance] accessToken]
+//                  completionHandler:^(NSError *error, NSDictionary *userInfo)
+//            {
+//                if (error)
+//                {
+//                    [self broadcastNotification:C46UserManagerLoginFailedNotification];
+//                }
+//                else
+//                {
+//                    _isFBLogin = YES;
+//                    _userInfo = fbUserInfo;
+//                    [self broadcastNotification:C46UserManagerLoggedInNotification];
+//                }
+//            }];
         }
     }];
 }
 
 -(void)loginWithUserName:(NSString *)userName andPassword:(NSString *)password
 {
-    [_server loginWithUserName:userName
-                      password:password
-             completionHandler:^(NSError *error, NSDictionary *userInfo) 
-    {
-        if (error)
-        {
-            [self broadcastNotification:C46UserManagerLoginFailedNotification];
-        }
-        else
-        {
-            _isFBLogin = NO;
-            _userInfo = [self userInfoWithServerDict:userInfo
-                                            password:password];
-            [self broadcastNotification:C46UserManagerLoggedInNotification];
-        }
-    }];
+//    [_server loginWithUserName:userName
+//                      password:password
+//             completionHandler:^(NSError *error, NSDictionary *userInfo) 
+//    {
+//        if (error)
+//        {
+//            [self broadcastNotification:C46UserManagerLoginFailedNotification];
+//        }
+//        else
+//        {
+//            _isFBLogin = NO;
+//            _userInfo = [self userInfoWithServerDict:userInfo
+//                                            password:password];
+//            [self broadcastNotification:C46UserManagerLoggedInNotification];
+//        }
+//    }];
 }
 
 -(void)logout

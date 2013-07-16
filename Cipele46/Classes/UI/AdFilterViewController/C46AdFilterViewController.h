@@ -8,18 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-#import "C46ServerCommunicationManager.h"
+@class C46AdFilter;
 
 @protocol C46AdFilterDelegate <NSObject>
-- (void)didUpdateFilters:(kC46FilterAdvertTypes)advertType category:(NSString *)category district:(NSString *)district;
+
+- (void)didUpdateFilter:(C46AdFilter *)filter;
+
 @end
 
 @interface C46AdFilterViewController : UIViewController
 
 @property (nonatomic, weak) id<C46AdFilterDelegate> delegate;
-
-@property (nonatomic) kC46FilterAdvertTypes selectedAdvertType;
-@property (nonatomic, copy, setter=setSelectedCategory:) NSString *selectedCategory;
-@property (nonatomic, copy) NSString *selectedDistrict;
+@property (nonatomic) C46AdFilter *selectedFilter;
 
 @end

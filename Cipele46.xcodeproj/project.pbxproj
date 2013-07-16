@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1133AAC717949440002E8B89 /* C46DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AA8A17949440002E8B89 /* C46DataSource.m */; };
 		1133AAC817949440002E8B89 /* C46Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AA8D17949440002E8B89 /* C46Ad.m */; };
-		1133AAC917949440002E8B89 /* C46ServerCommunicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AA9017949440002E8B89 /* C46ServerCommunicationManager.m */; };
 		1133AACA17949440002E8B89 /* favorites_icon_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1133AA9417949440002E8B89 /* favorites_icon_empty@2x.png */; };
 		1133AACB17949440002E8B89 /* favorites_icon_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1133AA9517949440002E8B89 /* favorites_icon_full@2x.png */; };
 		1133AACC17949440002E8B89 /* place_icon_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1133AA9617949440002E8B89 /* place_icon_blue@2x.png */; };
@@ -51,6 +50,7 @@
 		1133AB151795B4EB002E8B89 /* C46City.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB141795B4EB002E8B89 /* C46City.m */; };
 		1133AB181795BEF9002E8B89 /* C46AdImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB171795BEF9002E8B89 /* C46AdImageInfo.m */; };
 		1133AB1B1795C0C0002E8B89 /* C46Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB1A1795C0BF002E8B89 /* C46Region.m */; };
+		1133AB1E1795CDBC002E8B89 /* C46AdFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB1D1795CDBC002E8B89 /* C46AdFilter.m */; };
 		11B1F79117883629001B8969 /* AppIcon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B1F79017883629001B8969 /* AppIcon_114x114.png */; };
 		32E43B81178856B3008C9A88 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B80178856B3008C9A88 /* ImageIO.framework */; };
 		32E43B8317885A42008C9A88 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B8217885A42008C9A88 /* SDWebImage.framework */; };
@@ -105,8 +105,6 @@
 		1133AA8A17949440002E8B89 /* C46DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46DataSource.m; sourceTree = "<group>"; };
 		1133AA8C17949440002E8B89 /* C46Ad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46Ad.h; sourceTree = "<group>"; };
 		1133AA8D17949440002E8B89 /* C46Ad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46Ad.m; sourceTree = "<group>"; };
-		1133AA8F17949440002E8B89 /* C46ServerCommunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46ServerCommunicationManager.h; sourceTree = "<group>"; };
-		1133AA9017949440002E8B89 /* C46ServerCommunicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46ServerCommunicationManager.m; sourceTree = "<group>"; };
 		1133AA9417949440002E8B89 /* favorites_icon_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites_icon_empty@2x.png"; sourceTree = "<group>"; };
 		1133AA9517949440002E8B89 /* favorites_icon_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites_icon_full@2x.png"; sourceTree = "<group>"; };
 		1133AA9617949440002E8B89 /* place_icon_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "place_icon_blue@2x.png"; sourceTree = "<group>"; };
@@ -176,6 +174,8 @@
 		1133AB171795BEF9002E8B89 /* C46AdImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdImageInfo.m; sourceTree = "<group>"; };
 		1133AB191795C0BF002E8B89 /* C46Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46Region.h; sourceTree = "<group>"; };
 		1133AB1A1795C0BF002E8B89 /* C46Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46Region.m; sourceTree = "<group>"; };
+		1133AB1C1795CDBB002E8B89 /* C46AdFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdFilter.h; sourceTree = "<group>"; };
+		1133AB1D1795CDBC002E8B89 /* C46AdFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdFilter.m; sourceTree = "<group>"; };
 		11B1F79017883629001B8969 /* AppIcon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon_114x114.png; path = ../../AppIcon_114x114.png; sourceTree = "<group>"; };
 		32E43B80178856B3008C9A88 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		32E43B8217885A42008C9A88 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = 3rdParty/SDWebImage.framework; sourceTree = "<group>"; };
@@ -298,17 +298,10 @@
 				1133AB171795BEF9002E8B89 /* C46AdImageInfo.m */,
 				1133AB191795C0BF002E8B89 /* C46Region.h */,
 				1133AB1A1795C0BF002E8B89 /* C46Region.m */,
+				1133AB1C1795CDBB002E8B89 /* C46AdFilter.h */,
+				1133AB1D1795CDBC002E8B89 /* C46AdFilter.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		1133AA8E17949440002E8B89 /* ServerCommunicationManager */ = {
-			isa = PBXGroup;
-			children = (
-				1133AA8F17949440002E8B89 /* C46ServerCommunicationManager.h */,
-				1133AA9017949440002E8B89 /* C46ServerCommunicationManager.m */,
-			);
-			path = ServerCommunicationManager;
 			sourceTree = "<group>";
 		};
 		1133AA9117949440002E8B89 /* UI */ = {
@@ -536,7 +529,6 @@
 			isa = PBXGroup;
 			children = (
 				1133AAF11794980D002E8B89 /* Categories */,
-				1133AA8E17949440002E8B89 /* ServerCommunicationManager */,
 				1133AA8817949440002E8B89 /* DataSource */,
 				1133AA8B17949440002E8B89 /* Model */,
 				1133AA9117949440002E8B89 /* UI */,
@@ -792,7 +784,6 @@
 				C2C0FDA6178813C900AD355B /* NSString+URLEncoding.m in Sources */,
 				1133AAC717949440002E8B89 /* C46DataSource.m in Sources */,
 				1133AAC817949440002E8B89 /* C46Ad.m in Sources */,
-				1133AAC917949440002E8B89 /* C46ServerCommunicationManager.m in Sources */,
 				1133AAD017949440002E8B89 /* C46AdDetailViewController.m in Sources */,
 				1133AAD217949440002E8B89 /* C46AdFilterViewController.m in Sources */,
 				1133AAD417949440002E8B89 /* C46AdCell.m in Sources */,
@@ -819,6 +810,7 @@
 				1133AB151795B4EB002E8B89 /* C46City.m in Sources */,
 				1133AB181795BEF9002E8B89 /* C46AdImageInfo.m in Sources */,
 				1133AB1B1795C0C0002E8B89 /* C46Region.m in Sources */,
+				1133AB1E1795CDBC002E8B89 /* C46AdFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

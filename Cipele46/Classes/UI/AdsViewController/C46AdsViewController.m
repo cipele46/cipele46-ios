@@ -9,6 +9,7 @@
 #import "C46AdsViewController.h"
 #import "C46AdListViewController.h"
 #import "C46AdFilterViewController.h"
+#import "C46AdFilter.h"
 #import "MBProgressHUD.h"
 
 @interface C46AdsViewController () <C46AdListViewControllerDelegate, C46AdFilterDelegate>
@@ -51,7 +52,7 @@
 
 #pragma mark - C46AdFilterDelegate
 
-- (void)didUpdateFilters:(kC46FilterAdvertTypes)advertType category:(NSString *)category district:(NSString *)district
+- (void)didUpdateFilter:(C46AdFilter *)filter
 {
 //    NSLog(@"Filter changed");
 //    NSLog(@"Category: %@", category);

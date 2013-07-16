@@ -15,6 +15,12 @@
 
 static const int ddLogLevel = LOG_LEVEL_WARN;
 
+
+// later
+// ----> AFHTTPClient <----
+//[client setAuthorizationHeaderWithUsername:[parameters objectForKey:@"username"]
+//                                  password:[parameters objectForKey:@"password"]];
+
 @implementation C46DataSource
 
 + (C46DataSource *)sharedInstance
