@@ -9,7 +9,6 @@
 #import "C46AdListViewController.h"
 #import "C46AdCell.h"
 #import "C46Ad.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "C46DataSource.h"
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -71,9 +70,6 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 {
     static NSString *AdCellIdentifier = @"AdCell";
     
-    // add a placeholder cell while waiting on table data
-    //NSUInteger nodeCount = [self.tDataSource count];
-	
     C46AdCell *cell =(C46AdCell *) [tableView dequeueReusableCellWithIdentifier:AdCellIdentifier];
     if(cell==nil) {
         NSArray * topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"C46AdCell" owner:self options:nil];
@@ -87,21 +83,8 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     }
 
     C46Ad *ad = [self.ads objectAtIndex:indexPath.row];
+    cell.ad = ad;
     
-    // Here we use the new provided setImageWithURL: method to load the web image
-    NSLog(@"imageURL is %@", ad.imageURL);
-    [cell.leftImage setImageWithURL:ad.imageURL
-                   placeholderImage:[UIImage imageNamed:@"favorites_icon_full.png"]];
-    
-    cell.title.text = ad.title;
-    cell.category.text = ad.category;
-    cell.city.text = ad.city;
-    NSLog(@"adtype=%@",ad.type);
-    if([ad.type compare:[NSNumber numberWithInt:1]] == NSOrderedSame){
-        [cell.colorView setBackgroundColor:[UIColor colorWithRed:25.0f/255.0f green:225.0f/255.0f blue:206.0f/255.0f alpha:1.0]];
-    }else{
-        [cell.colorView setBackgroundColor:[UIColor colorWithRed:251.0f/255.0f green:62.0f/255.0f blue:38.0f/255.0f alpha:1.0]];
-    }
     return cell;
 }
 

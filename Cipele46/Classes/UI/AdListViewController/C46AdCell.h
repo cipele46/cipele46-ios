@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class C46Ad;
+
 @interface C46AdCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *title;
-@property (nonatomic, weak) IBOutlet UILabel *category;
-@property (nonatomic, weak) IBOutlet UILabel *city;
-@property (nonatomic, weak) IBOutlet UIImageView *leftImage;
-@property (nonatomic, weak) IBOutlet UIView *colorView;
+@property (nonatomic) C46Ad *ad;
 
 @end
