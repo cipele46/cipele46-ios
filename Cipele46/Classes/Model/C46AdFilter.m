@@ -10,4 +10,9 @@
 
 @implementation C46AdFilter
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Type: %@, Category: %@, Region: %@", ADTypeDescription(_type), _category.name, _region.name];
+}
+
 @end

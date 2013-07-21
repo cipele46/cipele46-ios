@@ -12,6 +12,8 @@
 #import "C46AdFilter.h"
 #import "MBProgressHUD.h"
 
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+
 @interface C46AdsViewController () <C46AdListViewControllerDelegate, C46AdFilterDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *adListViewControllerPlaceholderView;
@@ -52,11 +54,26 @@
 
 #pragma mark - C46AdFilterDelegate
 
-- (void)didUpdateFilter:(C46AdFilter *)filter
+- (void)adFilterViewControllerDidStartUpdatingFilters:(UIViewController *)controller
 {
-//    NSLog(@"Filter changed");
-//    NSLog(@"Category: %@", category);
-//    NSLog(@"District: %@", district);
+    [self.class showLoadingViewInView:controller.view];
+
+}
+
+- (void)adFilterViewControllerDidFinishUpdatingFilters:(UIViewController *)controller
+{
+    [self.class hideLoadingViewinView:controller.view];
+
+}
+
+- (void)adFilterViewController:(UIViewController *)controller didFailUpdatingFilterWithError:(C46Error *)error
+{
+    DDLogError(@"Ad filter view controller did fail updating filter with error: %@", error);
+}
+
+- (void)adFilterViewController:(UIViewController *)controller didSelectFilter:(C46AdFilter *)filter
+{
+    DDLogInfo(@"Filter selected: %@", filter);
 }
 
 #pragma mark - C46AdListViewControllerDelegate
@@ -68,16 +85,25 @@
 
 - (void)adListViewControllerDidStartRefreshing:(UIViewController *)controller
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Loading";
+    [self.class showLoadingViewInView:self.view];
 }
 
 - (void)adListViewControllerDidFinishRefreshing:(UIViewController *)controller
 {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [self.class hideLoadingViewinView:self.view];
 }
 
+#pragma mark - Utils
 
++ (void)showLoadingViewInView:(UIView *)view
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.labelText = @"Loading";
+}
 
++ (void)hideLoadingViewinView:(UIView *)view
+{
+    [MBProgressHUD hideHUDForView:view animated:YES];
+}
 
 @end

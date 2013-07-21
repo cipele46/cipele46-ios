@@ -37,6 +37,8 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 - (id <WMRequestProxyProtocol>)fetchAdsWithSuccess:(void (^)(NSArray *))success
                                            failure:(void (^)(C46Error *))failure
 {
+    DDLogInfo(@"Fetch ads");
+    
     NSString *path = @"ads.json";
     
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
@@ -68,6 +70,8 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 - (id<WMRequestProxyProtocol>)fetchCategoriesWithSuccess:(void (^)(NSArray *))success
                                                  failure:(void (^)(C46Error *))failure
 {
+    DDLogInfo(@"Fetch categories");
+    
     NSString *path = @"categories.json";
     
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
@@ -99,6 +103,8 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 - (id<WMRequestProxyProtocol>)fetchRegionsWithSuccess:(void (^)(NSArray *))success
                                               failure:(void (^)(C46Error *))failure
 {
+    DDLogInfo(@"Fetch regions");
+    
     NSString *path = @"regions.json";
     
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path

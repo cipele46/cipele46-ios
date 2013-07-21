@@ -12,7 +12,11 @@
 
 @protocol C46AdFilterDelegate <NSObject>
 
-- (void)didUpdateFilter:(C46AdFilter *)filter;
+- (void)adFilterViewController:(UIViewController *)controller didSelectFilter:(C46AdFilter *)filter;
+
+- (void)adFilterViewControllerDidStartUpdatingFilters:(UIViewController *)controller;
+- (void)adFilterViewControllerDidFinishUpdatingFilters:(UIViewController *)controller;
+- (void)adFilterViewController:(UIViewController *)controller didFailUpdatingFilterWithError:(C46Error *)error;
 
 @end
 
