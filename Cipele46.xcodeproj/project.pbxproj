@@ -15,8 +15,6 @@
 		1133AACD17949440002E8B89 /* place_icon_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1133AA9717949440002E8B89 /* place_icon_red@2x.png */; };
 		1133AACE17949440002E8B89 /* time_icon_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1133AA9817949440002E8B89 /* time_icon_blue@2x.png */; };
 		1133AACF17949440002E8B89 /* time_icon_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1133AA9917949440002E8B89 /* time_icon_red@2x.png */; };
-		1133AAD017949440002E8B89 /* C46AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AA9B17949440002E8B89 /* C46AdDetailViewController.m */; };
-		1133AAD117949440002E8B89 /* C46AdDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1133AA9C17949440002E8B89 /* C46AdDetailViewController.xib */; };
 		1133AAD217949440002E8B89 /* C46AdFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AA9F17949440002E8B89 /* C46AdFilterViewController.m */; };
 		1133AAD317949440002E8B89 /* C46AdFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1133AAA017949440002E8B89 /* C46AdFilterViewController.xib */; };
 		1133AAD417949440002E8B89 /* C46AdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AAA317949440002E8B89 /* C46AdCell.m */; };
@@ -52,6 +50,8 @@
 		1133AB1B1795C0C0002E8B89 /* C46Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB1A1795C0BF002E8B89 /* C46Region.m */; };
 		1133AB1E1795CDBC002E8B89 /* C46AdFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB1D1795CDBC002E8B89 /* C46AdFilter.m */; };
 		11B1F79117883629001B8969 /* AppIcon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B1F79017883629001B8969 /* AppIcon_114x114.png */; };
+		11F70BC7179D509200259C1E /* C46AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F70BC5179D509200259C1E /* C46AdDetailViewController.m */; };
+		11F70BC8179D509200259C1E /* C46AdDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F70BC6179D509200259C1E /* C46AdDetailViewController.xib */; };
 		32E43B81178856B3008C9A88 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B80178856B3008C9A88 /* ImageIO.framework */; };
 		32E43B8317885A42008C9A88 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B8217885A42008C9A88 /* SDWebImage.framework */; };
 		8D6E5245178838A400F0E54B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6E5244178838A400F0E54B /* MessageUI.framework */; };
@@ -111,9 +111,6 @@
 		1133AA9717949440002E8B89 /* place_icon_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "place_icon_red@2x.png"; sourceTree = "<group>"; };
 		1133AA9817949440002E8B89 /* time_icon_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time_icon_blue@2x.png"; sourceTree = "<group>"; };
 		1133AA9917949440002E8B89 /* time_icon_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time_icon_red@2x.png"; sourceTree = "<group>"; };
-		1133AA9A17949440002E8B89 /* C46AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdDetailViewController.h; sourceTree = "<group>"; };
-		1133AA9B17949440002E8B89 /* C46AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdDetailViewController.m; sourceTree = "<group>"; };
-		1133AA9C17949440002E8B89 /* C46AdDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdDetailViewController.xib; sourceTree = "<group>"; };
 		1133AA9E17949440002E8B89 /* C46AdFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdFilterViewController.h; sourceTree = "<group>"; };
 		1133AA9F17949440002E8B89 /* C46AdFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdFilterViewController.m; sourceTree = "<group>"; };
 		1133AAA017949440002E8B89 /* C46AdFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdFilterViewController.xib; sourceTree = "<group>"; };
@@ -177,6 +174,9 @@
 		1133AB1C1795CDBB002E8B89 /* C46AdFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdFilter.h; sourceTree = "<group>"; };
 		1133AB1D1795CDBC002E8B89 /* C46AdFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdFilter.m; sourceTree = "<group>"; };
 		11B1F79017883629001B8969 /* AppIcon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon_114x114.png; path = ../../AppIcon_114x114.png; sourceTree = "<group>"; };
+		11F70BC4179D509200259C1E /* C46AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdDetailViewController.h; sourceTree = "<group>"; };
+		11F70BC5179D509200259C1E /* C46AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdDetailViewController.m; sourceTree = "<group>"; };
+		11F70BC6179D509200259C1E /* C46AdDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdDetailViewController.xib; sourceTree = "<group>"; };
 		32E43B80178856B3008C9A88 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		32E43B8217885A42008C9A88 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = 3rdParty/SDWebImage.framework; sourceTree = "<group>"; };
 		8D6E5244178838A400F0E54B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -323,9 +323,9 @@
 			isa = PBXGroup;
 			children = (
 				1133AA9317949440002E8B89 /* Assets */,
-				1133AA9A17949440002E8B89 /* C46AdDetailViewController.h */,
-				1133AA9B17949440002E8B89 /* C46AdDetailViewController.m */,
-				1133AA9C17949440002E8B89 /* C46AdDetailViewController.xib */,
+				11F70BC4179D509200259C1E /* C46AdDetailViewController.h */,
+				11F70BC5179D509200259C1E /* C46AdDetailViewController.m */,
+				11F70BC6179D509200259C1E /* C46AdDetailViewController.xib */,
 			);
 			path = AdDetailViewController;
 			sourceTree = "<group>";
@@ -728,7 +728,6 @@
 				1133AACD17949440002E8B89 /* place_icon_red@2x.png in Resources */,
 				1133AACE17949440002E8B89 /* time_icon_blue@2x.png in Resources */,
 				1133AACF17949440002E8B89 /* time_icon_red@2x.png in Resources */,
-				1133AAD117949440002E8B89 /* C46AdDetailViewController.xib in Resources */,
 				1133AAD317949440002E8B89 /* C46AdFilterViewController.xib in Resources */,
 				1133AAD517949440002E8B89 /* C46AdCell.xib in Resources */,
 				1133AAD717949440002E8B89 /* C46AdListViewController.xib in Resources */,
@@ -737,6 +736,7 @@
 				1133AAE017949440002E8B89 /* C46MyAdsViewController.xib in Resources */,
 				1133AAE217949440002E8B89 /* C46RegisterUserViewController.xib in Resources */,
 				1133AAEB17949515002E8B89 /* C46LoginUserViewController.xib in Resources */,
+				11F70BC8179D509200259C1E /* C46AdDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,7 +784,6 @@
 				C2C0FDA6178813C900AD355B /* NSString+URLEncoding.m in Sources */,
 				1133AAC717949440002E8B89 /* C46DataSource.m in Sources */,
 				1133AAC817949440002E8B89 /* C46Ad.m in Sources */,
-				1133AAD017949440002E8B89 /* C46AdDetailViewController.m in Sources */,
 				1133AAD217949440002E8B89 /* C46AdFilterViewController.m in Sources */,
 				1133AAD417949440002E8B89 /* C46AdCell.m in Sources */,
 				1133AAD617949440002E8B89 /* C46AdListViewController.m in Sources */,
@@ -811,6 +810,7 @@
 				1133AB181795BEF9002E8B89 /* C46AdImageInfo.m in Sources */,
 				1133AB1B1795C0C0002E8B89 /* C46Region.m in Sources */,
 				1133AB1E1795CDBC002E8B89 /* C46AdFilter.m in Sources */,
+				11F70BC7179D509200259C1E /* C46AdDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
