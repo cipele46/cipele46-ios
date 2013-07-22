@@ -77,6 +77,8 @@ typedef enum __TableSection
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds
                                                   style:UITableViewStyleGrouped];
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -177,14 +179,14 @@ typedef enum __TableSection
 
 - (void)onTableDataPortionFetch
 {
-    if ([self tableDataFetched]) {
+    if ([self isTableDataFetched]) {
         
-        [self.delegate adFilterViewControllerDidFinishUpdatingFilters:self];
         [self.tableView reloadData];
+        [self.delegate adFilterViewControllerDidFinishUpdatingFilters:self];
     }
 }
 
-- (BOOL)tableDataFetched
+- (BOOL)isTableDataFetched
 {
     return _categoriesFetched && _regionsFetched && _typesFetched;
 }
