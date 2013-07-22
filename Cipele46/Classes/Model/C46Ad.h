@@ -19,6 +19,8 @@ typedef enum __AdType {
     
 } AdType;
 
+NSString * ADTypeDescription(AdType type);
+
 typedef enum __AdStatus {
     
     AdStatusPending = 1,

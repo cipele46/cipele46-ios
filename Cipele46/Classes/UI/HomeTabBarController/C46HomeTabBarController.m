@@ -12,7 +12,6 @@
 #import "C46AdDetailViewController.h"
 
 
-
 @interface C46HomeTabBarController () <C46AdsViewControllerDelegate>
 
 @property (nonatomic) C46AdsViewController *adsViewController;
@@ -39,7 +38,7 @@
     [super viewDidLoad];
     
     // Ads
-    _adsViewController = [[C46AdsViewController alloc] initWithNibName:@"C46AdsViewController" bundle:nil];
+    _adsViewController = [[C46AdsViewController alloc] init];
     _adsViewController.delegate = self;
     UINavigationController *adsNavigationController = [[UINavigationController alloc] initWithRootViewController:_adsViewController];
 
@@ -50,7 +49,7 @@
     _createAdViewController = [[UIViewController alloc] init];
     
     // My ads
-    _myAdsViewController = [[C46MyAdsViewController alloc] initWithNibName:@"C46MyAdsViewController" bundle:nil];
+    _myAdsViewController = [[C46MyAdsViewController alloc] init];
     _myAdsViewController.delegate = self;
     UINavigationController *myAdsNavigationController = [[UINavigationController alloc] initWithRootViewController:_myAdsViewController];
 
@@ -67,10 +66,9 @@
     NSAssert(controller == _adsViewController || controller == _myAdsViewController, @"Shit happened");
     NSAssert(controller.navigationController != nil, @"Navigation controller can not be nil");
     
-    C46AdDetailViewController *adViewController = [[C46AdDetailViewController alloc] initWithNibName:@"C46DetailsViewController" bundle:nil];
-    adViewController.ad = ad;
+    C46AdDetailViewController *adDetailViewController = [[C46AdDetailViewController alloc] initWithAd:ad];
     
-    [controller.navigationController pushViewController:adViewController animated:YES];
+    [controller.navigationController pushViewController:adDetailViewController animated:YES];
 }
 
 @end

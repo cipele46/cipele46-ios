@@ -1,40 +1,40 @@
 //
-//  C46DetailsViewController.m
+//  C46DetailViewController.m
 //  Cipele46
 //
-//  Created by Ivana Rast on 7/6/13.
+//  Created by Dino Bartosak on 7/22/13.
 //  Copyright (c) 2013 Miran Brajsa. All rights reserved.
 //
 
+#import "C46AdDetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "C46Ad.h"
-#import "C46AdDetailViewController.h"
 
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface C46AdDetailViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextView *titleTextView;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *containerScrollView;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *expirationLabel;
-@property (weak, nonatomic) IBOutlet UIButton *favouriteButton;
+@property (weak, nonatomic) IBOutlet UIView *detailsView;
 @property (weak, nonatomic) IBOutlet UIButton *phoneButton;
 @property (weak, nonatomic) IBOutlet UIButton *messageButton;
-@property (weak, nonatomic) IBOutlet UIImageView *adImageView;
-
 
 @end
 
-
 @implementation C46AdDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithAd:(C46Ad *)ad
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"C46AdDetailViewController" bundle:nil];
+    
     if (self) {
-        // Custom initialization
+        _ad = ad;
     }
+    
     return self;
 }
 
@@ -42,78 +42,50 @@
 {
     [super viewDidLoad];
     
-    [self setLocalizedLabelsOnButtons];
-}
-
-- (void) viewWillAppear:(BOOL)animated{
-    
-    // TODO: Set status label
-    
-    [[self titleTextView] setText:[[self ad] title]];
-    
-    [[self descriptionTextView] setText:[[self ad] description]];
-    
-    // TODO: Set expiration label
-    
-    NSString *address = _ad.city.name;
-    [[self addressLabel] setText:address];
-    
-    // Phone number is not mandatory.
-    if([[self ad] phone] && !([[[self ad] phone] isEqualToString:@""])){
-        NSString *phone = [[self phoneButton] titleLabel].text;
-        [[self phoneButton] setTitle:[NSString stringWithFormat:@"%@%@%@%@", phone, @" (", [[self ad] phone], @")"] forState:UIControlStateNormal];
-    }else{
-        [[self phoneButton] setHidden:YES];
-    }
-    
-    [[self adImageView] setImageWithURL:self.ad.imageInfo.imageURL
-                       placeholderImage:[UIImage imageNamed:@"favorites_icon_full.png"]];
+    [self refreshAdUI];
     
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewWillAppear:animated];
+    
+    // TODO do this better later
+    _containerScrollView.contentSize = CGSizeMake(_containerScrollView.bounds.size.width, 548); //_containerView.bounds.size;
 }
 
-
-# pragma mark - Button actions
-
-- (IBAction)phoneButtonTapped:(id)sender {
+- (void)setAd:(C46Ad *)ad
+{
+    _ad = ad;
     
-    NSString *phoneNo = [[self ad] phone];
+    [self refreshAdUI];
+}
+
+- (void)refreshAdUI
+{
+    _titleLabel.text = _ad.title;
+    
+    NSURL *imageURL = _ad.imageInfo.imageURL;
+    [_imageView setImageWithURL:imageURL
+               placeholderImage:[UIImage imageNamed:@"favorites_icon_full.png"]];
+    
+    _descriptionTextView.text = _ad.description;
+    
+    [_phoneButton setTitle:_ad.phone forState:UIControlStateNormal];
+}
+
+- (IBAction)phoneButtonPress:(id)sender
+{
+    NSString *phoneNo = _ad.phone;
     phoneNo = [phoneNo stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString *phoneNoURL = [@"telprompt://" stringByAppendingString:phoneNo];
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNoURL]];
 }
 
-- (IBAction)messageButtonTapped:(id)sender {
-    
-}
+- (IBAction)messageButtonPress:(id)sender
+{
 
-- (IBAction)favouriteButtonTapped:(id)sender {
-    
-    UIImage *image=nil;
-    
-    // TODO: Save the change
-//    
-//    if([[self ad] isFavourite]){
-//        image = [UIImage imageNamed:@"favorites_icon_full.png"];
-//    }else{
-//        image = [UIImage imageNamed:@"favorites_icon_empty.png"];
-//    }
-//    
-//    [[self favouriteButton] setImage:image forState:UIControlStateNormal];
-    
-}
-
--(void)setLocalizedLabelsOnButtons {
-    
-    [[self messageButton] setTitle: NSLocalizedString(@"DETAIL_VIEW__BTN_MESSAGE", @"") forState: UIControlStateNormal];
-    [[self phoneButton] setTitle: NSLocalizedString(@"DETAIL_VIEW__BTN_CALL", @"") forState: UIControlStateNormal];
-    
 }
 
 @end

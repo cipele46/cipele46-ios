@@ -14,7 +14,7 @@
 {
     if (self = [super init]) {
         
-        _identifier = [dictionary objectForKey:@"id"];
+        _identifier = [[dictionary objectForKey:@"id"] stringValue];
         _name = [dictionary objectForKey:@"name"];
         
         // TODO: create date objects from strings

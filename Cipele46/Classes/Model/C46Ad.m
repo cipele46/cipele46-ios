@@ -19,15 +19,15 @@
         NSDictionary *categoryDictionary =  [dictionary objectForKey:@"category"];
         _category = [[C46AdCategory alloc] initWithJSONDictionary:categoryDictionary];
         _categoryID =  [[dictionary objectForKey:@"categoryID"] integerValue];
-
+        
         NSDictionary *cityDictionary =  [dictionary objectForKey:@"city"];
         _city = [[C46City alloc] initWithJSONDictionary:cityDictionary];
         _cityID =  [[dictionary objectForKey:@"cityID"] integerValue];
-
+        
         // TODO: create date object from string
-//        NSString *dateCreatedString = [dictionary objectForKey:@"created_at"]; // 2013-07-06T10:01:53Z
+        //        NSString *dateCreatedString = [dictionary objectForKey:@"created_at"]; // 2013-07-06T10:01:53Z
         _dateCreated = [NSDate date];
-//        NSString *dateUpdatedString = [dictionary objectForKey:@"updated_at"]; // 2013-07-06T10:01:53Z
+        //        NSString *dateUpdatedString = [dictionary objectForKey:@"updated_at"]; // 2013-07-06T10:01:53Z
         _dateUpdated = [NSDate date];
         
         
@@ -37,7 +37,7 @@
         
         NSDictionary *imageInfoDIctionary = [dictionary objectForKey:@"image"];
         _imageInfo = [[C46AdImageInfo alloc] initWithJSONDictionary:imageInfoDIctionary];
-
+        
         _phone =  [dictionary objectForKey:@"phone"];
         
         NSDictionary *regionDictionary = [dictionary objectForKey:@"region"];
@@ -52,4 +52,13 @@
 }
 
 @end
+
+NSString * ADTypeDescription(AdType type)
+{
+    switch (type) {
+        case AdTypeSupply: return @"Supply";
+        case AdTypeDemand: return @"Demand";
+        default: return @"Unknown";
+    }
+}
 

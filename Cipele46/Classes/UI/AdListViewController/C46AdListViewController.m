@@ -9,14 +9,12 @@
 #import "C46AdListViewController.h"
 #import "C46AdCell.h"
 #import "C46Ad.h"
-#import "C46DataSource.h"
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface C46AdListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tView;
-@property (nonatomic, strong) NSArray *ads;
 
 @end
 
@@ -34,28 +32,10 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     return self;
 }
 
-- (void)viewDidLoad
+- (void)setAds:(NSArray *)ads
 {
-    [super viewDidLoad];
-        
-    [self.delegate adListViewControllerDidStartRefreshing:self];
-    
-    [[C46DataSource sharedInstance] fetchAdsWithSuccess:^(NSArray *ads) {
-        
-        DDLogInfo(@"Ads received");
-        DDLogVerbose(@"\t\tAds: %@", ads);
-        
-        [self.delegate adListViewControllerDidFinishRefreshing:self];
-        
-        self.ads = ads;
-        [self.tView reloadData];
-        
-    } failure:^(C46Error *error) {
-        
-        DDLogError(@"Ads fetch error: %@", error);
-        
-        [self.delegate adListViewControllerDidFinishRefreshing:self];
-    }];
+    _ads = ads;
+    [self.tView reloadData];
 }
 
 

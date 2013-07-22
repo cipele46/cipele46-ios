@@ -10,8 +10,7 @@
 #import "C46Cipele46APINetworkClient.h"
 #import "C46Cipele46APIUtils.h"
 #import "C46Ad.h"
-#import "C46AdCategory.h"
-#import "C46Region.h"
+#import "C46AdFilter.h"
 
 static const int ddLogLevel = LOG_LEVEL_WARN;
 
@@ -37,6 +36,8 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 - (id <WMRequestProxyProtocol>)fetchAdsWithSuccess:(void (^)(NSArray *))success
                                            failure:(void (^)(C46Error *))failure
 {
+    DDLogInfo(@"Fetch ads");
+    
     NSString *path = @"ads.json";
     
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
@@ -65,9 +66,46 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
     return request;
 }
 
+- (id<WMRequestProxyProtocol>)fetchAdsWithFilters:(NSArray *)filters
+                                          success:(void (^)(NSArray *))success
+                                          failure:(void (^)(C46Error *))failure
+{
+    DDLogInfo(@"Fetch ads with filters");
+    
+    NSString *path = @"ads.json";
+    NSDictionary *parameters = [self.class adFilterParametersFromFilters:filters];
+    
+    WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
+                                                                    parameters:parameters
+                                                                 networkClient:[C46Cipele46APINetworkClient sharedClient]
+                                                                       success:^(id responseInfo, id responseObject) {
+                                                                           
+                                                                           DDLogInfo(@"Fetch ads with filter success");
+                                                                           DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                                           DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                                           
+                                                                           success([self.class adsFromResponseObject:responseObject]);
+                                                                           
+                                                                       } failure:^(id responseInfo, id responseObject) {
+                                                                           
+                                                                           DDLogError(@"Fetch ads with filter error");
+                                                                           DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                                           DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                                           
+                                                                           failure([C46Cipele46APIUtils errorFromHTTPResponse:responseObject
+                                                                                                                 responseInfo:responseInfo]);
+                                                                       }];
+    
+    [request start];
+    
+    return request;
+}
+
 - (id<WMRequestProxyProtocol>)fetchCategoriesWithSuccess:(void (^)(NSArray *))success
                                                  failure:(void (^)(C46Error *))failure
 {
+    DDLogInfo(@"Fetch categories");
+    
     NSString *path = @"categories.json";
     
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
@@ -99,6 +137,8 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 - (id<WMRequestProxyProtocol>)fetchRegionsWithSuccess:(void (^)(NSArray *))success
                                               failure:(void (^)(C46Error *))failure
 {
+    DDLogInfo(@"Fetch regions");
+    
     NSString *path = @"regions.json";
     
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
@@ -166,6 +206,17 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
     }
     
     return regions;
+}
+
++ (NSDictionary *)adFilterParametersFromFilters:(NSArray *)filters
+{
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:filters.count];
+    
+    for (C46AdFilter *filter in filters) {
+        [parameters setObject:filter.C46APIValue forKey:filter.C46APIKey];
+    }
+    
+    return parameters;
 }
 
 @end

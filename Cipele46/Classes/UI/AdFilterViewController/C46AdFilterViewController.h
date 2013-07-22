@@ -8,17 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@class C46AdFilter;
-
 @protocol C46AdFilterDelegate <NSObject>
 
-- (void)didUpdateFilter:(C46AdFilter *)filter;
+- (void)adFilterViewController:(UIViewController *)controller didSelectFilters:(NSArray *)filters; // array of C46AdFilter objects
+
+- (void)adFilterViewControllerDidStartUpdatingFilters:(UIViewController *)controller;
+- (void)adFilterViewControllerDidFinishUpdatingFilters:(UIViewController *)controller;
+- (void)adFilterViewController:(UIViewController *)controller didFailUpdatingFilterWithError:(C46Error *)error;
 
 @end
 
 @interface C46AdFilterViewController : UIViewController
 
 @property (nonatomic, weak) id<C46AdFilterDelegate> delegate;
-@property (nonatomic) C46AdFilter *selectedFilter;
+
+- (id)initWithFilters:(NSArray *)filters;
 
 @end

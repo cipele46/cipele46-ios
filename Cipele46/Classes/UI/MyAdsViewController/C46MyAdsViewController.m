@@ -22,13 +22,16 @@
 
 @implementation C46MyAdsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"C46MyAdsViewController" bundle:nil];
+    
     if (self) {
         self.title = NSLocalizedString(@"MyAds", @"Moji");
         self.tabBarItem.image = [UIImage imageNamed:@"second"];
     }
+    
     return self;
 }
 
