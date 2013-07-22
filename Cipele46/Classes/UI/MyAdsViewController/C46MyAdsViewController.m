@@ -9,6 +9,8 @@
 #import "C46MyAdsViewController.h"
 #import "C46AdListViewController.h"
 #import "MBProgressHUD.h"
+#import "C46LoginUserViewController.h"
+#import "C46UserManager.h"
 
 @interface C46MyAdsViewController () <C46AdListViewControllerDelegate>
 
@@ -44,6 +46,15 @@
     _adListViewController = [[C46AdListViewController alloc] initWithNibName:@"C46AdListViewController" bundle:nil];
     _adListViewController.delegate = self;
     [_adListViewControllerPlaceholderView addSubview:_adListViewController.view];
+    
+    if (![[C46UserManager sharedInstance] isLoggedIn])
+    {
+        UIViewController* loginVC = [[C46LoginUserViewController alloc] init];
+        
+        [self presentViewController:loginVC
+                           animated:YES
+                         completion:NULL];
+    }
 }
 
 

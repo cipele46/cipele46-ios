@@ -9,6 +9,7 @@
 #import "C46LoginUserViewController.h"
 
 #import "C46RegisterUserViewController.h"
+#import "C46UserManager.h"
 
 @interface C46LoginUserViewController ()
 
@@ -26,6 +27,11 @@
 @synthesize btnRegister;
 @synthesize fieldEmail;
 @synthesize fieldPassword;
+
+-(id)init
+{
+    return [self initWithNibName:@"C46LoginUserViewController" bundle:[NSBundle mainBundle]];
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -60,13 +66,43 @@
 #pragma mark - Button events
 
 -(IBAction)tryFacebookLogin:(id)sender {
-
+    [[C46UserManager sharedInstance] loginViaFacebookWithCompletionHandler:^(NSError *error)
+    {
+        if (nil == error)
+        {
+            // Just dismmis view controller
+            [self dismissViewControllerAnimated: YES completion: nil];
+        }
+        else
+        {
+            // TODO
+            NSAssert(NO, @"");
+        }
+    }];
 }
 
 -(IBAction)tryNormalLogin:(id)sender {
     
     if ( ![self areLoginAndPasswordEntered]) {
         [self displayAlertView: @"Email/Lozinka nisu unešeni"];
+    }
+    else
+    {
+        [[C46UserManager sharedInstance] loginWithEmail:self.fieldEmail.text
+                                            andPassword:self.fieldPassword.text
+         completionHandler:^(NSError *error)
+        {
+            if (nil == error)
+            {
+                // Just dismmis view controller
+                [self dismissViewControllerAnimated: YES completion: nil];
+            }
+            else
+            {
+                // TODO
+                NSAssert(NO, @"");
+            }
+        }];
     }
 }
 

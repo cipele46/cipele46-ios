@@ -7,6 +7,7 @@
 //
 
 #import "C46RegisterUserViewController.h"
+#import "C46UserManager.h"
 
 #define viewSpacement 10.0f //px
 
@@ -96,8 +97,24 @@
         // Notify user that the passwords are not the sam
         [self displayAlertView: NSLocalizedString(@"REGISTER_USER_VIEW__ALERT_MESSAGE_PASSWORDS_NOT_SAME", @"")];
     } else {
-        // Just dismmis view controller
-        [self dismissViewControllerAnimated: YES completion: nil];
+        [[C46UserManager sharedInstance] createUserWithName:self.fieldName.text
+                                                      email:self.fieldEmail.text
+                                                      phone:self.fieldPhone.text
+                                                   password:self.fieldPassword.text
+                                          completionHandler:^(NSError *error)
+        {
+            if (nil == error)
+            {
+                // Just dismmis view controller
+                [self dismissViewControllerAnimated: YES completion: nil];
+            }
+            else
+            {
+                // TODO
+                NSAssert(NO, @"");
+            }
+        }];
+        
     }
 }
 
