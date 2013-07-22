@@ -13,13 +13,13 @@
 
 @required
 -(void)adListViewController:(UIViewController *)controller didSelectAd:(C46Ad *)ad;
--(void)adListViewControllerDidStartRefreshing:(UIViewController *)controller;
--(void)adListViewControllerDidFinishRefreshing:(UIViewController *)controller;
 
 @end
 
 @interface C46AdListViewController: UIViewController
 
 @property (nonatomic, weak) id<C46AdListViewControllerDelegate> delegate;
+
+@property (nonatomic) NSArray *ads;
 
 @end

@@ -67,10 +67,10 @@
     NSAssert(controller == _adsViewController || controller == _myAdsViewController, @"Shit happened");
     NSAssert(controller.navigationController != nil, @"Navigation controller can not be nil");
     
-    C46AdDetailViewController *adViewController = [[C46AdDetailViewController alloc] initWithNibName:@"C46DetailsViewController" bundle:nil];
-    adViewController.ad = ad;
+    C46AdDetailViewController *adDetailViewController = [[C46AdDetailViewController alloc] initWithNibName:@"C46DetailsViewController" bundle:nil];
+    adDetailViewController.ad = ad;
     
-    [controller.navigationController pushViewController:adViewController animated:YES];
+//    [controller.navigationController pushViewController:adDetailViewController animated:YES];
 }
 
 @end

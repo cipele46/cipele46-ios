@@ -11,7 +11,10 @@
 #import "C46DataSource.h"
 #import "C46Ad.h"
 
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#define kAdTypeInfoKeyType @"type"
+#define kAdTypeInfoKeyText @"text"
+
+static const int ddLogLevel = LOG_LEVEL_INFO;
 
 typedef enum __TableSection
 {
@@ -46,22 +49,23 @@ typedef enum __TableSection
 
 @implementation C46AdFilterViewController
 
-- (id)init
+- (id)initWithFilters:(NSArray *)filters
 {
-    if (self = [super init]) {
+    if (self = [self init]) {
         
         _typesFetched = YES;
         _types = @[
                    @{
-                       @"type": @(AdTypeSupply),
-                       @"text" : NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__SUPPLY", nil)
+                       kAdTypeInfoKeyType: @(AdTypeSupply),
+                       kAdTypeInfoKeyText : NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__SUPPLY", nil)
                        },
                    @{
-                       @"type": @(AdTypeDemand),
-                       @"text" : NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__DEMAND", nil)
+                       kAdTypeInfoKeyType: @(AdTypeDemand),
+                       kAdTypeInfoKeyText : NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__DEMAND", nil)
                        }
                    ];
         
+        [self updateSelectedFiltersFromStartingFilters:filters];
     }
     
     return self;
@@ -83,6 +87,47 @@ typedef enum __TableSection
 }
 
 #pragma mark - Private
+
+- (void)updateSelectedFiltersFromStartingFilters:(NSArray *)filters
+{
+    for (C46AdFilter *filter in filters) {
+        
+        id initializationContext = filter.initializationContext;
+        
+        switch (filter.type) {
+                
+            case AdFilterTypeAdType: {
+                
+                AdType type = [initializationContext integerValue];
+                
+                for (NSDictionary *adTypeInfo in _types) {
+                    if ([[adTypeInfo objectForKey:kAdTypeInfoKeyType] integerValue] == type) {
+                        _selectedAdTypeInfo = adTypeInfo;
+                        
+                        break;
+                    }
+                }
+                
+            }
+                break;
+                
+            case AdFilterTypeAdCategory: {
+             
+                _selectedAdCategory = (C46AdCategory *)initializationContext;
+                
+            }
+                break;
+                
+            case AdFilterTypeRegion: {
+                _selectedRegion = (C46Region *)initializationContext;
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
 
 - (void)fetchTableData
 {
@@ -133,6 +178,7 @@ typedef enum __TableSection
 - (void)onTableDataPortionFetch
 {
     if ([self tableDataFetched]) {
+        
         [self.delegate adFilterViewControllerDidFinishUpdatingFilters:self];
         [self.tableView reloadData];
     }
@@ -162,61 +208,88 @@ typedef enum __TableSection
         case TableSectionAdType: {
             
             [self deselectCellAtIndexPath:_selectedAdTypeInfoIndexPath];
-            _selectedAdTypeInfoIndexPath = indexPath;
-            _selectedAdTypeInfo = [_types objectAtIndex:row];
-            [self selectCellAtIndexPath:indexPath];
+            
+            if (![_selectedAdTypeInfoIndexPath isEqual:indexPath]) {
+                
+                [self deselectCellAtIndexPath:_selectedAdTypeInfoIndexPath];
+                _selectedAdTypeInfoIndexPath = indexPath;
+                _selectedAdTypeInfo = [_types objectAtIndex:row];
+                [self selectCellAtIndexPath:indexPath];
+                
+            } else {
+                
+                _selectedAdTypeInfoIndexPath = nil;
+                _selectedAdTypeInfo = nil;
+                [self deselectCellAtIndexPath:indexPath];
+            }
         }
             
             break;
-       
-         case TableSectionAdCategory: {
-       
-             [self deselectCellAtIndexPath:_selectedAdCategoryIndexPath];
-             _selectedAdCategoryIndexPath = indexPath;
-             _selectedAdCategory = [_categories objectAtIndex:row];
-             [self selectCellAtIndexPath:indexPath];
-       
-         }
-       
-             break;
-       
-         case TableSectionAdRegion: {
-             
-             [self deselectCellAtIndexPath:_selectedRegionIndexPath];
-             _selectedRegionIndexPath = indexPath;
-             _selectedRegion = [_regions objectAtIndex:row];
-             [self selectCellAtIndexPath:indexPath];
-       
-         }
-             break;
+            
+        case TableSectionAdCategory: {
+            
+            if (![_selectedAdCategoryIndexPath isEqual:indexPath]) {
+                
+                [self deselectCellAtIndexPath:_selectedAdCategoryIndexPath];
+                _selectedAdCategoryIndexPath = indexPath;
+                _selectedAdCategory = [_categories objectAtIndex:row];
+                [self selectCellAtIndexPath:indexPath];
+                
+            } else {
+                
+                _selectedAdCategoryIndexPath = nil;
+                _selectedAdCategory = nil;
+                [self deselectCellAtIndexPath:indexPath];
+            }
+        }
+            
+            break;
+            
+        case TableSectionAdRegion: {
+            
+            if (![_selectedRegionIndexPath isEqual:indexPath]) {
+                
+                [self deselectCellAtIndexPath:_selectedRegionIndexPath];
+                _selectedRegionIndexPath = indexPath;
+                _selectedRegion = [_regions objectAtIndex:row];
+                [self selectCellAtIndexPath:indexPath];
+                
+            } else {
+                
+                _selectedRegionIndexPath = nil;
+                _selectedRegion = nil;
+                [self deselectCellAtIndexPath:indexPath];
+            }
+        }
+            break;
             
         default:
             
             NSAssert(NO, @"Should not be here.");
     }
     
-    C46AdFilter *filter = [self filterFromSelectedRows];
-    [self.delegate adFilterViewController:self didSelectFilter:filter];
+    NSArray *filters = [self filtersFromSelectedRows];
+    [self.delegate adFilterViewController:self didSelectFilters:filters];
 }
 
-- (C46AdFilter *)filterFromSelectedRows
+- (NSArray *)filtersFromSelectedRows
 {
-    C46AdFilter *filter = [[C46AdFilter alloc] init];
+    NSMutableArray *filters = [NSMutableArray arrayWithCapacity:3];
     
     if (_selectedAdTypeInfo) {
-        AdType type = [[_selectedAdTypeInfo objectForKey:@"type"] integerValue];
-        filter.type = type;
+        AdType type = [[_selectedAdTypeInfo objectForKey:kAdTypeInfoKeyType] integerValue];
+        [filters addObject:[C46AdFilter filterWithAdType:type]];
     }
     
     if (_selectedAdCategory) {
-        filter.category = _selectedAdCategory;
+        [filters addObject:[C46AdFilter filterWithAdCategory:_selectedAdCategory]];
     }
     
     if (_selectedRegion) {
-        filter.region = _selectedRegion;
+        [filters addObject:[C46AdFilter filterWithRegion:_selectedRegion]];
     }
-
-    return filter;
+    
+    return filters;
 }
 
 
@@ -270,7 +343,6 @@ typedef enum __TableSection
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
     }
     
     switch (indexPath.section) {
@@ -278,9 +350,18 @@ typedef enum __TableSection
         case TableSectionAdType: {
             
             NSDictionary *adTypeInfo = [_types objectAtIndex:indexPath.row];
-            cell.textLabel.text = [adTypeInfo objectForKey:@"text"];
+            cell.textLabel.text = [adTypeInfo objectForKey:kAdTypeInfoKeyText];
             
-            [self selectCell:cell ifObject:adTypeInfo isEqualToObject:_selectedAdTypeInfo];
+            if ([[adTypeInfo objectForKey:kAdTypeInfoKeyType] integerValue] ==
+                [[_selectedAdTypeInfo objectForKey:kAdTypeInfoKeyType] integerValue]) {
+                
+                _selectedAdTypeInfoIndexPath = indexPath;
+                [self selectCell:cell];
+                
+            } else {
+                
+                [self deselectCell:cell];
+            }
             
         }
             break;
@@ -290,17 +371,33 @@ typedef enum __TableSection
             C46AdCategory *category = [_categories objectAtIndex:indexPath.row];
             cell.textLabel.text = category.name;
             
-            [self selectCell:cell ifObject:category isEqualToObject:_selectedAdCategory];
-            
-            break;
+            if ([category.identifier isEqualToString:_selectedAdCategory.identifier]) {
+                
+                _selectedAdCategoryIndexPath = indexPath;
+                [self selectCell:cell];
+                
+            } else {
+                
+                [self deselectCell:cell];
+            }
         }
+            break;
+            
             
         case TableSectionAdRegion: {
             
             C46Region *region = [_regions objectAtIndex:indexPath.row];
             cell.textLabel.text = region.name;
             
-            [self selectCell:cell ifObject:region isEqualToObject:_selectedRegion];
+            if ([region.identifier isEqualToString:_selectedRegion.identifier]) {
+                
+                _selectedRegionIndexPath = indexPath;
+                [self selectCell:cell];
+                
+            } else {
+                
+                [self deselectCell:cell];
+            }
         }
             
             break;
@@ -315,20 +412,6 @@ typedef enum __TableSection
 }
 
 #pragma mark - Table Utils
-
-- (void)selectCell:(UITableViewCell *)cell
-          ifObject:(id)firstObject
-   isEqualToObject:(id)secondObject
-{
-    if (firstObject == secondObject) {
-        
-        [self selectCell:cell];
-        
-    } else {
-        
-        [self deselectCell:cell];
-    }
-}
 
 - (void)deselectCellAtIndexPath:(NSIndexPath *)indexPath
 {
