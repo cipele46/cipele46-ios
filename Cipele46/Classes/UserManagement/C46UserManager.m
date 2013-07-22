@@ -44,7 +44,7 @@
     return self;
 }
 
--(void)loginViaFacebook
+-(void)loginViaFacebookWithCompletionHandler:(void (^)(NSError *))completed
 {
     [[C46FacebookConnect sharedInstance] connectWithCompletionHandler:^(NSError *error, C46UserInfo *fbUserInfo)
     {
@@ -73,7 +73,9 @@
     }];
 }
 
--(void)loginWithUserName:(NSString *)userName andPassword:(NSString *)password
+-(void)loginWithEmail:(NSString *)email
+          andPassword:(NSString *)password
+    completionHandler:(void (^)(NSError *))completed
 {
 //    [_server loginWithUserName:userName
 //                      password:password
@@ -91,6 +93,15 @@
 //            [self broadcastNotification:C46UserManagerLoggedInNotification];
 //        }
 //    }];
+}
+
+-(void) createUserWithName:(NSString*) name
+                     email:(NSString*) email
+                     phone:(NSString*) phone
+                  password:(NSString*) password
+         completionHandler:(void (^)(NSError *))completed
+{
+    
 }
 
 -(void)logout

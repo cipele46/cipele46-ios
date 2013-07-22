@@ -16,10 +16,19 @@
 
 +(id) sharedInstance;
 
--(void) loginViaFacebook;
--(void) loginWithUserName:(NSString*) userName andPassword:(NSString*) password;
+-(void) loginViaFacebookWithCompletionHandler:(void(^)(NSError* error)) completed;
+
+-(void) loginWithEmail:(NSString*) email
+           andPassword:(NSString*) password
+     completionHandler:(void(^)(NSError* error)) completed;
 
 -(void) logout;
+
+-(void) createUserWithName:(NSString*) name
+                     email:(NSString*) email
+                     phone:(NSString*) phone
+                  password:(NSString*) password
+         completionHandler:(void(^)(NSError* error)) completed;
 
 @property(nonatomic, readonly, getter=isLoggedIn) BOOL loggedIn;
 @property(nonatomic, readonly) C46UserInfo* userInfo;
