@@ -28,13 +28,15 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @implementation C46AdsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"C46AdsViewController" bundle:nil];
+    
     if (self) {
         self.title = NSLocalizedString(@"Ads", @"Oglasi");
         self.tabBarItem.image = [UIImage imageNamed:@"second"];
     }
+    
     return self;
 }
 
