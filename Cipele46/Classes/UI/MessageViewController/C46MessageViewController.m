@@ -7,23 +7,27 @@
 //
 
 #import "C46MessageViewController.h"
+#import "C46Ad.h"
+
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface C46MessageViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextView *titleTextView;
-@property (weak, nonatomic) IBOutlet UITextView *messageTextView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextView *messageTextView;
 
 @end
 
 @implementation C46MessageViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithAd:(C46Ad *)ad
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"C46MessageViewController" bundle:nil];
     if (self) {
-        // Custom initialization
+        _ad = ad;
     }
+    
     return self;
 }
 
@@ -35,26 +39,27 @@
                                                                    style:UIBarButtonItemStylePlain
                                                                   target:self
                                                                   action:@selector(sendButtonPressed:)];
-    self.navigationItem.leftBarButtonItem = sendButton;
-
+    self.navigationItem.rightBarButtonItem = sendButton;
+    
+    [self refreshAdUI];
 }
 
-- (void) viewWillAppear:(BOOL)animated{
-    
-    [[self titleTextView] setText: [self adTitle]];
-    [[self emailTextField] setText:[self email]];
-    
-}
-
-- (void)didReceiveMemoryWarning
+- (void)setAd:(C46Ad *)ad
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    _ad = ad;
+    [self refreshAdUI];
 }
 
-- (void) sendButtonPressed{
-    
-    // TODO: Send message
+- (void)refreshAdUI
+{
+    _titleLabel.text = _ad.title;
+    _emailTextField.text = _ad.email;
+}
+
+
+- (void)sendButtonPressed:(id)sender
+{
+    DDLogInfo(@"Send");
 }
 
 @end

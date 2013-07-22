@@ -7,8 +7,9 @@
 //
 
 #import "C46AdDetailViewController.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "C46MessageViewController.h"
 #import "C46Ad.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
@@ -85,7 +86,9 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (IBAction)messageButtonPress:(id)sender
 {
-
+    C46MessageViewController *messageViewController = [[C46MessageViewController alloc] initWithAd:_ad];
+    
+    [self.navigationController pushViewController:messageViewController animated:YES];
 }
 
 @end

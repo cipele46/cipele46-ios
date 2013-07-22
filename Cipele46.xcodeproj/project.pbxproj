@@ -309,11 +309,11 @@
 			children = (
 				1133AAEC17949522002E8B89 /* AuthenticationViewControllers */,
 				1133AA9217949440002E8B89 /* AdDetailViewController */,
+				1133AAB417949440002E8B89 /* MessageViewController */,
 				1133AA9D17949440002E8B89 /* AdFilterViewController */,
 				1133AAA117949440002E8B89 /* AdListViewController */,
 				1133AAA817949440002E8B89 /* AdsViewController */,
 				1133AAAC17949440002E8B89 /* HomeTabBarController */,
-				1133AAB417949440002E8B89 /* MessageViewController */,
 				1133AAB817949440002E8B89 /* MyAdsViewController */,
 			);
 			path = UI;

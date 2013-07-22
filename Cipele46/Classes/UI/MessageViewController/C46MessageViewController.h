@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class C46Ad;
+
 @interface C46MessageViewController : UIViewController
 
-@property (strong, nonatomic) NSString *email;
-@property (strong, nonatomic) NSString *adTitle;
+@property (nonatomic) C46Ad *ad;
+
+- (id)initWithAd:(C46Ad *)ad;
 
 @end
