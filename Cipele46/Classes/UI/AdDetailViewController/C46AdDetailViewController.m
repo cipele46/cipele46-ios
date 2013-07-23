@@ -73,6 +73,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     _descriptionTextView.text = _ad.description;
     
     [_phoneButton setTitle:_ad.phone forState:UIControlStateNormal];
+    [_messageButton setTitle:NSLocalizedString(@"DETAIL_VIEW__BTN_MESSAGE", nil) forState:UIControlStateNormal];
 }
 
 - (IBAction)phoneButtonPress:(id)sender
