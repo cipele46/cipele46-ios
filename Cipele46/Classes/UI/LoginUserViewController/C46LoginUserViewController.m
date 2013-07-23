@@ -111,7 +111,16 @@
 }
 
 -(IBAction)registerUser:(id)sender {
-    [self presentViewController: [[C46RegisterUserViewController alloc] initWithNibName:@"C46RegisterUserViewController" bundle:nil] animated: YES completion: nil];
+    
+    C46RegisterUserViewController *registerVC = [[C46RegisterUserViewController alloc] initWithNibName:@"C46RegisterUserViewController" bundle:nil];
+    registerVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [self presentViewController:registerVC  animated: YES completion: nil];
+}
+
+- (IBAction)dismiss:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Text fields events
