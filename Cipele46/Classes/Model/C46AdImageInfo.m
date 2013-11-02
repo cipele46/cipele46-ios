@@ -15,8 +15,7 @@
 {
     if (self = [super init]) {
         
-        NSString *urlString = [dictionary objectForKey:@"url"];
-        
+//        NSString *urlString = dictionary[@"url"];
 //        _imageURL = [NSURL URLWithString:[dictionary objectForKey:@"url"]];
 //        _largeImageURL = [[NSURL URLWithString:[dictionary objectForKey:@"large"]] objectForKey:@"url"];
 //        _mediumImageURL = [[NSURL URLWithString:[dictionary objectForKey:@"medium"]] objectForKey:@"url"];

@@ -11,7 +11,7 @@
 @interface C46Cipele46APIUtils : NSObject
 
 + (C46Error *)errorFromHTTPResponse:(NSDictionary *)responseDict
-                            responseInfo:(NSDictionary *)responseInfo;
+                       responseInfo:(NSDictionary *)responseInfo;
 
 @end
 

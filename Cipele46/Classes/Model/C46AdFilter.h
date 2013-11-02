@@ -46,7 +46,7 @@ typedef enum __AdFilterType {
 
 
 
-// TODO
+// TODO:
 //user (boolean) samo oglasi koji pripadaju trenutnom korisniku
 //favorites (boolean) samo oglasi koje je logirani korisnik "favoriteao"
 //page (integer, default 1) stranica

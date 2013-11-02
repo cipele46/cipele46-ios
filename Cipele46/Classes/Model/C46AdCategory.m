@@ -14,8 +14,8 @@
 {
     if (self = [super init]) {
         
-        _identifier = [[dictionary objectForKey:@"id"] stringValue];
-        _name = [dictionary objectForKey:@"name"];
+        _identifier = [dictionary[@"id"] stringValue];
+        _name = dictionary[@"name"];
         
         // TODO: create date objects from strings
 //        NSString *dateCreatedString = [dictionary objectForKey:@"created_at"]; // 2013-07-06T10:01:53Z

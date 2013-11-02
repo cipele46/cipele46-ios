@@ -33,7 +33,7 @@
     [self loginToFacebookWithPermissions:[[self class] loginPermissions]
                        completionHandler:^(NSError *error)
     {
-        dispatch_async(dispatch_get_current_queue(), ^()
+        dispatch_async(dispatch_get_main_queue(), ^()
         {
             if (nil != error)
             {

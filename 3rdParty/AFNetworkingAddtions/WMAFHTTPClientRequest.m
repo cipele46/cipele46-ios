@@ -183,7 +183,7 @@ typedef enum __WMNetworkOperationProxyType {
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
-    //XXX TODO check here if is network failure
+    // TODO: check here if is network failure
 
     [dict setObjectSafe:@(operation.response.statusCode) forKey:C46ResponseStatusCodeFromRequestKey];
     

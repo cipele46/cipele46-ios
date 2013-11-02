@@ -14,8 +14,8 @@
 {
     if (self = [super init]) {
         
-        _identifier = [dictionary objectForKey:@"id"];
-        _name = [dictionary objectForKey:@"name"];
+        _identifier = dictionary[@"id"];
+        _name = dictionary[@"name"];
         
         // TODO: create date objects from strings
         //        NSString *dateCreatedString = [dictionary objectForKey:@"created_at"]; // 2013-07-06T10:01:53Z
@@ -23,7 +23,7 @@
         //        NSString *dateUpdatedString = [dictionary objectForKey:@"updated_at"];
         _dateUpdated = [NSDate date];
         
-        _regionID = [[dictionary objectForKey:@"region_id"] integerValue];
+        _regionID = [dictionary[@"region_id"] integerValue];
     }
     
     return self;

@@ -673,33 +673,7 @@ static DDTTYLogger *sharedInstance;
 	
 	// iOS
 	
-	BOOL done = NO;
-	
-	if ([color respondsToSelector:@selector(getRed:green:blue:alpha:)])
-	{
-		done = [color getRed:rPtr green:gPtr blue:bPtr alpha:NULL];
-	}
-	
-	if (!done)
-	{
-		// The method getRed:green:blue:alpha: was only available starting iOS 5.
-		// So in iOS 4 and earlier, we have to jump through hoops.
-		
-		CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
-		
-		unsigned char pixel[4];
-		CGContextRef context = CGBitmapContextCreate(&pixel, 1, 1, 8, 4, rgbColorSpace, kCGImageAlphaNoneSkipLast);
-		
-		CGContextSetFillColorWithColor(context, [color CGColor]);
-		CGContextFillRect(context, CGRectMake(0, 0, 1, 1));
-		
-		if (rPtr) { *rPtr = pixel[0] / 255.0f; }
-		if (gPtr) { *gPtr = pixel[1] / 255.0f; }
-		if (bPtr) { *bPtr = pixel[2] / 255.0f; }
-		
-		CGContextRelease(context);
-		CGColorSpaceRelease(rgbColorSpace);
-	}
+	[color getRed:rPtr green:gPtr blue:bPtr alpha:NULL];
 	
 	#else
 	
@@ -958,7 +932,7 @@ static DDTTYLogger *sharedInstance;
 		}
 		
 		if (i < [colorProfilesArray count])
-			[colorProfilesArray replaceObjectAtIndex:i withObject:newColorProfile];
+			colorProfilesArray[i] = newColorProfile;
 		else
 			[colorProfilesArray addObject:newColorProfile];
 	}};
@@ -995,7 +969,7 @@ static DDTTYLogger *sharedInstance;
 		
 		NSLogInfo(@"DDTTYLogger: newColorProfile: %@", newColorProfile);
 		
-		[colorProfilesDict setObject:newColorProfile forKey:tag];
+		colorProfilesDict[tag] = newColorProfile;
 	}};
 	
 	// The design of the setter logic below is taken from the DDAbstractLogger implementation.
@@ -1184,7 +1158,7 @@ static DDTTYLogger *sharedInstance;
 		{
 			if (logMessage->tag)
 			{
-				colorProfile = [colorProfilesDict objectForKey:logMessage->tag];
+				colorProfile = colorProfilesDict[logMessage->tag];
 			}
 			if (colorProfile == nil)
 			{
@@ -1403,7 +1377,7 @@ static DDTTYLogger *sharedInstance;
 			// Map foreground color to closest available shell color
 			
 			fgCodeIndex = [DDTTYLogger codeIndexForColor:fgColor];
-			fgCodeRaw   = [codes_fg objectAtIndex:fgCodeIndex];
+			fgCodeRaw   = codes_fg[fgCodeIndex];
 			
 			NSString *escapeSeq = @"\033[";
 			
@@ -1438,7 +1412,7 @@ static DDTTYLogger *sharedInstance;
 			// Map background color to closest available shell color
 			
 			bgCodeIndex = [DDTTYLogger codeIndexForColor:bgColor];
-			bgCodeRaw   = [codes_bg objectAtIndex:bgCodeIndex];
+			bgCodeRaw   = codes_bg[bgCodeIndex];
 			
 			NSString *escapeSeq = @"\033[";
 			

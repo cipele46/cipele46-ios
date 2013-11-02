@@ -13,7 +13,7 @@
 - (void)setObjectSafe:(id)object forKey:(id <NSCopying>)key
 {
     if (object && key) {
-        [self setObject:object forKey:key];
+        self[key] = object;
     }
 }
 

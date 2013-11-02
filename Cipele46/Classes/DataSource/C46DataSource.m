@@ -213,7 +213,7 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:filters.count];
     
     for (C46AdFilter *filter in filters) {
-        [parameters setObject:filter.C46APIValue forKey:filter.C46APIKey];
+        parameters[filter.C46APIKey] = filter.C46APIValue;
     }
     
     return parameters;

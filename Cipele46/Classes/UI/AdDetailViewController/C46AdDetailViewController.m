@@ -51,7 +51,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 {
     [super viewWillAppear:animated];
     
-    // TODO do this better later
+    // TODO: do this better later
     _containerScrollView.contentSize = CGSizeMake(_containerScrollView.bounds.size.width, 548); //_containerView.bounds.size;
 }
 

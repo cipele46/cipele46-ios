@@ -22,17 +22,17 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     C46Error *error = nil;
     
-    if (responseDict && [responseDict objectForKey:@"errorCode"] != nil) {
+    if (responseDict && responseDict[@"errorCode"] != nil) {
         
-        NSUInteger errorCode = [[responseDict objectForKey:@"errorCode"] unsignedIntegerValue];
-        NSString *message = [responseDict objectForKey:@"message"];
+        NSUInteger errorCode = [responseDict[@"errorCode"] unsignedIntegerValue];
+        NSString *message = responseDict[@"message"];
         
         error = [C46Error errorWithDomain:kC46ErrorDomain code:errorCode userInfo:@{NSLocalizedDescriptionKey : message}];
         
     } else if (responseInfo) {
         
-        NSString *errorLocalizedDescription = [responseInfo objectForKey:C46NetworkClientErrorLocalizedDesriptionKey];
-        NSInteger code = [[responseInfo objectForKey:C46ErrorTypeKey] integerValue];
+        NSString *errorLocalizedDescription = responseInfo[C46NetworkClientErrorLocalizedDesriptionKey];
+        NSInteger code = [responseInfo[C46ErrorTypeKey] integerValue];
         
         if (errorLocalizedDescription) {
             

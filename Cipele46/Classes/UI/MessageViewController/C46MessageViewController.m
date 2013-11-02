@@ -85,7 +85,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSDictionary *userInfo = notification.userInfo;
     
     // frame relative to the window
-    CGRect keyboardEndRect = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGRect keyboardEndRect = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     // frame relative to the self.view
     CGRect convertedKeyboardEndRect = [self.view convertRect:keyboardEndRect fromView:nil];
     
@@ -94,7 +94,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     
     // animate resizing
-    NSTimeInterval animationDuration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    NSTimeInterval animationDuration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     [UIView animateWithDuration:animationDuration animations:^{
         _containerScrollView.frame = scrollNewFrame;
     }];

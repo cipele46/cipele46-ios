@@ -103,7 +103,7 @@ typedef enum __TableSection
                 AdType type = [initializationContext integerValue];
                 
                 for (NSDictionary *adTypeInfo in _types) {
-                    if ([[adTypeInfo objectForKey:kAdTypeInfoKeyType] integerValue] == type) {
+                    if ([adTypeInfo[kAdTypeInfoKeyType] integerValue] == type) {
                         _selectedAdTypeInfo = adTypeInfo;
                         
                         break;
@@ -215,7 +215,7 @@ typedef enum __TableSection
                 
                 [self deselectCellAtIndexPath:_selectedAdTypeInfoIndexPath];
                 _selectedAdTypeInfoIndexPath = indexPath;
-                _selectedAdTypeInfo = [_types objectAtIndex:row];
+                _selectedAdTypeInfo = _types[row];
                 [self selectCellAtIndexPath:indexPath];
                 
             } else {
@@ -234,7 +234,7 @@ typedef enum __TableSection
                 
                 [self deselectCellAtIndexPath:_selectedAdCategoryIndexPath];
                 _selectedAdCategoryIndexPath = indexPath;
-                _selectedAdCategory = [_categories objectAtIndex:row];
+                _selectedAdCategory = _categories[row];
                 [self selectCellAtIndexPath:indexPath];
                 
             } else {
@@ -253,7 +253,7 @@ typedef enum __TableSection
                 
                 [self deselectCellAtIndexPath:_selectedRegionIndexPath];
                 _selectedRegionIndexPath = indexPath;
-                _selectedRegion = [_regions objectAtIndex:row];
+                _selectedRegion = _regions[row];
                 [self selectCellAtIndexPath:indexPath];
                 
             } else {
@@ -279,7 +279,7 @@ typedef enum __TableSection
     NSMutableArray *filters = [NSMutableArray arrayWithCapacity:3];
     
     if (_selectedAdTypeInfo) {
-        AdType type = [[_selectedAdTypeInfo objectForKey:kAdTypeInfoKeyType] integerValue];
+        AdType type = [_selectedAdTypeInfo[kAdTypeInfoKeyType] integerValue];
         [filters addObject:[C46AdFilter filterWithAdType:type]];
     }
     
@@ -351,11 +351,11 @@ typedef enum __TableSection
             
         case TableSectionAdType: {
             
-            NSDictionary *adTypeInfo = [_types objectAtIndex:indexPath.row];
-            cell.textLabel.text = [adTypeInfo objectForKey:kAdTypeInfoKeyText];
+            NSDictionary *adTypeInfo = _types[indexPath.row];
+            cell.textLabel.text = adTypeInfo[kAdTypeInfoKeyText];
             
-            if ([[adTypeInfo objectForKey:kAdTypeInfoKeyType] integerValue] ==
-                [[_selectedAdTypeInfo objectForKey:kAdTypeInfoKeyType] integerValue]) {
+            if ([adTypeInfo[kAdTypeInfoKeyType] integerValue] ==
+                [_selectedAdTypeInfo[kAdTypeInfoKeyType] integerValue]) {
                 
                 _selectedAdTypeInfoIndexPath = indexPath;
                 [self selectCell:cell];
@@ -370,7 +370,7 @@ typedef enum __TableSection
             
         case TableSectionAdCategory: {
             
-            C46AdCategory *category = [_categories objectAtIndex:indexPath.row];
+            C46AdCategory *category = _categories[indexPath.row];
             cell.textLabel.text = category.name;
             
             if ([category.identifier isEqualToString:_selectedAdCategory.identifier]) {
@@ -388,7 +388,7 @@ typedef enum __TableSection
             
         case TableSectionAdRegion: {
             
-            C46Region *region = [_regions objectAtIndex:indexPath.row];
+            C46Region *region = _regions[indexPath.row];
             cell.textLabel.text = region.name;
             
             if ([region.identifier isEqualToString:_selectedRegion.identifier]) {

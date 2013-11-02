@@ -125,10 +125,10 @@
 -(C46UserInfo*) userInfoWithServerDict:(NSDictionary*) dict
                               password:(NSString*) password
 {
-    NSString* firstName = [dict objectForKey:@"first_name"];
-    NSString* lastName = [dict objectForKey:@"last_name"];
-    NSString* userName = [dict objectForKey:@"name"];
-    NSString* email = [dict objectForKey:@"email"];
+    NSString* firstName = dict[@"first_name"];
+    NSString* lastName = dict[@"last_name"];
+    NSString* userName = dict[@"name"];
+    NSString* email = dict[@"email"];
     
     C46UserInfo* userInfo = [[C46UserInfo alloc] initWithUserName:userName
                                                             email:email

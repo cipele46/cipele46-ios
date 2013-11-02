@@ -62,7 +62,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
         }
     }
 
-    C46Ad *ad = [self.ads objectAtIndex:indexPath.row];
+    C46Ad *ad = (self.ads)[indexPath.row];
     cell.ad = ad;
     
     return cell;
@@ -70,7 +70,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    C46Ad *ad = [self.ads objectAtIndex:indexPath.row];
+    C46Ad *ad = (self.ads)[indexPath.row];
     
     [self.delegate adListViewController:self didSelectAd:ad];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
