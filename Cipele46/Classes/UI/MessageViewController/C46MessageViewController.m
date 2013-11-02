@@ -9,8 +9,6 @@
 #import "C46MessageViewController.h"
 #import "C46Ad.h"
 
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
-
 @interface C46MessageViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *containerScrollView;

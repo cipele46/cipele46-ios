@@ -10,12 +10,12 @@
 #import "C46AdsViewController.h"
 #import "C46MyAdsViewController.h"
 #import "C46AdDetailViewController.h"
-
+#import "C46SearchViewController.h"
 
 @interface C46HomeTabBarController () <C46AdsViewControllerDelegate>
 
 @property (nonatomic) C46AdsViewController *adsViewController;
-@property (nonatomic) UIViewController *searchViewController;
+@property (nonatomic) C46SearchViewController *searchViewController;
 @property (nonatomic) UIViewController *createAdViewController;
 @property (nonatomic) C46MyAdsViewController *myAdsViewController;
 @property (nonatomic) UIViewController *settingsViewController;
@@ -24,51 +24,45 @@
 
 @implementation C46HomeTabBarController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
-    // Ads
-    _adsViewController = [[C46AdsViewController alloc] init];
-    _adsViewController.delegate = self;
-    UINavigationController *adsNavigationController = [[UINavigationController alloc] initWithRootViewController:_adsViewController];
+  [super viewDidLoad];
+  
+  // Ads
+  _adsViewController = [C46AdsViewController new];
+  _adsViewController.delegate = self;
+  
+  // Search
+  _searchViewController = [C46SearchViewController new];
+  _searchViewController.delegate = self;
+  
+  // Create ad
+  _createAdViewController = [UIViewController new];
+  
+  // My ads
+  _myAdsViewController = [C46MyAdsViewController new];
+  _myAdsViewController.delegate = self;
+  
+  // Settings
+  _settingsViewController = [UIViewController new];
+  
+  self.viewControllers = @[[self wrapIntoNavigationController:_adsViewController],
+                           [self wrapIntoNavigationController:_searchViewController],
+                           _createAdViewController,
+                           [self wrapIntoNavigationController:_myAdsViewController],
+                           _settingsViewController];
+}
 
-    // Search
-    _searchViewController = [[UIViewController alloc] init];
-    
-    // Create ad
-    _createAdViewController = [[UIViewController alloc] init];
-    
-    // My ads
-    _myAdsViewController = [[C46MyAdsViewController alloc] init];
-    _myAdsViewController.delegate = self;
-    UINavigationController *myAdsNavigationController = [[UINavigationController alloc] initWithRootViewController:_myAdsViewController];
-
-    // Settings
-    _settingsViewController = [[UIViewController alloc] init];
-       
-    self.viewControllers = @[adsNavigationController, _searchViewController, _createAdViewController, myAdsNavigationController, _settingsViewController];
+- (UINavigationController *)wrapIntoNavigationController:(UIViewController *)vc {
+  return [[UINavigationController alloc] initWithRootViewController:vc];
 }
 
 #pragma mark - C46AdsViewControllerDelegate
 
 - (void)adsViewController:(UIViewController *)controller didSelectAd:(C46Ad *)ad
 {
-    NSAssert(controller == _adsViewController || controller == _myAdsViewController, @"Shit happened");
-    NSAssert(controller.navigationController != nil, @"Navigation controller can not be nil");
-    
-    C46AdDetailViewController *adDetailViewController = [[C46AdDetailViewController alloc] initWithAd:ad];
-    
-    [controller.navigationController pushViewController:adDetailViewController animated:YES];
+  C46AdDetailViewController *adDetailViewController = [[C46AdDetailViewController alloc] initWithAd:ad];
+  [controller.navigationController pushViewController:adDetailViewController animated:YES];
 }
 
 @end

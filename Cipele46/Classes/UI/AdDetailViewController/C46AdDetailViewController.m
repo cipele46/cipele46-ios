@@ -11,8 +11,6 @@
 #import "C46Ad.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
-
 @interface C46AdDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *containerScrollView;

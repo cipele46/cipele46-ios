@@ -14,8 +14,6 @@
 #define kAdTypeInfoKeyType @"type"
 #define kAdTypeInfoKeyText @"text"
 
-static const int ddLogLevel = LOG_LEVEL_INFO;
-
 typedef enum __TableSection
 {
     TableSectionAdType = 0,

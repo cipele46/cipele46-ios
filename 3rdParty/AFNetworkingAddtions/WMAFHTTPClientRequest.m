@@ -10,12 +10,9 @@
 #import "AFHTTPRequestOperation.h"
 #import "NSMutableDictionary+Additions.h"
 
-static const int ddLogLevel = LOG_LEVEL_WARN;
-
 NSString * C46ResponseStatusCodeFromRequestKey = @"C46ResponseStatusCodeFromRequestKey";
 NSString * C46NetworkClientErrorLocalizedDesriptionKey = @"C46NetworkClientErrorLocalizedDesriptionKey";
 NSString * C46ErrorTypeKey = @"C46ErrorTypeKey";
-
 
 typedef enum __WMNetworkOperationProxyType {
     

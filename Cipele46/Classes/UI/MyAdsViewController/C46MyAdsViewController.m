@@ -28,7 +28,7 @@
     self = [super initWithNibName:@"C46MyAdsViewController" bundle:nil];
     
     if (self) {
-        self.title = NSLocalizedString(@"MyAds", @"Moji");
+        self.title = NSLocalizedString(@"TAB_MY_ADS", @"Moji");
         self.tabBarItem.image = [UIImage imageNamed:@"second"];
     }
     
@@ -60,7 +60,6 @@
     }
 }
 
-
 - (void)adsSegmentControlValueChanged:(id)sender
 {
     NSLog(@"Segment control value changed");
@@ -71,17 +70,6 @@
 - (void)adListViewController:(UIViewController *)controller didSelectAd:(C46Ad *)ad
 {
     [_delegate adsViewController:self didSelectAd:ad];
-}
-
-- (void)adListViewControllerDidStartRefreshing:(UIViewController *)controller
-{
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Loading";
-}
-
-- (void)adListViewControllerDidFinishRefreshing:(UIViewController *)controller
-{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 @end

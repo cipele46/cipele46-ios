@@ -12,9 +12,6 @@
 #import "C46Ad.h"
 #import "C46AdFilter.h"
 
-static const int ddLogLevel = LOG_LEVEL_WARN;
-
-
 // later
 // ----> AFHTTPClient <----
 //[client setAuthorizationHeaderWithUsername:[parameters objectForKey:@"username"]

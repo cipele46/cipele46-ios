@@ -10,7 +10,7 @@
 #import "C46AdCell.h"
 #import "C46Ad.h"
 
-static const int ddLogLevel = LOG_LEVEL_INFO;
+static NSString * const kCellName = @"C46AdCell";
 
 @interface C46AdListViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -20,22 +20,16 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @implementation C46AdListViewController
 
-- (id)init
+- (void)viewDidLoad
 {
-    self = [super initWithNibName:@"C46AdListViewController" bundle:nil];
-    
-    if (self) {
-        
-        
-    }
-
-    return self;
+  [self.tView registerNib:[UINib nibWithNibName:kCellName bundle:nil]
+   forCellReuseIdentifier:kCellName];
 }
 
 - (void)setAds:(NSArray *)ads
 {
-    _ads = ads;
-    [self.tView reloadData];
+  _ads = ads;
+  [self.tView reloadData];
 }
 
 
@@ -43,37 +37,22 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.ads count];
+  return [self.ads count];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *AdCellIdentifier = @"AdCell";
-    
-    C46AdCell *cell =(C46AdCell *) [tableView dequeueReusableCellWithIdentifier:AdCellIdentifier];
-    if(cell==nil) {
-        NSArray * topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"C46AdCell" owner:self options:nil];
-        for(id currentObject in topLevelObjects){
-            if([currentObject isKindOfClass:[UITableViewCell class]]){
-                cell = (C46AdCell *) currentObject;
-                [cell setOpaque:YES];
-                break;
-            }
-        }
-    }
-
-    C46Ad *ad = (self.ads)[indexPath.row];
-    cell.ad = ad;
-    
-    return cell;
+  C46AdCell *cell = (C46AdCell *) [tableView dequeueReusableCellWithIdentifier:kCellName];
+  cell.ad = (self.ads)[indexPath.row];
+  return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    C46Ad *ad = (self.ads)[indexPath.row];
-    
-    [self.delegate adListViewController:self didSelectAd:ad];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  C46Ad *ad = (self.ads)[indexPath.row];
+  
+  [self.delegate adListViewController:self didSelectAd:ad];
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

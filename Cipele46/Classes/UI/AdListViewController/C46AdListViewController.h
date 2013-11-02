@@ -18,7 +18,7 @@
 
 @interface C46AdListViewController: UIViewController
 
-@property (nonatomic, weak) id<C46AdListViewControllerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<C46AdListViewControllerDelegate> delegate;
 
 @property (nonatomic) NSArray *ads;
 

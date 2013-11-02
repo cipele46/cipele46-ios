@@ -6,11 +6,8 @@
 //  Copyright (c) 2013 Dino Bartošak. All rights reserved.
 //
 
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
-
 #import "C46Cipele46APIUtils.h"
 #import "WMAFHTTPClientRequest.h"
-
 
 @implementation C46Cipele46APIUtils
 

@@ -6,6 +6,13 @@
   Copyright (c) 2013 Miran Brajsa. All rights reserved.
 */
 
+/* Tab names */
+"TAB_ADS" = "Oglasi";
+"TAB_SEARCH" = "Pretraži";
+"TAB_NEW_AD" = "Novi oglas";
+"TAB_MY_ADS" = "Moji";
+"TAB_SETTINGS" = "Postavke";
+
 "FILTER_GROUP_HEADER__ADVERT_TYPE" = "Advert type";
 "FILTER_GROUP_HEADER__CATEGORY" = "Category";
 "FILTER_GROUP_HEADER__REGION" = "Region";
