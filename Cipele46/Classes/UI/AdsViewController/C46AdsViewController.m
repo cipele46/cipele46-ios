@@ -31,7 +31,7 @@
   self = [super initWithNibName:@"C46AdsViewController" bundle:nil];
   
   if (self) {
-    self.title = NSLocalizedString(@"TAB_ADS", @"Oglasi");
+    self.title = NSLocalizedString(@"TAB__ADS", @"Oglasi");
     self.tabBarItem.image = [UIImage imageNamed:@"second"];
   }
   

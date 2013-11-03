@@ -53,7 +53,8 @@
                            _settingsViewController];
 }
 
-- (UINavigationController *)wrapIntoNavigationController:(UIViewController *)vc {
+- (UINavigationController *)wrapIntoNavigationController:(UIViewController *)vc
+{
   return [[UINavigationController alloc] initWithRootViewController:vc];
 }
 

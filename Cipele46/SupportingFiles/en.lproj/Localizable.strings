@@ -7,11 +7,11 @@
 */
 
 /* Tab names */
-"TAB_ADS" = "Oglasi";
-"TAB_SEARCH" = "Pretraži";
-"TAB_NEW_AD" = "Novi oglas";
-"TAB_MY_ADS" = "Moji";
-"TAB_SETTINGS" = "Postavke";
+"TAB__ADS" = "Oglasi";
+"TAB__SEARCH" = "Pretraži";
+"TAB__NEW_AD" = "Novi oglas";
+"TAB__MY_ADS" = "Moji";
+"TAB__SETTINGS" = "Postavke";
 
 "FILTER_GROUP_HEADER__ADVERT_TYPE" = "Advert type";
 "FILTER_GROUP_HEADER__CATEGORY" = "Category";
@@ -47,3 +47,8 @@
 /* C46DetailsViewController */
 "DETAIL_VIEW__BTN_MESSAGE" = "Send message";
 "DETAIL_VIEW__BTN_CALL" = "Call";
+
+/* MyAds */
+"MY_ADS__ACTIVE" = "Active";
+"MY_ADS__FAVORITES" = "Favorites";
+"MY_ADS__CLOSED" = "Closed";

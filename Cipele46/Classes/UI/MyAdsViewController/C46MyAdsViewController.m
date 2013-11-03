@@ -11,65 +11,68 @@
 #import "MBProgressHUD.h"
 #import "C46LoginUserViewController.h"
 #import "C46UserManager.h"
+#import "C46SegmentedView.h"
+#import "ColorManager.h"
 
-@interface C46MyAdsViewController () <C46AdListViewControllerDelegate>
+@interface C46MyAdsViewController () <C46AdListViewControllerDelegate, C46SegmentedViewDataSource, C46SegmentedViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *adListViewControllerPlaceholderView;
-@property (nonatomic) C46AdListViewController *adListViewController;
-@property (nonatomic) UISegmentedControl *adsSegmentControl;
+@property (strong, nonatomic) IBOutlet C46AdListViewController *adListViewController;
+@property (strong, nonatomic) IBOutlet UIView *adListHolderView;
 
 @end
 
 @implementation C46MyAdsViewController
 
-
 - (id)init
 {
-    self = [super initWithNibName:@"C46MyAdsViewController" bundle:nil];
-    
-    if (self) {
-        self.title = NSLocalizedString(@"TAB_MY_ADS", @"Moji");
-        self.tabBarItem.image = [UIImage imageNamed:@"second"];
-    }
-    
-    return self;
+  self = [super initWithNibName:@"C46MyAdsViewController" bundle:nil];
+  
+  if (self) {
+    self.title = NSLocalizedString(@"TAB__MY_ADS", @"Moji");
+    self.tabBarItem.image = [UIImage imageNamed:@"second"];
+  }
+  
+  return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  
+  [_adListHolderView addSubview:_adListViewController.view];
+  _adListViewController.view.frame = _adListHolderView.bounds;
+  [self addChildViewController:_adListViewController];
+  
+  if (![[C46UserManager sharedInstance] isLoggedIn])
+  {
+    UIViewController* loginVC = [C46LoginUserViewController new];
     
-    // Segment control
-    _adsSegmentControl = [[UISegmentedControl alloc] initWithItems:@[@"Favoriti", @"Aktivni", @"Zatvoreni"]];
-    _adsSegmentControl.selectedSegmentIndex = 0;
-    [_adsSegmentControl addTarget:self action:@selector(adsSegmentControlValueChanged:) forControlEvents:UIControlEventValueChanged];
-    self.navigationItem.titleView = _adsSegmentControl;
-    
-    // Ad list
-    _adListViewController = [[C46AdListViewController alloc] initWithNibName:@"C46AdListViewController" bundle:nil];
-    _adListViewController.delegate = self;
-    [_adListViewControllerPlaceholderView addSubview:_adListViewController.view];
-    
-    if (![[C46UserManager sharedInstance] isLoggedIn])
-    {
-        UIViewController* loginVC = [[C46LoginUserViewController alloc] init];
-        
-        [self presentViewController:loginVC
-                           animated:YES
-                         completion:NULL];
-    }
-}
-
-- (void)adsSegmentControlValueChanged:(id)sender
-{
-    NSLog(@"Segment control value changed");
+    [self presentViewController:loginVC
+                       animated:YES
+                     completion:NULL];
+  }
 }
 
 #pragma mark - C46AdListViewControllerDelegate
 
 - (void)adListViewController:(UIViewController *)controller didSelectAd:(C46Ad *)ad
 {
-    [_delegate adsViewController:self didSelectAd:ad];
+  [_delegate adsViewController:self didSelectAd:ad];
+}
+
+#pragma mark - segmented view
+
+- (NSArray *)itemTitlesForSegmentedView:(C46SegmentedView *)segmentedView {
+  return @[ @"MY_ADS__ACTIVE", @"MY_ADS__FAVORITES", @"MY_ADS__CLOSED" ];
+}
+
+- (NSArray *)itemColorsForSegmentedView:(C46SegmentedView *)segmentedView {
+  UIColor *color = [ColorManager demandColor];
+  return @[ color, color, color ];
+}
+
+- (void)segmentedView:(C46SegmentedView *)segmentedView didPressItemAtIndex:(int)index {
+  NSLog(@"pressed item: %d", index);
 }
 
 @end

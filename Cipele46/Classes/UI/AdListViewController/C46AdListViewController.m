@@ -55,6 +55,4 @@ static NSString * const kCellName = @"C46AdCell";
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
-
 @end

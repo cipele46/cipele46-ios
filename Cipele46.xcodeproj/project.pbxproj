@@ -54,6 +54,7 @@
 		11F70BC8179D509200259C1E /* C46AdDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F70BC6179D509200259C1E /* C46AdDetailViewController.xib */; };
 		32E43B81178856B3008C9A88 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B80178856B3008C9A88 /* ImageIO.framework */; };
 		32E43B8317885A42008C9A88 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B8217885A42008C9A88 /* SDWebImage.framework */; };
+		790588FF18262606000D3448 /* C46SegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 790588FE18262606000D3448 /* C46SegmentedView.m */; };
 		79B116271824D90C00B1CA9E /* C46SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B116251824D90C00B1CA9E /* C46SearchViewController.m */; };
 		79B116281824D90C00B1CA9E /* C46SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B116261824D90C00B1CA9E /* C46SearchViewController.xib */; };
 		79B116311824DFF100B1CA9E /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B116301824DFF100B1CA9E /* ColorManager.m */; };
@@ -183,6 +184,8 @@
 		11F70BC6179D509200259C1E /* C46AdDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdDetailViewController.xib; sourceTree = "<group>"; };
 		32E43B80178856B3008C9A88 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		32E43B8217885A42008C9A88 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = 3rdParty/SDWebImage.framework; sourceTree = "<group>"; };
+		790588FD18262606000D3448 /* C46SegmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46SegmentedView.h; sourceTree = "<group>"; };
+		790588FE18262606000D3448 /* C46SegmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46SegmentedView.m; sourceTree = "<group>"; };
 		79B116241824D90C00B1CA9E /* C46SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46SearchViewController.h; path = SearchViewController/C46SearchViewController.h; sourceTree = "<group>"; };
 		79B116251824D90C00B1CA9E /* C46SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46SearchViewController.m; path = SearchViewController/C46SearchViewController.m; sourceTree = "<group>"; };
 		79B116261824D90C00B1CA9E /* C46SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = C46SearchViewController.xib; path = SearchViewController/C46SearchViewController.xib; sourceTree = "<group>"; };
@@ -518,6 +521,8 @@
 			children = (
 				79B1162F1824DFF100B1CA9E /* ColorManager.h */,
 				79B116301824DFF100B1CA9E /* ColorManager.m */,
+				790588FD18262606000D3448 /* C46SegmentedView.h */,
+				790588FE18262606000D3448 /* C46SegmentedView.m */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -822,6 +827,7 @@
 				C2C0FDA6178813C900AD355B /* NSString+URLEncoding.m in Sources */,
 				1133AAC717949440002E8B89 /* C46DataSource.m in Sources */,
 				1133AAC817949440002E8B89 /* C46Ad.m in Sources */,
+				790588FF18262606000D3448 /* C46SegmentedView.m in Sources */,
 				1133AAD217949440002E8B89 /* C46AdFilterViewController.m in Sources */,
 				1133AAD417949440002E8B89 /* C46AdCell.m in Sources */,
 				1133AAD617949440002E8B89 /* C46AdListViewController.m in Sources */,

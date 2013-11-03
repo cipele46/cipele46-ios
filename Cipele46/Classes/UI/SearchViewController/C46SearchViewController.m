@@ -20,7 +20,7 @@
 
 - (id)init {
   if (self = [super initWithNibName:@"C46SearchViewController" bundle:nil]) {
-    self.title = NSLocalizedString(@"TAB_SEARCH", nil);
+    self.title = NSLocalizedString(@"TAB__SEARCH", nil);
   }
   return self;
 }
