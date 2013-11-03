@@ -6,6 +6,7 @@
 
 #import "DDLog.h"
 #import "C46Error.h"
+#import "UIView+position.h"
 
 #ifndef __IPHONE_4_0
 #warning "This project uses features only available in iOS SDK 4.0 and later."

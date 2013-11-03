@@ -54,10 +54,19 @@
 		11F70BC8179D509200259C1E /* C46AdDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F70BC6179D509200259C1E /* C46AdDetailViewController.xib */; };
 		32E43B81178856B3008C9A88 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B80178856B3008C9A88 /* ImageIO.framework */; };
 		32E43B8317885A42008C9A88 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B8217885A42008C9A88 /* SDWebImage.framework */; };
-		790588FF18262606000D3448 /* C46SegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 790588FE18262606000D3448 /* C46SegmentedView.m */; };
+		790589061826430D000D3448 /* C46SegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 790589031826430D000D3448 /* C46SegmentedView.m */; };
+		790589071826430D000D3448 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 790589051826430D000D3448 /* ColorManager.m */; };
+		79058916182643AF000D3448 /* C46FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7905890A182643AF000D3448 /* C46FormCell.m */; };
+		79058917182643AF000D3448 /* C46FormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7905890B182643AF000D3448 /* C46FormCell.xib */; };
+		79058918182643AF000D3448 /* C46PickerFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7905890D182643AF000D3448 /* C46PickerFormCell.m */; };
+		79058919182643AF000D3448 /* C46PickerFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7905890E182643AF000D3448 /* C46PickerFormCell.xib */; };
+		7905891A182643AF000D3448 /* C46ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79058911182643AF000D3448 /* C46ButtonCell.m */; };
+		7905891B182643AF000D3448 /* C46ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79058912182643AF000D3448 /* C46ButtonCell.xib */; };
+		7905891C182643AF000D3448 /* C46RegionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79058915182643AF000D3448 /* C46RegionCell.m */; };
+		7905891F18264429000D3448 /* UIView+position.m in Sources */ = {isa = PBXBuildFile; fileRef = 7905891E18264429000D3448 /* UIView+position.m */; };
+		7905892218264502000D3448 /* C46FormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7905892118264502000D3448 /* C46FormTableViewController.m */; };
 		79B116271824D90C00B1CA9E /* C46SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B116251824D90C00B1CA9E /* C46SearchViewController.m */; };
 		79B116281824D90C00B1CA9E /* C46SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B116261824D90C00B1CA9E /* C46SearchViewController.xib */; };
-		79B116311824DFF100B1CA9E /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B116301824DFF100B1CA9E /* ColorManager.m */; };
 		79B116341824E5E500B1CA9E /* UIViewController+ProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B116331824E5E500B1CA9E /* UIViewController+ProgressIndicator.m */; };
 		8D6E5245178838A400F0E54B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6E5244178838A400F0E54B /* MessageUI.framework */; };
 		94C17D391787CCCE0074D7F7 /* C46AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C17D241787CCCE0074D7F7 /* C46AppDelegate.m */; };
@@ -184,13 +193,28 @@
 		11F70BC6179D509200259C1E /* C46AdDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdDetailViewController.xib; sourceTree = "<group>"; };
 		32E43B80178856B3008C9A88 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		32E43B8217885A42008C9A88 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = 3rdParty/SDWebImage.framework; sourceTree = "<group>"; };
-		790588FD18262606000D3448 /* C46SegmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46SegmentedView.h; sourceTree = "<group>"; };
-		790588FE18262606000D3448 /* C46SegmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46SegmentedView.m; sourceTree = "<group>"; };
+		790589021826430D000D3448 /* C46SegmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46SegmentedView.h; sourceTree = "<group>"; };
+		790589031826430D000D3448 /* C46SegmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46SegmentedView.m; sourceTree = "<group>"; };
+		790589041826430D000D3448 /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
+		790589051826430D000D3448 /* ColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
+		79058909182643AF000D3448 /* C46FormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46FormCell.h; sourceTree = "<group>"; };
+		7905890A182643AF000D3448 /* C46FormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46FormCell.m; sourceTree = "<group>"; };
+		7905890B182643AF000D3448 /* C46FormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46FormCell.xib; sourceTree = "<group>"; };
+		7905890C182643AF000D3448 /* C46PickerFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46PickerFormCell.h; sourceTree = "<group>"; };
+		7905890D182643AF000D3448 /* C46PickerFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46PickerFormCell.m; sourceTree = "<group>"; };
+		7905890E182643AF000D3448 /* C46PickerFormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46PickerFormCell.xib; sourceTree = "<group>"; };
+		79058910182643AF000D3448 /* C46ButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46ButtonCell.h; sourceTree = "<group>"; };
+		79058911182643AF000D3448 /* C46ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46ButtonCell.m; sourceTree = "<group>"; };
+		79058912182643AF000D3448 /* C46ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46ButtonCell.xib; sourceTree = "<group>"; };
+		79058914182643AF000D3448 /* C46RegionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46RegionCell.h; sourceTree = "<group>"; };
+		79058915182643AF000D3448 /* C46RegionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46RegionCell.m; sourceTree = "<group>"; };
+		7905891D18264429000D3448 /* UIView+position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+position.h"; sourceTree = "<group>"; };
+		7905891E18264429000D3448 /* UIView+position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+position.m"; sourceTree = "<group>"; };
+		7905892018264502000D3448 /* C46FormTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46FormTableViewController.h; sourceTree = "<group>"; };
+		7905892118264502000D3448 /* C46FormTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46FormTableViewController.m; sourceTree = "<group>"; };
 		79B116241824D90C00B1CA9E /* C46SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46SearchViewController.h; path = SearchViewController/C46SearchViewController.h; sourceTree = "<group>"; };
 		79B116251824D90C00B1CA9E /* C46SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46SearchViewController.m; path = SearchViewController/C46SearchViewController.m; sourceTree = "<group>"; };
 		79B116261824D90C00B1CA9E /* C46SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = C46SearchViewController.xib; path = SearchViewController/C46SearchViewController.xib; sourceTree = "<group>"; };
-		79B1162F1824DFF100B1CA9E /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
-		79B116301824DFF100B1CA9E /* ColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
 		79B116321824E5E500B1CA9E /* UIViewController+ProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ProgressIndicator.h"; sourceTree = "<group>"; };
 		79B116331824E5E500B1CA9E /* UIViewController+ProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ProgressIndicator.m"; sourceTree = "<group>"; };
 		8D6E5244178838A400F0E54B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -321,6 +345,7 @@
 		1133AA9117949440002E8B89 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				790589001826430D000D3448 /* Forms */,
 				79B116291824D91A00B1CA9E /* SearchViewController */,
 				1133AAEC17949522002E8B89 /* AuthenticationViewControllers */,
 				1133AA9217949440002E8B89 /* AdDetailViewController */,
@@ -330,6 +355,7 @@
 				1133AAA817949440002E8B89 /* AdsViewController */,
 				1133AAAC17949440002E8B89 /* HomeTabBarController */,
 				1133AAB817949440002E8B89 /* MyAdsViewController */,
+				790589011826430D000D3448 /* Misc */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -466,6 +492,8 @@
 		1133AAF11794980D002E8B89 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				7905891D18264429000D3448 /* UIView+position.h */,
+				7905891E18264429000D3448 /* UIView+position.m */,
 				1133AAF21794980D002E8B89 /* NSMutableDictionary+Additions.h */,
 				1133AAF31794980D002E8B89 /* NSMutableDictionary+Additions.m */,
 				79B116321824E5E500B1CA9E /* UIViewController+ProgressIndicator.h */,
@@ -506,6 +534,61 @@
 			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		790589001826430D000D3448 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				79058908182643AF000D3448 /* Base */,
+				7905890F182643AF000D3448 /* ButtonCell */,
+				79058913182643AF000D3448 /* RegionCell */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		790589011826430D000D3448 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				790589021826430D000D3448 /* C46SegmentedView.h */,
+				790589031826430D000D3448 /* C46SegmentedView.m */,
+				790589041826430D000D3448 /* ColorManager.h */,
+				790589051826430D000D3448 /* ColorManager.m */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		79058908182643AF000D3448 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7905892018264502000D3448 /* C46FormTableViewController.h */,
+				7905892118264502000D3448 /* C46FormTableViewController.m */,
+				79058909182643AF000D3448 /* C46FormCell.h */,
+				7905890A182643AF000D3448 /* C46FormCell.m */,
+				7905890B182643AF000D3448 /* C46FormCell.xib */,
+				7905890C182643AF000D3448 /* C46PickerFormCell.h */,
+				7905890D182643AF000D3448 /* C46PickerFormCell.m */,
+				7905890E182643AF000D3448 /* C46PickerFormCell.xib */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7905890F182643AF000D3448 /* ButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				79058910182643AF000D3448 /* C46ButtonCell.h */,
+				79058911182643AF000D3448 /* C46ButtonCell.m */,
+				79058912182643AF000D3448 /* C46ButtonCell.xib */,
+			);
+			path = ButtonCell;
+			sourceTree = "<group>";
+		};
+		79058913182643AF000D3448 /* RegionCell */ = {
+			isa = PBXGroup;
+			children = (
+				79058914182643AF000D3448 /* C46RegionCell.h */,
+				79058915182643AF000D3448 /* C46RegionCell.m */,
+			);
+			path = RegionCell;
+			sourceTree = "<group>";
+		};
 		79B116291824D91A00B1CA9E /* SearchViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,17 +597,6 @@
 				79B116261824D90C00B1CA9E /* C46SearchViewController.xib */,
 			);
 			name = SearchViewController;
-			sourceTree = "<group>";
-		};
-		79B1162E1824DFF100B1CA9E /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-				79B1162F1824DFF100B1CA9E /* ColorManager.h */,
-				79B116301824DFF100B1CA9E /* ColorManager.m */,
-				790588FD18262606000D3448 /* C46SegmentedView.h */,
-				790588FE18262606000D3448 /* C46SegmentedView.m */,
-			);
-			path = Misc;
 			sourceTree = "<group>";
 		};
 		94C17D221787CCCE0074D7F7 /* Cipele46 */ = {
@@ -571,7 +643,6 @@
 				1133AA8B17949440002E8B89 /* Model */,
 				1133AA9117949440002E8B89 /* UI */,
 				1133AAC017949440002E8B89 /* UserManagement */,
-				79B1162E1824DFF100B1CA9E /* Misc */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -759,10 +830,12 @@
 				94D2134A1787CDB500ADAF7E /* Default-568h@2x.png in Resources */,
 				94D2134B1787CDB500ADAF7E /* Default.png in Resources */,
 				94D2134C1787CDB500ADAF7E /* Default@2x.png in Resources */,
+				7905891B182643AF000D3448 /* C46ButtonCell.xib in Resources */,
 				94D213AC178827EA00ADAF7E /* Localizable.strings in Resources */,
 				11B1F79117883629001B8969 /* AppIcon_114x114.png in Resources */,
 				1133AACA17949440002E8B89 /* favorites_icon_empty@2x.png in Resources */,
 				1133AACB17949440002E8B89 /* favorites_icon_full@2x.png in Resources */,
+				79058917182643AF000D3448 /* C46FormCell.xib in Resources */,
 				1133AACC17949440002E8B89 /* place_icon_blue@2x.png in Resources */,
 				1133AACD17949440002E8B89 /* place_icon_red@2x.png in Resources */,
 				1133AACE17949440002E8B89 /* time_icon_blue@2x.png in Resources */,
@@ -772,6 +845,7 @@
 				1133AAD517949440002E8B89 /* C46AdCell.xib in Resources */,
 				1133AAD717949440002E8B89 /* C46AdListViewController.xib in Resources */,
 				1133AAD917949440002E8B89 /* C46AdsViewController.xib in Resources */,
+				79058919182643AF000D3448 /* C46PickerFormCell.xib in Resources */,
 				1133AADE17949440002E8B89 /* C46MessageViewController.xib in Resources */,
 				1133AAE017949440002E8B89 /* C46MyAdsViewController.xib in Resources */,
 				1133AAE217949440002E8B89 /* C46RegisterUserViewController.xib in Resources */,
@@ -812,6 +886,7 @@
 			files = (
 				79B116271824D90C00B1CA9E /* C46SearchViewController.m in Sources */,
 				79B116341824E5E500B1CA9E /* UIViewController+ProgressIndicator.m in Sources */,
+				79058918182643AF000D3448 /* C46PickerFormCell.m in Sources */,
 				94C17D391787CCCE0074D7F7 /* C46AppDelegate.m in Sources */,
 				94C17D451787CCCE0074D7F7 /* main.m in Sources */,
 				94D2137F1787FF9500ADAF7E /* AFHTTPClient.m in Sources */,
@@ -821,26 +896,30 @@
 				94D213831787FF9500ADAF7E /* AFNetworkActivityIndicatorManager.m in Sources */,
 				94D213841787FF9500ADAF7E /* AFPropertyListRequestOperation.m in Sources */,
 				94D213851787FF9500ADAF7E /* AFURLConnectionOperation.m in Sources */,
-				79B116311824DFF100B1CA9E /* ColorManager.m in Sources */,
 				94D213861787FF9500ADAF7E /* AFXMLRequestOperation.m in Sources */,
 				94D213871787FF9500ADAF7E /* UIImageView+AFNetworking.m in Sources */,
 				C2C0FDA6178813C900AD355B /* NSString+URLEncoding.m in Sources */,
 				1133AAC717949440002E8B89 /* C46DataSource.m in Sources */,
 				1133AAC817949440002E8B89 /* C46Ad.m in Sources */,
-				790588FF18262606000D3448 /* C46SegmentedView.m in Sources */,
 				1133AAD217949440002E8B89 /* C46AdFilterViewController.m in Sources */,
 				1133AAD417949440002E8B89 /* C46AdCell.m in Sources */,
+				7905891A182643AF000D3448 /* C46ButtonCell.m in Sources */,
+				7905892218264502000D3448 /* C46FormTableViewController.m in Sources */,
 				1133AAD617949440002E8B89 /* C46AdListViewController.m in Sources */,
 				1133AAD817949440002E8B89 /* C46AdsViewController.m in Sources */,
 				1133AADA17949440002E8B89 /* C46HomeTabBarController.m in Sources */,
 				1133AADD17949440002E8B89 /* C46MessageViewController.m in Sources */,
+				790589071826430D000D3448 /* ColorManager.m in Sources */,
 				1133AADF17949440002E8B89 /* C46MyAdsViewController.m in Sources */,
 				1133AAE117949440002E8B89 /* C46RegisterUserViewController.m in Sources */,
 				1133AAE317949440002E8B89 /* C46FacebookConnect.m in Sources */,
 				1133AAE417949440002E8B89 /* C46UserInfo.m in Sources */,
 				1133AAE517949440002E8B89 /* C46UserManager.m in Sources */,
+				7905891C182643AF000D3448 /* C46RegionCell.m in Sources */,
+				7905891F18264429000D3448 /* UIView+position.m in Sources */,
 				1133AAEA17949515002E8B89 /* C46LoginUserViewController.m in Sources */,
 				1133AAF41794980D002E8B89 /* NSMutableDictionary+Additions.m in Sources */,
+				790589061826430D000D3448 /* C46SegmentedView.m in Sources */,
 				1133AAFC179498CA002E8B89 /* DDASLLogger.m in Sources */,
 				1133AAFD179498CA002E8B89 /* DDLog.m in Sources */,
 				1133AAFE179498CA002E8B89 /* DDTTYLogger.m in Sources */,
@@ -855,6 +934,7 @@
 				1133AB1B1795C0C0002E8B89 /* C46Region.m in Sources */,
 				1133AB1E1795CDBC002E8B89 /* C46AdFilter.m in Sources */,
 				11F70BC7179D509200259C1E /* C46AdDetailViewController.m in Sources */,
+				79058916182643AF000D3448 /* C46FormCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

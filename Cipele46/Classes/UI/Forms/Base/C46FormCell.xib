@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="C46FormCell">
+            <connections>
+                <outlet property="holderView" destination="hv2-jQ-I4J" id="VmS-Fc-yym"/>
+                <outlet property="textField" destination="yMf-bW-bt4" id="k3l-tX-qiO"/>
+                <outlet property="titleLabel" destination="M3D-y4-soV" id="59m-wc-1Hm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="hv2-jQ-I4J">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M3D-y4-soV" userLabel="Title label">
+                    <rect key="frame" x="16" y="2" width="288" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                    <color key="textColor" white="0.30289119525547448" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" id="g1k-H5-5VW">
+                    <rect key="frame" x="16" y="22" width="288" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.85033645072992703" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" tag="65536" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please Enter Your E-mail" minimumFontSize="17" id="yMf-bW-bt4" userLabel="Text field">
+                    <rect key="frame" x="25" y="22" width="270" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" white="0.30289119525547448" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="IIZ-0g-dzU"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </view>
+    </objects>
+</document>
