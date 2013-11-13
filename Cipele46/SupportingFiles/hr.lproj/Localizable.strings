@@ -7,11 +7,11 @@
 */
 
 /* Tab names */
-"TAB__ADS" = "Ads";
-"TAB__SEARCH" = "Search";
-"TAB__NEW_AD" = "New ad";
-"TAB__MY_ADS" = "My ads";
-"TAB__SETTINGS" = "Settings";
+"TAB__ADS" = "Oglasi";
+"TAB__SEARCH" = "Pretraži";
+"TAB__NEW_AD" = "Novi oglas";
+"TAB__MY_ADS" = "Moji";
+"TAB__SETTINGS" = "Postavke";
 
 /* Filter */
 "FILTER_GROUP_HEADER__ADVERT_TYPE" = "Tip oglasa";

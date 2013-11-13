@@ -801,7 +801,7 @@
 			attributes = {
 				CLASSPREFIX = C46;
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "Miran Brajsa";
+				ORGANIZATIONNAME = cipele46.org;
 			};
 			buildConfigurationList = 94EF26411787CB8800BE46E3 /* Build configuration list for PBXProject "Cipele46" */;
 			compatibilityVersion = "Xcode 3.2";
