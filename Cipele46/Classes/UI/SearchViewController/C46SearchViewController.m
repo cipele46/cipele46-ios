@@ -34,7 +34,7 @@
   
   [self showProgressIndicator];
 
-  [[C46DataSource sharedInstance] fetchAdsWithSuccess:^(NSArray *ads) {
+  [[C46DataSource sharedInstance] fetchAllPublicAdsWithSuccess:^(NSArray *ads) {
     
     DDLogInfo(@"Search results received. Count (%d)", ads.count);
     DDLogVerbose(@"\t\tAds: %@", ads);

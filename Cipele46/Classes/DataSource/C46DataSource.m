@@ -30,10 +30,10 @@
     return _sharedInstance;
 }
 
-- (id <WMRequestProxyProtocol>)fetchAdsWithSuccess:(void (^)(NSArray *))success
-                                           failure:(void (^)(C46Error *))failure
+- (id <WMRequestProxyProtocol>)fetchAllPublicAdsWithSuccess:(void (^)(NSArray *))success
+                                                    failure:(void (^)(C46Error *))failure
 {
-    DDLogInfo(@"Fetch ads");
+    DDLogInfo(@"Fetch all public ads");
     
     NSString *path = @"ads.json";
     
@@ -42,7 +42,7 @@
                                                                  networkClient:[C46Cipele46APINetworkClient sharedClient]
                                                                        success:^(id responseInfo, id responseObject) {
                                                                            
-                                                                           DDLogInfo(@"Fetch ads success");
+                                                                           DDLogInfo(@"Fetch all public ads success");
                                                                            DDLogVerbose(@"\t\tResponse: %@", responseObject);
                                                                            DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
                                                                            
@@ -50,7 +50,7 @@
                                                                            
                                                                        } failure:^(id responseInfo, id responseObject) {
                                                                            
-                                                                           DDLogError(@"Fetch ads error");
+                                                                           DDLogError(@"Fetch all public ads error");
                                                                            DDLogVerbose(@"\t\tResponse: %@", responseObject);
                                                                            DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
                                                                            

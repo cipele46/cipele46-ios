@@ -15,8 +15,8 @@
 
 #pragma mark - Cipele46 API
 
-- (id <WMRequestProxyProtocol>)fetchAdsWithSuccess:(void(^)(NSArray *ads))success // C46Ad objects
-                                           failure:(void(^)(C46Error *error))failure;
+- (id <WMRequestProxyProtocol>)fetchAllPublicAdsWithSuccess:(void(^)(NSArray *ads))success // C46Ad objects
+                                                    failure:(void(^)(C46Error *error))failure;
 
 
 - (id <WMRequestProxyProtocol>)fetchAdsWithFilters:(NSArray *)filters // array of C46AdFilter objects
