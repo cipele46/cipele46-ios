@@ -8,23 +8,14 @@
 
 #import "C46AdCategory.h"
 
+NSString* const kAllCategoriesRepresentationIdentifier = @"c46.categories.identifier";
+
 @implementation C46AdCategory
 
-- (id)initWithJSONDictionary:(NSDictionary *)dictionary
++ (C46Entity *)defaultRepresentation
 {
-    if (self = [super init]) {
-        
-        _identifier = [dictionary[@"id"] stringValue];
-        _name = dictionary[@"name"];
-        
-        // TODO: create date objects from strings
-//        NSString *dateCreatedString = [dictionary objectForKey:@"created_at"]; // 2013-07-06T10:01:53Z
-        _dateCreated = [NSDate date];
-//        NSString *dateUpdatedString = [dictionary objectForKey:@"updated_at"];
-        _dateUpdated = [NSDate date];
-    }
-    
-    return self;
+    C46AdCategory *allCategories = [[C46AdCategory alloc] initWithIdentifier:kAllCategoriesRepresentationIdentifier name:NSLocalizedString(@"FILTER_ALL_CATEGORIES_TITLE", @"All categories")];
+    return allCategories;
 }
 
 @end

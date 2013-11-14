@@ -16,7 +16,6 @@
 		1133AACE17949440002E8B89 /* time_icon_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1133AA9817949440002E8B89 /* time_icon_blue@2x.png */; };
 		1133AACF17949440002E8B89 /* time_icon_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1133AA9917949440002E8B89 /* time_icon_red@2x.png */; };
 		1133AAD217949440002E8B89 /* C46AdFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AA9F17949440002E8B89 /* C46AdFilterViewController.m */; };
-		1133AAD317949440002E8B89 /* C46AdFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1133AAA017949440002E8B89 /* C46AdFilterViewController.xib */; };
 		1133AAD417949440002E8B89 /* C46AdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AAA317949440002E8B89 /* C46AdCell.m */; };
 		1133AAD517949440002E8B89 /* C46AdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1133AAA417949440002E8B89 /* C46AdCell.xib */; };
 		1133AAD617949440002E8B89 /* C46AdListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AAA617949440002E8B89 /* C46AdListViewController.m */; };
@@ -54,6 +53,7 @@
 		11F70BC8179D509200259C1E /* C46AdDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F70BC6179D509200259C1E /* C46AdDetailViewController.xib */; };
 		32E43B81178856B3008C9A88 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B80178856B3008C9A88 /* ImageIO.framework */; };
 		32E43B8317885A42008C9A88 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E43B8217885A42008C9A88 /* SDWebImage.framework */; };
+		5EF96CDC18342A0600A61C44 /* C46Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF96CDB18342A0600A61C44 /* C46Entity.m */; };
 		790589061826430D000D3448 /* C46SegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 790589031826430D000D3448 /* C46SegmentedView.m */; };
 		790589071826430D000D3448 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 790589051826430D000D3448 /* ColorManager.m */; };
 		79058916182643AF000D3448 /* C46FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7905890A182643AF000D3448 /* C46FormCell.m */; };
@@ -127,7 +127,6 @@
 		1133AA9917949440002E8B89 /* time_icon_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time_icon_red@2x.png"; sourceTree = "<group>"; };
 		1133AA9E17949440002E8B89 /* C46AdFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdFilterViewController.h; sourceTree = "<group>"; };
 		1133AA9F17949440002E8B89 /* C46AdFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdFilterViewController.m; sourceTree = "<group>"; };
-		1133AAA017949440002E8B89 /* C46AdFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdFilterViewController.xib; sourceTree = "<group>"; };
 		1133AAA217949440002E8B89 /* C46AdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdCell.h; sourceTree = "<group>"; };
 		1133AAA317949440002E8B89 /* C46AdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdCell.m; sourceTree = "<group>"; };
 		1133AAA417949440002E8B89 /* C46AdCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdCell.xib; sourceTree = "<group>"; };
@@ -193,6 +192,8 @@
 		11F70BC6179D509200259C1E /* C46AdDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46AdDetailViewController.xib; sourceTree = "<group>"; };
 		32E43B80178856B3008C9A88 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		32E43B8217885A42008C9A88 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = 3rdParty/SDWebImage.framework; sourceTree = "<group>"; };
+		5EF96CDA18342A0600A61C44 /* C46Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46Entity.h; sourceTree = "<group>"; };
+		5EF96CDB18342A0600A61C44 /* C46Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46Entity.m; sourceTree = "<group>"; };
 		790589021826430D000D3448 /* C46SegmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46SegmentedView.h; sourceTree = "<group>"; };
 		790589031826430D000D3448 /* C46SegmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46SegmentedView.m; sourceTree = "<group>"; };
 		790589041826430D000D3448 /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
@@ -324,6 +325,8 @@
 		1133AA8B17949440002E8B89 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5EF96CDA18342A0600A61C44 /* C46Entity.h */,
+				5EF96CDB18342A0600A61C44 /* C46Entity.m */,
 				1133AB0717949ADB002E8B89 /* C46Error.h */,
 				1133AB0817949ADB002E8B89 /* C46Error.m */,
 				1133AA8C17949440002E8B89 /* C46Ad.h */,
@@ -389,7 +392,6 @@
 			children = (
 				1133AA9E17949440002E8B89 /* C46AdFilterViewController.h */,
 				1133AA9F17949440002E8B89 /* C46AdFilterViewController.m */,
-				1133AAA017949440002E8B89 /* C46AdFilterViewController.xib */,
 			);
 			path = AdFilterViewController;
 			sourceTree = "<group>";
@@ -840,7 +842,6 @@
 				1133AACD17949440002E8B89 /* place_icon_red@2x.png in Resources */,
 				1133AACE17949440002E8B89 /* time_icon_blue@2x.png in Resources */,
 				1133AACF17949440002E8B89 /* time_icon_red@2x.png in Resources */,
-				1133AAD317949440002E8B89 /* C46AdFilterViewController.xib in Resources */,
 				79B116281824D90C00B1CA9E /* C46SearchViewController.xib in Resources */,
 				1133AAD517949440002E8B89 /* C46AdCell.xib in Resources */,
 				1133AAD717949440002E8B89 /* C46AdListViewController.xib in Resources */,
@@ -904,6 +905,7 @@
 				1133AAD217949440002E8B89 /* C46AdFilterViewController.m in Sources */,
 				1133AAD417949440002E8B89 /* C46AdCell.m in Sources */,
 				7905891A182643AF000D3448 /* C46ButtonCell.m in Sources */,
+				5EF96CDC18342A0600A61C44 /* C46Entity.m in Sources */,
 				7905892218264502000D3448 /* C46FormTableViewController.m in Sources */,
 				1133AAD617949440002E8B89 /* C46AdListViewController.m in Sources */,
 				1133AAD817949440002E8B89 /* C46AdsViewController.m in Sources */,

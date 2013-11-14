@@ -31,8 +31,8 @@ typedef enum __TableSection
 @property (nonatomic) BOOL categoriesFetched;
 
 @property (nonatomic) NSArray *types;
-@property (nonatomic) NSArray *regions;
-@property (nonatomic) NSArray *categories;
+@property (nonatomic) NSMutableArray *regions;
+@property (nonatomic) NSMutableArray *categories;
 
 
 @property (nonatomic) NSIndexPath *selectedAdTypeInfoIndexPath;
@@ -55,11 +55,11 @@ typedef enum __TableSection
         _types = @[
                    @{
                        kAdTypeInfoKeyType: @(AdTypeSupply),
-                       kAdTypeInfoKeyText : NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__SUPPLY", nil)
+                       kAdTypeInfoKeyText : NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__GIVEAWAYS", nil)
                        },
                    @{
                        kAdTypeInfoKeyType: @(AdTypeDemand),
-                       kAdTypeInfoKeyText : NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__DEMAND", nil)
+                       kAdTypeInfoKeyText : NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__NEEDS", nil)
                        }
                    ];
         
@@ -141,8 +141,12 @@ typedef enum __TableSection
         
         DDLogInfo(@"Categories received");
         DDLogVerbose(@"\t\t%@", categories);
-        
-        _categories = categories;
+
+        [_categories removeAllObjects];
+
+        _categories = [[NSMutableArray alloc] initWithObjects:[C46AdCategory defaultRepresentation], nil];
+        [_categories addObjectsFromArray:categories];
+
         _categoriesFetched = YES;
         
         [self onTableDataPortionFetch];
@@ -161,8 +165,12 @@ typedef enum __TableSection
         
         DDLogInfo(@"Regions received");
         DDLogVerbose(@"\t\t%@", regions);
+
+        [_regions removeAllObjects];
         
-        _regions = regions;
+        _regions = [[NSMutableArray alloc] initWithObjects:[C46Region defaultRepresentation], nil];
+        [_regions addObjectsFromArray:regions];
+
         _regionsFetched = YES;
         
         [self onTableDataPortionFetch];

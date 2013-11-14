@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Miran Brajsa. All rights reserved.
 //
 
+#import "C46Entity.h"
 #import "C46Ad.h"
 
 @implementation C46Ad

@@ -8,23 +8,14 @@
 
 #import "C46Region.h"
 
+NSString* const kAllRegionsRepresentationIdentifier = @"c46.regions.identifier";
+
 @implementation C46Region
 
-- (id)initWithJSONDictionary:(NSDictionary *)dictionary
++ (C46Entity *)defaultRepresentation
 {
-    if (self = [super init]) {
-        
-        _identifier = [dictionary[@"id"] stringValue];
-        _name = dictionary[@"name"];
-        
-        // TODO: create date objects from strings
-        //        NSString *dateCreatedString = [dictionary objectForKey:@"created_at"]; // 2013-07-06T10:01:53Z
-        _dateCreated = [NSDate date];
-        //        NSString *dateUpdatedString = [dictionary objectForKey:@"updated_at"];
-        _dateUpdated = [NSDate date];
-    }
-    
-    return self;
+    C46Region *allRegions = [[C46Region alloc] initWithIdentifier:kAllRegionsRepresentationIdentifier name:NSLocalizedString(@"FILTER_ALL_REGIONS_TITLE", @"All regions")];
+    return allRegions;
 }
 
 @end

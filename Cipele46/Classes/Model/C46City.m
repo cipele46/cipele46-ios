@@ -12,17 +12,7 @@
 
 - (id)initWithJSONDictionary:(NSDictionary *)dictionary
 {
-    if (self = [super init]) {
-        
-        _identifier = dictionary[@"id"];
-        _name = dictionary[@"name"];
-        
-        // TODO: create date objects from strings
-        //        NSString *dateCreatedString = [dictionary objectForKey:@"created_at"]; // 2013-07-06T10:01:53Z
-        _dateCreated = [NSDate date];
-        //        NSString *dateUpdatedString = [dictionary objectForKey:@"updated_at"];
-        _dateUpdated = [NSDate date];
-        
+    if (self = [super initWithJSONDictionary:dictionary]) {
         _regionID = [dictionary[@"region_id"] integerValue];
     }
     
