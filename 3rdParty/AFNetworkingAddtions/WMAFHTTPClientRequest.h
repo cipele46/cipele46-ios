@@ -11,6 +11,7 @@
 
 NSString * C46ResponseStatusCodeFromRequestKey; //NSUInteger
 NSString * C46NetworkClientErrorLocalizedDesriptionKey; // NSString
+NSString * C46NetworkClientErrorLocalizedResoverySuggestionKey;
 NSString * C46ErrorTypeKey; // C46ErrorType
 
 typedef void (^WMAFHTTPClientRequestSuccess)(id responseInfo, id responseObject);

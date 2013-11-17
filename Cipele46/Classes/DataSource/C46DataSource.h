@@ -29,6 +29,11 @@
                                           success:(void(^)(C46User *user))success
                                           failure:(void(^)(C46Error *error))failure;
 
+- (id <WMRequestProxyProtocol>)loginUserWithEmail:(NSString *)email
+                                         password:(NSString *)password
+                                          success:(void(^)(C46User *user))success
+                                          failure:(void(^)(C46Error *error))failure;
+
 #pragma mark - Cipele46 API
 
 - (id <WMRequestProxyProtocol>)fetchAllPublicAdsWithSuccess:(void(^)(NSArray *ads))success // C46Ad objects

@@ -14,10 +14,6 @@
 #import "C46UserManager.h"
 #import "C46User.h"
 
-// later
-// ----> AFHTTPClient <----
-//[client setAuthorizationHeaderWithUsername:[parameters objectForKey:@"username"]
-//                                  password:[parameters objectForKey:@"password"]];
 
 @interface C46DataSource ()
 
@@ -82,6 +78,34 @@
     
     return request;
 }
+
+- (id<WMRequestProxyProtocol>)loginUserWithEmail:(NSString *)email
+                                        password:(NSString *)password
+                                         success:(void (^)(C46User *))success
+                                         failure:(void (^)(C46Error *))failure
+{
+    DDLogInfo(@"Create user");
+    
+    [self setAuthorizationHeadersUsername:email password:password];
+    
+    WMAFHTTPClientRequest *request = [_userManager loginUserWithEmail:email
+                                                             password:password
+                                                              success:success
+                                                              failure:failure];
+    [request start];
+    
+    return request;
+}
+
+- (void)setAuthorizationHeadersUsername:(NSString *)username
+                               password:(NSString *)password
+{
+    [[C46Cipele46APINetworkClient sharedClient] setAuthorizationHeaderWithUsername:username
+                                                                          password:password];
+    
+}
+
+#pragma mark - Cipele46 API
 
 - (id <WMRequestProxyProtocol>)fetchAllPublicAdsWithSuccess:(void (^)(NSArray *))success
                                                     failure:(void (^)(C46Error *))failure

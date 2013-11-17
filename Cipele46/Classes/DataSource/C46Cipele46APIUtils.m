@@ -8,6 +8,7 @@
 
 #import "C46Cipele46APIUtils.h"
 #import "WMAFHTTPClientRequest.h"
+#import "NSMutableDictionary+Additions.h"
 
 @implementation C46Cipele46APIUtils
 
@@ -27,18 +28,18 @@
         error = [C46Error errorWithDomain:kC46ErrorDomain code:errorCode userInfo:@{NSLocalizedDescriptionKey : message}];
         
     } else if (responseInfo) {
-        
-        NSString *errorLocalizedDescription = responseInfo[C46NetworkClientErrorLocalizedDesriptionKey];
+    
         NSInteger code = [responseInfo[C46ErrorTypeKey] integerValue];
         
-        if (errorLocalizedDescription) {
-            
-            error = [C46Error errorWithDomain:kC46ErrorDomain code:code userInfo:@{NSLocalizedDescriptionKey : errorLocalizedDescription}];
+        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
         
-        } else {
+        NSString *errorLocalizedDescription = responseInfo[C46NetworkClientErrorLocalizedDesriptionKey];
+        NSString *errorLocalizedREcoverySuggestion = responseInfo[C46NetworkClientErrorLocalizedResoverySuggestionKey];
         
-            error = [C46Error errorWithDomain:kC46ErrorDomain code:code userInfo:nil];
-        }
+        [userInfo setObjectSafe:errorLocalizedDescription forKey:NSLocalizedDescriptionKey];
+        [userInfo setObjectSafe:errorLocalizedREcoverySuggestion forKey:NSLocalizedRecoverySuggestionErrorKey];
+
+        error = [C46Error errorWithDomain:kC46ErrorDomain code:code userInfo:userInfo];
     }
     
     if (!error) {

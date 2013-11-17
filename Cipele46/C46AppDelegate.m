@@ -37,19 +37,6 @@ static void uncaughtExceptionHandler(NSException * exception)
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
     
-    [[C46DataSource sharedInstance] createUserWithName:@"pero"
-                                              lastName:@"peric"
-                                                 email:@"pero3@pero.pero"
-                                                 phone:@"123456"
-                                              password:@"peropero"
-                                  passwordConfirmation:@"peropero"
-                                               success:^(C46User *user) {
-                                                   
-                                                   
-                                                   
-                                               } failure:^(C46Error *error) {
-                                                   
-                                               }];
     
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];

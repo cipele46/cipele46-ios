@@ -33,6 +33,11 @@
                                           success:(void(^)(C46User *user))success
                                           failure:(void(^)(C46Error *error))failure;
 
+- (id<WMRequestProxyProtocol>)loginUserWithEmail:(NSString *)email
+                                        password:(NSString *)password
+                                         success:(void (^)(C46User *))success
+                                         failure:(void (^)(C46Error *))failure;
+
 @property(nonatomic, readonly, getter=isLoggedIn) BOOL loggedIn;
 @property(nonatomic, readonly) C46User* user;
 

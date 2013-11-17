@@ -12,6 +12,7 @@
 
 NSString * C46ResponseStatusCodeFromRequestKey = @"C46ResponseStatusCodeFromRequestKey";
 NSString * C46NetworkClientErrorLocalizedDesriptionKey = @"C46NetworkClientErrorLocalizedDesriptionKey";
+NSString * C46NetworkClientErrorLocalizedResoverySuggestionKey = @"C46NetworkClientErrorLocalizedResoverySuggestionKey";
 NSString * C46ErrorTypeKey = @"C46ErrorTypeKey";
 
 typedef enum __WMNetworkOperationProxyType {
@@ -185,14 +186,8 @@ typedef enum __WMNetworkOperationProxyType {
     [dict setObjectSafe:@(operation.response.statusCode) forKey:C46ResponseStatusCodeFromRequestKey];
     
     if (networkClientError) {
-        
-        if (networkClientError.localizedRecoverySuggestion) {
-
-            [dict setObjectSafe:networkClientError.localizedRecoverySuggestion forKey:C46NetworkClientErrorLocalizedDesriptionKey];
-        } else {
-            [dict setObjectSafe:networkClientError.localizedDescription forKey:C46NetworkClientErrorLocalizedDesriptionKey];
-        }
-        
+        [dict setObjectSafe:networkClientError.localizedRecoverySuggestion forKey:C46NetworkClientErrorLocalizedResoverySuggestionKey];
+        [dict setObjectSafe:networkClientError.localizedDescription forKey:C46NetworkClientErrorLocalizedDesriptionKey];
         [dict setObjectSafe:@([WMAFHTTPClientRequest errorTypeFromRequestOperation:operation]) forKey:C46ErrorTypeKey];
     }
     

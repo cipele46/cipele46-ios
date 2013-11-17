@@ -106,6 +106,8 @@
                                          success:(void (^)(C46User *))success
                                          failure:(void (^)(C46Error *))failure
 {
+    DDLogInfo(@"Create User");
+    
     NSString *path = @"users.json";
     
     NSDictionary *bodyParamaters = @{ @"user":
@@ -116,7 +118,7 @@
                                               @"phone" : phone,
                                               @"password" : password,
                                               @"password_confirmation" : passwordConfirmation
-                                            }
+                                              }
                                       };
     
     return [WMAFHTTPClientRequest postRequestWithPath:path
@@ -144,6 +146,46 @@
                                                                                         responseInfo:responseInfo]);
                                               }];
     
+}
+
+- (id<WMRequestProxyProtocol>)loginUserWithEmail:(NSString *)email
+                                        password:(NSString *)password
+                                         success:(void (^)(C46User *))success
+                                         failure:(void (^)(C46Error *))failure
+{
+    DDLogInfo(@"Login User");
+    
+    NSString *path = @"users/current.json";
+    
+    NSDictionary *bodyParamaters = @{
+                                     @"email" : email,
+                                     @"password" : password
+                                    };
+    
+    return [WMAFHTTPClientRequest getRequestWithPath:path
+                                          parameters:nil
+                                       networkClient:[C46Cipele46APINetworkClient sharedClient]
+                                             success:^(id responseInfo, id responseObject) {
+                                                 
+                                                 DDLogInfo(@"Login user success");
+                                                 DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                 DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                 
+                                                 C46User *user = [[C46User alloc] initWithJSONDictionary:responseObject];
+                                                 
+                                                 DDLogVerbose(@"\t\tUser created: %@", user);
+                                                 
+                                                 success(user);
+                                                 
+                                             } failure:^(id responseInfo, id responseObject) {
+                                                 
+                                                 DDLogError(@"Login user error");
+                                                 DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                 DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                 
+                                                 failure([C46Cipele46APIUtils errorFromHTTPResponse:responseObject
+                                                                                       responseInfo:responseInfo]);
+                                             }];
 }
 
 -(void)logout
