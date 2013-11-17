@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Miran Brajsa. All rights reserved.
 //
 
-#import "C46UserInfo.h"
+#import "C46User.h"
 
-@implementation C46UserInfo
+@implementation C46User
 
 -(id) initWithUserName:(NSString*) userName
                  email:(NSString*) email

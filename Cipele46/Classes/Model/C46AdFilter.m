@@ -13,7 +13,7 @@
 @property (nonatomic) NSString *C46APIKey;
 @property (nonatomic) NSString *C46APIValue;
 @property (nonatomic) BOOL requiresAuthentication;
-@property (nonatomic) AdFilterType type;
+@property (nonatomic) AdFilterMask adFilterMask;
 @property (nonatomic) id initializationContext;
 
 @end
@@ -33,7 +33,7 @@
     return [self filterWithAPIKey:@"category_id"
                          APIValue:category.identifier
            requiresAuthentication:NO
-                             type:AdFilterTypeAdCategory
+                     adFilterMask:AdFilterMask_Category
             initializationContext:category];
 }
 
@@ -42,7 +42,7 @@
     return [self filterWithAPIKey:@"ad_type"
                          APIValue:[NSString stringWithFormat:@"%d", type]
            requiresAuthentication:NO
-                             type:AdFilterTypeAdType
+                     adFilterMask:AdFilterMask_AdType
             initializationContext:@(type)];
 }
 
@@ -51,7 +51,7 @@
     return [self filterWithAPIKey:@"region_id"
                          APIValue:region.identifier
            requiresAuthentication:NO
-                             type:AdFilterTypeRegion
+                     adFilterMask:AdFilterMask_Region
             initializationContext:region];
 }
 
@@ -60,7 +60,7 @@
     return [self filterWithAPIKey:@"status"
                          APIValue:[NSString stringWithFormat:@"%d", status]
            requiresAuthentication:NO
-                             type:AdFilterTypeOther
+                     adFilterMask:AdFilterMask_Status
             initializationContext:@(status)];
 }
 
@@ -69,7 +69,7 @@
     return [self filterWithAPIKey:@"query"
                          APIValue:text
            requiresAuthentication:NO
-                             type:AdFilterTypeOther
+                     adFilterMask:AdFilterMask_QueryText
             initializationContext:text];
 }
 
@@ -85,7 +85,7 @@
 + (C46AdFilter *)filterWithAPIKey:(NSString *)key
                          APIValue:(NSString *)value
            requiresAuthentication:(BOOL)requiresAuthentication
-                             type:(AdFilterType)type
+                     adFilterMask:(AdFilterMask)adFilterMask
             initializationContext:(id)initializationContext
 {
     C46AdFilter *filter = [[C46AdFilter alloc] init];
@@ -93,7 +93,7 @@
     filter.C46APIKey = key;
     filter.C46APIValue = value;
     filter.requiresAuthentication = requiresAuthentication;
-    filter.type = type;
+    filter.adFilterMask = adFilterMask;
     filter.initializationContext = initializationContext;
     
     return filter;

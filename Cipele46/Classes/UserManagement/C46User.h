@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface C46UserInfo : NSObject
+@interface C46User : NSObject
 
 -(id) initWithUserName:(NSString*) userName
                  email:(NSString*) email

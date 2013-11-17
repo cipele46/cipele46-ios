@@ -9,21 +9,24 @@
 #import <Foundation/Foundation.h>
 #import "C46Ad.h"
 
-typedef enum __AdFilterType {
+typedef enum __AdFilterMask {
     
-    AdFilterTypeOther,
-    AdFilterTypeAdCategory,
-    AdFilterTypeAdType,
-    AdFilterTypeRegion
+    AdFilterMask_Category       =   1 << 0,
+    AdFilterMask_AdType         =   1 << 1,
+    AdFilterMask_Region         =   1 << 2,
+    AdFilterMask_Status         =   1 << 3,
+    AdFilterMask_QueryText      =   1 << 4,
+    AdFilterMask_None           =   0,
+    AdFilterMask_All            =   NSUIntegerMax,
     
-} AdFilterType;
+} AdFilterMask;
 
 @interface C46AdFilter : NSObject
 
 @property (nonatomic, readonly) NSString *C46APIKey;
 @property (nonatomic, readonly) NSString *C46APIValue;
 @property (nonatomic, readonly) BOOL requiresAuthentication;
-@property (nonatomic, readonly) AdFilterType type;
+@property (nonatomic, readonly) AdFilterMask adFilterMask;
 
 
 // E.g.

@@ -9,7 +9,7 @@
 #import "C46FacebookConnect.h"
 #import "NSString+URLEncoding.h"
 #import <FacebookSDK/FacebookSDK.h>
-#import "C46UserInfo.h"
+#import "C46User.h"
 
 @implementation C46FacebookConnect
 
@@ -26,7 +26,7 @@
     return instance;
 }
 
--(void)connectWithCompletionHandler:(void (^)(NSError* error, C46UserInfo* userInfo))completionHandler
+-(void)connectWithCompletionHandler:(void (^)(NSError* error, C46User* userInfo))completionHandler
 {
     NSAssert(NULL != completionHandler, @"completion handler is required!");
     
@@ -41,7 +41,7 @@
             }
             else
             {
-                [self fetchUserInfoWithCompletionHandler:^(NSError *error, C46UserInfo *userInfo)
+                [self fetchUserInfoWithCompletionHandler:^(NSError *error, C46User *userInfo)
                 {
                     completionHandler(error, userInfo);
                 }];
@@ -115,7 +115,7 @@
     }];
 }
 
--(void) fetchUserInfoWithCompletionHandler:(void(^)(NSError* error, C46UserInfo* userInfo)) completionHandler
+-(void) fetchUserInfoWithCompletionHandler:(void(^)(NSError* error, C46User* userInfo)) completionHandler
 {
     NSAssert(NULL != completionHandler, @"completion handler is required!");
     
@@ -136,7 +136,7 @@
         }
         else
         {
-            C46UserInfo* userInfo = [self userInfoWithFBResponse:result];
+            C46User* userInfo = [self userInfoWithFBResponse:result];
             completionHandler(nil, userInfo);
         }
     }];
@@ -164,7 +164,7 @@
     return path;
 }
 
--(C46UserInfo*) userInfoWithFBResponse:(FBGraphObject*) response
+-(C46User*) userInfoWithFBResponse:(FBGraphObject*) response
 {
     FBGraphObject* data = [[response objectForKey:@"data"] firstObject];
     
@@ -175,7 +175,7 @@
     
     NSString* accessToken = [[[FBSession activeSession] accessTokenData] accessToken];
     
-    C46UserInfo* userInfo = [[C46UserInfo alloc] initWithUserName:userName
+    C46User* userInfo = [[C46User alloc] initWithUserName:userName
                                                             email:email
                                                         firstName:firstName
                                                          lastName:lastName

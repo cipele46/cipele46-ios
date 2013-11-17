@@ -18,6 +18,10 @@
 - (id <WMRequestProxyProtocol>)fetchAllPublicAdsWithSuccess:(void(^)(NSArray *ads))success // C46Ad objects
                                                     failure:(void(^)(C46Error *error))failure;
 
+- (id <WMRequestProxyProtocol>)fetchPublicAdsWithFilters:(NSArray *)filters // array of C46AdFilter objects
+                                                 success:(void(^)(NSArray *ads))success // C46Ad objects
+                                                 failure:(void(^)(C46Error *error))failure;
+
 
 - (id <WMRequestProxyProtocol>)fetchAdsWithFilters:(NSArray *)filters // array of C46AdFilter objects
                                            success:(void(^)(NSArray *ads))success // C46Ad objects

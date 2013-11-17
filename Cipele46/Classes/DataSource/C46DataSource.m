@@ -11,11 +11,18 @@
 #import "C46Cipele46APIUtils.h"
 #import "C46Ad.h"
 #import "C46AdFilter.h"
+#import "C46UserManager.h"
 
 // later
 // ----> AFHTTPClient <----
 //[client setAuthorizationHeaderWithUsername:[parameters objectForKey:@"username"]
 //                                  password:[parameters objectForKey:@"password"]];
+
+@interface C46DataSource ()
+
+@property (nonatomic) C46UserManager *userManager;
+
+@end
 
 @implementation C46DataSource
 
@@ -24,21 +31,44 @@
     static C46DataSource *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [[C46DataSource alloc] init];
+        _sharedInstance = [[C46DataSource alloc] initWithUserManager:[C46UserManager sharedInstance]];
     });
     
     return _sharedInstance;
+}
+
+- (id)initWithUserManager:(C46UserManager *)userManager
+{
+    if (self = [super init]) {
+        _userManager = userManager;
+    }
+    
+    return self;
 }
 
 - (id <WMRequestProxyProtocol>)fetchAllPublicAdsWithSuccess:(void (^)(NSArray *))success
                                                     failure:(void (^)(C46Error *))failure
 {
     DDLogInfo(@"Fetch all public ads");
+
+    return [self fetchPublicAdsWithFilters:nil
+                                   success:success
+                                   failure:failure];
+}
+
+- (id<WMRequestProxyProtocol>)fetchPublicAdsWithFilters:(NSArray *)filters
+                                                success:(void (^)(NSArray *))success
+                                                failure:(void (^)(C46Error *))failure
+{
+    DDLogInfo(@"Fetch public ads with filters");
+    DDLogVerbose(@"\t\tFilters: %@", filters);
     
     NSString *path = @"ads.json";
     
+    NSDictionary *parameters = [self adFilterParametersFromFilters:filters availableFiltersMask:AdFilterMask_AdType & AdFilterMask_Status];
+
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
-                                                                    parameters:nil
+                                                                    parameters:parameters
                                                                  networkClient:[C46Cipele46APINetworkClient sharedClient]
                                                                        success:^(id responseInfo, id responseObject) {
                                                                            
@@ -61,6 +91,7 @@
     [request start];
     
     return request;
+
 }
 
 - (id<WMRequestProxyProtocol>)fetchAdsWithFilters:(NSArray *)filters
@@ -70,7 +101,7 @@
     DDLogInfo(@"Fetch ads with filters");
     
     NSString *path = @"ads.json";
-    NSDictionary *parameters = [self.class adFilterParametersFromFilters:filters];
+    NSDictionary *parameters = [self.class adFilterParametersFromFilters:filters availableFiltersMask:AdFilterMask_All];
     
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
                                                                     parameters:parameters
@@ -164,6 +195,33 @@
     return request;
 }
 
+
+#pragma mark - Private
+
+- (NSDictionary *)adFilterParametersFromFilters:(NSArray *)filters availableFiltersMask:(AdFilterMask)availableFiltersMask
+{
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:filters.count];
+    
+    for (C46AdFilter *filter in filters) {
+        
+        BOOL shouldAdd = NO;
+        shouldAdd =  availableFiltersMask & filter.adFilterMask;
+        
+        if (filter.requiresAuthentication) {
+            DDLogWarn(@"Needs user authentication");
+            shouldAdd = shouldAdd && _userManager.isLoggedIn;
+        }
+        
+        if (shouldAdd) {
+            parameters[filter.C46APIKey] = filter.C46APIValue;
+        } else {
+            NSAssert(NO, @"Filter mask wrong.");
+        }
+    }
+    
+    return parameters;
+}
+
 #pragma mark - Utils
 
 + (NSArray *)adsFromResponseObject:(id)responseObject
@@ -203,17 +261,6 @@
     }
     
     return regions;
-}
-
-+ (NSDictionary *)adFilterParametersFromFilters:(NSArray *)filters
-{
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:filters.count];
-    
-    for (C46AdFilter *filter in filters) {
-        parameters[filter.C46APIKey] = filter.C46APIValue;
-    }
-    
-    return parameters;
 }
 
 @end

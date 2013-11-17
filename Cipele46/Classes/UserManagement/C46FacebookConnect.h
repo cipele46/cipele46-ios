@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class C46UserInfo;
+@class C46User;
 
 @interface C46FacebookConnect : NSObject
 
 +(id) sharedInstance;
 
--(void) connectWithCompletionHandler:(void(^)(NSError* error, C46UserInfo* userInfo)) completionHandler;
+-(void) connectWithCompletionHandler:(void(^)(NSError* error, C46User* userInfo)) completionHandler;
 -(void) disconnect;
 
 -(BOOL) handleOpenURL:(NSURL*) url;

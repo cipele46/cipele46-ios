@@ -30,7 +30,7 @@ typedef enum __TableSection
 @property (nonatomic) BOOL regionsFetched;
 @property (nonatomic) BOOL categoriesFetched;
 
-@property (nonatomic) NSArray *types;
+@property (nonatomic) NSArray *adTypes;
 @property (nonatomic) NSMutableArray *regions;
 @property (nonatomic) NSMutableArray *categories;
 
@@ -52,7 +52,7 @@ typedef enum __TableSection
     if (self = [self init]) {
         
         _typesFetched = YES;
-        _types = @[
+        _adTypes = @[
                    @{
                        kAdTypeInfoKeyType: @(AdTypeSupply),
                        kAdTypeInfoKeyText : NSLocalizedString(@"FILTER_GROUP_HEADER__ADVERT_TYPE__GIVEAWAYS", nil)
@@ -94,14 +94,15 @@ typedef enum __TableSection
         
         id initializationContext = filter.initializationContext;
         
-        switch (filter.type) {
+        switch (filter.adFilterMask) {
                 
-            case AdFilterTypeAdType: {
+            case AdFilterMask_AdType: {
                 
                 AdType type = [initializationContext integerValue];
                 
-                for (NSDictionary *adTypeInfo in _types) {
+                for (NSDictionary *adTypeInfo in _adTypes) {
                     if ([adTypeInfo[kAdTypeInfoKeyType] integerValue] == type) {
+                        NSAssert(!_selectedAdTypeInfo, @"Use on initialization only");
                         _selectedAdTypeInfo = adTypeInfo;
                         
                         break;
@@ -111,14 +112,16 @@ typedef enum __TableSection
             }
                 break;
                 
-            case AdFilterTypeAdCategory: {
+            case AdFilterMask_Category: {
              
+                NSAssert(!_selectedAdCategory, @"Use on initialization only");
                 _selectedAdCategory = (C46AdCategory *)initializationContext;
                 
             }
                 break;
                 
-            case AdFilterTypeRegion: {
+            case AdFilterMask_Region: {
+                NSAssert(!_selectedRegion, @"Use on initialization only");
                 _selectedRegion = (C46Region *)initializationContext;
             }
                 break;
@@ -221,7 +224,7 @@ typedef enum __TableSection
                 
                 [self deselectCellAtIndexPath:_selectedAdTypeInfoIndexPath];
                 _selectedAdTypeInfoIndexPath = indexPath;
-                _selectedAdTypeInfo = _types[row];
+                _selectedAdTypeInfo = _adTypes[row];
                 [self selectCellAtIndexPath:indexPath];
                 
             } else {
@@ -331,7 +334,7 @@ typedef enum __TableSection
 {
     switch (section) {
         case TableSectionAdType:
-            return _types.count;
+            return _adTypes.count;
             
         case TableSectionAdCategory:
             return _categories.count;
@@ -357,7 +360,7 @@ typedef enum __TableSection
             
         case TableSectionAdType: {
             
-            NSDictionary *adTypeInfo = _types[indexPath.row];
+            NSDictionary *adTypeInfo = _adTypes[indexPath.row];
             cell.textLabel.text = adTypeInfo[kAdTypeInfoKeyText];
             
             if ([adTypeInfo[kAdTypeInfoKeyType] integerValue] ==

@@ -7,7 +7,7 @@
 //
 
 #import "C46UserManager.h"
-#import "C46UserInfo.h"
+#import "C46User.h"
 #import "C46FacebookConnect.h"
 
 @interface C46UserManager()
@@ -46,7 +46,7 @@
 
 -(void)loginViaFacebookWithCompletionHandler:(void (^)(NSError *))completed
 {
-    [[C46FacebookConnect sharedInstance] connectWithCompletionHandler:^(NSError *error, C46UserInfo *fbUserInfo)
+    [[C46FacebookConnect sharedInstance] connectWithCompletionHandler:^(NSError *error, C46User *fbUserInfo)
     {
         if (error)
         {
@@ -111,18 +111,18 @@
         [[C46FacebookConnect sharedInstance] logout];
     }
     
-    _userInfo = nil;
+    _user = nil;
     _isFBLogin = NO;
 }
 
 -(BOOL)isLoggedIn
 {
-    return nil != _userInfo;
+    return nil != _user;
 }
 
 #pragma mark - private
 
--(C46UserInfo*) userInfoWithServerDict:(NSDictionary*) dict
+-(C46User*) userInfoWithServerDict:(NSDictionary*) dict
                               password:(NSString*) password
 {
     NSString* firstName = dict[@"first_name"];
@@ -130,7 +130,7 @@
     NSString* userName = dict[@"name"];
     NSString* email = dict[@"email"];
     
-    C46UserInfo* userInfo = [[C46UserInfo alloc] initWithUserName:userName
+    C46User* userInfo = [[C46User alloc] initWithUserName:userName
                                                             email:email
                                                         firstName:firstName
                                                          lastName:lastName

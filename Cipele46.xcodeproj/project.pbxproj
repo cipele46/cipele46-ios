@@ -30,7 +30,7 @@
 		1133AAE117949440002E8B89 /* C46RegisterUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AABE17949440002E8B89 /* C46RegisterUserViewController.m */; };
 		1133AAE217949440002E8B89 /* C46RegisterUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1133AABF17949440002E8B89 /* C46RegisterUserViewController.xib */; };
 		1133AAE317949440002E8B89 /* C46FacebookConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AAC217949440002E8B89 /* C46FacebookConnect.m */; };
-		1133AAE417949440002E8B89 /* C46UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AAC417949440002E8B89 /* C46UserInfo.m */; };
+		1133AAE417949440002E8B89 /* C46User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AAC417949440002E8B89 /* C46User.m */; };
 		1133AAE517949440002E8B89 /* C46UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AAC617949440002E8B89 /* C46UserManager.m */; };
 		1133AAEA17949515002E8B89 /* C46LoginUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AAE817949515002E8B89 /* C46LoginUserViewController.m */; };
 		1133AAEB17949515002E8B89 /* C46LoginUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1133AAE917949515002E8B89 /* C46LoginUserViewController.xib */; };
@@ -150,8 +150,8 @@
 		1133AABF17949440002E8B89 /* C46RegisterUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C46RegisterUserViewController.xib; sourceTree = "<group>"; };
 		1133AAC117949440002E8B89 /* C46FacebookConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46FacebookConnect.h; sourceTree = "<group>"; };
 		1133AAC217949440002E8B89 /* C46FacebookConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46FacebookConnect.m; sourceTree = "<group>"; };
-		1133AAC317949440002E8B89 /* C46UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46UserInfo.h; sourceTree = "<group>"; };
-		1133AAC417949440002E8B89 /* C46UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46UserInfo.m; sourceTree = "<group>"; };
+		1133AAC317949440002E8B89 /* C46User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46User.h; sourceTree = "<group>"; };
+		1133AAC417949440002E8B89 /* C46User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46User.m; sourceTree = "<group>"; };
 		1133AAC517949440002E8B89 /* C46UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46UserManager.h; sourceTree = "<group>"; };
 		1133AAC617949440002E8B89 /* C46UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46UserManager.m; sourceTree = "<group>"; };
 		1133AAE717949515002E8B89 /* C46LoginUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46LoginUserViewController.h; sourceTree = "<group>"; };
@@ -464,8 +464,8 @@
 			children = (
 				1133AAC117949440002E8B89 /* C46FacebookConnect.h */,
 				1133AAC217949440002E8B89 /* C46FacebookConnect.m */,
-				1133AAC317949440002E8B89 /* C46UserInfo.h */,
-				1133AAC417949440002E8B89 /* C46UserInfo.m */,
+				1133AAC317949440002E8B89 /* C46User.h */,
+				1133AAC417949440002E8B89 /* C46User.m */,
 				1133AAC517949440002E8B89 /* C46UserManager.h */,
 				1133AAC617949440002E8B89 /* C46UserManager.m */,
 			);
@@ -915,7 +915,7 @@
 				1133AADF17949440002E8B89 /* C46MyAdsViewController.m in Sources */,
 				1133AAE117949440002E8B89 /* C46RegisterUserViewController.m in Sources */,
 				1133AAE317949440002E8B89 /* C46FacebookConnect.m in Sources */,
-				1133AAE417949440002E8B89 /* C46UserInfo.m in Sources */,
+				1133AAE417949440002E8B89 /* C46User.m in Sources */,
 				1133AAE517949440002E8B89 /* C46UserManager.m in Sources */,
 				7905891C182643AF000D3448 /* C46RegionCell.m in Sources */,
 				7905891F18264429000D3448 /* UIView+position.m in Sources */,

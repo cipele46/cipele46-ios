@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@class C46UserInfo;
+@class C46User;
 
 
 @interface C46UserManager : NSObject
@@ -31,7 +31,7 @@
          completionHandler:(void(^)(NSError* error)) completed;
 
 @property(nonatomic, readonly, getter=isLoggedIn) BOOL loggedIn;
-@property(nonatomic, readonly) C46UserInfo* userInfo;
+@property(nonatomic, readonly) C46User* user;
 
 @end
 
