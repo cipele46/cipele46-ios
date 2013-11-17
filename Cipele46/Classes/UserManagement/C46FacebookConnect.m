@@ -10,6 +10,7 @@
 #import "NSString+URLEncoding.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "C46User.h"
+#import "C46DataSource.h"
 
 @implementation C46FacebookConnect
 
@@ -168,20 +169,10 @@
 {
     FBGraphObject* data = [[response objectForKey:@"data"] firstObject];
     
-    NSString* firstName = [data objectForKey:@"first_name"];
-    NSString* lastName = [data objectForKey:@"last_name"];
-    NSString* userName = [data objectForKey:@"name"];
-    NSString* email = [data objectForKey:@"email"];
-    
     NSString* accessToken = [[[FBSession activeSession] accessTokenData] accessToken];
     
-    C46User* userInfo = [[C46User alloc] initWithUserName:userName
-                                                            email:email
-                                                        firstName:firstName
-                                                         lastName:lastName
-                                                         password:accessToken];
-    
-    return userInfo;
+    return [[C46User alloc] initWithFacebookJSONDictionary:data
+                                       facebookAccessToken:accessToken];
 }
 
 @end

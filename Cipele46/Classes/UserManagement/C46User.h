@@ -7,19 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "C46Entity.h"
 
-@interface C46User : NSObject
+@interface C46User : C46Entity
 
--(id) initWithUserName:(NSString*) userName
-                 email:(NSString*) email
-             firstName:(NSString*) firstName
-              lastName:(NSString*) lastName
-              password:(NSString*) password;
+- (id)initWithFacebookJSONDictionary:(NSDictionary *)dictionary facebookAccessToken:(NSString *)token;
 
-@property(nonatomic,readonly) NSString* userName;
-@property(nonatomic,readonly) NSString* email;
-@property(nonatomic,readonly) NSString* firstName;
-@property(nonatomic,readonly) NSString* lastName;
-@property(nonatomic,readonly) NSString* password;
+@property (nonatomic, readonly) NSString *username;
+@property (nonatomic, readonly) NSString *email;
+@property (nonatomic, readonly) NSString *facebookUID;
+@property (nonatomic, readonly) NSString *firstName;
+@property (nonatomic, readonly) NSString *lastName;
+@property (nonatomic, readonly) NSString *phone;
 
 @end

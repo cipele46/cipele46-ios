@@ -10,22 +10,32 @@
 
 @implementation C46User
 
--(id) initWithUserName:(NSString*) userName
-                 email:(NSString*) email
-             firstName:(NSString*) firstName
-              lastName:(NSString*) lastName
-              password:(NSString*) password
+- (id)initWithJSONDictionary:(NSDictionary *)dictionary
 {
-    if (self = [super init])
-    {
-        _userName = [userName copy];
-        _email = [email copy];
-        _firstName = [firstName copy];
-        _lastName = [lastName copy];
-        _password = [password copy];
+    if (self = [super initWithJSONDictionary:dictionary]) {
+
+        _email = dictionary[@"email"];
+        _facebookUID = dictionary[@"facebook_uid"];
+        _firstName = dictionary[@"first_name"];
+        _lastName = dictionary[@"last_name"];
+        _phone = dictionary[@"phone"];
     }
     
     return self;
 }
+
+
+- (id)initWithFacebookJSONDictionary:(NSDictionary *)dictionary facebookAccessToken:(NSString *)token
+{
+    if (self = [super init]) {
+        _firstName = [dictionary objectForKey:@"first_name"];
+        _lastName = [dictionary objectForKey:@"last_name"];
+        _email = [dictionary objectForKey:@"email"];
+        _username = [dictionary objectForKey:@"name"];
+    }
+    
+    return self;
+}
+
 
 @end

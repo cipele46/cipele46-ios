@@ -15,8 +15,19 @@
 
 + (C46DataSource *)sharedInstance;
 
+#pragma mark - User in session
+
 @property (nonatomic, readonly) BOOL isUserLoggedIn;
 @property (nonatomic, readonly) C46User *loggedInUser;
+
+- (id <WMRequestProxyProtocol>)createUserWithName:(NSString *)name
+                                         lastName:(NSString *)lastName
+                                            email:(NSString *)email
+                                            phone:(NSString *)phone
+                                         password:(NSString *)password
+                             passwordConfirmation:(NSString *)passwordConfirmation
+                                          success:(void(^)(C46User *user))success
+                                          failure:(void(^)(C46Error *error))failure;
 
 #pragma mark - Cipele46 API
 

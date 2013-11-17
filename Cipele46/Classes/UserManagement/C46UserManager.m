@@ -9,6 +9,8 @@
 #import "C46UserManager.h"
 #import "C46User.h"
 #import "C46FacebookConnect.h"
+#import "C46Cipele46APINetworkClient.h"
+#import "C46Cipele46APIUtils.h"
 
 @interface C46UserManager()
 {
@@ -95,12 +97,52 @@
     //    }];
 }
 
--(void) createUserWithName:(NSString*) name
-                     email:(NSString*) email
-                     phone:(NSString*) phone
-                  password:(NSString*) password
-         completionHandler:(void (^)(NSError *))completed
+- (id<WMRequestProxyProtocol>)createUserWithName:(NSString *)name
+                                        lastName:(NSString *)lastName
+                                           email:(NSString *)email
+                                           phone:(NSString *)phone
+                                        password:(NSString *)password
+                            passwordConfirmation:(NSString *)passwordConfirmation
+                                         success:(void (^)(C46User *))success
+                                         failure:(void (^)(C46Error *))failure
 {
+    NSString *path = @"users.json";
+    
+    NSDictionary *bodyParamaters = @{ @"user":
+                                          @{
+                                              @"first_name" : name,
+                                              @"last_name" : lastName,
+                                              @"email" : email,
+                                              @"phone" : phone,
+                                              @"password" : password,
+                                              @"password_confirmation" : passwordConfirmation
+                                            }
+                                      };
+    
+    return [WMAFHTTPClientRequest postRequestWithPath:path
+                                       bodyParameters:bodyParamaters
+                                        networkClient:[C46Cipele46APINetworkClient sharedClient]
+                                              success:^(id responseInfo, id responseObject) {
+                                                  
+                                                  DDLogInfo(@"Create user success");
+                                                  DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                  DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                  
+                                                  C46User *user = [[C46User alloc] initWithJSONDictionary:responseObject];
+                                                  
+                                                  DDLogVerbose(@"\t\tUser created: %@", user);
+                                                  
+                                                  success(user);
+                                                  
+                                              } failure:^(id responseInfo, id responseObject) {
+                                                  
+                                                  DDLogError(@"Create user error");
+                                                  DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                  DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                  
+                                                  failure([C46Cipele46APIUtils errorFromHTTPResponse:responseObject
+                                                                                        responseInfo:responseInfo]);
+                                              }];
     
 }
 
@@ -121,23 +163,6 @@
 }
 
 #pragma mark - private
-
--(C46User*) userInfoWithServerDict:(NSDictionary*) dict
-                          password:(NSString*) password
-{
-    NSString* firstName = dict[@"first_name"];
-    NSString* lastName = dict[@"last_name"];
-    NSString* userName = dict[@"name"];
-    NSString* email = dict[@"email"];
-    
-    C46User* userInfo = [[C46User alloc] initWithUserName:userName
-                                                    email:email
-                                                firstName:firstName
-                                                 lastName:lastName
-                                                 password:password];
-    
-    return userInfo;
-}
 
 -(void) broadcastNotification:(NSString*) notification
 {

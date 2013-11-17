@@ -185,10 +185,17 @@ typedef enum __WMNetworkOperationProxyType {
     [dict setObjectSafe:@(operation.response.statusCode) forKey:C46ResponseStatusCodeFromRequestKey];
     
     if (networkClientError) {
+        
+        if (networkClientError.localizedRecoverySuggestion) {
+
+            [dict setObjectSafe:networkClientError.localizedRecoverySuggestion forKey:C46NetworkClientErrorLocalizedDesriptionKey];
+        } else {
+            [dict setObjectSafe:networkClientError.localizedDescription forKey:C46NetworkClientErrorLocalizedDesriptionKey];
+        }
+        
         [dict setObjectSafe:@([WMAFHTTPClientRequest errorTypeFromRequestOperation:operation]) forKey:C46ErrorTypeKey];
     }
     
-    [dict setObjectSafe:networkClientError.localizedDescription forKey:C46NetworkClientErrorLocalizedDesriptionKey];
     
     return dict;
 }

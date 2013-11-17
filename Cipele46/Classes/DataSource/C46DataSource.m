@@ -47,6 +47,8 @@
     return self;
 }
 
+#pragma mark - User in session
+
 - (BOOL)isUserLoggedIn
 {
     return [[C46UserManager sharedInstance] isLoggedIn];
@@ -57,11 +59,35 @@
     return [[C46UserManager sharedInstance] user];
 }
 
+- (id <WMRequestProxyProtocol>)createUserWithName:(NSString *)name
+                                         lastName:(NSString *)lastName
+                                            email:(NSString *)email
+                                            phone:(NSString *)phone
+                                         password:(NSString *)password
+                             passwordConfirmation:(NSString *)passwordConfirmation
+                                          success:(void (^)(C46User *))success
+                                          failure:(void (^)(C46Error *))failure
+{
+    DDLogInfo(@"Create user");
+    
+    WMAFHTTPClientRequest *request = [_userManager createUserWithName:name
+                                                             lastName:lastName
+                                                                email:email
+                                                                phone:phone
+                                                             password:password
+                                                 passwordConfirmation:passwordConfirmation
+                                                              success:success
+                                                              failure:failure];
+    [request start];
+    
+    return request;
+}
+
 - (id <WMRequestProxyProtocol>)fetchAllPublicAdsWithSuccess:(void (^)(NSArray *))success
                                                     failure:(void (^)(C46Error *))failure
 {
     DDLogInfo(@"Fetch all public ads");
-
+    
     return [self fetchPublicAdsWithFilters:nil
                                    success:success
                                    failure:failure];
@@ -77,7 +103,7 @@
     NSString *path = @"ads.json";
     
     NSDictionary *parameters = [self adFilterParametersFromFilters:filters availableFiltersMask:AdFilterMask_AdType & AdFilterMask_Status];
-
+    
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
                                                                     parameters:parameters
                                                                  networkClient:[C46Cipele46APINetworkClient sharedClient]
@@ -102,7 +128,7 @@
     [request start];
     
     return request;
-
+    
 }
 
 - (id<WMRequestProxyProtocol>)fetchAdsWithFilters:(NSArray *)filters
@@ -240,11 +266,11 @@
     NSMutableArray *ads = [NSMutableArray array];
     
     for (NSDictionary *dictionary in responseObject) {
-
+        
         C46Ad *ad = [[C46Ad alloc] initWithJSONDictionary:dictionary];
         [ads addObject:ad];
     }
-
+    
     return ads;
 }
 

@@ -14,8 +14,9 @@
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
 
+#import "C46DataSource.h"
 
-int const ddLogLevel = LOG_LEVEL_INFO;
+int const ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface C46AppDelegate ()
 
@@ -34,6 +35,21 @@ static void uncaughtExceptionHandler(NSException * exception)
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
+    
+    [[C46DataSource sharedInstance] createUserWithName:@"pero"
+                                              lastName:@"peric"
+                                                 email:@"pero3@pero.pero"
+                                                 phone:@"123456"
+                                              password:@"peropero"
+                                  passwordConfirmation:@"peropero"
+                                               success:^(C46User *user) {
+                                                   
+                                                   
+                                                   
+                                               } failure:^(C46Error *error) {
+                                                   
+                                               }];
     
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];

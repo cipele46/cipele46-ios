@@ -10,6 +10,7 @@
 #import "AFJSONRequestOperation.h"
 
 #define kBaseURL @"http://cipele46.org/"
+#define kStageURL @"http://staging.cipele46.org/api"
 
 
 @implementation C46Cipele46APINetworkClient

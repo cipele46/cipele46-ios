@@ -7,7 +7,7 @@
 //
 
 #import "C46RegisterUserViewController.h"
-#import "C46UserManager.h"
+#import "C46DataSource.h"
 
 #define viewSpacement 10.0f //px
 
@@ -97,24 +97,22 @@
         // Notify user that the passwords are not the sam
         [self displayAlertView: NSLocalizedString(@"REGISTER_USER_VIEW__ALERT_MESSAGE_PASSWORDS_NOT_SAME", @"")];
     } else {
-        [[C46UserManager sharedInstance] createUserWithName:self.fieldName.text
-                                                      email:self.fieldEmail.text
-                                                      phone:self.fieldPhone.text
-                                                   password:self.fieldPassword.text
-                                          completionHandler:^(NSError *error)
-        {
-            if (nil == error)
-            {
-                // Just dismmis view controller
-                [self dismissViewControllerAnimated: YES completion: nil];
-            }
-            else
-            {
-                // TODO:
-                NSAssert(NO, @"");
-            }
-        }];
-        
+        [[C46DataSource sharedInstance] createUserWithName:self.fieldName.text
+                                                  lastName:self.fieldName.text
+                                                     email:self.fieldEmail.text
+                                                     phone:self.fieldPhone.text
+                                                  password:self.fieldPassword.text
+                                      passwordConfirmation:self.fieldPasswordAgain.text
+                                                   success:^(C46User *user) {
+                                                       
+                                                       // Just dismmis view controller
+                                                       [self dismissViewControllerAnimated: YES completion: nil];
+                                                       
+                                                   } failure:^(C46Error *error) {
+                                                       
+                                                       // TODO:
+                                                       NSAssert(NO, @"");
+                                                   }];
     }
 }
 
@@ -128,7 +126,7 @@
     const NSString *passwdAgainText = [[[self fieldPasswordAgain] text] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     
     if ( [nameText length] == 0 || [emailText length] == 0 || [phoneText length] == 0
-                || [passwdText length] == 0 || [passwdAgainText length] == 0 ) {
+        || [passwdText length] == 0 || [passwdAgainText length] == 0 ) {
         return NO;
     }
     

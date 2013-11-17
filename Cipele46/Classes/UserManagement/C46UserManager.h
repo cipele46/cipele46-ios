@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "WMAFHTTPClientRequest.h"
 
 @class C46User;
 
@@ -24,11 +24,14 @@
 
 -(void) logout;
 
--(void) createUserWithName:(NSString*) name
-                     email:(NSString*) email
-                     phone:(NSString*) phone
-                  password:(NSString*) password
-         completionHandler:(void(^)(NSError* error)) completed;
+- (id <WMRequestProxyProtocol>)createUserWithName:(NSString *)name
+                                         lastName:(NSString *)lastName
+                                            email:(NSString *)email
+                                            phone:(NSString *)phone
+                                         password:(NSString *)password
+                             passwordConfirmation:(NSString *)passwordConfirmation
+                                          success:(void(^)(C46User *user))success
+                                          failure:(void(^)(C46Error *error))failure;
 
 @property(nonatomic, readonly, getter=isLoggedIn) BOOL loggedIn;
 @property(nonatomic, readonly) C46User* user;
