@@ -157,10 +157,10 @@
     
     NSString *path = @"users/current.json";
     
-    NSDictionary *bodyParamaters = @{
-                                     @"email" : email,
-                                     @"password" : password
-                                    };
+//    NSDictionary *bodyParamaters = @{
+//                                     @"email" : email,
+//                                     @"password" : password
+//                                    };
     
     return [WMAFHTTPClientRequest getRequestWithPath:path
                                           parameters:nil

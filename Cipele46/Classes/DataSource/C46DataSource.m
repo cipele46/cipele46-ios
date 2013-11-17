@@ -9,10 +9,10 @@
 #import "C46DataSource.h"
 #import "C46Cipele46APINetworkClient.h"
 #import "C46Cipele46APIUtils.h"
-#import "C46Ad.h"
 #import "C46AdFilter.h"
 #import "C46UserManager.h"
 #import "C46User.h"
+#import "C46AdCategory.h"
 
 
 @interface C46DataSource ()
@@ -184,6 +184,57 @@
                                                                            failure([C46Cipele46APIUtils errorFromHTTPResponse:responseObject
                                                                                                                  responseInfo:responseInfo]);
                                                                        }];
+    
+    [request start];
+    
+    return request;
+}
+
+
+- (id <WMRequestProxyProtocol>)createAdWithAdCategory:(C46AdCategory *)adCategory
+                                                 city:(C46City *)city
+                                                title:(NSString *)title
+                                          description:(NSString *)description
+                                                phone:(NSString *)phone
+                                               adType:(AdType)adType
+                                              success:(void(^)())success
+                                              failure:(void(^)(C46Error *error))failure
+{
+    DDLogInfo(@"Create ad");
+    
+    NSString *path = @"ads.json";
+    NSDictionary *bodyParameters = @{
+                                     @"ad" :
+                                         @{
+                                             @"category_id": adCategory.identifier,
+                                             @"city_id":city.identifier,
+                                             @"title": title,
+                                             @"description":description,
+                                             @"phone":phone,
+                                             @"ad_type":[@(adType) description]
+                                             }
+                                     };
+    
+    WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest postRequestWithPath:path
+                                                                 bodyParameters:bodyParameters
+                                                                  networkClient:[C46Cipele46APINetworkClient sharedClient]
+                                                                        success:^(id responseInfo, id responseObject) {
+                                                                            
+                                                                            DDLogInfo(@"Create ad success");
+                                                                            DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                                            DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                                            
+                                                                            success();
+                                                                            
+                                                                        } failure:^(id responseInfo, id responseObject) {
+                                                                            
+                                                                            DDLogError(@"Create ad error error");
+                                                                            DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                                            DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                                            
+                                                                            failure([C46Cipele46APIUtils errorFromHTTPResponse:responseObject
+                                                                                                                  responseInfo:responseInfo]);
+                                                                        }];
     
     [request start];
     

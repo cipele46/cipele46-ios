@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WMAFHTTPClientRequest.h"
+#import "C46Ad.h"
 
 @class C46User;
 
@@ -47,6 +48,16 @@
 - (id <WMRequestProxyProtocol>)fetchAdsWithFilters:(NSArray *)filters // array of C46AdFilter objects
                                            success:(void(^)(NSArray *ads))success // C46Ad objects
                                            failure:(void(^)(C46Error *error))failure;
+
+- (id <WMRequestProxyProtocol>)createAdWithAdCategory:(C46AdCategory *)adCategory
+                                                 city:(C46City *)city
+                                                title:(NSString *)title
+                                          description:(NSString *)description
+                                                phone:(NSString *)phone
+                                               adType:(AdType)adType
+                                              success:(void(^)())success
+                                              failure:(void(^)(C46Error *error))failure;
+
 
 - (id <WMRequestProxyProtocol>)fetchCategoriesWithSuccess:(void(^)(NSArray *categories))success // C46Category objects
                                                   failure:(void(^)(C46Error *error))failure;
