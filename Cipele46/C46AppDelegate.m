@@ -14,6 +14,8 @@
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
 
+#import "C46UserManager.h"
+
 int const ddLogLevel = LOG_LEVEL_INFO;
 
 @interface C46AppDelegate ()
@@ -26,33 +28,33 @@ int const ddLogLevel = LOG_LEVEL_INFO;
 
 static void uncaughtExceptionHandler(NSException * exception)
 {
-  NSLog(@"Unhandled exception: %@", exception.description);
-  NSLog(@"Stack trace: %@", [exception callStackSymbols].description);
+    NSLog(@"Unhandled exception: %@", exception.description);
+    NSLog(@"Stack trace: %@", [exception callStackSymbols].description);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-  
-  [DDLog addLogger:[DDASLLogger sharedInstance]];
-  [DDLog addLogger:[DDTTYLogger sharedInstance]];
-  
-  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  self.homeTabBarController = [[C46HomeTabBarController alloc] init];
-  self.window.rootViewController = self.homeTabBarController;
-  [self.window makeKeyAndVisible];
-  
-  return YES;
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.homeTabBarController = [[C46HomeTabBarController alloc] init];
+    self.window.rootViewController = self.homeTabBarController;
+    [self.window makeKeyAndVisible];
+    
+    return YES;
 }
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-  return [[C46FacebookConnect sharedInstance] handleOpenURL:url];
+    return [[C46FacebookConnect sharedInstance] handleOpenURL:url];
 }
 
 -(void)applicationDidBecomeActive:(UIApplication *)application
 {
-  [[C46FacebookConnect sharedInstance] handleDidBecomeActive];
+    [[C46FacebookConnect sharedInstance] handleDidBecomeActive];
 }
 
 @end
