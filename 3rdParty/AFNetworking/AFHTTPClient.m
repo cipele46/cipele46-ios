@@ -662,14 +662,17 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
     return operation;
 }
 
-- (void)deletePath:(NSString *)path
-        parameters:(NSDictionary *)parameters
-           success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-           failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+- (AFHTTPRequestOperation *)deletePath:(NSString *)path
+                            parameters:(NSDictionary *)parameters
+                               success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-	NSURLRequest *request = [self requestWithMethod:@"DELETE" path:path parameters:parameters];
+    
+    NSURLRequest *request = [self requestWithMethod:@"DELETE" path:path parameters:parameters];
 	AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
     [self enqueueHTTPRequestOperation:operation];
+    
+    return operation;
 }
 
 - (void)patchPath:(NSString *)path
