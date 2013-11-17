@@ -86,6 +86,15 @@ typedef enum __TableSection
     [self fetchTableData];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    if ([self.delegate respondsToSelector:@selector(adFilterViewControllerDidFinishSelectingFilters:)]) {
+        [self.delegate adFilterViewControllerDidFinishSelectingFilters:self];
+    }
+}
+
 #pragma mark - Private
 
 - (void)updateSelectedFiltersFromStartingFilters:(NSArray *)filters

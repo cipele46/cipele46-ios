@@ -101,7 +101,7 @@
     DDLogInfo(@"Fetch ads with filters");
     
     NSString *path = @"ads.json";
-    NSDictionary *parameters = [self.class adFilterParametersFromFilters:filters availableFiltersMask:AdFilterMask_All];
+    NSDictionary *parameters = [self adFilterParametersFromFilters:filters availableFiltersMask:AdFilterMask_All];
     
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
                                                                     parameters:parameters

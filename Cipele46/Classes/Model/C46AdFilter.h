@@ -21,7 +21,7 @@ typedef enum __AdFilterMask {
     
 } AdFilterMask;
 
-@interface C46AdFilter : NSObject
+@interface C46AdFilter : NSObject <NSCoding>
 
 @property (nonatomic, readonly) NSString *C46APIKey;
 @property (nonatomic, readonly) NSString *C46APIValue;
@@ -44,6 +44,8 @@ typedef enum __AdFilterMask {
 + (C46AdFilter *)filterWithAdType:(AdType)type;
 + (C46AdFilter *)filterWithAdStatus:(AdStatus)status;
 + (C46AdFilter *)filterWithQueryText:(NSString *)text;
+
++ (NSArray *)defaultFilters;
 
 @end
 

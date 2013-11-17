@@ -48,6 +48,7 @@
 		1133AB181795BEF9002E8B89 /* C46AdImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB171795BEF9002E8B89 /* C46AdImageInfo.m */; };
 		1133AB1B1795C0C0002E8B89 /* C46Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB1A1795C0BF002E8B89 /* C46Region.m */; };
 		1133AB1E1795CDBC002E8B89 /* C46AdFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133AB1D1795CDBC002E8B89 /* C46AdFilter.m */; };
+		114C09CA1838EC5F003C6D23 /* C46AdFilterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 114C09C91838EC5F003C6D23 /* C46AdFilterUtils.m */; };
 		11B1F79117883629001B8969 /* AppIcon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B1F79017883629001B8969 /* AppIcon_114x114.png */; };
 		11F70BC7179D509200259C1E /* C46AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F70BC5179D509200259C1E /* C46AdDetailViewController.m */; };
 		11F70BC8179D509200259C1E /* C46AdDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F70BC6179D509200259C1E /* C46AdDetailViewController.xib */; };
@@ -186,6 +187,8 @@
 		1133AB1A1795C0BF002E8B89 /* C46Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46Region.m; sourceTree = "<group>"; };
 		1133AB1C1795CDBB002E8B89 /* C46AdFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdFilter.h; sourceTree = "<group>"; };
 		1133AB1D1795CDBC002E8B89 /* C46AdFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdFilter.m; sourceTree = "<group>"; };
+		114C09C81838EC5F003C6D23 /* C46AdFilterUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C46AdFilterUtils.h; path = Utils/C46AdFilterUtils.h; sourceTree = "<group>"; };
+		114C09C91838EC5F003C6D23 /* C46AdFilterUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = C46AdFilterUtils.m; path = Utils/C46AdFilterUtils.m; sourceTree = "<group>"; };
 		11B1F79017883629001B8969 /* AppIcon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon_114x114.png; path = ../../AppIcon_114x114.png; sourceTree = "<group>"; };
 		11F70BC4179D509200259C1E /* C46AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C46AdDetailViewController.h; sourceTree = "<group>"; };
 		11F70BC5179D509200259C1E /* C46AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C46AdDetailViewController.m; sourceTree = "<group>"; };
@@ -348,6 +351,8 @@
 		1133AA9117949440002E8B89 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				114C09C81838EC5F003C6D23 /* C46AdFilterUtils.h */,
+				114C09C91838EC5F003C6D23 /* C46AdFilterUtils.m */,
 				790589001826430D000D3448 /* Forms */,
 				79B116291824D91A00B1CA9E /* SearchViewController */,
 				1133AAEC17949522002E8B89 /* AuthenticationViewControllers */,
@@ -906,6 +911,7 @@
 				1133AAD417949440002E8B89 /* C46AdCell.m in Sources */,
 				7905891A182643AF000D3448 /* C46ButtonCell.m in Sources */,
 				5EF96CDC18342A0600A61C44 /* C46Entity.m in Sources */,
+				114C09CA1838EC5F003C6D23 /* C46AdFilterUtils.m in Sources */,
 				7905892218264502000D3448 /* C46FormTableViewController.m in Sources */,
 				1133AAD617949440002E8B89 /* C46AdListViewController.m in Sources */,
 				1133AAD817949440002E8B89 /* C46AdsViewController.m in Sources */,
