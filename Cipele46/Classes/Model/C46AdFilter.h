@@ -11,13 +11,17 @@
 
 typedef enum __AdFilterMask {
     
-    AdFilterMask_Category       =   1 << 0,
-    AdFilterMask_AdType         =   1 << 1,
-    AdFilterMask_Region         =   1 << 2,
-    AdFilterMask_Status         =   1 << 3,
-    AdFilterMask_QueryText      =   1 << 4,
-    AdFilterMask_None           =   0,
-    AdFilterMask_All            =   NSUIntegerMax,
+    AdFilterMask_Category               =   1 << 0,
+    AdFilterMask_AdType                 =   1 << 1,
+    AdFilterMask_Region                 =   1 << 2,
+    AdFilterMask_Status                 =   1 << 3,
+    AdFilterMask_QueryText              =   1 << 4,
+    AdFilterMask_CurrentUserAdsOnly     =   1 << 5,
+    AdFilterMask_FavoritedAdsOnly       =   1 << 6,
+    AdFilterMask_Page                   =   1 << 7,
+    AdFilterMask_PerPage                =   1 << 8,
+    AdFilterMask_None                   =   0,
+    AdFilterMask_All                    =   NSUIntegerMax,
     
 } AdFilterMask;
 
@@ -44,15 +48,12 @@ typedef enum __AdFilterMask {
 + (C46AdFilter *)filterWithAdType:(AdType)type;
 + (C46AdFilter *)filterWithAdStatus:(AdStatus)status;
 + (C46AdFilter *)filterWithQueryText:(NSString *)text;
++ (C46AdFilter *)filterWithCurrentUserAdsOnly:(BOOL)currentUserAdsOnly;
++ (C46AdFilter *)filterWithFavoritedAdsOnly:(BOOL)favoritedAdsOnly;
++ (C46AdFilter *)filterWithPage:(NSUInteger)page;
++ (C46AdFilter *)filterWithPerPage:(NSUInteger)perPage;
+
 
 + (NSArray *)defaultFilters;
 
 @end
-
-
-
-// TODO:
-//user (boolean) samo oglasi koji pripadaju trenutnom korisniku
-//favorites (boolean) samo oglasi koje je logirani korisnik "favoriteao"
-//page (integer, default 1) stranica
-//per_page (integer, default 15) broj rezultata po stranici

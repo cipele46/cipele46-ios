@@ -28,7 +28,7 @@
     C46AdFilter *defaultCategoryFilter = [C46AdFilter filterWithAdCategory:(C46AdCategory*)[C46AdCategory defaultRepresentation]];
     C46AdFilter *defaultRegionFilter = [C46AdFilter filterWithRegion:(C46Region*)[C46Region defaultRepresentation]];
     C46AdFilter *defaultAdTypeFilter = [C46AdFilter filterWithAdType:AdTypeDemand];
-
+    
     return @[defaultCategoryFilter, defaultRegionFilter, defaultAdTypeFilter];
 }
 
@@ -85,6 +85,43 @@
             initializationContext:text];
 }
 
++ (C46AdFilter *)filterWithCurrentUserAdsOnly:(BOOL)currentUserAdsOnly
+{
+    return [self filterWithAPIKey:@"user"
+                         APIValue:[self APIValueForBool:currentUserAdsOnly]
+           requiresAuthentication:YES
+                     adFilterMask:AdFilterMask_CurrentUserAdsOnly
+            initializationContext:@(currentUserAdsOnly)];
+}
+
++ (C46AdFilter *)filterWithFavoritedAdsOnly:(BOOL)favoritedAdsOnly
+{
+    return [self filterWithAPIKey:@"favorites"
+                         APIValue:[self APIValueForBool:favoritedAdsOnly]
+           requiresAuthentication:YES
+                     adFilterMask:AdFilterMask_FavoritedAdsOnly
+            initializationContext:@(favoritedAdsOnly)];
+}
+
++ (C46AdFilter *)filterWithPage:(NSUInteger)page
+{
+    
+    return [self filterWithAPIKey:@"page"
+                         APIValue:[@(page) description]
+           requiresAuthentication:NO
+                     adFilterMask:AdFilterMask_Page
+            initializationContext:@(page)];
+}
+
++ (C46AdFilter *)filterWithPerPage:(NSUInteger)perPage
+{
+    return [self filterWithAPIKey:@"per_page"
+                         APIValue:[@(perPage) description]
+           requiresAuthentication:NO
+                     adFilterMask:AdFilterMask_PerPage
+            initializationContext:@(perPage)];
+}
+
 #pragma mark - Overrides
 
 - (NSString *)description
@@ -109,6 +146,13 @@
     filter.initializationContext = initializationContext;
     
     return filter;
+}
+
+#pragma mark - Utils
+
++ (NSString *)APIValueForBool:(BOOL)boolValue
+{
+    return boolValue ? @"true" : @"false";
 }
 
 #pragma mark - Keyed Archiving
@@ -138,13 +182,13 @@
 - (id)copyWithZone:(NSZone *)zone
 {
     id theCopy = [[[self class] allocWithZone:zone] init];  // use designated initializer
-
+    
     [theCopy setC46APIKey:[self.C46APIKey copy]];
     [theCopy setC46APIValue:[self.C46APIValue copy]];
     [theCopy setRequiresAuthentication:self.requiresAuthentication];
     [theCopy setAdFilterMask:self.adFilterMask];
     [theCopy setInitializationContext:[self.initializationContext copy]];
-
+    
     return theCopy;
 }
 
