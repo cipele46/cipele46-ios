@@ -399,10 +399,10 @@ typedef enum {
 
  @see -HTTPRequestOperationWithRequest:success:failure:
  */
-- (void)putPath:(NSString *)path
-     parameters:(NSDictionary *)parameters
-        success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (AFHTTPRequestOperation *)putPath:(NSString *)path
+                         parameters:(NSDictionary *)parameters
+                            success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                            failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 /**
  Creates an `AFHTTPRequestOperation` with a `DELETE` request, and enqueues it to the HTTP client's operation queue.

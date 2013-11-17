@@ -18,7 +18,8 @@ NSString * C46ErrorTypeKey = @"C46ErrorTypeKey";
 typedef enum __WMNetworkOperationProxyType {
     
     WMNetworkOperationProxyTypeGET,
-    WMNetworkOperationProxyTypePOST
+    WMNetworkOperationProxyTypePOST,
+    WMNetworkOperationProxyTypePUT
     
 } WMNetworkOperationProxyType;
 
@@ -32,6 +33,7 @@ typedef enum __WMNetworkOperationProxyType {
 // mutualy exclusive
 @property (nonatomic) NSDictionary *postBodyParameters;
 @property (nonatomic) NSDictionary *getParameters;
+@property (nonatomic) NSDictionary *putBodyParameters;
 
 @property (nonatomic, strong) WMAFHTTPClientRequestSuccess success;
 @property (nonatomic, strong) WMAFHTTPClientRequestFailure failure;
@@ -84,6 +86,24 @@ typedef enum __WMNetworkOperationProxyType {
     return request;
 }
 
++ (WMAFHTTPClientRequest *)putRequestWithPath:(NSString *)path
+                                   parameters:(NSDictionary *)parameters
+                                networkClient:(AFHTTPClient *)networkClient
+                                      success:(WMAFHTTPClientRequestSuccess)success
+                                      failure:(WMAFHTTPClientRequestFailure)failure
+{
+    WMAFHTTPClientRequest *request = [[WMAFHTTPClientRequest alloc] init];
+    
+    request.type = WMNetworkOperationProxyTypePUT;
+    
+    request.path = path;
+    request.putBodyParameters = parameters;
+    request.networkClient = networkClient;
+    request.success = success;
+    request.failure = failure;
+    
+    return request;
+}
 
 #pragma mark - Request Protocol
 
@@ -101,6 +121,12 @@ typedef enum __WMNetworkOperationProxyType {
         case WMNetworkOperationProxyTypeGET:
             
             operation = [self startGetRequest];
+            
+            break;
+            
+        case WMNetworkOperationProxyTypePUT:
+            
+            operation = [self startPutRequest];
             
             break;
     }
@@ -174,6 +200,37 @@ typedef enum __WMNetworkOperationProxyType {
     
     return operation;
 }
+
+
+- (AFHTTPRequestOperation *)startPutRequest
+{
+    DDLogInfo(@"Start PUT request");
+    DDLogVerbose(@"\t\tBase URL: %@", _networkClient.baseURL);
+    DDLogVerbose(@"\t\tPath: %@", _path);
+    
+    AFHTTPRequestOperation *operation = [_networkClient putPath:_path
+                                                     parameters:_getParameters
+                                                        success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                            
+                                                            DDLogInfo(@"AFHTTPClientRequest PUT success.");
+                                                            DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                            
+                                                            _success([WMAFHTTPClientRequest responseInfoFromRequestOperation:operation networkClientError:nil],
+                                                                     responseObject);
+                                                            
+                                                        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                            
+                                                            DDLogError(@"AFHTTPClientRequest PUT error: %@", error.localizedDescription);
+                                                            DDLogVerbose(@"\t\tError: %@", error);
+                                                            
+                                                            _failure([WMAFHTTPClientRequest responseInfoFromRequestOperation:operation networkClientError:error],
+                                                                     [WMAFHTTPClientRequest responseObjectFromRequestOperation:operation]);
+                                                            
+                                                        }];
+    
+    return operation;
+}
+
 
 #pragma mark - Utils
 

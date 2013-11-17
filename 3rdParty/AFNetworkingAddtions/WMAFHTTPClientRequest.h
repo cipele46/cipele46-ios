@@ -31,6 +31,12 @@ typedef void (^WMAFHTTPClientRequestFailure)(id responseInfo, id responseObject)
                                       success:(WMAFHTTPClientRequestSuccess)success
                                       failure:(WMAFHTTPClientRequestFailure)failure;
 
++ (WMAFHTTPClientRequest *)putRequestWithPath:(NSString *)path
+                                   parameters:(NSDictionary *)parameters
+                                networkClient:(AFHTTPClient *)networkClient
+                                      success:(WMAFHTTPClientRequestSuccess)success
+                                      failure:(WMAFHTTPClientRequestFailure)failure;
+
 
 
 @end
