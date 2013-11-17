@@ -18,12 +18,12 @@ typedef enum __AdFilterType {
     
 } AdFilterType;
 
-@interface C46AdFilter : NSObject
+@interface C46AdFilter : NSObject <NSCoding>
 
 @property (nonatomic, readonly) NSString *C46APIKey;
 @property (nonatomic, readonly) NSString *C46APIValue;
 @property (nonatomic, readonly) BOOL requiresAuthentication;
-@property (nonatomic, readonly) AdFilterType type;
+@property (nonatomic, readonly) AdFilterType adFilterType;
 
 
 // E.g.
@@ -41,6 +41,8 @@ typedef enum __AdFilterType {
 + (C46AdFilter *)filterWithAdType:(AdType)type;
 + (C46AdFilter *)filterWithAdStatus:(AdStatus)status;
 + (C46AdFilter *)filterWithQueryText:(NSString *)text;
+
++ (NSArray *)defaultFilters;
 
 @end
 

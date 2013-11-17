@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface C46Entity : NSObject
+@interface C46Entity : NSObject <NSCoding>
 
-@property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSDate *dateCreated;
-@property (nonatomic, readonly) NSDate *dateUpdated;
+@property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSDate *dateCreated;
+@property (nonatomic, readonly, copy) NSDate *dateUpdated;
 
 - (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name;
 - (id)initWithJSONDictionary:(NSDictionary *)dictionary;

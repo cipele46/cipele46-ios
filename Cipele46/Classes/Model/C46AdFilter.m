@@ -13,12 +13,23 @@
 @property (nonatomic) NSString *C46APIKey;
 @property (nonatomic) NSString *C46APIValue;
 @property (nonatomic) BOOL requiresAuthentication;
-@property (nonatomic) AdFilterType type;
+@property (nonatomic) AdFilterType adFilterType;
 @property (nonatomic) id initializationContext;
 
 @end
 
 @implementation C46AdFilter
+
+#pragma mark - Public properties
+
++ (NSArray *)defaultFilters
+{
+    C46AdFilter *defaultCategoryFilter = [C46AdFilter filterWithAdCategory:(C46AdCategory*)[C46AdCategory defaultRepresentation]];
+    C46AdFilter *defaultRegionFilter = [C46AdFilter filterWithRegion:(C46Region*)[C46Region defaultRepresentation]];
+    C46AdFilter *defaultAdTypeFilter = [C46AdFilter filterWithAdType:AdTypeDemand];
+
+    return @[defaultCategoryFilter, defaultRegionFilter, defaultAdTypeFilter];
+}
 
 
 //user (boolean) samo oglasi koji pripadaju trenutnom korisniku
@@ -93,10 +104,47 @@
     filter.C46APIKey = key;
     filter.C46APIValue = value;
     filter.requiresAuthentication = requiresAuthentication;
-    filter.type = type;
+    filter.adFilterType = type;
     filter.initializationContext = initializationContext;
     
     return filter;
+}
+
+#pragma mark - Keyed Archiving
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.C46APIKey forKey:@"c46APIKey"];
+    [encoder encodeObject:self.C46APIValue forKey:@"c46APIValue"];
+    [encoder encodeBool:self.requiresAuthentication forKey:@"requiresAuthentication"];
+    [encoder encodeInt:self.adFilterType forKey:@"adFilterType"];
+    [encoder encodeObject:self.initializationContext forKey:@"initializationContext"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super init];
+    if (self) {
+        self.C46APIKey = [decoder decodeObjectForKey:@"c46APIKey"];
+        self.C46APIValue = [decoder decodeObjectForKey:@"c46APIValue"];
+        self.requiresAuthentication = [decoder decodeBoolForKey:@"requiresAuthentication"];
+        self.adFilterType = [decoder decodeInt32ForKey:@"adFilterType"];
+        self.initializationContext = [decoder decodeObjectForKey:@"initializationContext"];
+    }
+    return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    id theCopy = [[[self class] allocWithZone:zone] init];  // use designated initializer
+
+    [theCopy setC46APIKey:[self.C46APIKey copy]];
+    [theCopy setC46APIValue:[self.C46APIValue copy]];
+    [theCopy setRequiresAuthentication:self.requiresAuthentication];
+    [theCopy setAdFilterType:self.adFilterType];
+    [theCopy setInitializationContext:[self.initializationContext copy]];
+
+    return theCopy;
 }
 
 @end

@@ -8,6 +8,15 @@
 
 #import "C46Entity.h"
 
+@interface C46Entity ()
+
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSDate *dateCreated;
+@property (nonatomic, copy) NSDate *dateUpdated;
+
+@end
+
 @implementation C46Entity
 
 - (id)initWithIdentifier:(NSString *)identifier name:(NSString *)name
@@ -40,6 +49,41 @@
 + (C46Entity*)defaultRepresentation
 {
     return nil;
+}
+
+
+#pragma mark - Keyed Archiving
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.identifier forKey:@"identifier"];
+    [encoder encodeObject:self.name forKey:@"name"];
+    [encoder encodeObject:self.dateCreated forKey:@"dateCreated"];
+    [encoder encodeObject:self.dateUpdated forKey:@"dateUpdated"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super init];
+    if (self) {
+        self.identifier = [decoder decodeObjectForKey:@"identifier"];
+        self.name = [decoder decodeObjectForKey:@"name"];
+        self.dateCreated = [decoder decodeObjectForKey:@"dateCreated"];
+        self.dateUpdated = [decoder decodeObjectForKey:@"dateUpdated"];
+    }
+    return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    id theCopy = [[[self class] allocWithZone:zone] init];  // use designated initializer
+
+    [theCopy setIdentifier:[self.identifier copy]];
+    [theCopy setName:[self.name copy]];
+    [theCopy setDateCreated:[self.dateCreated copy]];
+    [theCopy setDateUpdated:[self.dateUpdated copy]];
+
+    return theCopy;
 }
 
 @end

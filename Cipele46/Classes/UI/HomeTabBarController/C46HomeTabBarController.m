@@ -26,44 +26,46 @@
 
 - (void)viewDidLoad
 {
-  [super viewDidLoad];
-  
-  // Ads
-  _adsViewController = [C46AdsViewController new];
-  _adsViewController.delegate = self;
-  
-  // Search
-  _searchViewController = [C46SearchViewController new];
-  _searchViewController.delegate = self;
-  
-  // Create ad
-  _createAdViewController = [UIViewController new];
-  
-  // My ads
-  _myAdsViewController = [C46MyAdsViewController new];
-  _myAdsViewController.delegate = self;
-  
-  // Settings
-  _settingsViewController = [UIViewController new];
-  
-  self.viewControllers = @[[self wrapIntoNavigationController:_adsViewController],
-                           [self wrapIntoNavigationController:_searchViewController],
-                           _createAdViewController,
-                           [self wrapIntoNavigationController:_myAdsViewController],
-                           _settingsViewController];
+    [super viewDidLoad];
+    
+    // Ads
+    _adsViewController = [C46AdsViewController new];
+    _adsViewController.delegate = self;
+
+    // Search
+    _searchViewController = [C46SearchViewController new];
+    _searchViewController.delegate = self;
+
+    // Create ad
+    _createAdViewController = [UIViewController new];
+
+    // My ads
+    _myAdsViewController = [C46MyAdsViewController new];
+    _myAdsViewController.delegate = self;
+
+    // Settings
+    _settingsViewController = [UIViewController new];
+
+    self.viewControllers = @[[self wrapIntoNavigationController:_adsViewController],
+                             [self wrapIntoNavigationController:_searchViewController],
+                             _createAdViewController,
+                             [self wrapIntoNavigationController:_myAdsViewController],
+                             _settingsViewController];
 }
 
 - (UINavigationController *)wrapIntoNavigationController:(UIViewController *)vc
 {
-  return [[UINavigationController alloc] initWithRootViewController:vc];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    navigationController.navigationBar.translucent = NO;
+    return navigationController;
 }
 
 #pragma mark - C46AdsViewControllerDelegate
 
 - (void)adsViewController:(UIViewController *)controller didSelectAd:(C46Ad *)ad
 {
-  C46AdDetailViewController *adDetailViewController = [[C46AdDetailViewController alloc] initWithAd:ad];
-  [controller.navigationController pushViewController:adDetailViewController animated:YES];
+    C46AdDetailViewController *adDetailViewController = [[C46AdDetailViewController alloc] initWithAd:ad];
+    [controller.navigationController pushViewController:adDetailViewController animated:YES];
 }
 
 @end

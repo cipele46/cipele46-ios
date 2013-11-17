@@ -15,6 +15,7 @@
 - (void)adFilterViewControllerDidStartUpdatingFilters:(UIViewController *)controller;
 - (void)adFilterViewControllerDidFinishUpdatingFilters:(UIViewController *)controller;
 - (void)adFilterViewController:(UIViewController *)controller didFailUpdatingFilterWithError:(C46Error *)error;
+- (void)adFilterViewControllerDidFinishSelectingFilters:(UIViewController *)controller;
 
 @end
 
