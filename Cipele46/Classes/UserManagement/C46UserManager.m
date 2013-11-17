@@ -12,7 +12,7 @@
 
 @interface C46UserManager()
 {
-    @private
+@private
     
     BOOL _isFBLogin;
 }
@@ -28,9 +28,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^()
-    {
-        instance = [[self alloc] init];
-    });
+                  {
+                      instance = [[self alloc] init];
+                  });
     
     return instance;
 }
@@ -47,52 +47,52 @@
 -(void)loginViaFacebookWithCompletionHandler:(void (^)(NSError *))completed
 {
     [[C46FacebookConnect sharedInstance] connectWithCompletionHandler:^(NSError *error, C46User *fbUserInfo)
-    {
-        if (error)
-        {
-            [self broadcastNotification:C46UserManagerLoginFailedNotification];
-        }
-        else
-        {   
-//            [_server loginWithEmail:fbUserInfo.email
-//                facebookAccessToken:[[C46FacebookConnect sharedInstance] accessToken]
-//                  completionHandler:^(NSError *error, NSDictionary *userInfo)
-//            {
-//                if (error)
-//                {
-//                    [self broadcastNotification:C46UserManagerLoginFailedNotification];
-//                }
-//                else
-//                {
-//                    _isFBLogin = YES;
-//                    _userInfo = fbUserInfo;
-//                    [self broadcastNotification:C46UserManagerLoggedInNotification];
-//                }
-//            }];
-        }
-    }];
+     {
+         if (error)
+         {
+             [self broadcastNotification:C46UserManagerLoginFailedNotification];
+         }
+         else
+         {
+             //            [_server loginWithEmail:fbUserInfo.email
+             //                facebookAccessToken:[[C46FacebookConnect sharedInstance] accessToken]
+             //                  completionHandler:^(NSError *error, NSDictionary *userInfo)
+             //            {
+             //                if (error)
+             //                {
+             //                    [self broadcastNotification:C46UserManagerLoginFailedNotification];
+             //                }
+             //                else
+             //                {
+             //                    _isFBLogin = YES;
+             //                    _userInfo = fbUserInfo;
+             //                    [self broadcastNotification:C46UserManagerLoggedInNotification];
+             //                }
+             //            }];
+         }
+     }];
 }
 
 -(void)loginWithEmail:(NSString *)email
           andPassword:(NSString *)password
     completionHandler:(void (^)(NSError *))completed
 {
-//    [_server loginWithUserName:userName
-//                      password:password
-//             completionHandler:^(NSError *error, NSDictionary *userInfo) 
-//    {
-//        if (error)
-//        {
-//            [self broadcastNotification:C46UserManagerLoginFailedNotification];
-//        }
-//        else
-//        {
-//            _isFBLogin = NO;
-//            _userInfo = [self userInfoWithServerDict:userInfo
-//                                            password:password];
-//            [self broadcastNotification:C46UserManagerLoggedInNotification];
-//        }
-//    }];
+    //    [_server loginWithUserName:userName
+    //                      password:password
+    //             completionHandler:^(NSError *error, NSDictionary *userInfo)
+    //    {
+    //        if (error)
+    //        {
+    //            [self broadcastNotification:C46UserManagerLoginFailedNotification];
+    //        }
+    //        else
+    //        {
+    //            _isFBLogin = NO;
+    //            _userInfo = [self userInfoWithServerDict:userInfo
+    //                                            password:password];
+    //            [self broadcastNotification:C46UserManagerLoggedInNotification];
+    //        }
+    //    }];
 }
 
 -(void) createUserWithName:(NSString*) name
@@ -123,7 +123,7 @@
 #pragma mark - private
 
 -(C46User*) userInfoWithServerDict:(NSDictionary*) dict
-                              password:(NSString*) password
+                          password:(NSString*) password
 {
     NSString* firstName = dict[@"first_name"];
     NSString* lastName = dict[@"last_name"];
@@ -131,10 +131,10 @@
     NSString* email = dict[@"email"];
     
     C46User* userInfo = [[C46User alloc] initWithUserName:userName
-                                                            email:email
-                                                        firstName:firstName
-                                                         lastName:lastName
-                                                         password:password];
+                                                    email:email
+                                                firstName:firstName
+                                                 lastName:lastName
+                                                 password:password];
     
     return userInfo;
 }
@@ -142,9 +142,9 @@
 -(void) broadcastNotification:(NSString*) notification
 {
     dispatch_async(dispatch_get_main_queue(), ^()
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName:notification object:self];
-    });
+                   {
+                       [[NSNotificationCenter defaultCenter] postNotificationName:notification object:self];
+                   });
 }
 
 @end

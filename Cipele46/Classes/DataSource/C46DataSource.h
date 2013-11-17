@@ -9,9 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "WMAFHTTPClientRequest.h"
 
+@class C46User;
+
 @interface C46DataSource : NSObject
 
 + (C46DataSource *)sharedInstance;
+
+@property (nonatomic, readonly) BOOL isUserLoggedIn;
+@property (nonatomic, readonly) C46User *loggedInUser;
 
 #pragma mark - Cipele46 API
 

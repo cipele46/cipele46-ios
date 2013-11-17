@@ -14,7 +14,6 @@
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
 
-#import "C46UserManager.h"
 
 int const ddLogLevel = LOG_LEVEL_INFO;
 

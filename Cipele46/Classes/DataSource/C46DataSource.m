@@ -12,6 +12,7 @@
 #import "C46Ad.h"
 #import "C46AdFilter.h"
 #import "C46UserManager.h"
+#import "C46User.h"
 
 // later
 // ----> AFHTTPClient <----
@@ -44,6 +45,16 @@
     }
     
     return self;
+}
+
+- (BOOL)isUserLoggedIn
+{
+    return [[C46UserManager sharedInstance] isLoggedIn];
+}
+
+- (C46User *)loggedInUser
+{
+    return [[C46UserManager sharedInstance] user];
 }
 
 - (id <WMRequestProxyProtocol>)fetchAllPublicAdsWithSuccess:(void (^)(NSArray *))success
@@ -209,7 +220,7 @@
         
         if (filter.requiresAuthentication) {
             DDLogWarn(@"Needs user authentication");
-            shouldAdd = shouldAdd && _userManager.isLoggedIn;
+            shouldAdd = shouldAdd && [self isUserLoggedIn];
         }
         
         if (shouldAdd) {

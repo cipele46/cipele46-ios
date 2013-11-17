@@ -10,7 +10,7 @@
 #import "C46AdListViewController.h"
 #import "MBProgressHUD.h"
 #import "C46LoginUserViewController.h"
-#import "C46UserManager.h"
+#import "C46DataSource.h"
 #import "C46SegmentedView.h"
 #import "ColorManager.h"
 
@@ -43,7 +43,7 @@
   _adListViewController.view.frame = _adListHolderView.bounds;
   [self addChildViewController:_adListViewController];
   
-  if (![[C46UserManager sharedInstance] isLoggedIn])
+  if (![[C46DataSource sharedInstance] isUserLoggedIn])
   {
     UIViewController* loginVC = [C46LoginUserViewController new];
     
