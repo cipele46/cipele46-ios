@@ -202,7 +202,7 @@ int const ddLogLevel = LOG_LEVEL_WARN;
                                               success:(void(^)())success
                                               failure:(void(^)(C46Error *error))failure
 {
-    DDLogInfo(@"Create ad");
+    DDLogInfo(@"Create ad.");
     
     NSString *path = @"ads.json";
     NSDictionary *bodyParameters = @{
@@ -237,6 +237,63 @@ int const ddLogLevel = LOG_LEVEL_WARN;
                                                                             failure([C46Cipele46APIUtils errorFromHTTPResponse:responseObject
                                                                                                                   responseInfo:responseInfo]);
                                                                         }];
+    
+    [request start];
+    
+    return request;
+}
+
+- (id<WMRequestProxyProtocol>)updateAd:(C46Ad *)ad
+                        withAdCategory:(C46AdCategory *)adCategory
+                                  city:(C46City *)city
+                                 title:(NSString *)title
+                           description:(NSString *)description
+                                 phone:(NSString *)phone
+                                adType:(AdType)adType
+                               success:(void (^)(C46Ad *))success
+                               failure:(void (^)(C46Error *))failure
+{
+    NSAssert(ad, @"Need ad to update.");
+    NSAssert(ad.identifier, @"Ad needs to have its identifier");
+    
+    DDLogInfo(@"Update ad.");
+    DDLogVerbose(@"\t\tAd: %@", ad);
+    
+    NSString *path = [NSString stringWithFormat:@"ads.json/%@", ad.identifier];
+    NSDictionary *parameters = @{
+                                 @"ad" :
+                                     @{
+                                         @"category_id": adCategory.identifier,
+                                         @"city_id":city.identifier,
+                                         @"title": title,
+                                         @"description":description,
+                                         @"phone":phone,
+                                         @"ad_type":[@(adType) description]
+                                         }
+                                 };
+    
+    WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest putRequestWithPath:path
+                                                                    parameters:parameters
+                                                                 networkClient:[C46Cipele46APINetworkClient sharedClient]
+                                                                       success:^(id responseInfo, id responseObject) {
+                                                                           
+                                                                           DDLogInfo(@"Update ad success");
+                                                                           DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                                           DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                                           
+                                                                           C46Ad *updatedAd = [[C46Ad alloc] initWithJSONDictionary:responseObject];
+                                                                           
+                                                                           success(updatedAd);
+                                                                           
+                                                                       } failure:^(id responseInfo, id responseObject) {
+                                                                           
+                                                                           DDLogError(@"Update ad error error");
+                                                                           DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                                           DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                                           
+                                                                           failure([C46Cipele46APIUtils errorFromHTTPResponse:responseObject
+                                                                                                                 responseInfo:responseInfo]);
+                                                                       }];
     
     [request start];
     

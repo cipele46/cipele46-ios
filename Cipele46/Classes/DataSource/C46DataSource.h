@@ -60,6 +60,17 @@
                                               success:(void(^)())success
                                               failure:(void(^)(C46Error *error))failure;
 
+// TODO: Need to talk with Grbin and Mijo on how we should use this method.
+- (id <WMRequestProxyProtocol>)updateAd:(C46Ad *)ad
+                         withAdCategory:(C46AdCategory *)adCategory
+                                   city:(C46City *)city
+                                  title:(NSString *)title
+                            description:(NSString *)description
+                                  phone:(NSString *)phone
+                                 adType:(AdType)adType
+                                success:(void(^)(C46Ad *updatedAd))success
+                                failure:(void(^)(C46Error *error))failure;
+
 
 #pragma mark - Cipele46 API - Category
 

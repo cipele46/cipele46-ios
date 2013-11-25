@@ -45,7 +45,7 @@ typedef enum __AdStatus {
 
 @property (nonatomic, readonly) NSString *description;
 @property (nonatomic, readonly) NSString *email;
-@property (nonatomic, readonly) NSInteger identifier;
+@property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) C46AdImageInfo *imageInfo;
 @property (nonatomic, readonly) NSString *phone;
 @property (nonatomic, readonly) C46Region *region;

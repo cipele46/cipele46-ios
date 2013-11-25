@@ -34,7 +34,7 @@
         
         _description =  dictionary[@"description"];
         _email =  dictionary[@"email"];
-        _identifier = [dictionary[@"id"] integerValue];
+        _identifier = dictionary[@"id"];
         
         NSDictionary *imageInfoDIctionary = dictionary[@"image"];
         _imageInfo = [[C46AdImageInfo alloc] initWithJSONDictionary:imageInfoDIctionary];
