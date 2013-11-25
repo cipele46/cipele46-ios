@@ -71,6 +71,9 @@
                                 success:(void(^)(C46Ad *updatedAd))success
                                 failure:(void(^)(C46Error *error))failure;
 
+- (id <WMRequestProxyProtocol>)deleteAd:(C46Ad *)ad
+                                success:(void(^)())success
+                                failure:(void(^)(C46Error *error))failure;
 
 #pragma mark - Cipele46 API - Category
 

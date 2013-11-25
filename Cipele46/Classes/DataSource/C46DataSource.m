@@ -243,7 +243,7 @@ int const ddLogLevel = LOG_LEVEL_WARN;
     return request;
 }
 
-- (id<WMRequestProxyProtocol>)updateAd:(C46Ad *)ad
+- (id <WMRequestProxyProtocol>)updateAd:(C46Ad *)ad
                         withAdCategory:(C46AdCategory *)adCategory
                                   city:(C46City *)city
                                  title:(NSString *)title
@@ -259,7 +259,7 @@ int const ddLogLevel = LOG_LEVEL_WARN;
     DDLogInfo(@"Update ad.");
     DDLogVerbose(@"\t\tAd: %@", ad);
     
-    NSString *path = [NSString stringWithFormat:@"ads.json/%@", ad.identifier];
+    NSString *path = [NSString stringWithFormat:@"ads/%@", ad.identifier];
     NSDictionary *parameters = @{
                                  @"ad" :
                                      @{
@@ -294,6 +294,44 @@ int const ddLogLevel = LOG_LEVEL_WARN;
                                                                            failure([C46Cipele46APIUtils errorFromHTTPResponse:responseObject
                                                                                                                  responseInfo:responseInfo]);
                                                                        }];
+    
+    [request start];
+    
+    return request;
+}
+
+- (id <WMRequestProxyProtocol>)deleteAd:(C46Ad *)ad
+                               success:(void (^)())success
+                               failure:(void (^)(C46Error *))failure
+{
+    NSAssert(ad, @"Need ad to delete.");
+    NSAssert(ad.identifier, @"Ad needs to have its identifier");
+    
+    DDLogInfo(@"Delete ad.");
+    DDLogVerbose(@"\t\tAd: %@", ad);
+    
+    NSString *path = [NSString stringWithFormat:@"ads/%@", ad.identifier];
+    
+    WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest deleteRequestWithPath:path
+                                                                       parameters:nil
+                                                                    networkClient:[C46Cipele46APINetworkClient sharedClient]
+                                                                          success:^(id responseInfo, id responseObject) {
+                                                                              
+                                                                              DDLogInfo(@"Delete ad success");
+                                                                              DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                                              DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                                              
+                                                                              success();
+                                                                              
+                                                                          } failure:^(id responseInfo, id responseObject) {
+                                                                              
+                                                                              DDLogError(@"Delete ad error error");
+                                                                              DDLogVerbose(@"\t\tResponse: %@", responseObject);
+                                                                              DDLogVerbose(@"\t\tResponse info: %@", responseInfo);
+                                                                              
+                                                                              failure([C46Cipele46APIUtils errorFromHTTPResponse:responseObject
+                                                                                                                    responseInfo:responseInfo]);
+                                                                          }];
     
     [request start];
     
