@@ -14,7 +14,7 @@
 #import "C46User.h"
 #import "C46AdCategory.h"
 
-int const ddLogLevel = LOG_LEVEL_VERBOSE;
+int const ddLogLevel = LOG_LEVEL_WARN;
 
 @interface C46DataSource ()
 

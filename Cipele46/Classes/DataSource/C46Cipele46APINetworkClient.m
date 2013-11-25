@@ -12,6 +12,7 @@
 #define kBaseURL @"http://cipele46.org/"
 #define kStageURL @"http://staging.cipele46.org/api"
 
+#define kURLToUse kBaseURL
 
 @implementation C46Cipele46APINetworkClient
 
@@ -20,7 +21,7 @@
     static C46Cipele46APINetworkClient *__instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        __instance = [[C46Cipele46APINetworkClient alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
+        __instance = [[C46Cipele46APINetworkClient alloc] initWithBaseURL:[NSURL URLWithString:kURLToUse]];
     });
     
     return __instance;
