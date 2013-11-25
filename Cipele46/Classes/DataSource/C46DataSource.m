@@ -106,7 +106,8 @@ int const ddLogLevel = LOG_LEVEL_WARN;
     
 }
 
-#pragma mark - Cipele46 API
+
+#pragma mark - Cipele46 API - Ad
 
 - (id <WMRequestProxyProtocol>)fetchAllPublicAdsWithSuccess:(void (^)(NSArray *))success
                                                     failure:(void (^)(C46Error *))failure
@@ -242,6 +243,9 @@ int const ddLogLevel = LOG_LEVEL_WARN;
     return request;
 }
 
+
+#pragma mark - Cipele46 API - Category
+
 - (id<WMRequestProxyProtocol>)fetchCategoriesWithSuccess:(void (^)(NSArray *))success
                                                  failure:(void (^)(C46Error *))failure
 {
@@ -274,6 +278,9 @@ int const ddLogLevel = LOG_LEVEL_WARN;
     
     return request;
 }
+
+
+#pragma mark - Cipele46 API - Region
 
 - (id<WMRequestProxyProtocol>)fetchRegionsWithSuccess:(void (^)(NSArray *))success
                                               failure:(void (^)(C46Error *))failure

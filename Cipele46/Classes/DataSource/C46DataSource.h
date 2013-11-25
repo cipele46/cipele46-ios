@@ -35,7 +35,7 @@
                                           success:(void(^)(C46User *user))success
                                           failure:(void(^)(C46Error *error))failure;
 
-#pragma mark - Cipele46 API
+#pragma mark - Cipele46 API - Ad
 
 - (id <WMRequestProxyProtocol>)fetchAllPublicAdsWithSuccess:(void(^)(NSArray *ads))success // C46Ad objects
                                                     failure:(void(^)(C46Error *error))failure;
@@ -59,8 +59,12 @@
                                               failure:(void(^)(C46Error *error))failure;
 
 
+#pragma mark - Cipele46 API - Category
+
 - (id <WMRequestProxyProtocol>)fetchCategoriesWithSuccess:(void(^)(NSArray *categories))success // C46Category objects
                                                   failure:(void(^)(C46Error *error))failure;
+
+#pragma mark - Cipele46 API - Region
 
 - (id <WMRequestProxyProtocol>)fetchRegionsWithSuccess:(void(^)(NSArray *regions))success // C46Region objects
                                                failure:(void(^)(C46Error *error))failure;
