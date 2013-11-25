@@ -16,7 +16,7 @@
 
 #import "C46DataSource.h"
 
-int const ddLogLevel = LOG_LEVEL_VERBOSE;
+int const ddLogLevel = LOG_LEVEL_WARN;
 
 @interface C46AppDelegate ()
 
@@ -35,8 +35,6 @@ static void uncaughtExceptionHandler(NSException * exception)
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-    
-    
     
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];

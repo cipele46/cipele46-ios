@@ -11,6 +11,8 @@
 #import "C46DataSource.h"
 #import "UIViewController+ProgressIndicator.h"
 
+int const ddLogLevel = LOG_LEVEL_WARN;
+
 @interface C46SearchViewController () <UISearchBarDelegate, C46AdListViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet C46AdListViewController *adListViewController;
 @property (strong, nonatomic) IBOutlet UIView *adListHolderView;

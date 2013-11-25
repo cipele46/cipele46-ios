@@ -11,6 +11,8 @@
 #import "C46DataSource.h"
 #import "C46Ad.h"
 
+int const ddLogLevel = LOG_LEVEL_WARN;
+
 #define kAdTypeInfoKeyType @"type"
 #define kAdTypeInfoKeyText @"text"
 

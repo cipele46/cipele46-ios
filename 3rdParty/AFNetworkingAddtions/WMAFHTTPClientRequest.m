@@ -10,6 +10,8 @@
 #import "AFHTTPRequestOperation.h"
 #import "NSMutableDictionary+Additions.h"
 
+int const ddLogLevel = LOG_LEVEL_WARN;
+
 NSString * C46ResponseStatusCodeFromRequestKey = @"C46ResponseStatusCodeFromRequestKey";
 NSString * C46NetworkClientErrorLocalizedDesriptionKey = @"C46NetworkClientErrorLocalizedDesriptionKey";
 NSString * C46NetworkClientErrorLocalizedResoverySuggestionKey = @"C46NetworkClientErrorLocalizedResoverySuggestionKey";

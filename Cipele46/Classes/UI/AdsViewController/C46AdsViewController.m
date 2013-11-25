@@ -14,6 +14,8 @@
 #import "UIViewController+ProgressIndicator.h"
 #import "C46AdFilterUtils.h"
 
+int const ddLogLevel = LOG_LEVEL_WARN;
+
 @interface C46AdsViewController () <C46AdListViewControllerDelegate, C46AdFilterDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *adListViewControllerPlaceholderView;

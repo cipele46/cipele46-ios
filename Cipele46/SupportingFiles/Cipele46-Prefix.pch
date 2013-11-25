@@ -18,5 +18,3 @@
     #import <SystemConfiguration/SystemConfiguration.h>
     #import <MobileCoreServices/MobileCoreServices.h>
 #endif
-
-extern int const ddLogLevel;

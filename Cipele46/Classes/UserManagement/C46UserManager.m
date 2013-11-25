@@ -12,6 +12,8 @@
 #import "C46Cipele46APINetworkClient.h"
 #import "C46Cipele46APIUtils.h"
 
+int const ddLogLevel = LOG_LEVEL_VERBOSE;
+
 @interface C46UserManager()
 {
 @private

@@ -10,6 +10,8 @@
 #import "WMAFHTTPClientRequest.h"
 #import "NSMutableDictionary+Additions.h"
 
+int const ddLogLevel = LOG_LEVEL_WARN;
+
 @implementation C46Cipele46APIUtils
 
 + (C46Error *)errorFromHTTPResponse:(NSDictionary *)responseDict responseInfo:(NSDictionary *)responseInfo
