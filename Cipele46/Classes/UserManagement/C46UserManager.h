@@ -39,7 +39,7 @@
                                          failure:(void (^)(C46Error *))failure;
 
 @property(nonatomic, readonly, getter=isLoggedIn) BOOL loggedIn;
-@property(nonatomic, readonly) C46User* user;
+@property(nonatomic, readonly) C46User* loggedInUser;
 
 @end
 

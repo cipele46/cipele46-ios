@@ -197,13 +197,13 @@ int const ddLogLevel = LOG_LEVEL_VERBOSE;
         [[C46FacebookConnect sharedInstance] logout];
     }
     
-    _user = nil;
+    _loggedInUser = nil;
     _isFBLogin = NO;
 }
 
 -(BOOL)isLoggedIn
 {
-    return nil != _user;
+    return nil != _loggedInUser;
 }
 
 #pragma mark - private

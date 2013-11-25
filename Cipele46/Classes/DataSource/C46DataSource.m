@@ -53,7 +53,7 @@ int const ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (C46User *)loggedInUser
 {
-    return [[C46UserManager sharedInstance] user];
+    return [[C46UserManager sharedInstance] loggedInUser];
 }
 
 - (id <WMRequestProxyProtocol>)createUserWithName:(NSString *)name
