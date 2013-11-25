@@ -128,7 +128,7 @@ int const ddLogLevel = LOG_LEVEL_WARN;
     
     NSString *path = @"ads.json";
     
-    NSDictionary *parameters = [self adFilterParametersFromFilters:filters availableFiltersMask:AdFilterMask_AdType & AdFilterMask_Status];
+    NSDictionary *parameters = [self adFilterParametersFromFilters:filters availableFiltersMask:AdFilterMask_All & ~AdFilterMask_FavoritedAdsOnly & ~AdFilterMask_CurrentUserAdsOnly];
     
     WMAFHTTPClientRequest *request = [WMAFHTTPClientRequest getRequestWithPath:path
                                                                     parameters:parameters

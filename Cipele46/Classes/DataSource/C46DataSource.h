@@ -45,6 +45,8 @@
                                                  failure:(void(^)(C46Error *error))failure;
 
 
+// Difference between this method and two methods above is that this method
+// can use user specific filters (e.g. favorites only). This means that user has to be logged in.
 - (id <WMRequestProxyProtocol>)fetchAdsWithFilters:(NSArray *)filters // array of C46AdFilter objects
                                            success:(void(^)(NSArray *ads))success // C46Ad objects
                                            failure:(void(^)(C46Error *error))failure;
